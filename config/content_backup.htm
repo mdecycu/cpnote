@@ -2,7 +2,7 @@
 <p><a href="https://mde.tw/cpnote">https://mde.tw/cpnote</a></p>
 <p>這是國立虎尾科技大學機械設計工程系大一計算機程式課堂筆記網站。</p>
 <p>課程內容將從基本的 C 程式語言練習起，主要目的是讓學員了解編譯程式語言的特性及基本用法。</p>
-<p>C 程式語言範例，包括如何利用數值分析流程，解出 mass-spring-damper 系統運動程式，並將質量的運動位移及速度，以圖表列出。</p>
+<p>C 程式語言範例，包括如何利用數值分析流程，解出 mass-spring-damper 系統運動程式，並將質量的運動位移及速度，以 Gnuplot 圖表列出。</p>
 <p>接著將數值分析運算移至瀏覽器時，要求學員試著將 C 程式改寫為 Javascript， 並加上 plotly.js 進行繪圖。</p>
 <p>之後在 plotly.js 的運算繪架構下，嘗試利用 Brython 取代 Javascript。</p>
 <p>最後，希望透過一組包含網路前後端的 Python 語法程式範例，說明計算機程式語言在現階段機電資整合設計中的相關應用。</p><h1>課程評分</h1>
@@ -369,7 +369,200 @@ doc["threejsblock"].bind("click", threejsblock.do)
 <p><span>機械設計工程師在甚麼情況下需要使用 Javascript 解決問題?</span></p>
 <p><span>Brython 程式語言一般被用在那些情況下?</span></p>
 <p><span>機械設計工程師在甚麼情況下需要使用 Python 解決問題?</span></p>
-<h2>開發工具</h2>
+<h3>ANSI C</h3>
+<ol>
+<li>ANSI C 程式語言所謂具有可攜性, 是甚麼意思?</li>
+<li>ANSI C 被定位為低階程式語言, 是甚麼意思?</li>
+<li>可以用 ANSIＣ加上Gnuplot 繪圖, 解一個質量與兩個並聯的彈簧與阻尼器連接到牆上, 且起始條件為執行被往後拉 0.2 m 後放開的常微分方程式, 並劃出該質量被釋放之後 10 秒之內的位移以及速度圖嗎?</li>
+<li>請詳細解釋所謂的 Euler's Method, 並且能不能將 Gnuplot 繪圖指令直接與 C 程式合併, 執行程式後直接產生位移與速度 png 圖?</li>
+<li>能不能將 gnuplot 繪圖程式碼與 Euler's Method 解微分方程式的程式碼結合在一起, 執行時直接就能繪出質量的位移與速度圖, 而且請在繪圖時直接使用位於 Y:\ 的 wqy-microhei.ttc 中文字形, 否則無法在圖面上顯示出正確的中文.</li>
+<li>請將質量的位移以及速度繪製在同一個 png 圖檔上</li>
+</ol>
+<p>利用 Euler's Method 解 mass-spring-damper 系統的運動方程式, 並採 ANSI C 與 Gnuplot 執行運算及繪圖.</p>
+<p><a href="/downloads/euler_mass_spring_damper_gnuplot.7z">euler_mass_spring_damper_gnuplot.7z</a></p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main() {
+    // 開啟文件以寫入位移和速度數據
+    FILE *outputFile = fopen("motion_data.txt", "w");
+    if (!outputFile) {
+        fprintf(stderr, "無法創建數據文件。\n");
+        return 1;
+    }
+
+    // 模擬運動 10 秒並計算位移和速度，同時將數據寫入文件
+    double x = 0.2;  // 初始位移
+    double v = 0.0;  // 初始速度
+    double dt = 0.01; // 時間步長
+    double t = 0.0;  // 時間
+
+    while (t &lt;= 10.0) {
+        double acceleration = (-10.0 * x - 0.5 * v) / 1.0; // 這裡修改了系統的參數
+        v += acceleration * dt;
+        x += v * dt;
+
+        fprintf(outputFile, "%lf %lf %lf\n", t, x, v);
+
+        t += dt;
+    }
+
+    // 關閉數據文件
+    fclose(outputFile);
+
+    // 使用popen啟動Gnuplot進程
+    FILE *gnuplotPipe = popen("gnuplot -persistent", "w");
+    if (!gnuplotPipe) {
+        fprintf(stderr, "無法啟動Gnuplot。\n");
+        return 1;
+    }
+
+    // 使用Gnuplot繪圖指令，指定字型文件和輸出PNG
+    fprintf(gnuplotPipe, "set terminal pngcairo enhanced font 'Y:/wqy-microhei.ttc,10' size 800,400\n");
+    fprintf(gnuplotPipe, "set output 'motion_plot.png'\n");
+    fprintf(gnuplotPipe, "set title '位移和速度 vs. 時間'\n");
+    fprintf(gnuplotPipe, "set xlabel '時間 (s)'\n");
+    fprintf(gnuplotPipe, "set ylabel '位移 (m)'\n");
+    fprintf(gnuplotPipe, "plot 'motion_data.txt' using 1:2 with lines lw 2 title '位移', \
+                             'motion_data.txt' using 1:3 with lines lw 2 title '速度'\n");
+
+    // 關閉Gnuplot進程
+    fprintf(gnuplotPipe, "exit\n");
+    pclose(gnuplotPipe);
+
+    return 0;
+}
+</pre>
+<p>運算結果:</p>
+<p><img alt="" height="200" src="/images/Euler_Method__mass_spring_damper_motion_plot.png" width="400"/></p>
+<p>假如拿掉 Damping:</p>
+<p><img alt="" height="200" src="/images/Euler_Method_mass_spring_motion_plot.png" width="400"/></p>
+<p>假如將 C 改寫為 Javascript, 並且使用 plotly.js 取代 Gnuplot, 可使用下列 html + Javascript 執行運算:</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;script src="https://cdn.plot.ly/plotly-latest.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div id="plotDamping"&gt;&lt;/div&gt;
+    &lt;div id="plotNoDamping"&gt;&lt;/div&gt;
+
+    &lt;script&gt;
+        // Function to simulate motion using Euler's method
+        function simulateMotion(MASS, SPRING_K, DAMPING_C, containerId) {
+            // Define simulation parameters
+            const totalTime = 10.0;
+            const dt = 0.01;
+            
+            // Initialize data arrays
+            const timeData = [];
+            const displacementData = [];
+            const velocityData = [];
+
+            // Initial conditions
+            let t = 0.0;
+            let x = 0.2;
+            let v = 0.0;
+
+            while (t &lt;= totalTime) {
+                timeData.push(t);
+                displacementData.push(x);
+                velocityData.push(v);
+
+                // Calculate acceleration based on parameters
+                const acceleration = (-SPRING_K * x - DAMPING_C * v) / MASS;
+                v += acceleration * dt;
+                x += v * dt;
+
+                t += dt;
+            }
+
+            // Plot the data
+            const trace = {
+                x: timeData,
+                y: displacementData,
+                mode: 'lines',
+                name: containerId === 'plotDamping' ? 'With Damping' : 'No Damping'
+            };
+
+            const layout = {
+                title: `位移 vs. 時間 (${containerId === 'plotDamping' ? 'With Damping' : 'No Damping'})`,
+                xaxis: { title: '時間 (s)' },
+                yaxis: { title: '位移 (m)' }
+            };
+
+            const plotData = [trace];
+
+            Plotly.newPlot(containerId, plotData, layout);
+        }
+
+        // Simulate motion with damping
+        simulateMotion(1.0, 10.0, 0.5, 'plotDamping');
+
+        // Simulate motion without damping
+        simulateMotion(1.0, 10.0, 0.0, 'plotNoDamping');
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+<p>模擬運算結果為:</p>
+<p></p>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<div id="plotDamping"></div>
+<div id="plotNoDamping"></div>
+<script>
+    // Function to simulate motion using Euler's method
+    function simulateMotion(MASS, SPRING_K, DAMPING_C, containerId) {
+        // Define simulation parameters
+        const totalTime = 10.0;
+        const dt = 0.01;
+        
+        // Initialize data arrays
+        const timeData = [];
+        const displacementData = [];
+        const velocityData = [];
+
+        // Initial conditions
+        let t = 0.0;
+        let x = 0.2;
+        let v = 0.0;
+
+        while (t <= totalTime) {
+            timeData.push(t);
+            displacementData.push(x);
+            velocityData.push(v);
+
+            // Calculate acceleration based on parameters
+            const acceleration = (-SPRING_K * x - DAMPING_C * v) / MASS;
+            v += acceleration * dt;
+            x += v * dt;
+
+            t += dt;
+        }
+
+        // Plot the data
+        const trace = {
+            x: timeData,
+            y: displacementData,
+            mode: 'lines',
+            name: containerId === 'plotDamping' ? 'With Damping' : 'No Damping'
+        };
+
+        const layout = {
+            title: `位移 vs. 時間 (${containerId === 'plotDamping' ? 'With Damping' : 'No Damping'})`,
+            xaxis: { title: '時間 (s)' },
+            yaxis: { title: '位移 (m)' }
+        };
+
+        const plotData = [trace];
+
+        Plotly.newPlot(containerId, plotData, layout);
+    }
+
+    // Simulate motion with damping
+    simulateMotion(1.0, 10.0, 0.5, 'plotDamping');
+
+    // Simulate motion without damping
+    simulateMotion(1.0, 10.0, 0.0, 'plotNoDamping');
+</script><h2>開發工具</h2>
 <p>3. 開發程式工具 (解決特定問題)</p>
 <p>References:</p>
 <p style="padding-left: 30px;"><a href="https://www.codecademy.com/resources/blog/20-code-challenges/">https://www.codecademy.com/resources/blog/20-code-challenges/</a></p>
