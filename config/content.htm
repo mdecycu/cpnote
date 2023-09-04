@@ -966,6 +966,7 @@ window.onload = simulateMotion;
 <div><label for="dampingCoefficient">阻尼係數 (c):</label> <input id="dampingCoefficient" type="number" value="0.5"/></div>
 <div><label for="initialDisplacement">初始位移 (x0):</label> <input id="initialDisplacement" type="number" value="0.2"/></div>
 <div><label for="initialVelocity">初始速度 (v0):</label> <input id="initialVelocity" type="number" value="0.0"/></div>
+<div><label for="endTime">模擬時間 (endTime):</label> <input id="endTime" type="number" value="10.0"/></div>
 <p><button id="withDamping">模擬運動 (有阻尼)</button> <button id="withoutDamping">模擬運動 (無阻尼)</button></p>
 <!-- 請注意!! 每一個 plotly.js 繪圖必須有各自的 id 名稱 -->
 <div id="rkmotionPlot2"></div>
@@ -974,7 +975,8 @@ window.onload = simulateMotion;
     (function () {
         const N = 2; // number of first order equations
         const dist = 0.01; // stepsize in t
-        const MAX = 10.0; // max for t
+        //const MAX = 10.0; // max for t
+        const endTime = parseFloat(document.getElementById('endTime').value);
 
         // for debuging
         const mass = parseFloat(document.getElementById('mass').value);
@@ -1031,9 +1033,9 @@ window.onload = simulateMotion;
             }
             if (i === 1) {
                 if (damping) {
-                    return -10 * y[0] - 0.5 * y[1]; // with damping
+                    return (-springConstant * y[0] - dampingCoefficient * y[1])/mass; // with damping
                 } else {
-                    return -10 * y[0]; // without damping
+                    return (-springConstant * y[0])/mass; // without damping
                 }
             }
             return 0;
@@ -1069,7 +1071,7 @@ window.onload = simulateMotion;
 
         // for debuging
         function simulateMotion(t, y, damping = false) {
-            for (let j = 1; j * dist <= MAX; j++) {
+            for (let j = 1; j * dist <= endTime; j++) {
                 t = j * dist;
                 runge4(t, y, dist, damping);
                 if (damping) {
@@ -1143,12 +1145,12 @@ window.onload = simulateMotion;
         //simulateMotionWithDamping(); // Initial simulation with damping
         // Attach an event listener to the button
         document.getElementById("withDamping").addEventListener("click", function () {
-            console.log("Button with damping clicked.");
+            //console.log("Button with damping clicked.");
             simulateMotionWithDamping();
         });
 
         document.getElementById("withoutDamping").addEventListener("click", function () {
-            console.log("Button without damping clicked.");
+            //console.log("Button without damping clicked.");
             simulateMotionWithoutDamping();
         });
 
@@ -1160,6 +1162,9 @@ window.onload = simulateMotion;
 &lt;div&gt;&lt;label for="dampingCoefficient"&gt;阻尼係數 (c):&lt;/label&gt; &lt;input id="dampingCoefficient" type="number" value="0.5"&gt;&lt;/div&gt;
 &lt;div&gt;&lt;label for="initialDisplacement"&gt;初始位移 (x0):&lt;/label&gt; &lt;input id="initialDisplacement" type="number" value="0.2"&gt;&lt;/div&gt;
 &lt;div&gt;&lt;label for="initialVelocity"&gt;初始速度 (v0):&lt;/label&gt; &lt;input id="initialVelocity" type="number" value="0.0"&gt;&lt;/div&gt;
+    
+&lt;div&gt;&lt;label for="endTime"&gt;模擬時間 (endTime):&lt;/label&gt; &lt;input id="endTime" type="number" value="10.0"&gt;&lt;/div&gt;
+    
 &lt;p&gt;&lt;button id="withDamping"&gt;模擬運動 (有阻尼)&lt;/button&gt; &lt;button id="withoutDamping"&gt;模擬運動 (無阻尼)&lt;/button&gt;&lt;/p&gt;
 &lt;!-- 請注意!! 每一個 plotly.js 繪圖必須有各自的 id 名稱 --&gt;
 &lt;div id="rkmotionPlot2"&gt;&lt;/div&gt;
@@ -1168,7 +1173,8 @@ window.onload = simulateMotion;
     (function () {
         const N = 2; // number of first order equations
         const dist = 0.01; // stepsize in t
-        const MAX = 10.0; // max for t
+        //const MAX = 10.0; // max for t
+        const endTime = parseFloat(document.getElementById('endTime').value);
 
         // for debuging
         const mass = parseFloat(document.getElementById('mass').value);
@@ -1225,9 +1231,9 @@ window.onload = simulateMotion;
             }
             if (i === 1) {
                 if (damping) {
-                    return -10 * y[0] - 0.5 * y[1]; // with damping
+                    return (-springConstant * y[0] - dampingCoefficient * y[1])/mass; // with damping
                 } else {
-                    return -10 * y[0]; // without damping
+                    return (-springConstant * y[0])/mass; // without damping
                 }
             }
             return 0;
@@ -1263,7 +1269,7 @@ window.onload = simulateMotion;
 
         // for debuging
         function simulateMotion(t, y, damping = false) {
-            for (let j = 1; j * dist &lt;= MAX; j++) {
+            for (let j = 1; j * dist &lt;= endTime; j++) {
                 t = j * dist;
                 runge4(t, y, dist, damping);
                 if (damping) {
@@ -1337,18 +1343,19 @@ window.onload = simulateMotion;
         //simulateMotionWithDamping(); // Initial simulation with damping
         // Attach an event listener to the button
         document.getElementById("withDamping").addEventListener("click", function () {
-            console.log("Button with damping clicked.");
+            //console.log("Button with damping clicked.");
             simulateMotionWithDamping();
         });
 
         document.getElementById("withoutDamping").addEventListener("click", function () {
-            console.log("Button without damping clicked.");
+            //console.log("Button without damping clicked.");
             simulateMotionWithoutDamping();
         });
 
     })();
 // ]]&gt;&lt;/script&gt;</pre>
-<p></p><h2>開發工具</h2>
+<p></p>
+<p>Question: 如何讓模擬變數表單值變更後, 無需重新 refresh 頁面即可繪出運算結果?</p><h2>開發工具</h2>
 <p>3. 開發程式工具 (解決特定問題)</p>
 <p>References:</p>
 <p style="padding-left: 30px;"><a href="https://www.codecademy.com/resources/blog/20-code-challenges/">https://www.codecademy.com/resources/blog/20-code-challenges/</a></p>
