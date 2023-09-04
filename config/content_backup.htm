@@ -5,7 +5,11 @@
 <p>C 程式語言範例，包括如何利用數值分析流程，解出 mass-spring-damper 系統運動程式，並將質量的運動位移及速度，以 Gnuplot 圖表列出。</p>
 <p>接著將數值分析運算移至瀏覽器時，要求學員試著將 C 程式改寫為 Javascript， 並加上 plotly.js 進行繪圖。</p>
 <p>之後在 plotly.js 的運算繪架構下，嘗試利用 Brython 取代 Javascript。</p>
-<p>最後，希望透過一組包含網路前後端的 Python 語法程式範例，說明計算機程式語言在現階段機電資整合設計中的相關應用。</p><h1>課程評分</h1>
+<p>最後，希望透過一組包含網路前後端的 Python 語法程式範例，說明計算機程式語言在現階段機電資整合設計中的相關應用。</p>
+<p>下載可攜程式套件:</p>
+<p style="padding-left: 30px;"><a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EbxsXK5kkU1ImhJ_HcYPnTcB9MboGQcfs6FuojXRPlhInA?e=wzLQFt">basic_portable_python.7z</a> (下載 15MB, 解開後 55MB)</p>
+<p style="padding-left: 30px;">下載 <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EQTW-mq62DpFtw5It9ao-PIBPXW7z5z8oVsW5gd8zbDXOQ?e=q6gHgf">Portable_2023_fall_1.3g_5g.7z</a> (需要下載密碼)</p>
+<p style="padding-left: 30px;">也可以直接使用電腦輔助設計室中 C:\Portable_2023_fall 目錄中的檔案</p><h1>課程評分</h1>
 <p>課程評分:</p>
 <p style="padding-left: 30px;">線上測驗、期中網站與簡報、期末網站與簡報.</p>
 <p>線上測驗:</p>
@@ -370,6 +374,9 @@ doc["threejsblock"].bind("click", threejsblock.do)
 <p><span>Brython 程式語言一般被用在那些情況下?</span></p>
 <p><span>機械設計工程師在甚麼情況下需要使用 Python 解決問題?</span></p>
 <h3>ANSI C</h3>
+<p><a href="https://nfuedu-my.sharepoint.com/:b:/g/personal/yen_nfu_edu_tw/EWd1cR2zOStOjVSduSw6pQMBv1fB6tWu-P9qfVH2YxbDPw?e=uOZW7N">jsliu_c_programming.pdf</a> (需要下載密碼)</p>
+<p><a href="https://link.springer.com/book/10.1007/978-1-4842-1371-1">2015 Learn to Program with C</a> (經由校園網路或 VPN 下載)</p>
+<p><a href="https://link.springer.com/book/10.1007/978-3-030-50750-3">2020 Computer Programming in C for Begineers</a> (經由校園網路或 VPN 下載)</p>
 <ol>
 <li>ANSI C 程式語言所謂具有可攜性, 是甚麼意思?</li>
 <li>ANSI C 被定位為低階程式語言, 是甚麼意思?</li>
@@ -477,20 +484,27 @@ int main() {
             }
 
             // Plot the data
-            const trace = {
+            const displacementTrace = {
                 x: timeData,
                 y: displacementData,
                 mode: 'lines',
-                name: containerId === 'plotDamping' ? 'With Damping' : 'No Damping'
+                name: 'Displacement'
+            };
+
+            const velocityTrace = {
+                x: timeData,
+                y: velocityData,
+                mode: 'lines',
+                name: 'Velocity'
             };
 
             const layout = {
-                title: `位移 vs. 時間 (${containerId === 'plotDamping' ? 'With Damping' : 'No Damping'})`,
-                xaxis: { title: '時間 (s)' },
-                yaxis: { title: '位移 (m)' }
+                title: `Displacement and Velocity vs. Time (${containerId === 'plotDamping' ? 'With Damping' : 'No Damping'})`,
+                xaxis: { title: 'Time (s)' },
+                yaxis: { title: 'Displacement (m) / Velocity' }
             };
 
-            const plotData = [trace];
+            const plotData = [displacementTrace, velocityTrace];
 
             Plotly.newPlot(containerId, plotData, layout);
         }
@@ -505,11 +519,14 @@ int main() {
 &lt;/html&gt;</pre>
 <p>模擬運算結果為:</p>
 <p></p>
+<p>
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</p>
 <div id="plotDamping"></div>
 <div id="plotNoDamping"></div>
+<p>
 <script>
-    // Function to simulate motion using Euler's method
+// Function to simulate motion using Euler's method
     function simulateMotion(MASS, SPRING_K, DAMPING_C, containerId) {
         // Define simulation parameters
         const totalTime = 10.0;
@@ -539,20 +556,27 @@ int main() {
         }
 
         // Plot the data
-        const trace = {
+        const displacementTrace = {
             x: timeData,
             y: displacementData,
             mode: 'lines',
-            name: containerId === 'plotDamping' ? 'With Damping' : 'No Damping'
+            name: 'Displacement'
+        };
+
+        const velocityTrace = {
+            x: timeData,
+            y: velocityData,
+            mode: 'lines',
+            name: 'Velocity'
         };
 
         const layout = {
-            title: `位移 vs. 時間 (${containerId === 'plotDamping' ? 'With Damping' : 'No Damping'})`,
-            xaxis: { title: '時間 (s)' },
-            yaxis: { title: '位移 (m)' }
+            title: `Displacement and Velocity vs. Time (${containerId === 'plotDamping' ? 'With Damping' : 'No Damping'})`,
+            xaxis: { title: 'Time (s)' },
+            yaxis: { title: 'Displacement (m) / Velocity' }
         };
 
-        const plotData = [trace];
+        const plotData = [displacementTrace, velocityTrace];
 
         Plotly.newPlot(containerId, plotData, layout);
     }
@@ -562,6 +586,573 @@ int main() {
 
     // Simulate motion without damping
     simulateMotion(1.0, 10.0, 0.0, 'plotNoDamping');
+</script>
+</p>
+<p>假如採用 C 以 Runge-Kutta 解 mass-spring-damper 系統運動模擬:</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* Runge Kutta for a set of first order differential equations */
+// http://mde.tw/cad2020/content/W7.html
+  
+#include &lt;stdio.h&gt;
+#include &lt;math.h&gt;
+  
+#define N 2 /* number of first order equations */
+#define dist 0.01 /* stepsize in t*/
+#define MAX 10.0 /* max for t */
+  
+FILE *output; /* internal filename */
+FILE *output1; /* internal filename */
+// 利用 pipe 呼叫 gnuplot 繪圖
+FILE *pipe;
+  
+void runge4(double x, double y[], double step); /* Runge-Kutta function */
+double f(double x, double y[], int i); /* function for derivatives */
+  
+void main(){
+  
+  double t, y[N];
+  int j;
+  
+  output=fopen("osc.dat", "w"); /* external filename */
+  output1=fopen("osc1.dat", "w"); /* external filename */
+  
+  y[0]=0.2; /* initial position */
+  y[1]=0.0; /* initial velocity */
+  
+  //fprintf(output, "0\t%f\n", y[0]);
+  
+  for (j=1; j*dist&lt;=MAX ;j++) /* time loop */{
+  
+    t=j*dist;
+    runge4(t, y, dist);
+    fprintf(output, "%f\t%f\n", t, y[0]);
+    fprintf(output1, "%f\t%f\n", t, y[1]);
+  }
+  
+  fclose(output);
+  fclose(output1);
+  
+  pipe = popen("gnuplot -persist","w");
+  //fprintf(pipe,"set term png enhanced font \"v:/fireflysung.ttf\" 18 \n");
+  fprintf(pipe,"set term png enhanced font \"y:/wqy-microhei.ttc\" 18 \n");
+  //fprintf(pipe,"set yrange [68:70]\n");
+  fprintf(pipe,"set output \"rk_mass_spring_damper.png\"\n");
+  fprintf(pipe, "plot \"osc.dat\" title \"位移\" with lines, \"osc1.dat\" title \"速度\" with lines\n");
+  fprintf(pipe,"quit\n");
+ 
+  fprintf(pipe,"quit\n");
+  pclose(pipe);
+}
+  
+void runge4(double x, double y[], double step){
+  
+  double h=step/2.0, /* the midpoint */
+  t1[N], t2[N], t3[N], /* temporary storage arrays */
+  k1[N], k2[N], k3[N],k4[N]; /* for Runge-Kutta */
+  int i;
+  
+  for (i=0;i&lt;N;i++){
+  
+    t1[i]=y[i]+0.5*(k1[i]=step*f(x,y,i));
+  }
+  
+  for (i=0;i&lt;N;i++){
+  
+    t2[i]=y[i]+0.5*(k2[i]=step*f(x+h, t1, i));
+  }
+  
+  for (i=0;i&lt;N;i++){
+  
+    t3[i]=y[i]+ (k3[i]=step*f(x+h, t2, i));
+  }
+  
+  for (i=0;i&lt;N;i++){
+  
+    k4[i]= step*f(x+step, t3, i);
+  }
+  
+  for (i=0;i&lt;N;i++){
+  
+    y[i]+=(k1[i]+2*k2[i]+2*k3[i]+k4[i])/6.0;
+  }
+}
+  
+double f(double x, double y[], int i){
+  
+  if (i==0)
+    x=y[1]; /* derivative of first equation */
+  if (i==1)
+    x=-10*y[0]-0.5*y[1];
+  return x;
+}</pre>
+<p>模擬結果為:</p>
+<p><img alt="" height="300" src="/images/rk_mass_spring_damper.png" width="400"/></p>
+<p>假如拿掉 Damper, 則結果為:</p>
+<p><img alt="" height="300" src="/images/rk_mass_spring.png" width="400"/></p>
+<p>假如將 Runge-Kutta C 改寫為 Javascript, 並在網頁中直接以 plotly.js 畫圖:</p>
+<!-- 引入 Plotly.js -->
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<!-- 用於顯示運動繪圖的 div -->
+<div id="rkmotionPlot"></div>
+<script>
+const N = 2; // number of first order equations
+const dist = 0.01; // stepsize in t
+const MAX = 10.0; // max for t
+
+let outputDataDamping = []; // to store data for displacement with damping
+let output1DataDamping = []; // to store data for velocity with damping
+let outputDataNoDamping = []; // to store data for displacement without damping
+let output1DataNoDamping = []; // to store data for velocity without damping
+
+function runge4(x, y, step, damping = false) {
+    let h = step / 2.0;
+    let t1 = [];
+    let t2 = [];
+    let t3 = [];
+    let k1 = [];
+    let k2 = [];
+    let k3 = [];
+    let k4 = [];
+
+    for (let i = 0; i < N; i++) {
+        t1[i] = y[i] + 0.5 * (k1[i] = step * f(x, y, i, damping));
+    }
+
+    for (let i = 0; i < N; i++) {
+        t2[i] = y[i] + 0.5 * (k2[i] = step * f(x + h, t1, i, damping));
+    }
+
+    for (let i = 0; i < N; i++) {
+        t3[i] = y[i] + (k3[i] = step * f(x + h, t2, i, damping));
+    }
+
+    for (let i = 0; i < N; i++) {
+        k4[i] = step * f(x + step, t3, i, damping);
+    }
+
+    for (let i = 0; i < N; i++) {
+        y[i] += (k1[i] + 2 * k2[i] + 2 * k3[i] + k4[i]) / 6.0;
+    }
+}
+
+function f(x, y, i, damping = false) {
+    if (i === 0) {
+        return y[1]; // derivative of first equation (velocity)
+    }
+    if (i === 1) {
+        if (damping) {
+            return -10 * y[0] - 0.5 * y[1]; // with damping
+        } else {
+            return -10 * y[0]; // without damping
+        }
+    }
+    return 0;
+}
+
+function simulateMotion() {
+    let t = 0.0;
+    let yDamping = [0.2, 0.0]; // initial position and velocity with damping
+    let yNoDamping = [0.2, 0.0]; // initial position and velocity without damping
+
+    for (let j = 1; j * dist <= MAX; j++) {
+        t = j * dist;
+        runge4(t, yDamping, dist, true); // simulate with damping
+        runge4(t, yNoDamping, dist, false); // simulate without damping
+        outputDataDamping.push([t, yDamping[0]]);
+        output1DataDamping.push([t, yDamping[1]]);
+        outputDataNoDamping.push([t, yNoDamping[0]]);
+        output1DataNoDamping.push([t, yNoDamping[1]]);
+    }
+
+    // Plot the data using Plotly.js
+    plotMotion();
+}
+
+function plotMotion() {
+    // Create traces for displacement and velocity with damping
+    const displacementTraceDamping = {
+        x: outputDataDamping.map((dataPoint) => dataPoint[0]),
+        y: outputDataDamping.map((dataPoint) => dataPoint[1]),
+        mode: 'lines',
+        name: 'Displacement (Damping)',
+    };
+
+    const velocityTraceDamping = {
+        x: output1DataDamping.map((dataPoint) => dataPoint[0]),
+        y: output1DataDamping.map((dataPoint) => dataPoint[1]),
+        mode: 'lines',
+        name: 'Velocity (Damping)',
+    };
+
+    // Create traces for displacement and velocity without damping
+    const displacementTraceNoDamping = {
+        x: outputDataNoDamping.map((dataPoint) => dataPoint[0]),
+        y: outputDataNoDamping.map((dataPoint) => dataPoint[1]),
+        mode: 'lines',
+        name: 'Displacement (No Damping)',
+    };
+
+    const velocityTraceNoDamping = {
+        x: output1DataNoDamping.map((dataPoint) => dataPoint[0]),
+        y: output1DataNoDamping.map((dataPoint) => dataPoint[1]),
+        mode: 'lines',
+        name: 'Velocity (No Damping)',
+    };
+
+    const data = [
+        displacementTraceDamping,
+        velocityTraceDamping,
+        displacementTraceNoDamping,
+        velocityTraceNoDamping,
+    ];
+
+    // Layout configuration
+    const layout = {
+        title: 'Displacement and Velocity vs. Time',
+        xaxis: {
+            title: 'Time (s)',
+        },
+        yaxis: {
+            title: 'Displacement / Velocity',
+        },
+    };
+
+    // Plot the graph
+    Plotly.newPlot('rkmotionPlot', data, layout);
+}
+
+// Call the simulation function when the page loads
+window.onload = simulateMotion;
+</script>
+<p>上列 Javascript 模擬運算的超文件為:</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;!-- 引入 Plotly.js --&gt;
+&lt;script src="https://cdn.plot.ly/plotly-latest.min.js"&gt;&lt;/script&gt;
+&lt;!-- 用於顯示運動繪圖的 div --&gt;
+&lt;div id="rkmotionPlot"&gt;&lt;/div&gt;
+&lt;script&gt;
+const N = 2; // number of first order equations
+const dist = 0.01; // stepsize in t
+const MAX = 10.0; // max for t
+
+let outputDataDamping = []; // to store data for displacement with damping
+let output1DataDamping = []; // to store data for velocity with damping
+let outputDataNoDamping = []; // to store data for displacement without damping
+let output1DataNoDamping = []; // to store data for velocity without damping
+
+function runge4(x, y, step, damping = false) {
+    let h = step / 2.0;
+    let t1 = [];
+    let t2 = [];
+    let t3 = [];
+    let k1 = [];
+    let k2 = [];
+    let k3 = [];
+    let k4 = [];
+
+    for (let i = 0; i &lt; N; i++) {
+        t1[i] = y[i] + 0.5 * (k1[i] = step * f(x, y, i, damping));
+    }
+
+    for (let i = 0; i &lt; N; i++) {
+        t2[i] = y[i] + 0.5 * (k2[i] = step * f(x + h, t1, i, damping));
+    }
+
+    for (let i = 0; i &lt; N; i++) {
+        t3[i] = y[i] + (k3[i] = step * f(x + h, t2, i, damping));
+    }
+
+    for (let i = 0; i &lt; N; i++) {
+        k4[i] = step * f(x + step, t3, i, damping);
+    }
+
+    for (let i = 0; i &lt; N; i++) {
+        y[i] += (k1[i] + 2 * k2[i] + 2 * k3[i] + k4[i]) / 6.0;
+    }
+}
+
+function f(x, y, i, damping = false) {
+    if (i === 0) {
+        return y[1]; // derivative of first equation (velocity)
+    }
+    if (i === 1) {
+        if (damping) {
+            return -10 * y[0] - 0.5 * y[1]; // with damping
+        } else {
+            return -10 * y[0]; // without damping
+        }
+    }
+    return 0;
+}
+
+function simulateMotion() {
+    let t = 0.0;
+    let yDamping = [0.2, 0.0]; // initial position and velocity with damping
+    let yNoDamping = [0.2, 0.0]; // initial position and velocity without damping
+
+    for (let j = 1; j * dist &lt;= MAX; j++) {
+        t = j * dist;
+        runge4(t, yDamping, dist, true); // simulate with damping
+        runge4(t, yNoDamping, dist, false); // simulate without damping
+        outputDataDamping.push([t, yDamping[0]]);
+        output1DataDamping.push([t, yDamping[1]]);
+        outputDataNoDamping.push([t, yNoDamping[0]]);
+        output1DataNoDamping.push([t, yNoDamping[1]]);
+    }
+
+    // Plot the data using Plotly.js
+    plotMotion();
+}
+
+function plotMotion() {
+    // Create traces for displacement and velocity with damping
+    const displacementTraceDamping = {
+        x: outputDataDamping.map((dataPoint) =&gt; dataPoint[0]),
+        y: outputDataDamping.map((dataPoint) =&gt; dataPoint[1]),
+        mode: 'lines',
+        name: 'Displacement (Damping)',
+    };
+
+    const velocityTraceDamping = {
+        x: output1DataDamping.map((dataPoint) =&gt; dataPoint[0]),
+        y: output1DataDamping.map((dataPoint) =&gt; dataPoint[1]),
+        mode: 'lines',
+        name: 'Velocity (Damping)',
+    };
+
+    // Create traces for displacement and velocity without damping
+    const displacementTraceNoDamping = {
+        x: outputDataNoDamping.map((dataPoint) =&gt; dataPoint[0]),
+        y: outputDataNoDamping.map((dataPoint) =&gt; dataPoint[1]),
+        mode: 'lines',
+        name: 'Displacement (No Damping)',
+    };
+
+    const velocityTraceNoDamping = {
+        x: output1DataNoDamping.map((dataPoint) =&gt; dataPoint[0]),
+        y: output1DataNoDamping.map((dataPoint) =&gt; dataPoint[1]),
+        mode: 'lines',
+        name: 'Velocity (No Damping)',
+    };
+
+    const data = [
+        displacementTraceDamping,
+        velocityTraceDamping,
+        displacementTraceNoDamping,
+        velocityTraceNoDamping,
+    ];
+
+    // Layout configuration
+    const layout = {
+        title: 'Displacement and Velocity vs. Time',
+        xaxis: {
+            title: 'Time (s)',
+        },
+        yaxis: {
+            title: 'Displacement / Velocity',
+        },
+    };
+
+    // Plot the graph
+    Plotly.newPlot('rkmotionPlot', data, layout);
+}
+
+// Call the simulation function when the page loads
+window.onload = simulateMotion;
+&lt;/script&gt;</pre>
+<p></p>
+<p>最後, 將 Javascript 改為可以讓使用者選擇模擬參數以及起始條件:</p>
+<p></p>
+<div><label for="mass">質量 (m):</label> <input id="mass" type="number" value="1.0"/></div>
+<div><label for="springConstant">彈簧常數 (k):</label> <input id="springConstant" type="number" value="10.0"/></div>
+<div><label for="dampingCoefficient">阻尼係數 (c):</label> <input id="dampingCoefficient" type="number" value="0.5"/></div>
+<div><label for="initialDisplacement">初始位移 (x0):</label> <input id="initialDisplacement" type="number" value="0.2"/></div>
+<div><label for="initialVelocity">初始速度 (v0):</label> <input id="initialVelocity" type="number" value="0.0"/></div>
+<p><button id="withDamping">模擬運動 (有阻尼)</button> <button id="withoutDamping">模擬運動 (無阻尼)</button></p>
+<!-- 請注意!! 每一個 plotly.js 繪圖必須有各自的 id 名稱 -->
+<div id="rkmotionPlot2"></div>
+<script>
+// 函數包裝，避免變數衝突
+    (function () {
+        const N = 2; // number of first order equations
+        const dist = 0.01; // stepsize in t
+        const MAX = 10.0; // max for t
+
+        // for debuging
+        const mass = parseFloat(document.getElementById('mass').value);
+        const springConstant = parseFloat(document.getElementById('springConstant').value);
+        const dampingCoefficient = parseFloat(document.getElementById('dampingCoefficient').value);
+        const initialDisplacement = parseFloat(document.getElementById('initialDisplacement').value);
+        const initialVelocity = parseFloat(document.getElementById('initialVelocity').value);
+        /*
+            console.log('Mass:', mass);
+            console.log('Spring Constant:', springConstant);
+            console.log('Damping Coefficient:', dampingCoefficient);
+            console.log('Initial Displacement:', initialDisplacement);
+            console.log('Initial Velocity:', initialVelocity);
+         */
+
+
+        let outputDataWithDamping = []; // to store data for displacement and velocity with damping
+        let outputDataWithoutDamping = []; // to store data for displacement and velocity without damping
+
+        function runge4(x, y, step, damping = false) {
+            let h = step / 2.0;
+            let t1 = [];
+            let t2 = [];
+            let t3 = [];
+            let k1 = [];
+            let k2 = [];
+            let k3 = [];
+            let k4 = [];
+
+            for (let i = 0; i < N; i++) {
+                t1[i] = y[i] + 0.5 * (k1[i] = step * f(x, y, i, damping));
+            }
+
+            for (let i = 0; i < N; i++) {
+                t2[i] = y[i] + 0.5 * (k2[i] = step * f(x + h, t1, i, damping));
+            }
+
+            for (let i = 0; i < N; i++) {
+                t3[i] = y[i] + (k3[i] = step * f(x + h, t2, i, damping));
+            }
+
+            for (let i = 0; i < N; i++) {
+                k4[i] = step * f(x + step, t3, i, damping);
+            }
+
+            for (let i = 0; i < N; i++) {
+                y[i] += (k1[i] + 2 * k2[i] + 2 * k3[i] + k4[i]) / 6.0;
+            }
+        }
+
+        function f(x, y, i, damping = false) {
+            if (i === 0) {
+                return y[1]; // derivative of first equation (velocity)
+            }
+            if (i === 1) {
+                if (damping) {
+                    return -10 * y[0] - 0.5 * y[1]; // with damping
+                } else {
+                    return -10 * y[0]; // without damping
+                }
+            }
+            return 0;
+        }
+
+        function simulateMotionWithDamping() {
+            let t = 0.0;
+            let y = [
+                parseFloat(document.getElementById('initialDisplacement').value),
+                parseFloat(document.getElementById('initialVelocity').value)
+            ];
+
+            outputDataWithDamping = []; // Clear previous data
+            simulateMotion(t, y, true); // Simulate with damping
+        // for debuging, yes we got the values
+        //console.log('outputDataWithDamping:', outputDataWithDamping); 
+            plotMotion(true); // Plot with damping
+        }
+
+        function simulateMotionWithoutDamping() {
+            let t = 0.0;
+            let y = [
+                parseFloat(document.getElementById('initialDisplacement').value),
+                parseFloat(document.getElementById('initialVelocity').value)
+            ];
+
+            outputDataWithoutDamping = []; // Clear previous data
+            simulateMotion(t, y, false); // Simulate without damping
+        // for debuging, we got the values
+        //console.log('outputDataWithoutDamping:', outputDataWithoutDamping); 
+            plotMotion(false); // Plot without damping
+        }
+
+        // for debuging
+        function simulateMotion(t, y, damping = false) {
+            for (let j = 1; j * dist <= MAX; j++) {
+                t = j * dist;
+                runge4(t, y, dist, damping);
+                if (damping) {
+                    outputDataWithDamping.push([t, y[0], y[1]]);
+                } else {
+                    outputDataWithoutDamping.push([t, y[0], y[1]]);
+                }
+
+                // Log the data for debugging
+                //console.log('t:', t);
+                //console.log('y:', y);
+            }
+                // we do get the array values
+                //console.log('outputDataWithDamping:', outputDataWithDamping);
+                //console.log('outputDataWithoutDamping:', outputDataWithoutDamping); 
+        }
+
+
+        function plotMotion(damping = false) {
+            let data = [];
+            if (damping) {
+                // Create traces for displacement and velocity with damping
+                data.push({
+                    x: outputDataWithDamping.map((dataPoint) => dataPoint[0]),
+                    y: outputDataWithDamping.map((dataPoint) => dataPoint[1]),
+                    mode: 'lines',
+                    name: 'Displacement (Damping)',
+                });
+                data.push({
+                    x: outputDataWithDamping.map((dataPoint) => dataPoint[0]),
+                    y: outputDataWithDamping.map((dataPoint) => dataPoint[2]),
+                    mode: 'lines',
+                    name: 'Velocity (Damping)',
+                });
+            } else {
+                // Create traces for displacement and velocity without damping
+                data.push({
+                    x: outputDataWithoutDamping.map((dataPoint) => dataPoint[0]),
+                    y: outputDataWithoutDamping.map((dataPoint) => dataPoint[1]),
+                    mode: 'lines',
+                    name: 'Displacement (No Damping)',
+                });
+                data.push({
+                    x: outputDataWithoutDamping.map((dataPoint) => dataPoint[0]),
+                    y: outputDataWithoutDamping.map((dataPoint) => dataPoint[2]),
+                    mode: 'lines',
+                    name: 'Velocity (No Damping)',
+                });
+            }
+
+            // Layout configuration
+            const layout = {
+                title: 'Displacement and Velocity vs. Time',
+                xaxis: {
+                    title: 'Time (s)',
+                },
+                yaxis: {
+                    title: 'Displacement / Velocity',
+                },
+            };
+
+            // Plot the graph
+            Plotly.newPlot('rkmotionPlot2', data, layout);
+        }
+
+        // for debuging
+        //console.log(outputDataWithDamping);
+        //console.log(outputDataWithoutDamping);
+
+        // Call the simulation function when the page loads
+        //simulateMotionWithDamping(); // Initial simulation with damping
+        // Attach an event listener to the button
+        document.getElementById("withDamping").addEventListener("click", function () {
+            console.log("Button with damping clicked.");
+            simulateMotionWithDamping();
+        });
+
+        document.getElementById("withoutDamping").addEventListener("click", function () {
+            console.log("Button without damping clicked.");
+            simulateMotionWithoutDamping();
+        });
+
+    })();
 </script><h2>開發工具</h2>
 <p>3. 開發程式工具 (解決特定問題)</p>
 <p>References:</p>
@@ -592,7 +1183,20 @@ int main() {
 <p style="padding-left: 30px;"><a href="https://www.linkedin.com/">https://www.linkedin.com/</a></p>
 <h1>QandA</h1>
 <p>如何利用 Github 建立網站?</p>
-<h1>Brython</h1>
+<p><button id="myButton">Click me</button></p>
+<script>
+(function () {
+    // Your big anonymous function
+
+    function myFunction() {
+        // Your function logic here
+        alert("Button clicked!");
+    }
+
+    // Attach an event listener to the button
+    document.getElementById("myButton").addEventListener("click", myFunction);
+})();
+</script><h1>Brython</h1>
 <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">https://en.wikipedia.org/wiki/Python_(programming_language)</a></p>
 <h4>Examples:</h4>
 <p style="padding-left: 30px;"><a href="https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d">https://gist.github.com/mdecycu/d9082d678096bd58378d6afe2c7fa05d</a></p>
