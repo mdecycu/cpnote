@@ -117,9 +117,36 @@ int main(void) {
 <p style="padding-left: 60px;">2013 <a href="https://link.springer.com/book/10.1007/978-1-4302-6095-0">Moving from C to C++</a> (在校園網路或經由 VPN 下載)</p>
 <p style="padding-left: 60px;">2014 <a href="https://link.springer.com/book/10.1007/978-1-4302-6668-6">Advanced C and C++ Compilin</a>g (在校園網路或經由 VPN 下載)</p>
 <p style="padding-left: 60px;">2017 <a href="https://link.springer.com/book/10.1007/978-3-319-73132-2">Guide to Scientific Computing in C++</a> (在校園網路或經由 VPN 下載)</p>
+<p style="padding-left: 60px;">2018 <a href="https://link.springer.com/book/10.1007/978-1-4842-3366-5">Beginning C++17</a> (在校園網路或經由 VPN 下載)</p>
 <p style="padding-left: 60px;">2023 <a href="https://link.springer.com/book/10.1007/978-1-4842-9274-7">Modern C++ for Absolute Beginners</a> (在校園網路或經由 VPN 下載)</p>
 <p style="padding-left: 60px;"><a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EUd5wZF9jSdCtrDkLvEfyj4BkK8YCB_7QK8-eI7k52_LHg?e=AnkZ1z">msys2_and_cmake.7z</a> (需要下載密碼)</p>
-<p style="padding-left: 60px;">設法利用 Msys2 編譯 SciTE, Solvespace 與 CoppeliaSim</p><h1>課程評分</h1>
+<p style="padding-left: 60px;">設法利用 Msys2 編譯 SciTE, Solvespace 與 CoppeliaSim</p>
+<h3>編譯範例</h3>
+<p>以下為 C++ 原始碼進階自學編譯範例:</p>
+<p>先建立 msys64 可攜系統:</p>
+<p style="padding-left: 30px;">下載 <a href="https://www.msys2.org/">https://www.msys2.org/</a> 安裝後, 將 C:\msys64_20230718, 複製到 Y:\msys64_20230718</p>
+<p style="padding-left: 30px;">套件名稱帶有 mingw-w64-x86_64 表示用於 MinGW 64 bit 操作系統:</p>
+<p style="padding-left: 60px;">更新系統核心組件:</p>
+<p style="padding-left: 90px;">pacman -Syu</p>
+<p style="padding-left: 60px;">安裝基本 C/C++ 編譯與開發工具:</p>
+<p style="padding-left: 90px;">pacman -S mingw-w64-x86_64-toolchain</p>
+<p style="padding-left: 60px;">安裝 CMake</p>
+<p style="padding-left: 90px;">pacman -S mingw-w64-x86_64-cmake</p>
+<p>下載 <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EQHpkbGf-iFAnvQpjr6YpvoBT5IGyhc7zkRFldLb9gzumQ?e=07fTJm">msys64_20230718_cmake.7z</a> (需要下載密碼)</p>
+<p>編譯 Solvespace:</p>
+<p style="padding-left: 30px;">git clone --recurse-submodules https://github.com/solvespace/solvespace.git<br/><br/>cd solvespace<br/><br/>git checkout v3.1<br/><br/>mkdir build<br/><br/>cd build<br/><br/>cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release<br/><br/>mingw32-make</p>
+<p style="padding-left: 30px;">下載 <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EbxAx7kkFERGiND16jP2KG4BFt6XH7EojD5_39uk8qWihw?e=tZF6NP">solvespace_src_compiled.7z</a> (需要下載密碼)</p>
+<p>利用 MSYS2 編譯 SciTE 編輯器:</p>
+<p style="padding-left: 30px;">從 <a href="https://www.scintilla.org/SciTE.html">https://www.scintilla.org/SciTE.html</a> 下載 Scite 原始碼.</p>
+<p style="padding-left: 30px;">cd scintilla\win32</p>
+<p style="padding-left: 30px;"><span>mingw32-make</span></p>
+<p style="padding-left: 60px;">get Scintilla.dll and SciLexer.dll under <span>scintilla\bin</span></p>
+<p style="padding-left: 30px;">cd scite\win32</p>
+<p style="padding-left: 30px;">mingw32-make</p>
+<p style="padding-left: 60px;">get SciTE.exe under scite\bin</p>
+<p style="padding-left: 30px;">need extra libgcc_s_seh-1.dll, libstdc++-6.dll and libwinpthread-1.dll along with <span>Scintilla.dll and </span><span>SciLexer.dll </span>to execute SciTE.exe</p>
+<p style="padding-left: 30px;">下載 <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/Eai7ZaPaDzdLjObSeCYpSJoBYSyLEEq8iREAsArUVycgug?e=W7PA7x">SciTE537_src_compiled.7z</a> (需要下載密碼)</p>
+<p>SciTE properties files: <a href="http://wcm.cycu.org:88/github/cad2019/downloads/SciTE_properties_files.7z">SciTE_properties_files.7z</a></p><h1>課程評分</h1>
 <p>課程評分:</p>
 <p style="padding-left: 30px;">線上測驗、期中網站與簡報、期末網站與簡報.</p>
 <p>線上測驗:</p>
