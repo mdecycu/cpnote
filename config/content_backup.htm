@@ -12,7 +12,7 @@
 <p style="padding-left: 30px;">也可以直接使用電腦輔助設計室中 C:\Portable_2023_fall 目錄中的檔案</p>
 <h1>上課內容</h1>
 <p>112 學年度第一學期 (2023 Fall) 機械設計工程系 - 計算機程式課程的上課內容與進度.</p>
-<p>有關 Replit 與近端可攜系統的相關操作, 請參考 cadnote 中的內容: <a href="https://mde.tw/cadnote/content/Replit.html">Replit</a>, <a href="https://mde.tw/cadnote/content/%E8%BF%91%E7%AB%AF%E5%8F%AF%E6%94%9C.html">近端可攜</a>.</p>
+<p>有關 Replit 與近端可攜系統的相關操作, 請參考 cadnote 中的內容: <a href="https://mde.tw/cadnote/content/Replit.html">Replit</a>, <a href="https://mde.tw/cadnote/content/%E8%BF%91%E7%AB%AF%E5%8F%AF%E6%94%9C.html">近端可攜</a>, <a href="https://mde.tw/cadnote/content/Git.html">Git</a>.</p>
 <p>手機建議安裝以下 Apps:</p>
 <p style="padding-left: 30px;">ChatGPT, Github mobile, Replit, Authy, Teams, Onshape</p>
 <p>說明 Win 11 網路設定:</p>
@@ -105,6 +105,7 @@ int main(void) {
 <li>編譯與解譯有何不同?</li>
 </ol>
 <p>Exercises:</p>
+<p style="padding-left: 30px;"><a href="https://nfuedu-my.sharepoint.com/:b:/g/personal/yen_nfu_edu_tw/EWd1cR2zOStOjVSduSw6pQMBv1fB6tWu-P9qfVH2YxbDPw?e=uOZW7N">jsliu_c_programming.pdf</a> (需要下載密碼)</p>
 <p style="padding-left: 30px;">請從 <a href="https://www.w3resource.com/c-programming-exercises/">https://www.w3resource.com/c-programming-exercises/</a> 網頁中自選 10 個練習範例, 分別在 Replit, Windows 與 Linux (or macOS) 中執行後, 取下執行畫面放入個人的 Github Pages 網頁 (即帳號.github.io 網站), 以 ANSIC 作為頁面標題並詳細說明每一行的程式語法.</p>
 <p style="padding-left: 30px;">延伸參考:</p>
 <p style="padding-left: 60px;"><a href="https://codeforwin.org/c-programming-examples-exercises-solutions-beginners">https://codeforwin.org/c-programming-examples-exercises-solutions-beginners</a></p>
@@ -124,13 +125,15 @@ int main(void) {
 <p style="padding-left: 60px;">2018 <a href="https://link.springer.com/book/10.1007/978-1-4842-3366-5">Beginning C++17</a> (在校園網路或經由 VPN 下載)</p>
 <p style="padding-left: 60px;">2023 <a href="https://link.springer.com/book/10.1007/978-1-4842-9274-7">Modern C++ for Absolute Beginners</a> (在校園網路或經由 VPN 下載)</p>
 <p style="padding-left: 60px;">下載 <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EQHpkbGf-iFAnvQpjr6YpvoBT5IGyhc7zkRFldLb9gzumQ?e=07fTJm">msys64_20230718_cmake.7z</a> (需要下載密碼)</p>
-<p style="padding-left: 60px;">設法利用 Msys2 編譯 SciTE, Solvespace 與 CoppeliaSim</p>
-<h2>進階內容</h2>
-<p>計算機程式課程主要從基本的 C 語法開始, 設法利用數值分析法解簡單的 mass-spring-damper 運動方程式, 並將質量運動的位移與速度, 以 Gnuplot 畫出後, 將 C 程式改寫為 Javascript, 以便能直接將質量運動的位移與速度圖顯示在網頁中.</p>
+<p style="padding-left: 60px;">設法利用 Msys2 編譯 SciTE, Solvespace 與 CoppeliaSim</p><h2>MSD</h2>
+<p>Mass-Spring-Damper 是一個典型的物理模型, 由質量-彈簧-阻尼器等三個元件組成, 若將彈簧其拉力與變形量成正比, 而阻尼器的阻力大小則與其受力方向的速度成正比, 根據牛頓運動定律, 就可以從物理模型的自由體圖導入系統的運動方程式. 接下來就要利用計算機程式, 解此一系統的微分方程式.</p>
+<p>計算機程式課程主要從基本的 C 語法開始, 設法利用數值分析法解簡單的 <a href="https://en.wikipedia.org/wiki/Mass-spring-damper_model">mass-spring-damper</a> 運動方程式, 並將質量運動的位移與速度, 以 Gnuplot 畫出後, 將 C 程式改寫為 Javascript, 以便能直接將質量運動的位移與速度圖顯示在網頁中.</p>
+<p><img caption="false" height="159" src="/images/mass_spring_damper.png" width="250"/></p>
+<p><img caption="false" height="36" src="/images/mass_spring_damper_eom.png" width="200"/></p>
+<p>Solve <a href="https://nfuedu-my.sharepoint.com/:b:/g/personal/yen_nfu_edu_tw/EZ222iTCfJdJjLNS6a55IDoBs74yVGLWuAxN-1VTJE2PNQ?e=ZbhQyw">spring-mass-damper problem in Matlab.pdf</a> (需要下載密碼)</p>
 <p>接續 Javascript 基本數值分析方法的學習, 將採 Brython 語法改寫後, 希望能直接在網頁中透過類似 Python 的語法, 進行數值分析運算與繪圖. 最後再將 Brython 語法轉為 CPython 程式, 讓使用者可以直接在電腦操作系統中進行數值分析與繪圖.</p>
 <p>上述從 C, Javascript, Brython 到 Python 的範例練習, 主要目的是希望呈現最基本的網際機電資整合系統設計流程, 讓機械設計工程師能夠將所設計的產品 3D 零組件完成後, 轉入機電模擬系統 (CoppeliaSim, Webots 或 Robodk), 設法編寫或運用既有的全球資訊網前後端程式架構, 結合近端的實體模型與全球資訊網端的機電控制系統模擬, 進行機械、電子、電機與資工領域工程師協同產品設計.</p>
-<p>由於 CoppeliaSim、Webots 以及 Solvespace 都是採用 C++ 程式語言編寫, 且都屬開放源程式套件, 使用者若要更進一步了解此類工具的設計與配置方法, 可以自行透過進階內容學習.</p>
-<h3>編譯範例</h3>
+<p>由於 CoppeliaSim、Webots 以及 Solvespace 都是採用 C++ 程式語言編寫, 且都屬開放源程式套件, 使用者若要更進一步了解此類工具的設計與配置方法, 可以自行透過進階內容學習.</p><h3>編譯範例</h3>
 <p>以下為 C++ 原始碼進階自學編譯範例:</p>
 <p>先建立 msys64 可攜系統:</p>
 <p style="padding-left: 30px;">下載 <a href="https://www.msys2.org/">https://www.msys2.org/</a> 安裝後, 將 C:\msys64_20230718, 複製到 Y:\msys64_20230718</p>
