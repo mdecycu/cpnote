@@ -68,7 +68,7 @@
 <h4><span style="background-color: #ffff99;">申請 onedrive 帳號:</span></h4>
 <ol>
 <li>登入學校郵箱 (用來收帳號建立確認信)</li>
-<li>至 <a href="https://www.microsoft.com/zh-tw/education/products/office">https://www.microsoft.com/zh-tw/education/products/office</a>, 以 學號@nfu.edu.tw 帳號申請 OneDrive 帳號.</li>
+<li>至 <a href="https://www.microsoft.com/zh-tw/education/products/office">https://www.microsoft.com/zh-tw/education/products/office</a>, 以 學號@nfu.edu.tw 帳號申請 OneDrive 帳號 (登入教育版 onedirve 密碼由學校電算中心寄出, 請由 <a href="https://mail.nfu.edu.tw">https://mail.nfu.edu.tw</a> 登入信箱查閱)</li>
 </ol>
 <p>onedrive 帳號在計算機程式課程中的用途:</p>
 <ol>
@@ -139,7 +139,8 @@ SET CurrentDir=%~dp0
 powershell -executionpolicy bypass -File %CurrentDir%1_disable_ipv4.ps1
 rem mstsc /admin /v:your_server
 exit</pre>
-<p>1_2023_cadlab_network_setup.reg</p>
+<p>其中包含以下兩個設定檔案:</p>
+<p>1_2023_cadlab_network_setup.reg 用於關閉自動 Proxy 搜尋, 開啟手動設定 Proxy server.</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">Windows Registry Editor Version 5.00
 
  [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
@@ -151,7 +152,7 @@ exit</pre>
 "ProxyHttp1.1"=dword:00000000 
 "ProxyServer"="http://[2001:288:6004:17::69]:3128"
 "ProxyOverride"="localhost;192.168.1.0/24"</pre>
-<p>1_disable_ipv4.ps1</p>
+<p>1_disable_ipv4.ps1 用於關閉 IPv4 網路協定, 開啟 IPv6 網路協定.</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">Disable-NetAdapterBinding -Name "*" -ComponentID ms_tcpip
 Enable-NetAdapterBinding -Name "*" -ComponentID ms_tcpip6</pre>
 <p></p><h2>MSD</h2>
