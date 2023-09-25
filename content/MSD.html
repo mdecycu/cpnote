@@ -172,13 +172,17 @@ img.add_border {
 <p>Euler's Method:</p>
 <p><a href="https://tutorial.math.lamar.edu/classes/de/eulersmethod.aspx">https://tutorial.math.lamar.edu/classes/de/eulersmethod.aspx</a></p>
 <p><img alt="" height="227" src="./../images/Euler_method__plot.png" width="400"/></p>
-<p>\(\frac{dy}{dx}=f(x,y)\)</p>
-<p>\(\frac{y_{n+1}-y_{n}}{x_{n+1}-x_{n}}\approx f(x_{n},y_{n})\)</p>
-<p>\(h=x_{n+1}-x_{n}\)</p>
-<p>therefore:</p>
+<p>針對常微分方程式: \(\frac{dy}{dx}=f(x,y)\)</p>
+<p>假如 \(x_{n+1}\) 與 \(x_{n}\) 之間的距離非常接近, 則 \(\frac{y_{n+1}-y_{n}}{x_{n+1}-x_{n}}\approx f(x_{n},y_{n})\)</p>
+<p>若取 \(h=x_{n+1}-x_{n}\) 作為 x 座標在每一次計算過程的增量值.</p>
+<p>則可以在已知此一常微分方程式的起始值之後, 逐一透過 h 增量值計算此常微分方程式在各 x 座標點上的對應值:</p>
 <p>\(y_{n+1}-y_{n}\approx f(x_{n},y_{n})h\)</p>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><br />setup << <a href='setup.html'>Previous</a> <a href='clang.html'>Next</a> >> clang</div>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<p>此外, 只要在網頁中導入:</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;script src="https://polyfill.io/v3/polyfill.min.js?features=es6"&gt;&lt;/script&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"&gt;&lt;/script&gt;</pre>
+<p>就可以利用 MathJax v3 的 \(\LaTeX\) 語法, 輸入所需要呈現的數學方程式.</p><br />setup << <a href='setup.html'>Previous</a> <a href='clang.html'>Next</a> >> clang</div>
         
     <!-- footer -->
       <div class="container">
