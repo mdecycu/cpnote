@@ -131,7 +131,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li class='has-children'><a href='上課內容.html'>上課內容</a><ul class='dropdown'><li><a href='w2.html'>w2</a><li><a href='setup.html'>setup</a><li class='has-children'><a href='MSD.html'>MSD</a><ul class='dropdown'><li><a href='編譯範例.html'>編譯範例</a></li></li></ul></ul><li><a href='課程評分.html'>課程評分</a><li class='has-children'><a href='課程主題.html'>課程主題</a><ul class='dropdown'><li class='has-children'><a href='數位環境與資源.html'>數位環境與資源</a><ul class='dropdown'><li><a href='上課系統.html'>上課系統</a></li></ul><li class='has-children'><a href='程式能力.html'>程式能力</a><ul class='dropdown'><li><a href='程式語言.html'>程式語言</a><li><a href='ANSI C.html'>ANSI C</a><li><a href='on_linux.html'>on_linux</a><li><a href='on_windows.html'>on_windows</a></li></ul><li class='has-children'><a href='開發工具.html'>開發工具</a><ul class='dropdown'><li><a href='程式專案.html'>程式專案</a><li><a href='課程座次.html'>課程座次</a></li></ul><li><a href='課程總結.html'>課程總結</a></li></ul><li><a href='QandA.html'>QandA</a><li><a href='Brython.html'>Brython</a></li>
+                     <li><a href='About.html'>About</a><li class='has-children'><a href='上課內容.html'>上課內容</a><ul class='dropdown'><li><a href='w2.html'>w2</a><li><a href='setup.html'>setup</a><li class='has-children'><a href='MSD.html'>MSD</a><ul class='dropdown'><li><a href='clang.html'>clang</a><li><a href='編譯範例.html'>編譯範例</a></li></li></ul></ul><li><a href='課程評分.html'>課程評分</a><li class='has-children'><a href='課程主題.html'>課程主題</a><ul class='dropdown'><li class='has-children'><a href='數位環境與資源.html'>數位環境與資源</a><ul class='dropdown'><li><a href='上課系統.html'>上課系統</a></li></ul><li class='has-children'><a href='程式能力.html'>程式能力</a><ul class='dropdown'><li><a href='程式語言.html'>程式語言</a><li><a href='ANSI C.html'>ANSI C</a><li><a href='on_linux.html'>on_linux</a><li><a href='on_windows.html'>on_windows</a></li></ul><li class='has-children'><a href='開發工具.html'>開發工具</a><ul class='dropdown'><li><a href='程式專案.html'>程式專案</a><li><a href='課程座次.html'>課程座次</a></li></ul><li><a href='課程總結.html'>課程總結</a></li></ul><li><a href='QandA.html'>QandA</a><li><a href='Brython.html'>Brython</a></li>
                       </ul>
                 </nav>
               </div>
@@ -459,9 +459,12 @@ double f(double x, double y[], int i){
 <p><img alt="" height="300" src="./../images/rk_mass_spring.png" width="400"/></p>
 <p>假如將 Runge-Kutta C 改寫為 Javascript, 並在網頁中直接以 plotly.js 畫圖:</p>
 <!-- 引入 Plotly.js -->
+<p>
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</p>
 <!-- 用於顯示運動繪圖的 div -->
 <div id="rkmotionPlot"></div>
+<p>
 <script>
 const N = 2; // number of first order equations
 const dist = 0.01; // stepsize in t
@@ -592,6 +595,7 @@ function plotMotion() {
 // Call the simulation function when the page loads
 window.onload = simulateMotion;
 </script>
+</p>
 <p>上列 Javascript 模擬運算的超文件為:</p>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;!-- 引入 Plotly.js --&gt;
 &lt;script src="https://cdn.plot.ly/plotly-latest.min.js"&gt;&lt;/script&gt;
@@ -739,6 +743,7 @@ window.onload = simulateMotion;
 <p><button id="withDamping">模擬運動 (有阻尼)</button> <button id="withoutDamping">模擬運動 (無阻尼)</button></p>
 <!-- 請注意!! 每一個 plotly.js 繪圖必須有各自的 id 名稱 -->
 <div id="rkmotionPlot2"></div>
+<p>
 <script>
 // 函數包裝，避免變數衝突
     (function () {
@@ -925,6 +930,7 @@ window.onload = simulateMotion;
 
     })();
 </script>
+</p>
 <p>上列可輸入模擬參數與起始條件的 html 程式碼:</p>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;div&gt;&lt;label for="mass"&gt;質量 (m):&lt;/label&gt; &lt;input id="mass" type="number" value="1.0"&gt;&lt;/div&gt;
 &lt;div&gt;&lt;label for="springConstant"&gt;彈簧常數 (k):&lt;/label&gt; &lt;input id="springConstant" type="number" value="10.0"&gt;&lt;/div&gt;
