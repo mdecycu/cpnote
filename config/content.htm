@@ -276,7 +276,10 @@ Enable-NetAdapterBinding -Name "*" -ComponentID ms_tcpip6</pre>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;script src="https://polyfill.io/v3/polyfill.min.js?features=es6"&gt;&lt;/script&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"&gt;&lt;/script&gt;</pre>
 <p>就可以利用 MathJax v3 的 \(\LaTeX\) 語法, 輸入所需要呈現的數學方程式.</p>
-<h3>clang</h3>
+<p><a href="https://twiki.cern.ch/twiki/pub/Main/CollaborativeProjects/7_Application_-_1.pdf">Runge-Kutta Method</a>:</p>
+<p style="padding-left: 30px;"><a href="https://www.researchgate.net/publication/340027249_Developments_in_Runge-Kutta_Method_to_Solve_Ordinary_Differential_Equations">Developments in Runge–Kutta Method to Solve Ordinary Differential Equations</a></p>
+<p style="padding-left: 30px;"><a href="https://www.me.psu.edu/cimbala/Learning/General/Runge_Kutta_Technique.pdf">https://www.me.psu.edu/cimbala/Learning/General/Runge_Kutta_Technique.pdf</a> </p>
+<p style="padding-left: 30px;"><a href="https://homepage.math.uiowa.edu/~atkinson/papers/NAODE_Book.pdf">NUMERICAL SOLUTION OF ORDINARY DIFFERENTIAL EQUATIONS</a> (from one of the authors)</p><h3>clang</h3>
 <p>以下為與 clang 有關的進階自學內容:</p>
 <p><a href="https://opensource.apple.com/source/clang/clang-23/clang/tools/clang/www/comparison.html">clang 與其他開源編譯器的比較</a></p>
 <p>安裝 clang (801MB) 與 valgrind (91.8MB):</p>
@@ -706,7 +709,7 @@ doc["threejsblock"].bind("click", threejsblock.do)
 <ol>
 <li>ANSI C 程式語言所謂具有可攜性, 是甚麼意思?</li>
 <li>ANSI C 被定位為低階程式語言, 是甚麼意思?</li>
-<li>可以用 ANSIＣ加上Gnuplot 繪圖, 解一個質量與兩個並聯的彈簧與阻尼器連接到牆上, 且起始條件為執行被往後拉 0.2 m 後放開的常微分方程式, 並劃出該質量被釋放之後 10 秒之內的位移以及速度圖嗎?</li>
+<li>可以用 ANSIＣ加上Gnuplot 繪圖 (<a href="http://www.gnuplot.info/docs_5.4/Gnuplot_5_4.pdf">Gnuplot Documentation</a>), 解一個質量與兩個並聯的彈簧與阻尼器連接到牆上, 且起始條件為執行被往後拉 0.2 m 後放開的常微分方程式, 並劃出該質量被釋放之後 10 秒之內的位移以及速度圖嗎?</li>
 <li>請詳細解釋所謂的 Euler's Method, 並且能不能將 Gnuplot 繪圖指令直接與 C 程式合併, 執行程式後直接產生位移與速度 png 圖?</li>
 <li>能不能將 gnuplot 繪圖程式碼與 Euler's Method 解微分方程式的程式碼結合在一起, 執行時直接就能繪出質量的位移與速度圖, 而且請在繪圖時直接使用位於 Y:\ 的 wqy-microhei.ttc 中文字形, 否則無法在圖面上顯示出正確的中文.</li>
 <li>請將質量的位移以及速度繪製在同一個 png 圖檔上</li>
@@ -1689,8 +1692,7 @@ window.onload = simulateMotion;
 <p></p>
 <p>Question: 如何讓模擬變數表單值變更後, 無需重新 refresh 頁面即可繪出運算結果?</p>
 <p>Exercises:</p>
-<p style="padding-left: 30px;">請將上述各階段的數值分析結果與<a href="https://lampx.tugraz.at/~hadley/physikm/apps/odeanalytic/dharmonic.en.php">理論分析解</a>(<a href="https://en.wikipedia.org/wiki/Mass-spring-damper_model">Wikipedia</a>)的結果, 以圖示進行比較, 並以表列出各點的運算誤差.</p>
-<h3>on_linux</h3>
+<p style="padding-left: 30px;">請將上述各階段的數值分析結果與<a href="https://lampx.tugraz.at/~hadley/physikm/apps/odeanalytic/dharmonic.en.php">理論分析解</a>(<a href="https://en.wikipedia.org/wiki/Mass-spring-damper_model">Wikipedia</a>)的結果, 以圖示進行比較, 並以表列出各點的運算誤差.</p><h3>on_linux</h3>
 <p><img alt="" height="601" src="/images/Replit_c_on_linux.png" width="800"/></p>
 <h3>on_windows</h3>
 <p>何謂編譯?</p>
