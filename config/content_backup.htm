@@ -59,7 +59,7 @@
 <p style="padding-left: 60px;">4. 至於手機中的 Authenticator 也可以再利用 Pin 密碼、指紋或人臉辨識流程加入安全保護, 一旦手機或手錶毀損, 就可以藉以登入 Github 帳號修改設定.</p>
 <p>Github 帳號在計算機程式課程中的用途:</p>
 <ol>
-<li>領取 <a href="https://classroom.github.com">Github Classroom</a> 系統所指定的作業</li>
+<li>領取 <a href="https://classroom.github.com">Github Classroom</a> 系統所指定的作業 (為了整合 Replit, cp2023 與 cad2023 將放棄使用 Github Classroom)</li>
 <li>建立個人網站: <a href="https://github_帳號.github.io">https://github_帳號.github.io</a></li>
 <li>將計算機程式課程中所編寫的程式與相關資料存入 Github 帳號下的 Gist</li>
 </ol>
@@ -143,6 +143,13 @@ int main(void) {
 <p>w3</p>
 <p><a href="https://nfuedu-my.sharepoint.com/:v:/g/personal/yen_nfu_edu_tw/EbXrVO6Jeb5Gnn47Dvpv7pYBftMz4z9evscZ-Spxxmk7mw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0RpcmVjdCJ9fQ&amp;e=RiZ5wB">有關電腦輔助設計室網路設定說明</a></p>
 <p><a href="https://nfuedu-my.sharepoint.com/:v:/g/personal/yen_nfu_edu_tw/Eb1u9lGQSotOpxiJTQeFVwEBq-FxJEDTnTkuUL0jlGdnFQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0RpcmVjdCJ9fQ&amp;e=zcA6Qt">處理 .replit 與 replit.nix 中的舊 Python 設定問題</a></p>
+<p><a href="https://nfuedu-my.sharepoint.com/:v:/g/personal/yen_nfu_edu_tw/EUVPlEOxYxdCkQyT9rX-B64BK_SNHRJaz52HloupubxlMw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0RpcmVjdCJ9fQ&amp;e=W03gHn">說明如何為 site-個人github帳號 倉儲設定 Github Pages</a></p>
+<p>採用 Github Classroom 建立作業倉儲的問題:</p>
+<p style="padding-left: 30px;">2023/09/26 在 1a w3 課程進行到建立各學員 site 作業時發現, 將 Replit 導入 Github 倉儲的流程中, 所產生的系統間權限設定, 必須由 Github Classroom 管理帳號 (以 cp2023 為例, 附屬在 mdecp2023 帳號下), 針對各用戶所提出的個別 Replit 權限 requests (以 site-scrum-1 倉儲為例, 只能透過 Replit 提出控管 mdecp2023/site-scrum-1 倉儲的權限) <span style="background-color: #ffff00;">逐一進行設定</span>.</p>
+<p style="padding-left: 30px;"><img alt="" class="add_border" height="310" src="/images/mdecp2023_replit_requests.png" width="400"/></p>
+<p style="padding-left: 30px;">(上圖顯示共有三名用戶針對 mdecp2023 帳號下的 Github Classroom 倉儲提出 Replit 連線要求, 其中只有最上方用戶的 request 取得 mdecp2023/site-scrum-1 倉儲的維護權限, 其餘兩則 requests 則仍處於待審核階段. 意即若要讓各用戶整合 Replit, <span style="background-color: #ffff00;">每一個 Github Classroom 作業, 管理者都必須手動處理超過兩百則的 requests</span>)</p>
+<p style="padding-left: 30px;">為減輕管理者的負擔, 決定 2023 cp 與 cad 等課程將放棄使用 Github Classroom. 改為由各學員自行針對課程建立用來評分的課程倉儲與網站, 直接附屬在學員的 Github 帳號下, 後續的 submodule 設定與倉儲協同權限則必須由各學員自行負責.</p>
+<hr/>
 <p><a href="https://nfuedu-my.sharepoint.com/:b:/g/personal/yen_nfu_edu_tw/EWd1cR2zOStOjVSduSw6pQMBv1fB6tWu-P9qfVH2YxbDPw?e=uOZW7N">jsliu_c_programming.pdf</a> (需要下載密碼)</p>
 <p><a href="https://link.springer.com/content/pdf/10.1007/978-1-4842-5064-8_1.pdf?pdf=inline%20link">Introduction to C</a> (經由校園網路或 VPN 下載)</p>
 <p>指定 Github Classroom 作業: 取得 <a href="https://github.com/mdecp2023">https://github.com/mdecp2023</a> 帳號下的 "site-個人github帳號" 倉儲 (用於學員簡報以及期中期末評分用)</p>
@@ -260,12 +267,15 @@ Enable-NetAdapterBinding -Name "*" -ComponentID ms_tcpip6</pre>
 <p>若取 \(h=x_{n+1}-x_{n}\) 作為 x 座標在每一次計算過程的增量值.</p>
 <p>則可以在已知此一常微分方程式的起始值之後, 逐一透過 h 增量值計算此常微分方程式在各 x 座標點上的對應值:</p>
 <p>\(y_{n+1}-y_{n}\approx f(x_{n},y_{n})h\)</p>
+<p>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</p>
 <p>此外, 只要在網頁中導入:</p>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&lt;script src="https://polyfill.io/v3/polyfill.min.js?features=es6"&gt;&lt;/script&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"&gt;&lt;/script&gt;</pre>
-<p>就可以利用 MathJax v3 的 \(\LaTeX\) 語法, 輸入所需要呈現的數學方程式.</p><h3>clang</h3>
+<p>就可以利用 MathJax v3 的 \(\LaTeX\) 語法, 輸入所需要呈現的數學方程式.</p>
+<h3>clang</h3>
 <p>以下為與 clang 有關的進階自學內容:</p>
 <p><a href="https://opensource.apple.com/source/clang/clang-23/clang/tools/clang/www/comparison.html">clang 與其他開源編譯器的比較</a></p>
 <p>安裝 clang (801MB) 與 valgrind (91.8MB):</p>
@@ -1678,7 +1688,8 @@ window.onload = simulateMotion;
 <p></p>
 <p>Question: 如何讓模擬變數表單值變更後, 無需重新 refresh 頁面即可繪出運算結果?</p>
 <p>Exercises:</p>
-<p style="padding-left: 30px;">請將上述各階段的數值分析結果與<a href="https://lampx.tugraz.at/~hadley/physikm/apps/odeanalytic/dharmonic.en.php">理論分析解</a>(<a href="https://en.wikipedia.org/wiki/Mass-spring-damper_model">Wikipedia</a>)的結果, 以圖示進行比較, 並以表列出各點的運算誤差.</p><h3>on_linux</h3>
+<p style="padding-left: 30px;">請將上述各階段的數值分析結果與<a href="https://lampx.tugraz.at/~hadley/physikm/apps/odeanalytic/dharmonic.en.php">理論分析解</a>(<a href="https://en.wikipedia.org/wiki/Mass-spring-damper_model">Wikipedia</a>)的結果, 以圖示進行比較, 並以表列出各點的運算誤差.</p>
+<h3>on_linux</h3>
 <p><img alt="" height="601" src="/images/Replit_c_on_linux.png" width="800"/></p>
 <h3>on_windows</h3>
 <p>何謂編譯?</p>
@@ -2175,7 +2186,7 @@ doc["threejsblock"].bind("click", threejsblock.do)
 <div style="width: 100%; height: 100%;"><textarea autocomplete="off" id="kw_console2"></textarea></div>
 <p><!-- Brython 程式執行的結果, 都以 brython_div1 作為切入位置 --></p>
 <div id="brython_div2"></div>
-<!-- editor2 結束 --><hr/>
+<!-- editor2 結束 --><hr>
 <p>
 <script src="https://unpkg.com/three@0.144.0/build/three.js" type="text/javascript"></script>
-</p>
+</p></hr>
