@@ -209,7 +209,8 @@ return 0;
 }</pre>
 <p style="padding-left: 30px;"></p><h2>setup</h2>
 <p>利用隨身碟中的批次檔案, 設定所需的網路環境.</p>
-<p>network_setup.bat (需要管理者身分執行, 才能關閉 IPv4 網路, 啟動 IPv6 網路)</p>
+<p><a href="/downloads/cadlab_network_setup.7z">cadlab_network_setup.7z</a></p>
+<p>1_network_setup.bat (需要管理者身分執行, 才能關閉 IPv4 網路, 啟動 IPv6 網路)</p>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">echo "disable ipv4 and setup proxy for ipv6"
 SET CurrentDir=%~dp0
 %windir%\system32\reg.exe import %CurrentDir%1_2023_cadlab_network_setup.reg
@@ -246,7 +247,18 @@ Enable-NetAdapterBinding -Name "*" -ComponentID ms_tcpip6
 $dnsServers = "2001:b000:168::1", "2001:b000:168::2"
 Set-DnsClientServerAddress -InterfaceAlias "*" -ServerAddresses $dnsServers
 </pre>
-<p></p><h2>MSD</h2>
+<p></p><h2>replit</h2>
+<p>在 Replit C 程式環境中額外納入 gnuplot 套件:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">{ pkgs }: {
+	deps = [
+		pkgs.sudo
+  pkgs.clang_12
+		pkgs.ccls
+		pkgs.gdb
+		pkgs.gnumake
+        pkgs.gnuplot
+	];
+}</pre><h2>MSD</h2>
 <p>學習要點:</p>
 <p style="padding-left: 30px;">何謂微分方程式?何謂常微分方程式?</p>
 <p style="padding-left: 30px;">為何要解出系統運動方程式的結果?</p>
@@ -291,7 +303,7 @@ Set-DnsClientServerAddress -InterfaceAlias "*" -ServerAddresses $dnsServers
 <p>就可以利用 MathJax v3 的 \(\LaTeX\) 語法, 輸入所需要呈現的數學方程式.</p>
 <p><a href="https://twiki.cern.ch/twiki/pub/Main/CollaborativeProjects/7_Application_-_1.pdf">Runge-Kutta Method</a>:</p>
 <p style="padding-left: 30px;"><a href="https://www.researchgate.net/publication/340027249_Developments_in_Runge-Kutta_Method_to_Solve_Ordinary_Differential_Equations">Developments in Runge–Kutta Method to Solve Ordinary Differential Equations</a></p>
-<p style="padding-left: 30px;"><a href="https://www.me.psu.edu/cimbala/Learning/General/Runge_Kutta_Technique.pdf">https://www.me.psu.edu/cimbala/Learning/General/Runge_Kutta_Technique.pdf</a> </p>
+<p style="padding-left: 30px;"><a href="https://www.me.psu.edu/cimbala/Learning/General/Runge_Kutta_Technique.pdf">https://www.me.psu.edu/cimbala/Learning/General/Runge_Kutta_Technique.pdf</a></p>
 <p style="padding-left: 30px;"><a href="https://homepage.math.uiowa.edu/~atkinson/papers/NAODE_Book.pdf">NUMERICAL SOLUTION OF ORDINARY DIFFERENTIAL EQUATIONS</a> (from one of the authors)</p><h3>clang</h3>
 <p>以下為與 clang 有關的進階自學內容:</p>
 <p><a href="https://opensource.apple.com/source/clang/clang-23/clang/tools/clang/www/comparison.html">clang 與其他開源編譯器的比較</a></p>
@@ -319,7 +331,7 @@ Set-DnsClientServerAddress -InterfaceAlias "*" -ServerAddresses $dnsServers
 <p style="padding-left: 90px;">pacman -S mingw-w64-x86_64-cmake</p>
 <p>下載 <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EQHpkbGf-iFAnvQpjr6YpvoBT5IGyhc7zkRFldLb9gzumQ?e=07fTJm">msys64_20230718_cmake.7z</a> (需要下載密碼)</p>
 <p>編譯 Solvespace:</p>
-<p style="padding-left: 30px;">git clone --recurse-submodules https://github.com/solvespace/solvespace.git<br/><br/>cd solvespace<br/><br/>git checkout v3.1<br/><br/>mkdir build<br/><br/>cd build<br><br/>cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release<br/><br/>mingw32-make</br></p>
+<p style="padding-left: 30px;">git clone --recurse-submodules https://github.com/solvespace/solvespace.git<br/><br/>cd solvespace<br/><br/>git checkout v3.1<br/><br/>mkdir build<br/><br/>cd build<br/><br/>cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release<br/><br/>mingw32-make</p>
 <p style="padding-left: 30px;">下載 <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EbxAx7kkFERGiND16jP2KG4BFt6XH7EojD5_39uk8qWihw?e=tZF6NP">solvespace_src_compiled.7z</a> (需要下載密碼)</p>
 <p>利用 MSYS2 編譯 SciTE 編輯器:</p>
 <p style="padding-left: 30px;">從 <a href="https://www.scintilla.org/SciTE.html">https://www.scintilla.org/SciTE.html</a> 下載 Scite 原始碼.</p>
