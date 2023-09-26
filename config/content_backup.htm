@@ -142,7 +142,61 @@ int main(void) {
 <p><a href="https://nfuedu-my.sharepoint.com/:v:/g/personal/yen_nfu_edu_tw/EW-FcfDAaMZPjdA8nFjgCHEBpp8yPr7wSoi9RsxmyLbZpA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0RpcmVjdCJ9fQ&amp;e=E1T3vG">說明如何 connect Replit to Github, 如何建立個人網站並利用 Replit 啟動編輯網站</a></p>
 <p>w3</p>
 <p><a href="https://nfuedu-my.sharepoint.com/:b:/g/personal/yen_nfu_edu_tw/EWd1cR2zOStOjVSduSw6pQMBv1fB6tWu-P9qfVH2YxbDPw?e=uOZW7N">jsliu_c_programming.pdf</a> (需要下載密碼)</p>
-<p><a href="https://link.springer.com/content/pdf/10.1007/978-1-4842-5064-8_1.pdf?pdf=inline%20link">Introduction to C</a> (經由校園網路或 VPN 下載)</p><h2>setup</h2>
+<p><a href="https://link.springer.com/content/pdf/10.1007/978-1-4842-5064-8_1.pdf?pdf=inline%20link">Introduction to C</a> (經由校園網路或 VPN 下載)</p>
+<p>指定 Github Classroom 作業: 取得 <a href="https://github.com/mdecp2023">https://github.com/mdecp2023</a> 帳號下的 "site-個人github帳號" 倉儲 (用於學員簡報以及期中期末評分用)</p>
+<p>SciTE 與 Tiny C Compiler 若要設定為 Tools - Compile 之後產生可執行檔案 a.out, cpp.properties 設定檔案必須修改如下:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">ccopts=-pedantic -Os
+#cc=g++ $(ccopts) -c $(FileNameExt) -o $(FileName).o
+#ccc=gcc $(ccopts) -c $(FileNameExt) -o $(FileName).o
+cc=tcc.exe -run 
+ccc=tcc.exe -o a.out
+
+make.command=make
+#command.compile.*.c=$(ccc) -std=c99
+command.compile.*.c=$(ccc) $(FileNameExt)
+command.build.*.c=$(make.command)
+command.build.*.h=$(make.command)
+command.clean.*.c=$(make.command) clean
+command.clean.*.h=$(make.command) clean
+# use tcc to run .c program
+#command.go.*.c=./$(FileName)
+command.go.*.c=$(cc) $(FileNameExt)</pre>
+<p>Exercises:</p>
+<p>請從 與 電子書中擷取 C 程式範例, 分別:</p>
+<ol>
+<li>在可攜程式環境中以 SciTE + Tiny C Compiler, 使用 Tools - Go 以及 Tools - Compile 後取得 a.out, 然後在命令列中以 a.out 執行.</li>
+<li>在 Replit 程式環境中的 Shell 頁面, 以 cc ex1.c 產生可執行檔案 a.out, 並以 ./a.out 執行, 或者以 cc ex1.c -o ex1 指定編譯連結後的可執行檔案名稱為 ex1 後, 以 ./ex1 執行.</li>
+</ol>
+<p>最後將上述執行過的程式碼與相關說明內容, 整理在 mdecp2023.github.io/site-個人github帳號 網頁中的 c_ex 頁面中.</p>
+<p>參考:</p>
+<p style="padding-left: 30px;">使用者輸入兩個整數後相加的 C 程式範例:</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* Read in two integers , add them and display the answer */
+#define _CRT_SECURE_NO_WARNINGS
+#include&lt;stdio.h&gt;
+int main()
+{
+int this_is_a_number1, this_is_a_number2, total;
+printf("Please enter an integer number:\n ");
+/* read number in */
+if (scanf("%d", &amp;this_is_a_number1) == 1) {
+      printf("%d", this_is_a_number1);
+    } else {
+        printf("Failed to read integer.\n");
+    }
+
+printf("You entered %d\n", this_is_a_number1);
+printf("Please enter another number: \n");
+if (scanf("%d", &amp;this_is_a_number2) == 1) {
+      printf("%d", this_is_a_number1);
+    } else {
+      printf("Failed to read integer.\n");
+    }
+printf("You entered %d\n", this_is_a_number2);
+total = this_is_a_number1 + this_is_a_number2;/* add two numbers */
+printf("total is %d\n", total);
+return 0;
+}</pre>
+<p style="padding-left: 30px;"></p><h2>setup</h2>
 <p>利用隨身碟中的批次檔案, 設定所需的網路環境.</p>
 <p>network_setup.bat (需要管理者身分執行, 才能關閉 IPv4 網路, 啟動 IPv6 網路)</p>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">echo "disable ipv4 and setup proxy for ipv6"
@@ -195,7 +249,7 @@ Enable-NetAdapterBinding -Name "*" -ComponentID ms_tcpip6</pre>
 <p>接續 Javascript 基本數值分析方法的學習, 將採 Brython 語法改寫後, 希望能直接在網頁中透過類似 Python 的語法, 進行數值分析運算與繪圖. 最後再將 Brython 語法轉為 CPython 程式, 讓使用者可以直接在電腦操作系統中進行數值分析與繪圖.</p>
 <p>上述從 C, Javascript, Brython 到 Python 的範例練習, 主要目的是希望呈現最基本的網際機電資整合系統設計流程, 讓機械設計工程師能夠將所設計的產品 3D 零組件完成後, 轉入機電模擬系統 (CoppeliaSim, Webots 或 Robodk), 設法編寫或運用既有的全球資訊網前後端程式架構, 結合近端的實體模型與全球資訊網端的機電控制系統模擬, 進行機械、電子、電機與資工領域工程師協同產品設計.</p>
 <p>由於 CoppeliaSim、Webots 以及 Solvespace 都是採用 C++ 程式語言編寫, 且都屬開放源程式套件, 使用者若要更進一步了解此類工具的設計與配置方法, 可以自行透過進階內容學習.</p>
-<p>Euler's Method(<a href="https://youtu.be/Atvaac3_NlM">教學影片</a>, <a href="https://www.freecodecamp.org/news/eulers-method-explained-with-examples/">說明</a> in English):</p>
+<p>Euler's Method(<a href="https://youtu.be/Atvaac3_NlM">教學影片</a>, <a href="https://www.freecodecamp.org/news/eulers-method-explained-with-examples/">說明1</a>, <a href="https://web.uvic.ca/~tbazett/diffyqs/numer_section.html">說明2</a> in English):</p>
 <p><a href="https://tutorial.math.lamar.edu/classes/de/eulersmethod.aspx">https://tutorial.math.lamar.edu/classes/de/eulersmethod.aspx</a></p>
 <p><img alt="" height="227" src="/images/Euler_method__plot.png" width="400"/></p>
 <p>針對常微分方程式: \(\frac{dy}{dx}=f(x,y)\)</p>

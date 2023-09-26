@@ -150,7 +150,62 @@ img.add_border {
 <p><a href="https://nfuedu-my.sharepoint.com/:v:/g/personal/yen_nfu_edu_tw/EW-FcfDAaMZPjdA8nFjgCHEBpp8yPr7wSoi9RsxmyLbZpA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0RpcmVjdCJ9fQ&amp;e=E1T3vG">說明如何 connect Replit to Github, 如何建立個人網站並利用 Replit 啟動編輯網站</a></p>
 <p>w3</p>
 <p><a href="https://nfuedu-my.sharepoint.com/:b:/g/personal/yen_nfu_edu_tw/EWd1cR2zOStOjVSduSw6pQMBv1fB6tWu-P9qfVH2YxbDPw?e=uOZW7N">jsliu_c_programming.pdf</a> (需要下載密碼)</p>
-<p><a href="https://link.springer.com/content/pdf/10.1007/978-1-4842-5064-8_1.pdf?pdf=inline%20link">Introduction to C</a> (經由校園網路或 VPN 下載)</p><br />上課內容 << <a href='上課內容.html'>Previous</a> <a href='setup.html'>Next</a> >> setup</div>
+<p><a href="https://link.springer.com/content/pdf/10.1007/978-1-4842-5064-8_1.pdf?pdf=inline%20link">Introduction to C</a> (經由校園網路或 VPN 下載)</p>
+<p>指定 Github Classroom 作業: 取得 <a href="https://github.com/mdecp2023">https://github.com/mdecp2023</a> 帳號下的 "site-個人github帳號" 倉儲 (用於學員簡報以及期中期末評分用)</p>
+<p>SciTE 與 Tiny C Compiler 若要設定為 Tools - Compile 之後產生可執行檔案 a.out, cpp.properties 設定檔案必須修改如下:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">ccopts=-pedantic -Os
+#cc=g++ $(ccopts) -c $(FileNameExt) -o $(FileName).o
+#ccc=gcc $(ccopts) -c $(FileNameExt) -o $(FileName).o
+cc=tcc.exe -run 
+ccc=tcc.exe -o a.out
+
+make.command=make
+#command.compile.*.c=$(ccc) -std=c99
+command.compile.*.c=$(ccc) $(FileNameExt)
+command.build.*.c=$(make.command)
+command.build.*.h=$(make.command)
+command.clean.*.c=$(make.command) clean
+command.clean.*.h=$(make.command) clean
+# use tcc to run .c program
+#command.go.*.c=./$(FileName)
+command.go.*.c=$(cc) $(FileNameExt)</pre>
+<p>Exercises:</p>
+<p>請從 <a href="https://nfuedu-my.sharepoint.com/:b:/g/personal/yen_nfu_edu_tw/EWd1cR2zOStOjVSduSw6pQMBv1fB6tWu-P9qfVH2YxbDPw?e=uOZW7N">jsliu_c_programming.pdf</a> (需要下載密碼)與 <a href="https://link.springer.com/content/pdf/10.1007/978-1-4842-5064-8_1.pdf?pdf=inline%20link">Introduction to C</a> (經由校園網路或 VPN 下載)電子書中擷取 C 程式範例, 分別:</p>
+<ol>
+<li>在可攜程式環境中以 SciTE + Tiny C Compiler 編譯系統, 使用 Tools - Go 類編譯方式執行.</li>
+<li>在可攜程式環境中以 SciTE + Tiny C Compiler 編譯系統, 使用 Tools - Compile 編譯連結後取得 a.out, 然後在命令列中以 a.out 執行.</li>
+<li>在 Replit 全球資訊網 IDE 環境中的 Shell 頁面, 以 cc ex1.c 產生可執行檔案 a.out, 並以 ./a.out 執行, 或者以 cc ex1.c -o ex1 指定編譯連結後的可執行檔案名稱為 ex1 後, 以 ./ex1 執行.</li>
+</ol>
+<p>最後將所選擇的 C 程式範例執行過程與相關說明內容, 整理在 <span style="background-color: #ccffcc;">mdecp2023.github.io/site-個人github帳號</span> 網頁中的 c_ex 頁面中.</p>
+<p>參考:</p>
+<p style="padding-left: 30px;">使用者輸入兩個整數後相加的 C 程式範例:</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/* Read in two integers , add them and display the answer */
+#define _CRT_SECURE_NO_WARNINGS
+#include&lt;stdio.h&gt;
+int main()
+{
+int this_is_a_number1, this_is_a_number2, total;
+printf("Please enter an integer number:\n ");
+/* read number in */
+if (scanf("%d", &amp;this_is_a_number1) == 1) {
+      printf("%d", this_is_a_number1);
+    } else {
+        printf("Failed to read integer.\n");
+    }
+
+printf("You entered %d\n", this_is_a_number1);
+printf("Please enter another number: \n");
+if (scanf("%d", &amp;this_is_a_number2) == 1) {
+      printf("%d", this_is_a_number1);
+    } else {
+      printf("Failed to read integer.\n");
+    }
+printf("You entered %d\n", this_is_a_number2);
+total = this_is_a_number1 + this_is_a_number2;/* add two numbers */
+printf("total is %d\n", total);
+return 0;
+}</pre>
+<p style="padding-left: 30px;"></p><br />上課內容 << <a href='上課內容.html'>Previous</a> <a href='setup.html'>Next</a> >> setup</div>
         
     <!-- footer -->
       <div class="container">
