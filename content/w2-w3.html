@@ -162,7 +162,8 @@ img.add_border {
 <p><a href="https://link.springer.com/content/pdf/10.1007/978-1-4842-5064-8_1.pdf?pdf=inline%20link">Introduction to C</a> (經由校園網路或 VPN 下載)</p>
 <p><span style="text-decoration: line-through;">指定 Github Classroom 作業: 取得 <a href="https://github.com/mdecp2023">https://github.com/mdecp2023</a> 帳號下的 "site-個人github帳號" 倉儲 (用於學員簡報以及期中期末評分用)<br/></span></p>
 <p> <span style="background-color: #ccffcc;">改由學員自行利用 <a href="https://github.com/mdecycu/cmsite" style="background-color: #ccffcc;">https://github.com/mdecycu/cmsite</a> 倉儲作為 template, 建立名稱為 cp2023 的評分倉儲</span>.</p>
-<p>SciTE 與 Tiny C Compiler 若要設定為 Tools - Compile 之後產生可執行檔案 a.out, cpp.properties 設定檔案必須修改如下:</p>
+<p>近端執行:</p>
+<p style="padding-left: 30px;">SciTE 與 Tiny C Compiler 若要設定為 Tools - Compile 之後產生可執行檔案 a.out, cpp.properties 設定檔案必須修改如下:</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">ccopts=-pedantic -Os
 #cc=g++ $(ccopts) -c $(FileNameExt) -o $(FileName).o
 #ccc=gcc $(ccopts) -c $(FileNameExt) -o $(FileName).o
@@ -179,6 +180,16 @@ command.clean.*.h=$(make.command) clean
 # use tcc to run .c program
 #command.go.*.c=./$(FileName)
 command.go.*.c=$(cc) $(FileNameExt)</pre>
+<p>雲端執行:</p>
+<p style="padding-left: 30px;">範例: <a href="https://replit.com/@wcms/cjavascriptpython">https://replit.com/@wcms/cjavascriptpython</a> </p>
+<p style="padding-left: 30px;">將位於個人 Github 帳號下的 cp2023 倉儲 (建議以 <a href="https://github.com/mdecycu/cmsite">https://github.com/mdecycu/cmsite</a> 作為 template) import 進入 Replit, 以 git submodule update --init 取下子模組, 然後以 pip install flask flask_cors bs4 lxml pelican markdown gevent 安裝啟動編輯網站所需模組後, 將 config/config 密碼編碼移至 Secrets 頁面中的 config 變數後啟動.</p>
+<p style="padding-left: 30px;">修改 replit.nix 如下, 表示要安裝 gnuplot 套件:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">{ pkgs }: {
+  deps = [
+    pkgs.gnuplot
+  ];
+}</pre>
+<p style="padding-left: 30px;">之後將所練習的 C 程式置於 downloads 目錄中, 其執行影像結果存入 images 後, 分別在網頁中引用.</p>
 <p>Exercises:</p>
 <p>請從 <a href="https://nfuedu-my.sharepoint.com/:b:/g/personal/yen_nfu_edu_tw/EWd1cR2zOStOjVSduSw6pQMBv1fB6tWu-P9qfVH2YxbDPw?e=uOZW7N">jsliu_c_programming.pdf</a> (需要下載密碼)與 <a href="https://link.springer.com/content/pdf/10.1007/978-1-4842-5064-8_1.pdf?pdf=inline%20link">Introduction to C</a> (經由校園網路或 VPN 下載)電子書中擷取 C 程式範例, 分別:</p>
 <ol>

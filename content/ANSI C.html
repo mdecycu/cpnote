@@ -210,7 +210,7 @@ int main() {
     }
 
     // 使用Gnuplot繪圖指令，指定字型文件和輸出PNG
-    fprintf(gnuplotPipe, "set terminal pngcairo enhanced font 'Y:/wqy-microhei.ttc,10' size 800,400\n");
+    fprintf(gnuplotPipe, "set terminal png font 'Y:/wqy-microhei.ttc,10' size 800,400\n");
     fprintf(gnuplotPipe, "set output 'motion_plot.png'\n");
     fprintf(gnuplotPipe, "set title '位移和速度 vs. 時間'\n");
     fprintf(gnuplotPipe, "set xlabel '時間 (s)'\n");
