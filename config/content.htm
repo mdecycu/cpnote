@@ -248,7 +248,7 @@ $dnsServers = "2001:b000:168::1", "2001:b000:168::2"
 Set-DnsClientServerAddress -InterfaceAlias "*" -ServerAddresses $dnsServers
 </pre>
 <p></p><h2>replit</h2>
-<p>在 Replit C 程式環境中額外納入 gnuplot 套件:</p>
+<p>在 Replit C 程式環境中額外納入 gnuplot 套件的 replit.nix 設定:</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">{ pkgs }: {
 	deps = [
 		pkgs.sudo
@@ -312,7 +312,48 @@ int main() {
     return 0;
 }
 </pre>
-<p></p><h2>MSD</h2>
+<p>假如要同時支援 C with gnuplot 套件, 以及使用 Python 3.10.11 的 replit.nix 設定:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">{ pkgs }: {
+	deps = [
+  pkgs.qtile
+  pkgs.sudo
+  pkgs.clang_12
+		pkgs.ccls
+		pkgs.gdb
+		pkgs.gnumake
+    pkgs.gnuplot
+	];
+  env = {
+    PYTHON_LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [
+      # Needed for pandas / numpy
+      pkgs.stdenv.cc.cc.lib
+      pkgs.zlib
+      # Needed for pygame
+      pkgs.glib
+      # Needed for matplotlib
+      pkgs.xorg.libX11
+    ];
+    PYTHONHOME = "${pkgs.python310Full}";
+    PYTHONBIN = "${pkgs.python310Full}/bin/python3.10";
+    LANG = "en_US.UTF-8";
+    STDERREDBIN = "${pkgs.replitPackages.stderred}/bin/stderred";
+    PRYBAR_PYTHON_BIN = "${pkgs.replitPackages.prybar-python310}/bin/prybar-python310";
+  };
+}</pre>
+<p>配合使用 Python language 的 .replit 設定:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">modules = ["python-3.10:v18-20230807-322e88b"]
+
+hidden = [".pythonlibs"]
+run = "python3 main.py"
+
+[nix]
+channel = "stable-23_05"
+
+[deployment]
+run = ["sh", "-c", "python3 main.py"]
+deploymentTarget = "cloudrun"</pre>
+<p>若需要執行動態 cmsimde 倉儲中的內容編輯網站, 則可在 Shell tag 安裝所需模組:</p>
+<p>pip install flask flask_cors bs4 lxml pelican markdown gevent</p><h2>MSD</h2>
 <p>學習要點:</p>
 <p style="padding-left: 30px;">何謂微分方程式?何謂常微分方程式?</p>
 <p style="padding-left: 30px;">為何要解出系統運動方程式的結果?</p>

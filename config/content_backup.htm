@@ -248,7 +248,7 @@ $dnsServers = "2001:b000:168::1", "2001:b000:168::2"
 Set-DnsClientServerAddress -InterfaceAlias "*" -ServerAddresses $dnsServers
 </pre>
 <p></p><h2>replit</h2>
-<p>在 Replit C 程式環境中額外納入 gnuplot 套件:</p>
+<p>在 Replit C 程式環境中額外納入 gnuplot 套件的 replit.nix 設定:</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">{ pkgs }: {
 	deps = [
 		pkgs.sudo
@@ -258,7 +258,101 @@ Set-DnsClientServerAddress -InterfaceAlias "*" -ServerAddresses $dnsServers
 		pkgs.gnumake
         pkgs.gnuplot
 	];
-}</pre><h2>MSD</h2>
+}</pre>
+<p>C with gnuplot:</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+
+int main() {
+    // Open a file to write displacement and velocity data
+    FILE *outputFile = fopen("motion_data.txt", "w");
+    if (!outputFile) {
+        fprintf(stderr, "Failed to create data file.\n");
+        return 1;
+    }
+
+    // Simulate motion for 10 seconds and calculate displacement and velocity, while writing data to the file
+    double x = 0.2;  // Initial displacement
+    double v = 0.0;  // Initial velocity
+    double dt = 0.01; // Time step
+    double t = 0.0;  // Time
+
+    while (t &lt;= 10.0) {
+        double acceleration = (-10.0 * x - 0.5 * v) / 1.0; // Modified system parameters here
+        v += acceleration * dt;
+        x += v * dt;
+
+        fprintf(outputFile, "%lf %lf %lf\n", t, x, v);
+
+        t += dt;
+    }
+
+    // Close the data file
+    fclose(outputFile);
+
+    // Start a Gnuplot process using popen
+    FILE *gnuplotPipe = popen("gnuplot -persistent", "w");
+    if (!gnuplotPipe) {
+        fprintf(stderr, "Failed to start Gnuplot.\n");
+        return 1;
+    }
+
+    // Use Gnuplot plotting commands, specify font and output as PNG
+    fprintf(gnuplotPipe, "set terminal pngcairo enhanced font 'default,10' size 800,400\n");
+    fprintf(gnuplotPipe, "set output 'motion_plot.png'\n");
+    fprintf(gnuplotPipe, "set title 'Displacement and Velocity vs. Time'\n");
+    fprintf(gnuplotPipe, "set xlabel 'Time (s)'\n");
+    fprintf(gnuplotPipe, "set ylabel 'Displacement (m)'\n");
+    fprintf(gnuplotPipe, "plot 'motion_data.txt' using 1:2 with lines lw 2 title 'Displacement', \
+                             'motion_data.txt' using 1:3 with lines lw 2 title 'Velocity'\n");
+
+    // Close the Gnuplot process
+    fprintf(gnuplotPipe, "exit\n");
+    pclose(gnuplotPipe);
+
+    return 0;
+}
+</pre>
+<p>假如要同時支援 C with gnuplot 套件, 以及使用 Python 3.10.11 的 replit.nix 設定:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">{ pkgs }: {
+	deps = [
+  pkgs.qtile
+  pkgs.sudo
+  pkgs.clang_12
+		pkgs.ccls
+		pkgs.gdb
+		pkgs.gnumake
+    pkgs.gnuplot
+	];
+  env = {
+    PYTHON_LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [
+      # Needed for pandas / numpy
+      pkgs.stdenv.cc.cc.lib
+      pkgs.zlib
+      # Needed for pygame
+      pkgs.glib
+      # Needed for matplotlib
+      pkgs.xorg.libX11
+    ];
+    PYTHONHOME = "${pkgs.python310Full}";
+    PYTHONBIN = "${pkgs.python310Full}/bin/python3.10";
+    LANG = "en_US.UTF-8";
+    STDERREDBIN = "${pkgs.replitPackages.stderred}/bin/stderred";
+    PRYBAR_PYTHON_BIN = "${pkgs.replitPackages.prybar-python310}/bin/prybar-python310";
+  };
+}</pre>
+<p>配合使用 Python language 的 .replit 設定:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">modules = ["python-3.10:v18-20230807-322e88b"]
+
+hidden = [".pythonlibs"]
+run = "python3 main.py"
+
+[nix]
+channel = "stable-23_05"
+
+[deployment]
+run = ["sh", "-c", "python3 main.py"]
+deploymentTarget = "cloudrun"</pre>
+<p></p><h2>MSD</h2>
 <p>學習要點:</p>
 <p style="padding-left: 30px;">何謂微分方程式?何謂常微分方程式?</p>
 <p style="padding-left: 30px;">為何要解出系統運動方程式的結果?</p>
