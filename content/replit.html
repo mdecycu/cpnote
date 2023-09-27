@@ -147,7 +147,7 @@ img.add_border {
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">{ pkgs }: {
 	deps = [
 		pkgs.sudo
-  pkgs.clang_12
+        pkgs.clang_12
 		pkgs.ccls
 		pkgs.gdb
 		pkgs.gnumake
@@ -207,48 +207,14 @@ int main() {
     return 0;
 }
 </pre>
-<p>假如要同時支援 C with gnuplot 套件, 以及使用 Python 3.10.11 的 replit.nix 設定:</p>
+<p>在選擇 Python 作為 Language 的 repl 專案中, cc 已經內建, 若要加裝 gnuplot 套件則可在 replit.nix 設定檔案中加入 pkgs.gnuplot:</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">{ pkgs }: {
-	deps = [
-  pkgs.qtile
-  pkgs.sudo
-  pkgs.clang_12
-		pkgs.ccls
-		pkgs.gdb
-		pkgs.gnumake
-    pkgs.gnuplot
-	];
-  env = {
-    PYTHON_LD_LIBRARY_PATH = pkgs.lib.makeLibraryPath [
-      # Needed for pandas / numpy
-      pkgs.stdenv.cc.cc.lib
-      pkgs.zlib
-      # Needed for pygame
-      pkgs.glib
-      # Needed for matplotlib
-      pkgs.xorg.libX11
+    deps = [
+      pkgs.gnuplot
     ];
-    PYTHONHOME = "${pkgs.python310Full}";
-    PYTHONBIN = "${pkgs.python310Full}/bin/python3.10";
-    LANG = "en_US.UTF-8";
-    STDERREDBIN = "${pkgs.replitPackages.stderred}/bin/stderred";
-    PRYBAR_PYTHON_BIN = "${pkgs.replitPackages.prybar-python310}/bin/prybar-python310";
-  };
 }</pre>
-<p>配合使用 Python language 的 .replit 設定:</p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">modules = ["python-3.10:v18-20230807-322e88b"]
-
-hidden = [".pythonlibs"]
-run = "python3 main.py"
-
-[nix]
-channel = "stable-23_05"
-
-[deployment]
-run = ["sh", "-c", "python3 main.py"]
-deploymentTarget = "cloudrun"</pre>
-<p>若需要執行動態 cmsimde 倉儲中的內容編輯網站, 則可在 Shell tag 安裝所需模組:</p>
-<p>pip install flask flask_cors bs4 lxml pelican markdown gevent</p><br />setup << <a href='setup.html'>Previous</a> <a href='MSD.html'>Next</a> >> MSD</div>
+<p></p>
+<p></p><br />setup << <a href='setup.html'>Previous</a> <a href='MSD.html'>Next</a> >> MSD</div>
         
     <!-- footer -->
       <div class="container">
