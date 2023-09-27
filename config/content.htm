@@ -399,7 +399,82 @@ deploymentTarget = "cloudrun"</pre>
 <p><a href="https://twiki.cern.ch/twiki/pub/Main/CollaborativeProjects/7_Application_-_1.pdf">Runge-Kutta Method</a>:</p>
 <p style="padding-left: 30px;"><a href="https://www.researchgate.net/publication/340027249_Developments_in_Runge-Kutta_Method_to_Solve_Ordinary_Differential_Equations">Developments in Runge–Kutta Method to Solve Ordinary Differential Equations</a></p>
 <p style="padding-left: 30px;"><a href="https://www.me.psu.edu/cimbala/Learning/General/Runge_Kutta_Technique.pdf">https://www.me.psu.edu/cimbala/Learning/General/Runge_Kutta_Technique.pdf</a></p>
-<p style="padding-left: 30px;"><a href="https://homepage.math.uiowa.edu/~atkinson/papers/NAODE_Book.pdf">NUMERICAL SOLUTION OF ORDINARY DIFFERENTIAL EQUATIONS</a> (from one of the authors)</p><h3>clang</h3>
+<p style="padding-left: 30px;"><a href="https://homepage.math.uiowa.edu/~atkinson/papers/NAODE_Book.pdf">NUMERICAL SOLUTION OF ORDINARY DIFFERENTIAL EQUATIONS</a> (from one of the authors)</p>
+<hr/>
+<p>將 euler_gnuplot_msd_ex1.c 存入 downloads 目錄, 然後在 replit.nix 中進行 C 與 gnuplot 套件的設置:</p>
+<p>replit.nix 設定內容:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">{ pkgs }: {
+    deps = [
+  pkgs.qtile
+  pkgs.sudo
+  pkgs.clang_12
+        pkgs.ccls
+        pkgs.gdb
+        pkgs.gnumake
+        pkgs.gnuplot
+    ];
+}</pre>
+<p>euler_gnuplot_msd_ex1.c 程式內容:</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">// 包含標準輸出入程式庫的標頭文件
+#include &lt;stdio.h&gt;
+
+// 主函式
+int main() {
+    // Open a file to write displacement and velocity data
+    FILE *outputFile = fopen("motion_data.txt", "w");
+    if (!outputFile) {
+        fprintf(stderr, "Failed to create data file.\n");
+        return 1;
+    }
+
+    // Simulate motion for 10 seconds and calculate displacement and velocity, while writing data to the file
+    double x = 0.2;  // Initial displacement
+    double v = 0.0;  // Initial velocity
+    double dt = 0.01; // Time step
+    double t = 0.0;  // Time
+
+    while (t &lt;= 10.0) {
+        double acceleration = (-10.0 * x - 0.5 * v) / 1.0; // Modified system parameters here
+        v += acceleration * dt;
+        x += v * dt;
+
+        fprintf(outputFile, "%lf %lf %lf\n", t, x, v);
+
+        t += dt;
+    }
+
+    // Close the data file
+    fclose(outputFile);
+
+    // Start a Gnuplot process using popen
+    FILE *gnuplotPipe = popen("gnuplot -persistent", "w");
+    if (!gnuplotPipe) {
+        fprintf(stderr, "Failed to start Gnuplot.\n");
+        return 1;
+    }
+
+    // Use Gnuplot plotting commands, specify font and output as PNG
+    fprintf(gnuplotPipe, "set terminal pngcairo enhanced font 'default,10' size 800,400\n");
+    fprintf(gnuplotPipe, "set output './../images/motion_plot.png'\n");
+    fprintf(gnuplotPipe, "set title 'Displacement and Velocity vs. Time'\n");
+    fprintf(gnuplotPipe, "set xlabel 'Time (s)'\n");
+    fprintf(gnuplotPipe, "set ylabel 'Displacement (m)'\n");
+    fprintf(gnuplotPipe, "plot 'motion_data.txt' using 1:2 with lines lw 2 title 'Displacement', \
+                             'motion_data.txt' using 1:3 with lines lw 2 title 'Velocity'\n");
+
+    // Close the Gnuplot process
+    fprintf(gnuplotPipe, "exit\n");
+    pclose(gnuplotPipe);
+
+    return 0;
+}
+</pre>
+<p>在 Shell 工具頁面:</p>
+<p>cd downloads</p>
+<p>cc euler_gnuplot_msd_ex1.c</p>
+<p>經過編譯與連結後取得 a.out</p>
+<p>然後利用 ./a.out 執行, 就可以在 images 目錄下得到 mass-spring-damper 微分運動方程式採 Euler's Method 模擬數值分析結果, motion_plot.png:</p>
+<p><img alt="" height="200" src="/images/motion_plot.png" width="400"/></p><h3>clang</h3>
 <p>以下為與 clang 有關的進階自學內容:</p>
 <p><a href="https://opensource.apple.com/source/clang/clang-23/clang/tools/clang/www/comparison.html">clang 與其他開源編譯器的比較</a></p>
 <p>安裝 clang (801MB) 與 valgrind (91.8MB):</p>
