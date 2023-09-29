@@ -453,7 +453,10 @@ int main() {
 <p>cc euler_gnuplot_msd_ex1.c</p>
 <p>經過編譯與連結後取得 a.out</p>
 <p>然後利用 ./a.out 執行, 就可以在 images 目錄下得到 mass-spring-damper 微分運動方程式採 Euler's Method 模擬數值分析結果, motion_plot.png:</p>
-<p><img alt="" height="200" src="/images/motion_plot.png" width="400"/></p><h3>clang</h3>
+<p><img alt="" height="200" src="/images/motion_plot.png" width="400"/></p>
+<p>假如程式中需要使用數學函數運算則可 #include &lt;math.h&gt;, 並在編譯時納入 -lm, 亦即連結數程式庫.</p>
+<p>cc ex_with_math.c -lm -o ex_with_math</p>
+<p>然後以 ./ex_with_math 執行</p><h3>clang</h3>
 <p>以下為與 clang 有關的進階自學內容:</p>
 <p><a href="https://opensource.apple.com/source/clang/clang-23/clang/tools/clang/www/comparison.html">clang 與其他開源編譯器的比較</a></p>
 <p>安裝 clang (801MB) 與 valgrind (91.8MB):</p>

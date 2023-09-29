@@ -263,7 +263,10 @@ int main() {
 <p>cc euler_gnuplot_msd_ex1.c</p>
 <p>經過編譯與連結後取得 a.out</p>
 <p>然後利用 ./a.out 執行, 就可以在 images 目錄下得到 mass-spring-damper 微分運動方程式採 Euler's Method 模擬數值分析結果, motion_plot.png:</p>
-<p><img alt="" height="200" src="./../images/motion_plot.png" width="400"/></p><br />replit << <a href='replit.html'>Previous</a> <a href='clang.html'>Next</a> >> clang</div>
+<p><img alt="" height="200" src="./../images/motion_plot.png" width="400"/></p>
+<p>假如程式中需要使用數學函數運算則可 #include &lt;math.h&gt;, 並在編譯時納入 -lm, 亦即連結數程式庫.</p>
+<p>cc ex_with_math.c -lm -o ex_with_math</p>
+<p>然後以 ./ex_with_math 執行</p><br />replit << <a href='replit.html'>Previous</a> <a href='clang.html'>Next</a> >> clang</div>
         
     <!-- footer -->
       <div class="container">
