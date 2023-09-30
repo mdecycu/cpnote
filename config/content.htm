@@ -259,8 +259,9 @@ $dnsServers = "2001:b000:168::1", "2001:b000:168::2"
 Set-DnsClientServerAddress -InterfaceAlias "*" -ServerAddresses $dnsServers
 </pre>
 <p></p><h2>replit</h2>
-<p><a href="https://docs.replit.com/">https://docs.replit.com/</a> </p>
-<p>建立 yengm (at gm.nfu) 帳號, for Replit <a href="https://replit.com/site/teams-for-education">Teams for Education</a>.</p>
+<p><a href="https://docs.replit.com/">https://docs.replit.com/</a></p>
+<p>將 GitHub cmsimde 倉儲導入 Replit 的方法, 請參考 <a href="https://mde.tw/cadnote/content/Replit.html">https://mde.tw/cadnote/content/Replit.html</a> 中的說明.</p>
+<p>備註：建立 yengm (at gm.nfu) 帳號, for Replit <a href="https://replit.com/site/teams-for-education">Teams for Education</a>.</p>
 <p>在 Replit C 程式環境中額外納入 gnuplot 套件的 replit.nix 設定:</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">{ pkgs }: {
 	deps = [
@@ -333,12 +334,12 @@ int main() {
 }</pre>
 <p></p>
 <p></p><h2>MSD</h2>
-<p>學習要點:</p>
-<p style="padding-left: 30px;">何謂微分方程式?何謂常微分方程式?</p>
-<p style="padding-left: 30px;">為何要解出系統運動方程式的結果?</p>
+<p>學習要點(以下各項提問, 可以透過與 ChatGPT 的對話, 取得相關參考內容):</p>
+<p style="padding-left: 30px;">何謂微分方程式(Differential Equations)?何謂常微分方程式(Ordinary Differential Equations)?</p>
+<p style="padding-left: 30px;">為何要解出系統運動方程式(System Equations of Motion)的結果?</p>
 <p style="padding-left: 30px;">何謂牛頓運動定律?</p>
 <p style="padding-left: 30px;">工程師通常可以採甚麼方法解常微分方程式?</p>
-<p style="padding-left: 30px;">何謂數值分析?與計算機程式有何關聯?</p>
+<p style="padding-left: 30px;">何謂數值分析(Numerical Analysis)?與計算機程式有何關聯?</p>
 <p style="padding-left: 30px;">工程師為什麼要在網頁中呈現系統的分析過程?</p>
 <p style="padding-left: 30px;">何謂 Euler's Method?</p>
 <p style="padding-left: 30px;">為什麼可以利用 Euler's Method 解常微分方程式?</p>
@@ -348,7 +349,7 @@ int main() {
 <p style="padding-left: 30px;">Runge-Kutta Method 是如何推導出來的?</p>
 <p style="padding-left: 30px;">為什麼要利用計算機程式語言, 採數值分析法解系統的運動方程式?</p>
 <p style="padding-left: 30px;">工程師在設計產品之前的理論分析重要嗎?</p>
-<p>Mass-Spring-Damper 是一個典型的物理模型, 由質量-彈簧-阻尼器等三個元件組成, 若將彈簧其拉力與變形量成正比, 而阻尼器的阻力大小則與其受力方向的速度成正比, 根據牛頓運動定律, 就可以從物理模型的自由體圖導入系統的運動方程式. 接下來就要利用計算機程式, 解此一系統的微分方程式.</p>
+<p>Mass-Spring-Damper 是一個典型的物理模型, 由質量-彈簧-阻尼器等三個元件組成, 若將彈簧其拉力與變形量成正比, 若假設阻尼器的阻力大小則與其受力方向的速度成正比, 根據牛頓運動定律, 就可以從物理模型的自由體圖導入系統的運動方程式. 接下來就要利用計算機程式, 解此一系統的微分方程式.</p>
 <p>計算機程式課程主要從基本的 C 語法開始, 設法利用數值分析法解簡單的 <a href="https://en.wikipedia.org/wiki/Mass-spring-damper_model">mass-spring-damper</a> 運動方程式, 並將質量運動的位移與速度, 以 Gnuplot 畫出後, 將 C 程式改寫為 Javascript, 以便能直接將質量運動的位移與速度圖顯示在網頁中.</p>
 <p><img caption="false" height="159" src="/images/mass_spring_damper.png" width="250"/></p>
 <p>in png:</p>
@@ -457,6 +458,7 @@ int main() {
 <p>假如程式中需要使用數學函數運算則可 #include &lt;math.h&gt;, 並在編譯時納入 -lm, 亦即連結數程式庫.</p>
 <p>cc ex_with_math.c -lm -o ex_with_math</p>
 <p>然後以 ./ex_with_math 執行</p><h3>clang</h3>
+<p>利用 cc 執行編譯 C程式, 請參考 <a href="https://replit.com/@wcms/cjavascriptpython?v=1#README.txt">https://replit.com/@wcms/cjavascriptpython?v=1#README.txt</a> </p>
 <p>以下為與 clang 有關的進階自學內容:</p>
 <p><a href="https://opensource.apple.com/source/clang/clang-23/clang/tools/clang/www/comparison.html">clang 與其他開源編譯器的比較</a></p>
 <p>安裝 clang (801MB) 與 valgrind (91.8MB):</p>
@@ -469,8 +471,7 @@ int main() {
 <p>References:</p>
 <p style="padding-left: 30px;"><a href="https://cs.indstate.edu/wiki/index.php/C_Programming_-_Getting_Started">https://cs.indstate.edu/wiki/index.php/C_Programming_-_Getting_Started</a></p>
 <p style="padding-left: 30px;"><a href="https://en.wikipedia.org/wiki/Clang">https://en.wikipedia.org/wiki/Clang</a></p>
-<p style="padding-left: 30px;"><a href="https://valgrind.org/">https://valgrind.org/</a></p>
-<h3>編譯範例</h3>
+<p style="padding-left: 30px;"><a href="https://valgrind.org/">https://valgrind.org/</a></p><h3>編譯範例</h3>
 <p>以下為 C++ 原始碼進階自學編譯範例:</p>
 <p>先建立 msys64 可攜系統:</p>
 <p style="padding-left: 30px;">下載 <a href="https://www.msys2.org/">https://www.msys2.org/</a> 安裝後, 將 C:\msys64_20230718, 複製到 Y:\msys64_20230718</p>
@@ -483,6 +484,7 @@ int main() {
 <p style="padding-left: 90px;">pacman -S mingw-w64-x86_64-cmake</p>
 <p>下載 <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EQHpkbGf-iFAnvQpjr6YpvoBT5IGyhc7zkRFldLb9gzumQ?e=07fTJm">msys64_20230718_cmake.7z</a> (需要下載密碼)</p>
 <p>編譯 Solvespace:</p>
+<p style="padding-left: 30px;"><a href="https://solvespace.com/index.pl">Solvespace</a> 是一套小型的開放源參數式電腦輔助設計與繪圖軟體.</p>
 <p style="padding-left: 30px;">git clone --recurse-submodules https://github.com/solvespace/solvespace.git<br/><br/>cd solvespace<br/><br/>git checkout v3.1<br/><br/>mkdir build<br/><br/>cd build<br/><br/>cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release<br/><br/>mingw32-make</p>
 <p style="padding-left: 30px;">下載 <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EbxAx7kkFERGiND16jP2KG4BFt6XH7EojD5_39uk8qWihw?e=tZF6NP">solvespace_src_compiled.7z</a> (需要下載密碼)</p>
 <p>利用 MSYS2 編譯 SciTE 編輯器:</p>
@@ -495,8 +497,7 @@ int main() {
 <p style="padding-left: 60px;">get SciTE.exe under scite\bin</p>
 <p style="padding-left: 30px;">need extra libgcc_s_seh-1.dll, libstdc++-6.dll and libwinpthread-1.dll along with <span>Scintilla.dll and </span><span>SciLexer.dll </span>to execute SciTE.exe</p>
 <p style="padding-left: 30px;">下載 <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/Eai7ZaPaDzdLjObSeCYpSJoBYSyLEEq8iREAsArUVycgug?e=W7PA7x">SciTE537_src_compiled.7z</a> (需要下載密碼)</p>
-<p>SciTE properties files: <a href="http://wcm.cycu.org:88/github/cad2019/downloads/SciTE_properties_files.7z">SciTE_properties_files.7z</a></p>
-<h1>課程評分</h1>
+<p>SciTE properties files: <a href="http://wcm.cycu.org:88/github/cad2019/downloads/SciTE_properties_files.7z">SciTE_properties_files.7z</a></p><h1>課程評分</h1>
 <p>課程評分:</p>
 <p style="padding-left: 30px;">線上測驗、期中網站與簡報、期末網站與簡報.</p>
 <p>線上測驗:</p>
