@@ -6,6 +6,18 @@
 // https://docs.google.com/presentation/d/14N0cWG2SnBSqhc2cLF0_2VerB9FF8JN3
 // https://cs61c.org/fa23/
 // https://greenteapress.com/wp/think-python-2e/
+// https://github.com/ecalvadi/c99-examples
+// https://github.com/gouravthakur39/beginners-C-program-examples
+// https://github.com/ergenekonyigit/Numerical-Analysis-Examples
+// https://www.che.ncku.edu.tw/facultyweb/changct/html/teaching/CPPandMATLAB/Past/pdf%20Files/Chap02-Ling.pdf
+// https://gteceducation.com.sg/Brochures/PROGRAMMING/C%20PROGRAMMING%20FULL.pdf
+// https://jsommers.github.io/cbook/cbook.pdf
+// https://jsommers.github.io/cbook/index.html
+// http://student.itee.uq.edu.au/courses/csse2310/CProgrammingNotes.pdf
+// http://cslibrary.stanford.edu/101/EssentialC.pdf
+// https://publications.gbdirect.co.uk/c_book/
+// https://www.fossil-scm.org/fossil-book/doc/2ndEdition/fossilbook.pdf
+// ***** execute on replit 
 // cd downloads
 // cc gnuplot_ex1.c -o gnuplot_ex1
 // ./gnuplot_ex1
