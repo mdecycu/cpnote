@@ -37,13 +37,13 @@ int main() {
     }
 
     // Use Gnuplot plotting commands, specify font and output as PNG
-    fprintf(gnuplotPipe, "set terminal png font 'wqy-microhei.ttc,12' size 800,400\n");
+    fprintf(gnuplotPipe, "set terminal png font './wqy-microhei.ttc,12' size 800,400\n");
     fprintf(gnuplotPipe, "set output './../images/motion_plot.png'\n");
-    fprintf(gnuplotPipe, "set title '移與速度 vs. 時間'\n");
-    fprintf(gnuplotPipe, "set xlabel '間 (s)'\n");
-    fprintf(gnuplotPipe, "set ylabel '移 (m)'\n");
-    fprintf(gnuplotPipe, "plot 'motion_data.txt' using 1:2 with lines lw 2 title '移', \
-                             'motion_data.txt' using 1:3 with lines lw 2 title '玄'\n");
+    fprintf(gnuplotPipe, "set title '位移與速度 vs. 時間'\n");
+    fprintf(gnuplotPipe, "set xlabel '時間 (s)'\n");
+    fprintf(gnuplotPipe, "set ylabel '位移 (m)'\n");
+    fprintf(gnuplotPipe, "plot 'motion_data.txt' using 1:2 with lines lw 2 title '位移', \
+                             'motion_data.txt' using 1:3 with lines lw 2 title '速度'\n");
 
     // Close the Gnuplot process
     fprintf(gnuplotPipe, "exit\n");
