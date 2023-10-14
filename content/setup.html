@@ -145,6 +145,7 @@ img.add_border {
     <div id="tipue_search_content">w2-w5 << <a href='w2-w5.html'>Previous</a> <a href='replit.html'>Next</a> >> replit<br /><h1>setup</h1>
 <p>利用隨身碟中的批次檔案, 設定所需的網路環境.</p>
 <p><a href="./../downloads/cadlab_network_setup.7z">cadlab_network_setup.7z</a></p>
+<p>納入個別學員所分配到的 IPv6 固定網址設定: <a href="./../downloads/2023_fall_cadlab_network_setup.7z">2023_fall_cadlab_network_setup.7z</a></p>
 <p>1_network_setup.bat (需要管理者身分執行, 才能關閉 IPv4 網路, 啟動 IPv6 網路)</p>
 <pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">echo "disable ipv4 and setup proxy for ipv6"
 SET CurrentDir=%~dp0
@@ -163,7 +164,7 @@ exit</pre>
 ; enable Proxy
 "ProxyEnable"=dword:00000001 
 "ProxyHttp1.1"=dword:00000000 
-"ProxyServer"="http://[2001:288:6004:17::69]:3128"
+"ProxyServer"="http://[2001:288:6004:17::4]:3128"
 "ProxyOverride"="localhost;192.168.1.0/24;&lt;local&gt;"</pre>
 <p>1_disable_ipv4.ps1 用於關閉 IPv4 網路協定, 開啟 IPv6 網路協定.</p>
 <p>對 ChatGPT 提問:</p>
@@ -181,6 +182,33 @@ Enable-NetAdapterBinding -Name "*" -ComponentID ms_tcpip6
 # 設置 IPv6 網路中的兩個 DNS 伺服器 (hinet)
 $dnsServers = "2001:b000:168::1", "2001:b000:168::2"
 Set-DnsClientServerAddress -InterfaceAlias "*" -ServerAddresses $dnsServers
+</pre>
+<p>加上個別學員所分配到的 IPv6 固定網址設定後的 1_disable_ipv4.ps1 Powershell 設定檔案 (必須自行更改固定 Ipv6 位址):</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false"># 關閉 IPv4 網路
+Disable-NetAdapterBinding -Name "*" -ComponentID ms_tcpip
+ 
+# 啟用 IPv6 網路
+Enable-NetAdapterBinding -Name "*" -ComponentID ms_tcpip6
+ 
+# 設置 IPv6 網路中的兩個 DNS 伺服器 (hinet)
+$dnsServers = "2001:b000:168::1", "2001:b000:168::2"
+Set-DnsClientServerAddress -InterfaceAlias "*" -ServerAddresses $dnsServers
+
+
+# 設定 IPv6 固定位址 (fixed address), 子網路首碼長度 (subnet prefix) 與網路預設閘道 (gateway) 等三個變數
+$ipv6Address = "2001:288:6004:17:your_ipv6_address"
+$subnetPrefixLength = 64
+$gateway = "2001:288:6004:17::254"
+
+# 利用前述變數設定電腦的 IPv6 網路通訊協定 (固定位址與子網路首碼長度)
+New-NetIPAddress -InterfaceAlias "*" -IPAddress $ipv6Address -PrefixLength $subnetPrefixLength
+
+# 利用前述變數設定 IPv6 網路通訊協定中的預設閘道
+Set-NetRoute -InterfaceAlias "*" -NextHop $gateway -DestinationPrefix "::/0"
+
+# 列出所使用的 IPv6 網路通訊協定內容
+Write-Host "IPv6 Address: $ipv6Address/$subnetPrefixLength"
+Write-Host "IPv6 Gateway: $gateway"
 </pre>
 <p></p><br />w2-w5 << <a href='w2-w5.html'>Previous</a> <a href='replit.html'>Next</a> >> replit</div>
         
