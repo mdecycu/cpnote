@@ -131,7 +131,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li class='has-children'><a href='上課內容.html'>上課內容</a><ul class='dropdown'><li><a href='w2-w5.html'>w2-w5</a><li><a href='setup.html'>setup</a><li><a href='replit.html'>replit</a><li class='has-children'><a href='MSD.html'>MSD</a><ul class='dropdown'><li><a href='clang.html'>clang</a><li><a href='編譯範例.html'>編譯範例</a></li></li></ul></ul><li><a href='課程評分.html'>課程評分</a><li class='has-children'><a href='課程主題.html'>課程主題</a><ul class='dropdown'><li class='has-children'><a href='數位環境與資源.html'>數位環境與資源</a><ul class='dropdown'><li><a href='上課系統.html'>上課系統</a></li></ul><li class='has-children'><a href='程式能力.html'>程式能力</a><ul class='dropdown'><li><a href='程式語言.html'>程式語言</a><li><a href='ANSI C.html'>ANSI C</a><li><a href='on_linux.html'>on_linux</a><li><a href='on_windows.html'>on_windows</a><li><a href='python.html'>python</a></li></ul><li class='has-children'><a href='開發工具.html'>開發工具</a><ul class='dropdown'><li><a href='程式專案.html'>程式專案</a><li><a href='課程座次.html'>課程座次</a></li></ul><li><a href='課程總結.html'>課程總結</a></li></ul><li><a href='QandA.html'>QandA</a><li><a href='Brython.html'>Brython</a></li>
+                     <li><a href='About.html'>About</a><li class='has-children'><a href='上課內容.html'>上課內容</a><ul class='dropdown'><li><a href='w2-w5.html'>w2-w5</a><li><a href='w6.html'>w6</a><li><a href='setup.html'>setup</a><li><a href='replit.html'>replit</a><li class='has-children'><a href='MSD.html'>MSD</a><ul class='dropdown'><li><a href='clang.html'>clang</a><li><a href='編譯範例.html'>編譯範例</a></li></li></ul></ul><li><a href='課程評分.html'>課程評分</a><li class='has-children'><a href='課程主題.html'>課程主題</a><ul class='dropdown'><li class='has-children'><a href='數位環境與資源.html'>數位環境與資源</a><ul class='dropdown'><li><a href='上課系統.html'>上課系統</a></li></ul><li class='has-children'><a href='程式能力.html'>程式能力</a><ul class='dropdown'><li><a href='程式語言.html'>程式語言</a><li><a href='ANSI C.html'>ANSI C</a><li><a href='on_linux.html'>on_linux</a><li><a href='on_windows.html'>on_windows</a><li><a href='python.html'>python</a></li></ul><li class='has-children'><a href='開發工具.html'>開發工具</a><ul class='dropdown'><li><a href='程式專案.html'>程式專案</a><li><a href='課程座次.html'>課程座次</a></li></ul><li><a href='課程總結.html'>課程總結</a></li></ul><li><a href='QandA.html'>QandA</a><li><a href='Brython.html'>Brython</a></li>
                       </ul>
                 </nav>
               </div>
@@ -142,7 +142,7 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">w2-w5 << <a href='w2-w5.html'>Previous</a> <a href='replit.html'>Next</a> >> replit<br /><h1>setup</h1>
+    <div id="tipue_search_content">w6 << <a href='w6.html'>Previous</a> <a href='replit.html'>Next</a> >> replit<br /><h1>setup</h1>
 <p>利用隨身碟中的批次檔案, 設定所需的網路環境.</p>
 <p><a href="./../downloads/cadlab_network_setup.7z">cadlab_network_setup.7z</a></p>
 <p>納入個別學員所分配到的 IPv6 固定網址設定: <a href="./../downloads/2023_fall_cadlab_network_setup.7z">2023_fall_cadlab_network_setup.7z</a></p>
@@ -183,6 +183,9 @@ Enable-NetAdapterBinding -Name "*" -ComponentID ms_tcpip6
 $dnsServers = "2001:b000:168::1", "2001:b000:168::2"
 Set-DnsClientServerAddress -InterfaceAlias "*" -ServerAddresses $dnsServers
 </pre>
+<p>對 ChatGPT 提問:</p>
+<p style="padding-left: 30px;">the following powershell script can setup windows network connection "# 關閉 IPv4 網路<br/>Disable-NetAdapterBinding -Name "*" -ComponentID ms_tcpip<br/> <br/># 啟用 IPv6 網路<br/>Enable-NetAdapterBinding -Name "*" -ComponentID ms_tcpip6<br/> <br/># 設置 IPv6 網路中的兩個 DNS 伺服器 (hinet)<br/>$dnsServers = "2001:b000:168::1", "2001:b000:168::2"<br/>Set-DnsClientServerAddress -InterfaceAlias "*" -ServerAddresses $dnsServers" what if the ipv6 address need set to 2001:288:6004:17:1234::1234 and subnet prefix as 64 and ipv6 gateway as 2001:288:6004:17::254</p>
+<p>可以得到下列回應答案:</p>
 <p>加上個別學員所分配到的 IPv6 固定網址設定後的 1_disable_ipv4.ps1 Powershell 設定檔案 (必須自行更改固定 Ipv6 位址):</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false"># 關閉 IPv4 網路
 Disable-NetAdapterBinding -Name "*" -ComponentID ms_tcpip
@@ -210,7 +213,7 @@ Set-NetRoute -InterfaceAlias "*" -NextHop $gateway -DestinationPrefix "::/0"
 Write-Host "IPv6 Address: $ipv6Address/$subnetPrefixLength"
 Write-Host "IPv6 Gateway: $gateway"
 </pre>
-<p></p><br />w2-w5 << <a href='w2-w5.html'>Previous</a> <a href='replit.html'>Next</a> >> replit</div>
+<p></p><br />w6 << <a href='w6.html'>Previous</a> <a href='replit.html'>Next</a> >> replit</div>
         
     <!-- footer -->
       <div class="container">

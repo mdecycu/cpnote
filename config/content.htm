@@ -208,7 +208,7 @@ command.go.*.c=$(cc) $(FileNameExt)</pre>
 }</pre>
 <p style="padding-left: 30px;">之後將所練習的 C 程式置於 downloads 目錄中, 其執行影像結果存入 images 後, 分別在網頁中引用.</p>
 <p>Exercises:</p>
-<p>請從 <a href="https://nfuedu-my.sharepoint.com/:b:/g/personal/yen_nfu_edu_tw/EWd1cR2zOStOjVSduSw6pQMBv1fB6tWu-P9qfVH2YxbDPw?e=uOZW7N">jsliu_c_programming.pdf</a> (需要下載密碼)與 <a href="https://link.springer.com/content/pdf/10.1007/978-1-4842-5064-8_1.pdf?pdf=inline%20link">Introduction to C</a> (經由校園網路或 VPN 下載)電子書中擷取 C 程式範例, 分別:</p>
+<p>請從 <a href="https://nfuedu-my.sharepoint.com/:b:/g/personal/yen_nfu_edu_tw/EWd1cR2zOStOjVSduSw6pQMBv1fB6tWu-P9qfVH2YxbDPw?e=uOZW7N">jsliu_c_programming.pdf</a> (需要下載密碼)與 <a href="https://link.springer.com/content/pdf/10.1007/978-1-4842-5064-8_1.pdf?pdf=inline%20link">Introduction to C</a> (經由校園網路或 VPN 下載)電子書中各擷取 10 個 C 程式範例, 分別:</p>
 <ol>
 <li>在可攜程式環境中以 SciTE + Tiny C Compiler 編譯系統, 使用 Tools - Go 類編譯方式執行.</li>
 <li>在可攜程式環境中以 SciTE + Tiny C Compiler 編譯系統, 使用 Tools - Compile 編譯連結後取得 a.out, 然後在命令列中以 a.out 執行.</li>
@@ -244,7 +244,28 @@ total = this_is_a_number1 + this_is_a_number2;/* add two numbers */
 printf("total is %d\n", total);
 return 0;
 }</pre>
-<p style="padding-left: 30px;"></p><h2>setup</h2>
+<p style="padding-left: 30px;"></p><h2>w6</h2>
+<p>建立線上考試題目</p>
+<p>各學員評分倉儲與網站的內容維護</p>
+<p style="padding-left: 30px;">SMap</p>
+<p style="padding-left: 30px;">EditA</p>
+<p style="padding-left: 30px;">Edit</p>
+<p style="padding-left: 30px;">Config</p>
+<p style="padding-left: 30px;">Search</p>
+<p style="padding-left: 30px;">IUpload</p>
+<p style="padding-left: 30px;">IList</p>
+<p style="padding-left: 30px;">FUpload</p>
+<p style="padding-left: 30px;">FList</p>
+<p style="padding-left: 30px;">Logout</p>
+<p style="padding-left: 30px;">Convert</p>
+<p>C 程式練習一:</p>
+<p style="padding-left: 30px;"><span>請從 </span><a href="https://www.w3resource.com/c-programming-exercises/">https://www.w3resource.com/c-programming-exercises/</a><span><span> </span>網頁中自選 10 個練習範例, 分別在 Replit, Windows 與 Linux (or macOS) 中執行後, 取下執行畫面放入個人的 Github Pages 網頁 (即帳號.github.io 網站), 以 <span style="background-color: #ffff00;">ANSIC</span> 作為頁面標題並詳細說明每一行的程式語法.</span></p>
+<p><span>C 程式練習二:</span></p>
+<p style="padding-left: 30px;">請從 <a href="https://nfuedu-my.sharepoint.com/:b:/g/personal/yen_nfu_edu_tw/EWd1cR2zOStOjVSduSw6pQMBv1fB6tWu-P9qfVH2YxbDPw?e=uOZW7N">jsliu_c_programming.pdf</a><span> </span>(需要下載密碼)與 <a href="https://link.springer.com/content/pdf/10.1007/978-1-4842-5064-8_1.pdf?pdf=inline%20link">Introduction to C</a> (經由校園網路或 VPN 下載)電子書中各擷取 10 個 C 程式範例, 分別:</p>
+<p style="padding-left: 30px;">1. 在可攜程式環境中以 SciTE + Tiny C Compiler 編譯系統, 使用 Tools - Go 類編譯方式執行.</p>
+<p style="padding-left: 30px;">2. 在可攜程式環境中以 SciTE + Tiny C Compiler 編譯系統, 使用 Tools - Compile 編譯連結後取得 a.out, 然後在命令列中以 a.out 執行.</p>
+<p style="padding-left: 30px;">3. 在 Replit 全球資訊網 IDE 環境中的 Shell 頁面, 以 cc ex1.c 產生可執行檔案 a.out, 並以 ./a.out 執行, 或者以 cc ex1.c -o ex1 指定編譯連結後的可執行檔案名稱為 ex1 後, 以 ./ex1 執行.</p>
+<p style="padding-left: 30px;">最後將所選擇的 C 程式範例執行過程與相關說明內容, 整理在<span>個人 github 帳號下的 cp2023 倉儲網頁</span>中的 <span style="background-color: #ffff00;">c_ex</span> 頁面中.</p><h2>setup</h2>
 <p>利用隨身碟中的批次檔案, 設定所需的網路環境.</p>
 <p><a href="/downloads/cadlab_network_setup.7z">cadlab_network_setup.7z</a></p>
 <p>納入個別學員所分配到的 IPv6 固定網址設定: <a href="/downloads/2023_fall_cadlab_network_setup.7z">2023_fall_cadlab_network_setup.7z</a></p>
@@ -285,6 +306,9 @@ Enable-NetAdapterBinding -Name "*" -ComponentID ms_tcpip6
 $dnsServers = "2001:b000:168::1", "2001:b000:168::2"
 Set-DnsClientServerAddress -InterfaceAlias "*" -ServerAddresses $dnsServers
 </pre>
+<p>對 ChatGPT 提問:</p>
+<p style="padding-left: 30px;">the following powershell script can setup windows network connection "# 關閉 IPv4 網路<br/>Disable-NetAdapterBinding -Name "*" -ComponentID ms_tcpip<br/> <br/># 啟用 IPv6 網路<br/>Enable-NetAdapterBinding -Name "*" -ComponentID ms_tcpip6<br/> <br/># 設置 IPv6 網路中的兩個 DNS 伺服器 (hinet)<br/>$dnsServers = "2001:b000:168::1", "2001:b000:168::2"<br/>Set-DnsClientServerAddress -InterfaceAlias "*" -ServerAddresses $dnsServers" what if the ipv6 address need set to 2001:288:6004:17:1234::1234 and subnet prefix as 64 and ipv6 gateway as 2001:288:6004:17::254</p>
+<p>可以得到下列回應答案:</p>
 <p>加上個別學員所分配到的 IPv6 固定網址設定後的 1_disable_ipv4.ps1 Powershell 設定檔案 (必須自行更改固定 Ipv6 位址):</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false"># 關閉 IPv4 網路
 Disable-NetAdapterBinding -Name "*" -ComponentID ms_tcpip
@@ -541,6 +565,10 @@ int main() {
 <p style="padding-left: 30px;"><a href="https://solvespace.com/index.pl">Solvespace</a> 是一套小型的開放源參數式電腦輔助設計與繪圖軟體.</p>
 <p style="padding-left: 30px;">git clone --recurse-submodules https://github.com/solvespace/solvespace.git<br/><br/>cd solvespace<br/><br/>git checkout v3.1<br/><br/>mkdir build<br/><br/>cd build<br/><br/>cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release<br/><br/>mingw32-make</p>
 <p style="padding-left: 30px;">下載 <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EbxAx7kkFERGiND16jP2KG4BFt6XH7EojD5_39uk8qWihw?e=tZF6NP">solvespace_src_compiled.7z</a> (需要下載密碼)</p>
+<p style="padding-left: 30px;">在 Windows 若無法以 https 取下 github.com 中的倉儲資料, 可以在 .gitconfig 中加上:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">[http "https://github.com"]
+sslVerify = false</pre>
+<p style="padding-left: 30px;">表示不使用 Windows 的 SChannel API 進行認證, 轉而使用 OpenSSL handshake 認證.</p>
 <p>利用 MSYS2 編譯 SciTE 編輯器:</p>
 <p style="padding-left: 30px;">從 <a href="https://www.scintilla.org/SciTE.html">https://www.scintilla.org/SciTE.html</a> 下載 Scite 原始碼.</p>
 <p style="padding-left: 30px;">cd scintilla\win32</p>
