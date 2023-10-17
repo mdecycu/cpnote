@@ -262,18 +262,18 @@ return 0;
 <p style="padding-left: 30px;">1a 學員展示用 IPv6 位址: 2001:288:6004:17:2023:cpa::<a href="https://mde.tw/cpnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9215c7c160119721ded887018cda8f4e/raw/593a8e462e0d8e7996f0bca3dd922adfdd4962e0/generate_cp2023_1a_site_repo.py">班級名單序號</a></p>
 <p style="padding-left: 30px;"><span>2b 學員展示用 IPv6 位址: 2001:288:6004:17:2023:cpb::</span><a href="https://mde.tw/cpnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9215c7c160119721ded887018cda8f4e/raw/593a8e462e0d8e7996f0bca3dd922adfdd4962e0/generate_cp2023_1b_site_repo.py">班級名單序號</a></p>
 <p>建立線上考試題目</p>
-<p>各學員評分倉儲與網站的內容維護</p>
-<p style="padding-left: 30px;">SMap</p>
-<p style="padding-left: 30px;">EditA</p>
-<p style="padding-left: 30px;">Edit</p>
-<p style="padding-left: 30px;">Config</p>
-<p style="padding-left: 30px;">Search</p>
-<p style="padding-left: 30px;">IUpload</p>
-<p style="padding-left: 30px;">IList</p>
-<p style="padding-left: 30px;">FUpload</p>
-<p style="padding-left: 30px;">FList</p>
-<p style="padding-left: 30px;">Logout</p>
-<p style="padding-left: 30px;">Convert</p>
+<p>各學員評分倉儲與網站的內容維護 (<a href="https://nfuedu-my.sharepoint.com/:v:/g/personal/yen_nfu_edu_tw/EQW8qQv3EENEgj5tPPsII-IB2-ck9cJaTP_ghrOYrF0BLA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0RpcmVjdCJ9fQ&amp;e=hMNc0O">說明影片</a>):</p>
+<p style="padding-left: 30px;">SMap: site map 網站所有頁面</p>
+<p style="padding-left: 30px;">EditA: edit all pages, 使用時機為(1)解決多人共用網站時的衝突, 或(2)刪除特定頁面</p>
+<p style="padding-left: 30px;">Edit: edit one page, 先選頁面, 再選 Edit 然後才能進入編輯模式</p>
+<p style="padding-left: 30px;">Config: 編輯網站標題, 若要編輯 site title, 必須更改 init.py 中的 site_title 字串內容</p>
+<p style="padding-left: 30px;">Search: 頁面資料 html 原始碼內容搜尋</p>
+<p style="padding-left: 30px;">IUpload: image upload, 影像檔案上傳, 資料會放入 images 目錄中</p>
+<p style="padding-left: 30px;">IList: image file list, 列出存在 images 目錄下的影像檔案</p>
+<p style="padding-left: 30px;">FUpload: file upload, 一般檔案上傳功能, 資料會放入 downloads 目錄中</p>
+<p style="padding-left: 30px;">FList: file list, 列出位於 downloads 目錄下的檔案</p>
+<p style="padding-left: 30px;">Logout: 登出</p>
+<p style="padding-left: 30px;">Convert: 將 config/content.htm 經過分頁程式處理後, 轉為 content 目錄下的超文件</p>
 <p>C 程式練習一:</p>
 <p style="padding-left: 30px;"><span>請從 </span><a href="https://www.w3resource.com/c-programming-exercises/">https://www.w3resource.com/c-programming-exercises/</a><span><span> </span>網頁中自選 10 個練習範例, 分別在 Replit, Windows 與 Linux (or macOS) 中執行後, 取下執行畫面放入個人的 Github Pages 網頁 (即帳號.github.io 網站), 以 <span style="background-color: #ffff00;">ANSIC</span> 作為頁面標題並詳細說明每一行的程式語法.</span></p>
 <p><span>C 程式練習二:</span></p>
@@ -281,7 +281,53 @@ return 0;
 <p style="padding-left: 30px;">1. 在可攜程式環境中以 SciTE + Tiny C Compiler 編譯系統, 使用 Tools - Go 類編譯方式執行.</p>
 <p style="padding-left: 30px;">2. 在可攜程式環境中以 SciTE + Tiny C Compiler 編譯系統, 使用 Tools - Compile 編譯連結後取得 a.out, 然後在命令列中以 a.out 執行.</p>
 <p style="padding-left: 30px;">3. 在 Replit 全球資訊網 IDE 環境中的 Shell 頁面, 以 cc ex1.c 產生可執行檔案 a.out, 並以 ./a.out 執行, 或者以 cc ex1.c -o ex1 指定編譯連結後的可執行檔案名稱為 ex1 後, 以 ./ex1 執行.</p>
-<p style="padding-left: 30px;">最後將所選擇的 C 程式範例執行過程與相關說明內容, 整理在<span>個人 github 帳號下的 cp2023 倉儲網頁</span>中的 <span style="background-color: #ffff00;">c_ex</span> 頁面中.</p><h2>setup</h2>
+<p style="padding-left: 30px;">最後將所選擇的 C 程式範例執行過程與相關說明內容, 整理在<span>個人 github 帳號下的 cp2023 倉儲網頁</span>中的 <span style="background-color: #ffff00;">c_ex</span> 頁面中.</p>
+<p><a href="/downloads/gnuplot_ex1.c">gnuplot_ex1.c</a> 原始碼如下:</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">// 包含標準輸出入程式庫的標頭文件
+// https://blog.csdn.net/weixin_38468077/article/details/101069365
+// http://www.gnuplot.info/demo/
+// https://github.com/sysprog21/rv32emu
+// https://github.com/sysprog21/semu 
+// https://docs.google.com/presentation/d/14N0cWG2SnBSqhc2cLF0_2VerB9FF8JN3
+// https://cs61c.org/fa23/
+// https://greenteapress.com/wp/think-python-2e/
+// https://github.com/ecalvadi/c99-examples
+// https://github.com/gouravthakur39/beginners-C-program-examples
+// https://github.com/ergenekonyigit/Numerical-Analysis-Examples
+// https://www.che.ncku.edu.tw/facultyweb/changct/html/teaching/CPPandMATLAB/Past/pdf%20Files/Chap02-Ling.pdf
+// https://gteceducation.com.sg/Brochures/PROGRAMMING/C%20PROGRAMMING%20FULL.pdf
+// https://jsommers.github.io/cbook/cbook.pdf
+// https://jsommers.github.io/cbook/index.html
+// http://student.itee.uq.edu.au/courses/csse2310/CProgrammingNotes.pdf
+// http://cslibrary.stanford.edu/101/EssentialC.pdf
+// https://publications.gbdirect.co.uk/c_book/
+// https://www.fossil-scm.org/fossil-book/doc/2ndEdition/fossilbook.pdf
+// ***** execute on replit 
+// cd downloads
+// cc gnuplot_ex1.c -o gnuplot_ex1
+// ./gnuplot_ex1
+#include &lt;stdio.h&gt;
+ 
+// 主函式
+int main() {
+    // Start a Gnuplot process using popen
+    FILE *gnuplotPipe = popen("gnuplot -persistent", "w");
+    if (!gnuplotPipe) {
+        fprintf(stderr, "Failed to start Gnuplot.\n");
+        return 1;
+    }
+ 
+    // Use Gnuplot plotting commands, specify font and output as PNG
+    fprintf(gnuplotPipe, "set terminal png font 'default,10' size 800,400\n");
+    fprintf(gnuplotPipe, "set output './../images/gnuplot_ex1.png'\n");
+    fprintf(gnuplotPipe, "plot sin(x)");
+    // Close popen
+    pclose(gnuplotPipe);
+ 
+    return 0;
+}</pre>
+<p>執行結果位於 images:</p>
+<p><img alt="" height="200" src="/images/gnuplot_ex1.png" width="400"/></p><h2>setup</h2>
 <p>利用隨身碟中的批次檔案, 設定所需的網路環境.</p>
 <p><a href="/downloads/cadlab_network_setup.7z">cadlab_network_setup.7z</a></p>
 <p>納入個別學員所分配到的 IPv6 固定網址設定: <a href="/downloads/2023_fall_cadlab_network_setup.7z">2023_fall_cadlab_network_setup.7z</a></p>
