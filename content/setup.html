@@ -188,31 +188,27 @@ Set-DnsClientServerAddress -InterfaceAlias "*" -ServerAddresses $dnsServers
 <p>可以得到下列回應答案:</p>
 <p>加上個別學員所分配到的 IPv6 固定網址設定後的 1_disable_ipv4.ps1 Powershell 設定檔案 (必須自行更改固定 Ipv6 位址):</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false"># 關閉 IPv4 網路
-Disable-NetAdapterBinding -Name "*" -ComponentID ms_tcpip
- 
+Disable-NetAdapterBinding -Name "乙太網路 2" -ComponentID ms_tcpip
+  
 # 啟用 IPv6 網路
-Enable-NetAdapterBinding -Name "*" -ComponentID ms_tcpip6
- 
+Enable-NetAdapterBinding -Name "乙太網路 2" -ComponentID ms_tcpip6
+  
 # 設置 IPv6 網路中的兩個 DNS 伺服器 (hinet)
 $dnsServers = "2001:b000:168::1", "2001:b000:168::2"
-Set-DnsClientServerAddress -InterfaceAlias "*" -ServerAddresses $dnsServers
-
-
+Set-DnsClientServerAddress -InterfaceAlias "乙太網路 2" -ServerAddresses $dnsServers
+ 
+ 
 # 設定 IPv6 固定位址 (fixed address), 子網路首碼長度 (subnet prefix) 與網路預設閘道 (gateway) 等三個變數
-$ipv6Address = "2001:288:6004:17:your_ipv6_address"
+$ipv6Address = "2001:288:6004:17:自行修改所份配到的 IPv6 address"
 $subnetPrefixLength = 64
 $gateway = "2001:288:6004:17::254"
-
+ 
 # 利用前述變數設定電腦的 IPv6 網路通訊協定 (固定位址與子網路首碼長度)
-New-NetIPAddress -InterfaceAlias "*" -IPAddress $ipv6Address -PrefixLength $subnetPrefixLength
-
-# 利用前述變數設定 IPv6 網路通訊協定中的預設閘道
-Set-NetRoute -InterfaceAlias "*" -NextHop $gateway -DestinationPrefix "::/0"
-
+New-NetIPAddress -AddressFamily "IPv6" -InterfaceAlias "乙太網路 2" -IPAddress $ipv6Address -PrefixLength $subnetPrefixLength -DefaultGateway $gateway
+ 
 # 列出所使用的 IPv6 網路通訊協定內容
 Write-Host "IPv6 Address: $ipv6Address/$subnetPrefixLength"
-Write-Host "IPv6 Gateway: $gateway"
-</pre>
+Write-Host "IPv6 Gateway: $gateway"</pre>
 <p></p><br />w6 << <a href='w6.html'>Previous</a> <a href='replit.html'>Next</a> >> replit</div>
         
     <!-- footer -->
