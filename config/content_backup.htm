@@ -346,7 +346,9 @@ int main() {
 <p style="padding-left: 30px;"><a href="/downloads/gd_usa_flag.c">gd_usa_flag.c</a></p>
 <p style="padding-left: 30px;">目前所得到的繪圖結果如下:</p>
 <p style="padding-left: 30px;"><img alt="" height="133" src="/images/roc_flag.png" width="200"/> 與 <img caption="false" height="133" src="/images/usa_flag.png" width="253"/></p>
-<p style="padding-left: 30px;">請完成上列兩國國旗的繪製.</p><h3>replit_github</h3>
+<p style="padding-left: 30px;">請完成上列兩國國旗的繪製.</p>
+<p>進階練習:</p>
+<p style="padding-left: 30px;">C 與 gnuplot 及 gd 繪圖程式庫的結合, 除了在 Replit 平台上執行外, 如何在可攜系統中以 Tiny C Compiler 完成相同的運算與繪圖流程?</p><h3>replit_github</h3>
 <p><a href="https://mde.tw/cpnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9215c7c160119721ded887018cda8f4e/raw/ae4f22fca4d70678714fe1c5fc74cf6255a322d1/cp2023_w6_1a_elite.py">1a 完成利用 Replit 將改版資料推向 Github 學員名單</a></p>
 <p><a href="https://mde.tw/cpnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9215c7c160119721ded887018cda8f4e/raw/ae4f22fca4d70678714fe1c5fc74cf6255a322d1/cp2023_w6_1b_elite.py">1b 完成利用 Replit 將改版資料推向 Github 學員名單</a></p>
 <p>w6 上課後, 1a 已經完成 Replit 資料推向 Github 學員:</p>
@@ -651,6 +653,7 @@ int main() {
 <p style="padding-left: 60px;">安裝 CMake</p>
 <p style="padding-left: 90px;">pacman -S mingw-w64-x86_64-cmake</p>
 <p>下載 <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EQHpkbGf-iFAnvQpjr6YpvoBT5IGyhc7zkRFldLb9gzumQ?e=07fTJm">msys64_20230718_cmake.7z</a> (需要下載密碼)</p>
+<hr/>
 <p>編譯 Solvespace:</p>
 <p style="padding-left: 30px;"><a href="https://solvespace.com/index.pl">Solvespace</a> 是一套小型的開放源參數式電腦輔助設計與繪圖軟體.</p>
 <p style="padding-left: 30px;">git clone --recurse-submodules https://github.com/solvespace/solvespace.git<br/><br/>cd solvespace<br/><br/>git checkout v3.1<br/><br/>mkdir build<br/><br/>cd build<br/><br/>cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release<br/><br/>mingw32-make</p>
@@ -659,6 +662,7 @@ int main() {
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">[http "https://github.com"]
 sslVerify = false</pre>
 <p style="padding-left: 30px;">表示不使用 Windows 的 SChannel API 進行認證, 轉而使用 OpenSSL handshake 認證.</p>
+<hr/>
 <p>利用 MSYS2 編譯 SciTE 編輯器:</p>
 <p style="padding-left: 30px;">從 <a href="https://www.scintilla.org/SciTE.html">https://www.scintilla.org/SciTE.html</a> 下載 Scite 原始碼.</p>
 <p style="padding-left: 30px;">cd scintilla\win32</p>
@@ -669,7 +673,13 @@ sslVerify = false</pre>
 <p style="padding-left: 60px;">get SciTE.exe under scite\bin</p>
 <p style="padding-left: 30px;">need extra libgcc_s_seh-1.dll, libstdc++-6.dll and libwinpthread-1.dll along with <span>Scintilla.dll and </span><span>SciLexer.dll </span>to execute SciTE.exe</p>
 <p style="padding-left: 30px;">下載 <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/Eai7ZaPaDzdLjObSeCYpSJoBYSyLEEq8iREAsArUVycgug?e=W7PA7x">SciTE537_src_compiled.7z</a> (需要下載密碼)</p>
-<p>SciTE properties files: <a href="http://wcm.cycu.org:88/github/cad2019/downloads/SciTE_properties_files.7z">SciTE_properties_files.7z</a></p><h1>課程評分</h1>
+<p>SciTE properties files: <a href="http://wcm.cycu.org:88/github/cad2019/downloads/SciTE_properties_files.7z">SciTE_properties_files.7z</a></p>
+<hr/>
+<p>利用 MSYS2 編譯 Tiny C Compiler:</p>
+<p>Reference:</p>
+<p style="padding-left: 30px;"><a href="https://github.com/Tiny-C-Compiler/mirror-repository">https://github.com/Tiny-C-Compiler/mirror-repository</a> </p>
+<p style="padding-left: 30px;"><a href="https://github.com/phoenixthrush/Tiny-C-Compiler">https://github.com/phoenixthrush/Tiny-C-Compiler</a> </p>
+<p style="padding-left: 30px;"><a href="https://packages.msys2.org/package/mingw-w64-x86_64-libgd">https://packages.msys2.org/package/mingw-w64-x86_64-libgd</a> </p><h1>課程評分</h1>
 <p>課程評分:</p>
 <p style="padding-left: 30px;">線上測驗、期中網站與簡報、期末網站與簡報.</p>
 <p>線上測驗:</p>

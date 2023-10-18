@@ -154,6 +154,7 @@ img.add_border {
 <p style="padding-left: 60px;">安裝 CMake</p>
 <p style="padding-left: 90px;">pacman -S mingw-w64-x86_64-cmake</p>
 <p>下載 <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EQHpkbGf-iFAnvQpjr6YpvoBT5IGyhc7zkRFldLb9gzumQ?e=07fTJm">msys64_20230718_cmake.7z</a> (需要下載密碼)</p>
+<hr/>
 <p>編譯 Solvespace:</p>
 <p style="padding-left: 30px;"><a href="https://solvespace.com/index.pl">Solvespace</a> 是一套小型的開放源參數式電腦輔助設計與繪圖軟體.</p>
 <p style="padding-left: 30px;">git clone --recurse-submodules https://github.com/solvespace/solvespace.git<br/><br/>cd solvespace<br/><br/>git checkout v3.1<br/><br/>mkdir build<br/><br/>cd build<br/><br/>cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release<br/><br/>mingw32-make</p>
@@ -162,6 +163,7 @@ img.add_border {
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">[http "https://github.com"]
 sslVerify = false</pre>
 <p style="padding-left: 30px;">表示不使用 Windows 的 SChannel API 進行認證, 轉而使用 OpenSSL handshake 認證.</p>
+<hr/>
 <p>利用 MSYS2 編譯 SciTE 編輯器:</p>
 <p style="padding-left: 30px;">從 <a href="https://www.scintilla.org/SciTE.html">https://www.scintilla.org/SciTE.html</a> 下載 Scite 原始碼.</p>
 <p style="padding-left: 30px;">cd scintilla\win32</p>
@@ -172,7 +174,15 @@ sslVerify = false</pre>
 <p style="padding-left: 60px;">get SciTE.exe under scite\bin</p>
 <p style="padding-left: 30px;">need extra libgcc_s_seh-1.dll, libstdc++-6.dll and libwinpthread-1.dll along with <span>Scintilla.dll and </span><span>SciLexer.dll </span>to execute SciTE.exe</p>
 <p style="padding-left: 30px;">下載 <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/Eai7ZaPaDzdLjObSeCYpSJoBYSyLEEq8iREAsArUVycgug?e=W7PA7x">SciTE537_src_compiled.7z</a> (需要下載密碼)</p>
-<p>SciTE properties files: <a href="http://wcm.cycu.org:88/github/cad2019/downloads/SciTE_properties_files.7z">SciTE_properties_files.7z</a></p><br />clang << <a href='clang.html'>Previous</a> <a href='課程評分.html'>Next</a> >> 課程評分</div>
+<p>SciTE properties files: <a href="http://wcm.cycu.org:88/github/cad2019/downloads/SciTE_properties_files.7z">SciTE_properties_files.7z</a></p>
+<hr/>
+<p>利用 MSYS2 編譯 Tiny C Compiler 並配置 gd 程式庫環境:</p>
+<p>從 <a href="https://github.com/Tiny-C-Compiler/mirror-repository">https://github.com/Tiny-C-Compiler/mirror-repository</a> 下載 Tiny C Compiler 0.9.27 原始碼後, 利用 win32 目錄中的 build-tcc.bat 完成編譯.</p>
+<p>在 MSYS2 環境中以 pacman -S mingw-w64-x86_64-libgd 安裝 gd 程式庫後, 可以取得 2.3.3 版的 libgd.dll</p>
+<p>利用 tcc -impdef -v libgd.dll -o libgd.def 取得 libgd.def 放入 Tiny C Compiler 系統中 win32 目錄中的 lib 後, 配合 gd 系統的 header 檔案後, 就可以利用 tcc gd_roc_flag.c -lgd 編譯連結後取得 gd_roc_flag.exe 可執行檔案. 之後則必須配合 libgd.dll 與 MSYS2 相關 dll 檔案執行 gd_roc_flag.exe</p>
+<p>Reference:</p>
+<p style="padding-left: 30px;"><a href="https://github.com/phoenixthrush/Tiny-C-Compiler">https://github.com/phoenixthrush/Tiny-C-Compiler</a> </p>
+<p style="padding-left: 30px;"><a href="https://packages.msys2.org/package/mingw-w64-x86_64-libgd">https://packages.msys2.org/package/mingw-w64-x86_64-libgd</a> </p><br />clang << <a href='clang.html'>Previous</a> <a href='課程評分.html'>Next</a> >> 課程評分</div>
         
     <!-- footer -->
       <div class="container">
