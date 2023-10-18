@@ -327,13 +327,32 @@ int main() {
     return 0;
 }</pre>
 <p>執行結果位於 images:</p>
-<p><img alt="" height="200" src="/images/gnuplot_ex1.png" width="400"/></p><h3>replit_github</h3>
-<p><a href="https://mde.tw/cpnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9215c7c160119721ded887018cda8f4e/raw/2be92a3d95add5e7c36b63c49116d33328997989/cp2023_w6_1a_elite.py">1a 完成利用 Replit 將改版資料推向 Github 學員名單</a></p>
-<p><a href="https://gist.githubusercontent.com/mdecycu/9215c7c160119721ded887018cda8f4e/raw/2be92a3d95add5e7c36b63c49116d33328997989/cp2023_w6_1b_elite.py">1b 完成利用 Replit 將改版資料推向 Github 學員名單</a></p>
+<p><img alt="" height="200" src="/images/gnuplot_ex1.png" width="400"/></p>
+<p>前述 Replit 平台環境中, 已經加入 Gnuplot 繪圖程式庫, 若循相同設定, 在 replit.nix 中加入 gd 繪圖程式庫以及 ncurses 終端機圖形介面程式庫, 則可結合 C/C++ 進行各式靜態與動態繪圖練習:</p>
+<p>replit.nix</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">{ pkgs }: {
+    deps = [
+      pkgs.gnuplot
+      pkgs.ncurses.dev
+      pkgs.gd
+    ];
+}</pre>
+<p>納入 ncurses 後的 C 程式編譯連結指令為: cc ncurses_ex1.c -lncurses -lm</p>
+<p>其中 -lncurses 會在連結階段導入所需的 ncurses 程式庫, 而 -lm 則導入 math.h 時連結數學程式庫之用.</p>
+<p>至於納入 gd 繪圖程式庫後的編譯連結指令為: cc gd_ex1.c -lgd -lm</p>
+<p>其中 -lgd 會在連結階段導入所需的 gd 程式庫, 而 -lm 則導入數學程式庫.</p>
+<p>gd 程式庫繪圖練習:</p>
+<p style="padding-left: 30px;"><a href="/downloads/gd_roc_flag.c">gd_roc_flag.c</a></p>
+<p style="padding-left: 30px;"><a href="/downloads/gd_usa_flag.c">gd_usa_flag.c</a></p>
+<p style="padding-left: 30px;">目前所得到的繪圖結果如下:</p>
+<p style="padding-left: 30px;"><img alt="" height="133" src="/images/roc_flag.png" width="200"/> 與 <img caption="false" height="133" src="/images/usa_flag.png" width="253"/></p>
+<p style="padding-left: 30px;">請完成上列兩國國旗的繪製.</p><h3>replit_github</h3>
+<p><a href="https://mde.tw/cpnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9215c7c160119721ded887018cda8f4e/raw/ae4f22fca4d70678714fe1c5fc74cf6255a322d1/cp2023_w6_1a_elite.py">1a 完成利用 Replit 將改版資料推向 Github 學員名單</a></p>
+<p><a href="https://mde.tw/cpnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9215c7c160119721ded887018cda8f4e/raw/ae4f22fca4d70678714fe1c5fc74cf6255a322d1/cp2023_w6_1b_elite.py">1b 完成利用 Replit 將改版資料推向 Github 學員名單</a></p>
 <p>w6 上課後, 1a 已經完成 Replit 資料推向 Github 學員:</p>
-<p style="padding-left: 30px;">41223103</p>
+<p style="padding-left: 30px;"><a href="https://cyg41223103.github.io/cp2023">41223103</a><span><span> </span>(</span><a href="https://github.com/CYG41223103/cp2023">repo</a><span>)</span></p>
 <p>w6 上課前, 1b 已經完成 Replit 資料推向 Github 學員:</p>
-<p style="padding-left: 30px;">40930151<br/>41223201<br/>41223205<br/>41223206<br/>41223209<br/>41223215<br/>41223217<br/>41223224<br/>41223225<br/>41223226<br/>41223228<br/>41223234<br/>41223235<br/>41223246</p><h3>replit_html</h3>
+<p style="padding-left: 30px;"><a href="https://mch40930151.github.io/cp2023">40930151</a><span><span> </span>(</span><a href="https://github.com/mch40930151/cp2023">repo</a><span>)</span><br/><a href="https://41223201.github.io/cp2023">41223201</a><span><span> </span>(</span><a href="https://github.com/41223201/cp2023">repo</a><span>)</span><br/><a href="https://41223205.github.io/cp2023">41223205</a><span><span> </span>(</span><a href="https://github.com/41223205/cp2023">repo</a><span>)</span><br/><a href="https://41223206.github.io/cp2023">41223206</a><span><span> </span>(</span><a href="https://github.com/41223206/cp2023">repo</a><span>)</span><br/><a href="https://41223209.github.io/cp2023">41223209</a><span><span> </span>(</span><a href="https://github.com/41223209/cp2023">repo</a><span>)</span><br/><a href="https://ray41223215.github.io/cp2023">41223215</a><span><span> </span>(</span><a href="https://github.com/RAY41223215/cp2023">repo</a><span>)</span><br/><a href="https://41223217.github.io/cp2023">41223217</a><span><span> </span>(</span><a href="https://github.com/41223217/cp2023">repo</a><span>)</span><br/><a href="https://41223224.github.io/cp2023">41223224</a><span><span> </span>(</span><a href="https://github.com/41223224/cp2023">repo</a><span>)</span><br/><a href="https://41223225.github.io/cp2023">41223225</a><span><span> </span>(</span><a href="https://github.com/41223225/cp2023">repo</a><span>)</span><br/><a href="https://lin41223226.github.io/cp2023">41223226</a><span><span> </span>(</span><a href="https://github.com/Lin41223226/cp2023">repo</a><span>)</span><br/><a href="https://hyy41223228.github.io/cp2023">41223228</a><span><span> </span>(</span><a href="https://github.com/hyy41223228/cp2023">repo</a><span>)</span><br/><a href="https://41223234.github.io/cp2023">41223234</a><span><span> </span>(</span><a href="https://github.com/41223234/cp2023">repo</a><span>)</span><br/><a href="https://41223235.github.io/cp2023">41223235</a><span><span> </span>(</span><a href="https://github.com/41223235/cp2023">repo</a><span>)</span><br/><a href="https://41223246.github.io/cp2023">41223246</a><span><span> </span>(</span><a href="https://github.com/41223246/cp2023">repo</a><span>)</span></p><h3>replit_html</h3>
 <p><a href="https://docs.replit.com/teaching-curriculum/intro-python">Intro to Python | Replit Docs</a></p>
 <h3>replit_python</h3>
 <p><a href="https://docs.replit.com/teaching-curriculum/intro-python">Intro to Python | Replit Docs</a></p>
