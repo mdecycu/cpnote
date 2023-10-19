@@ -147,9 +147,45 @@ img.add_border {
 <p><a href="https://mde.tw/content/PDF.html">https://mde.tw/content/PDF.html</a> </p>
 <p><a href="https://mde.tw/content/CAD.html">https://mde.tw/content/CAD.html</a> </p>
 <p><a href="https://mde.tw/content/cp2022.html">https://mde.tw/content/cp2022.html</a> </p>
+<p>使用舊版 Python 建立新版的可攜程式系統:</p>
+<p>Python 3.12.0 沒有 tools.msi</p>
+<p><a href="https://www.bing.com/ck/a?!&amp;&amp;p=91ef2cbcb9cc640eJmltdHM9MTY5NzY3MzYwMCZpZ3VpZD0zYTQ3ZGJlMS1lOGQ4LTZkNDktMjYyNy1jODk3ZTk0YzZjMDcmaW5zaWQ9NTIyMA&amp;ptn=3&amp;hsh=3&amp;fclid=3a47dbe1-e8d8-6d49-2627-c897e94c6c07&amp;psq=get+pip&amp;u=a1aHR0cHM6Ly9naXRodWIuY29tL3B5cGEvZ2V0LXBpcA&amp;ntb=1">get-pip.py</a></p>
+<p>generate_portable_python.py</p>
+<pre class="brush:py;toolbar:false" contenteditable="false">import urllib.request
+import os
+
+dir_path = os.path.dirname(os.path.realpath(__file__))
+# basic files for Python installation
+# before 3.12.0
+#py_list = ["core", "dev", "exe", "lib", "tcltk", "tools"]
+# 3.12.0 no tools.msi
+py_list = ["core", "dev", "exe", "lib", "tcltk"]
+# Python version
+version = "3.12.0"
+# Python msi download URL
+ftp = "https://www.python.org/ftp/python/" + version + "/amd64/"
+# location for Portable Python
+path = "y:\\tmp\\Python312"
+# create directory
+try:
+    os.mkdir(path)
+except:
+    # path exists
+    pass
+# get Python installation msi files and extract into target dir
+for i in py_list:
+    filename = i + ".msi"
+    url = ftp + filename
+    # download basic python msi file
+    urllib.request.urlretrieve(url, filename)
+    os.system("msiexec.exe /a " + i + ".msi targetdir=" + path)
+    # delete msi file
+    os.remove(dir_path + "\\" + i + ".msi")
+</pre>
 <p></p>
 <p></p>
-<br />on_windows << <a href='on_windows.html'>Previous</a> <a href='開發工具.html'>Next</a> >> 開發工具</div>
+<p></p>
+<p></p><br />on_windows << <a href='on_windows.html'>Previous</a> <a href='開發工具.html'>Next</a> >> 開發工具</div>
         
     <!-- footer -->
       <div class="container">

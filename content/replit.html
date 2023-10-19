@@ -144,6 +144,12 @@ img.add_border {
         </header>
     <div id="tipue_search_content">setup << <a href='setup.html'>Previous</a> <a href='MSD.html'>Next</a> >> MSD<br /><h1>replit</h1>
 <p><a href="https://docs.replit.com/">https://docs.replit.com/</a></p>
+<p>請注意: 原本 Replit Python 3.8 虛擬環境的目錄為 venv, 但是 Python 3.10 虛擬環境的目錄已經改用 .pythonlibs, 因此倉儲若不希望帶著此一虛擬環境檔案, 則可以將 .pythonlibs 附加到 .gitignore</p>
+<p>另外在近端必須處理 Python 3.12.0 版本中的 <a href="https://docs.python.org/3/library/ssl.html">https://docs.python.org/3/library/ssl.html</a> </p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">httpd.socket = ssl.wrap_socket(httpd.socket,
+                   ^^^^^^^^^^^^^^^
+AttributeError: module 'ssl' has no attribute 'wrap_socket'
+</pre>
 <p>將 GitHub cmsimde 倉儲導入 Replit 的方法, 請參考 <a href="https://mde.tw/cadnote/content/Replit.html">https://mde.tw/cadnote/content/Replit.html</a> 中的說明.</p>
 <p>備註：建立 yengm (at gm.nfu) 帳號, for Replit <a href="https://replit.com/site/teams-for-education">Teams for Education</a>.</p>
 <p>在 Replit C 程式環境中額外納入 gnuplot 套件的 replit.nix 設定:</p>
@@ -217,8 +223,7 @@ int main() {
     ];
 }</pre>
 <p></p>
-<p></p>
-<br />setup << <a href='setup.html'>Previous</a> <a href='MSD.html'>Next</a> >> MSD</div>
+<p></p><br />setup << <a href='setup.html'>Previous</a> <a href='MSD.html'>Next</a> >> MSD</div>
         
     <!-- footer -->
       <div class="container">
