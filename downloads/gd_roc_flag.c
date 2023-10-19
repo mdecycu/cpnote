@@ -20,7 +20,7 @@ int main() {
 
     draw_roc_flag(img);
 
-    FILE *outputFile = fopen("./../images/roc_flag.png", "wb");
+    FILE *outputFile = fopen("./../images/roc_flag1.png", "wb");
     if (outputFile == NULL) {
         fprintf(stderr, "Error opening the output file.\n");
         return 1;
