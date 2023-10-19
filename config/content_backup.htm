@@ -328,6 +328,10 @@ int main() {
 }</pre>
 <p>執行結果位於 images:</p>
 <p><img alt="" height="200" src="/images/gnuplot_ex1.png" width="400"/></p>
+<p><a href="http://www.gnuplot.info/docs_5.0/gnuplot.pdf">gnuplot 5.0 參考手冊.pdf</a></p>
+<p><a href="http://personalpages.to.infn.it/~mignone/Numerical_Algorithms/gnuplot.pdf">Quick guide to gnuplot.pdf</a></p>
+<p><a href="https://wiki.csie.ncku.edu.tw/embedded/2016q1h1">從今天起忘記 MicroSoft Excel</a> (!)</p>
+<hr/>
 <p>前述 Replit 平台環境中, 已經加入 Gnuplot 繪圖程式庫, 若循相同設定, 在 replit.nix 中加入 gd 繪圖程式庫以及 ncurses 終端機圖形介面程式庫, 則可結合 C/C++ 進行各式靜態與動態繪圖練習:</p>
 <p>replit.nix</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">{ pkgs }: {
@@ -348,7 +352,7 @@ int main() {
 <p style="padding-left: 30px;"><img alt="" height="133" src="/images/roc_flag.png" width="200"/> 與 <img caption="false" height="133" src="/images/usa_flag.png" width="253"/></p>
 <p style="padding-left: 30px;">請完成上列兩國國旗的繪製.</p>
 <p>進階練習:</p>
-<p style="padding-left: 30px;">C 與 gnuplot 及 gd 繪圖程式庫的結合, 除了在 Replit 平台上執行外, 如何在可攜系統中以 Tiny C Compiler 完成相同的運算與繪圖流程?</p><h3>replit_github</h3>
+<p style="padding-left: 30px;">C 與 gnuplot 及 gd 繪圖程式庫的結合, 除了在 Replit 平台上執行外, 如何在 Windows 可攜系統中以 Tiny C Compiler 完成相同的運算與繪圖流程?</p><h3>replit_github</h3>
 <p><a href="https://mde.tw/cpnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9215c7c160119721ded887018cda8f4e/raw/ae4f22fca4d70678714fe1c5fc74cf6255a322d1/cp2023_w6_1a_elite.py">1a 完成利用 Replit 將改版資料推向 Github 學員名單</a></p>
 <p><a href="https://mde.tw/cpnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9215c7c160119721ded887018cda8f4e/raw/ae4f22fca4d70678714fe1c5fc74cf6255a322d1/cp2023_w6_1b_elite.py">1b 完成利用 Replit 將改版資料推向 Github 學員名單</a></p>
 <p>w6 上課後, 1a 已經完成 Replit 資料推向 Github 學員:</p>
@@ -675,9 +679,13 @@ sslVerify = false</pre>
 <p style="padding-left: 30px;">下載 <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/Eai7ZaPaDzdLjObSeCYpSJoBYSyLEEq8iREAsArUVycgug?e=W7PA7x">SciTE537_src_compiled.7z</a> (需要下載密碼)</p>
 <p>SciTE properties files: <a href="http://wcm.cycu.org:88/github/cad2019/downloads/SciTE_properties_files.7z">SciTE_properties_files.7z</a></p>
 <hr/>
-<p>利用 MSYS2 編譯 Tiny C Compiler:</p>
+<p>利用 MSYS2 編譯 Tiny C Compiler 並配置 gd 程式庫環境:</p>
+<p>從 <a href="https://github.com/Tiny-C-Compiler/mirror-repository">https://github.com/Tiny-C-Compiler/mirror-repository</a> 下載 Tiny C Compiler 0.9.27 原始碼後, 利用 win32 目錄中的 build-tcc.bat 完成編譯.</p>
+<p>在 MSYS2 環境中以 pacman -S mingw-w64-x86_64-libgd 安裝 gd 程式庫後, 可以取得 2.3.3 版的 libgd.dll</p>
+<p>利用 tcc -impdef -v libgd.dll -o libgd.def 取得 libgd.def 放入 Tiny C Compiler 系統中 win32 目錄中的 lib 後, 配合 gd 系統的 header 檔案後, 就可以利用 tcc gd_roc_flag.c -lgd 編譯連結後取得 gd_roc_flag.exe 可執行檔案. 之後則必須配合 libgd.dll 與 MSYS2 相關 dll 檔案執行 gd_roc_flag.exe</p>
+<p>下載 <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EbKDl4ElS8FDkrBwRbPTQCQBu-KoWRHVabZ79hwE5Woaaw?e=1obiXK">MSYS2 編譯的 Tiny C Compiler 0.9.27 與 gd 程式庫 2.3.3 可攜套件</a> (需要下載密碼)</p>
+<p>假如希望利用 Visual Studio C++ 編譯 gd 2.3.3 版程式庫, 請參考<a href="https://github.com/libgd/libgd/blob/master/windows/readme.md">這裡的說明</a>.</p>
 <p>Reference:</p>
-<p style="padding-left: 30px;"><a href="https://github.com/Tiny-C-Compiler/mirror-repository">https://github.com/Tiny-C-Compiler/mirror-repository</a> </p>
 <p style="padding-left: 30px;"><a href="https://github.com/phoenixthrush/Tiny-C-Compiler">https://github.com/phoenixthrush/Tiny-C-Compiler</a> </p>
 <p style="padding-left: 30px;"><a href="https://packages.msys2.org/package/mingw-w64-x86_64-libgd">https://packages.msys2.org/package/mingw-w64-x86_64-libgd</a> </p><h1>課程評分</h1>
 <p>課程評分:</p>

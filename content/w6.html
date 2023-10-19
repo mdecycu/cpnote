@@ -160,6 +160,7 @@ img.add_border {
 <p style="padding-left: 30px;">1a 學員展示用 IPv6 位址: 2001:288:6004:17:2023:cba::<a href="https://mde.tw/cpnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9215c7c160119721ded887018cda8f4e/raw/593a8e462e0d8e7996f0bca3dd922adfdd4962e0/generate_cp2023_1a_site_repo.py">班級名單序號</a> (原先使用 cpa, 因為 p 並非 16 位元的合法字元, 因此將 p 向上翻轉成為 b, 2023 之後接 cba)</p>
 <p style="padding-left: 30px;"><span>2b 學員展示用 IPv6 位址: 2001:288:6004:17:2023:cbb::</span><a href="https://mde.tw/cpnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9215c7c160119721ded887018cda8f4e/raw/593a8e462e0d8e7996f0bca3dd922adfdd4962e0/generate_cp2023_1b_site_repo.py">班級名單序號</a></p>
 <p>建立線上考試題目</p>
+<p>從 gnuplot 到 gd 利用 C 程式繪圖設定<a href="https://nfuedu-my.sharepoint.com/:v:/g/personal/yen_nfu_edu_tw/EcN_ZOJU_n5PqudKHHD1934B_oynSHASndPVJ2_WSx6KKg?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0RpcmVjdCJ9fQ&amp;e=m8Md1v">說明影片</a></p>
 <p>各學員評分倉儲與網站的內容維護 (<a href="https://nfuedu-my.sharepoint.com/:v:/g/personal/yen_nfu_edu_tw/EQW8qQv3EENEgj5tPPsII-IB2-ck9cJaTP_ghrOYrF0BLA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0RpcmVjdCJ9fQ&amp;e=hMNc0O">說明影片</a>, 抱歉, 影片大約在 8:30 之後沒有聲音, 之後會再補充說明):</p>
 <p style="padding-left: 30px;">SMap: site map 網站所有頁面</p>
 <p style="padding-left: 30px;">EditA: edit all pages, 使用時機為(1)解決多人共用網站時的衝突, 或(2)刪除特定頁面</p>
@@ -226,6 +227,10 @@ int main() {
 }</pre>
 <p>執行結果位於 images:</p>
 <p><img alt="" height="200" src="./../images/gnuplot_ex1.png" width="400"/></p>
+<p><a href="http://www.gnuplot.info/docs_5.0/gnuplot.pdf">gnuplot 5.0 參考手冊.pdf</a></p>
+<p><a href="http://personalpages.to.infn.it/~mignone/Numerical_Algorithms/gnuplot.pdf">Quick guide to gnuplot.pdf</a></p>
+<p><a href="https://wiki.csie.ncku.edu.tw/embedded/2016q1h1">從今天起忘記 MicroSoft Excel</a> (!)</p>
+<hr/>
 <p>前述 Replit 平台環境中, 已經加入 Gnuplot 繪圖程式庫, 若循相同設定, 在 replit.nix 中加入 gd 繪圖程式庫以及 ncurses 終端機圖形介面程式庫, 則可結合 C/C++ 進行各式靜態與動態繪圖練習:</p>
 <p>replit.nix</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">{ pkgs }: {
@@ -246,7 +251,7 @@ int main() {
 <p style="padding-left: 30px;"><img alt="" height="133" src="./../images/roc_flag.png" width="200"/> 與 <img caption="false" height="133" src="./../images/usa_flag.png" width="253"/></p>
 <p style="padding-left: 30px;">請完成上列兩國國旗的繪製.</p>
 <p>進階練習:</p>
-<p style="padding-left: 30px;">C 與 gnuplot 及 gd 繪圖程式庫的結合, 除了在 Replit 平台上執行外, 如何在可攜系統中以 Tiny C Compiler 完成相同的運算與繪圖流程?</p><br />w2-w5 << <a href='w2-w5.html'>Previous</a> <a href='replit_github.html'>Next</a> >> replit_github</div>
+<p style="padding-left: 30px;">C 與 gnuplot 及 gd 繪圖程式庫的結合, 除了在 Replit 平台上執行外, 如何在 Windows 可攜系統中以 Tiny C Compiler 完成相同的運算與繪圖流程?</p><br />w2-w5 << <a href='w2-w5.html'>Previous</a> <a href='replit_github.html'>Next</a> >> replit_github</div>
         
     <!-- footer -->
       <div class="container">
