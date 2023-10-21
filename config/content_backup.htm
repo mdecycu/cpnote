@@ -381,6 +381,29 @@ int main() {
 <p>以下為 C++ 進階課程, 僅提供參考.</p>
 <p><a href="https://docs.replit.com/teaching-curriculum/intro-cpp">Intro to C++ | Replit Docs</a>, 針對有 C++ 以外程式基礎的學員, 除了基本 C++ 語法外還介紹指標 (pointers) 與資料結構 (data structures).</p>
 <p>C++ 程式範例: <a href="https://replit.com/teams/import/afurhdoyyeyvpxbo-SeaPlusPlus">Project copying - Replit</a></p>
+<h2>gd</h2>
+<p>gd_ex1.c</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;gd.h&gt;
+#include &lt;stdio.h&gt;
+
+int main() {
+	gdImagePtr im; //declaration of the image
+	FILE *out; //output file
+	int black,white;
+
+	im = gdImageCreateTrueColor(100,100); //create an image, 100 by 100 pixels
+
+	black = gdImageColorAllocate(im, 0, 0, 0); //allocate black color
+	white = gdImageColorAllocate(im, 255, 255, 255);	//allocate white color	
+	gdImageLine(im, 0, 0,100,100, white); // draw a lineusing the allocated white color.
+
+	out = fopen("draw_line.png", "wb"); //open a file
+	gdImagePngEx(im, out, 9); //write the image to thefile using the default quality setting
+
+	/* be good, clean up stuff */
+	fclose(out); 
+	gdImageDestroy(im);
+}</pre>
 <h2>setup</h2>
 <p>利用隨身碟中的批次檔案, 設定所需的網路環境.</p>
 <p><a href="/downloads/cadlab_network_setup.7z">cadlab_network_setup.7z</a></p>
@@ -448,10 +471,14 @@ New-NetIPAddress -AddressFamily "IPv6" -InterfaceAlias "乙太網路 2" -IPAddre
 # 列出所使用的 IPv6 網路通訊協定內容
 Write-Host "IPv6 Address: $ipv6Address/$subnetPrefixLength"
 Write-Host "IPv6 Gateway: $gateway"</pre>
-<p></p>
-<h2>replit</h2>
+<p></p><h2>replit</h2>
 <p><a href="https://docs.replit.com/">https://docs.replit.com/</a></p>
 <p>請注意: 原本 Replit Python 3.8 虛擬環境的目錄為 venv, 但是 Python 3.10 虛擬環境的目錄已經改用 .pythonlibs, 因此倉儲若不希望帶著此一虛擬環境檔案, 則可以將 .pythonlibs 附加到 .gitignore</p>
+<p>另外在近端必須處理 Python 3.12.0 版本中的 <a href="https://docs.python.org/3/library/ssl.html">https://docs.python.org/3/library/ssl.html</a> </p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">httpd.socket = ssl.wrap_socket(httpd.socket,
+                   ^^^^^^^^^^^^^^^
+AttributeError: module 'ssl' has no attribute 'wrap_socket'
+</pre>
 <p>將 GitHub cmsimde 倉儲導入 Replit 的方法, 請參考 <a href="https://mde.tw/cadnote/content/Replit.html">https://mde.tw/cadnote/content/Replit.html</a> 中的說明.</p>
 <p>備註：建立 yengm (at gm.nfu) 帳號, for Replit <a href="https://replit.com/site/teams-for-education">Teams for Education</a>.</p>
 <p>在 Replit C 程式環境中額外納入 gnuplot 套件的 replit.nix 設定:</p>
