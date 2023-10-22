@@ -2,7 +2,7 @@
         <head>
         <title>cpnote</title>
         <meta charset="utf-8">
-<meta property="head" content="H3">
+<meta property="head" content="H2">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
@@ -142,9 +142,30 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">ANSI C << <a href='ANSI C.html'>Previous</a> <a href='on_windows.html'>Next</a> >> on_windows<br /><h1>on_linux</h1>
-<p><img alt="" height="601" src="./../images/Replit_c_on_linux.png" width="800"/></p>
-<br />ANSI C << <a href='ANSI C.html'>Previous</a> <a href='on_windows.html'>Next</a> >> on_windows</div>
+    <div id="tipue_search_content">replit_cpp << <a href='replit_cpp.html'>Previous</a> <a href='setup.html'>Next</a> >> setup<br /><h1>gd</h1>
+<p>gd_ex1.c</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">// 導入 gd.h 標頭檔案
+#include &lt;gd.h&gt;
+#include &lt;stdio.h&gt;
+
+int main() {
+	gdImagePtr im; // 宣告 gd 影像指標
+	FILE *out; // 輸出檔案
+	int black,white;
+
+	im = gdImageCreateTrueColor(100,100); // 建立 100x100 影像
+
+	black = gdImageColorAllocate(im, 0, 0, 0); // 設定黑色變數
+	white = gdImageColorAllocate(im, 255, 255, 255);	// 設定白色變數
+	gdImageLine(im, 0, 0,100,100, white); // 以白色畫一條對角線
+
+	out = fopen("draw_line.png", "wb"); // 開啟檔案
+	gdImagePngEx(im, out, 9); // 將影像存檔
+
+	/* 清除不再使用的記憶體 */
+	fclose(out); 
+	gdImageDestroy(im);
+}</pre><br />replit_cpp << <a href='replit_cpp.html'>Previous</a> <a href='setup.html'>Next</a> >> setup</div>
         
     <!-- footer -->
       <div class="container">
