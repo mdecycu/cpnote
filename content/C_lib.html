@@ -131,7 +131,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li class='has-children'><a href='上課內容.html'>上課內容</a><ul class='dropdown'><li><a href='w2-w5.html'>w2-w5</a><li class='has-children'><a href='w6-w7.html'>w6-w7</a><ul class='dropdown'><li><a href='replit_github.html'>replit_github</a><li><a href='replit_html.html'>replit_html</a><li><a href='replit_python.html'>replit_python</a><li><a href='replit_cpp.html'>replit_cpp</a></li></ul><li><a href='gd.html'>gd</a><li><a href='setup.html'>setup</a><li><a href='replit.html'>replit</a><li class='has-children'><a href='MSD.html'>MSD</a><ul class='dropdown'><li><a href='clang.html'>clang</a><li><a href='編譯範例.html'>編譯範例</a></li></li></ul></ul><li><a href='課程評分.html'>課程評分</a><li class='has-children'><a href='課程主題.html'>課程主題</a><ul class='dropdown'><li class='has-children'><a href='數位環境與資源.html'>數位環境與資源</a><ul class='dropdown'><li><a href='上課系統.html'>上課系統</a></li></ul><li class='has-children'><a href='程式能力.html'>程式能力</a><ul class='dropdown'><li><a href='程式語言.html'>程式語言</a><li><a href='ANSI C.html'>ANSI C</a><li><a href='on_linux.html'>on_linux</a><li><a href='on_windows.html'>on_windows</a><li><a href='python.html'>python</a></li></ul><li class='has-children'><a href='開發工具.html'>開發工具</a><ul class='dropdown'><li><a href='程式專案.html'>程式專案</a><li><a href='課程座次.html'>課程座次</a></li></ul><li><a href='課程總結.html'>課程總結</a></li></ul><li><a href='QandA.html'>QandA</a><li><a href='Brython.html'>Brython</a></li>
+                     <li><a href='About.html'>About</a><li class='has-children'><a href='上課內容.html'>上課內容</a><ul class='dropdown'><li><a href='w2-w5.html'>w2-w5</a><li class='has-children'><a href='w6-w7.html'>w6-w7</a><ul class='dropdown'><li><a href='replit_github.html'>replit_github</a><li><a href='replit_html.html'>replit_html</a><li><a href='replit_python.html'>replit_python</a><li><a href='replit_cpp.html'>replit_cpp</a></li></ul><li><a href='C_lib.html'>C_lib</a><li><a href='setup.html'>setup</a><li><a href='replit.html'>replit</a><li class='has-children'><a href='MSD.html'>MSD</a><ul class='dropdown'><li><a href='clang.html'>clang</a><li><a href='編譯範例.html'>編譯範例</a></li></li></ul></ul><li><a href='課程評分.html'>課程評分</a><li class='has-children'><a href='課程主題.html'>課程主題</a><ul class='dropdown'><li class='has-children'><a href='數位環境與資源.html'>數位環境與資源</a><ul class='dropdown'><li><a href='上課系統.html'>上課系統</a></li></ul><li class='has-children'><a href='程式能力.html'>程式能力</a><ul class='dropdown'><li><a href='程式語言.html'>程式語言</a><li><a href='ANSI C.html'>ANSI C</a><li><a href='on_linux.html'>on_linux</a><li><a href='on_windows.html'>on_windows</a><li><a href='python.html'>python</a></li></ul><li class='has-children'><a href='開發工具.html'>開發工具</a><ul class='dropdown'><li><a href='程式專案.html'>程式專案</a><li><a href='課程座次.html'>課程座次</a></li></ul><li><a href='課程總結.html'>課程總結</a></li></ul><li><a href='QandA.html'>QandA</a><li><a href='Brython.html'>Brython</a></li>
                       </ul>
                 </nav>
               </div>
@@ -142,9 +142,25 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">replit_cpp << <a href='replit_cpp.html'>Previous</a> <a href='setup.html'>Next</a> >> setup<br /><h1>gd</h1>
+    <div id="tipue_search_content">replit_cpp << <a href='replit_cpp.html'>Previous</a> <a href='setup.html'>Next</a> >> setup<br /><h1>C_lib</h1>
+<p>本課程針對 C 程式語言的教學將使用下列程式庫:</p>
+<p>gnuplot: <a href="https://github.com/gnuplot/gnuplot">https://github.com/gnuplot/gnuplot</a></p>
+<p><span style="background-color: #ffff00;">數值分析繪圖程式庫</span> - 在機電設計流程中, 工程師運用數值分析法進行設計與模擬運算後, 將數據存檔, 可利用 gnuplot 繪圖指令, 以令人容易理解的圖形呈現數值分析結果.</p>
+<p>範例:</p>
+<p></p>
+<hr/>
+<p>gd: <a href="https://github.com/libgd/libgd">https://github.com/libgd/libgd</a></p>
+<p>泛用繪圖程式庫: 工程師在產品開發或製造程序中, 可利用線條(例如: 特殊齒輪外型)、字串(例如: 製造日期或保固訊息)或塗色區域(特定標誌、二維條碼或 QRCode)進行一般標誌或圖像繪圖.</p>
+<p>範例:</p>
 <p>gd_ex1.c</p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">// 導入 gd.h 標頭檔案
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">// gd_ex1.c
+/* on Replit, 在 replit.nix 加入 pkgs.gd 後
+以 cc gd_ex1.c -lgd -lm 進行編譯與連結後
+以 ./a.out 執行
+*/
+/* 在近端 Tiny C Compiler 環境, 以 tcc.exe -run -lgd 執行
+*/
+// 導入 gd.h 標頭檔案
 #include &lt;gd.h&gt;
 #include &lt;stdio.h&gt;
 
@@ -165,7 +181,85 @@ int main() {
 	/* 清除不再使用的記憶體 */
 	fclose(out); 
 	gdImageDestroy(im);
-}</pre><br />replit_cpp << <a href='replit_cpp.html'>Previous</a> <a href='setup.html'>Next</a> >> setup</div>
+}</pre>
+<hr/>
+<p>raylib: <a href="https://github.com/raysan5/raylib">https://github.com/raysan5/raylib</a></p>
+<p><a href="https://www.raylib.com/cheatsheet/raylib_cheatsheet_v4.0.pdf">https://www.raylib.com/cheatsheet/raylib_cheatsheet_v4.0.pdf</a></p>
+<p>電玩程式庫</p>
+<p>範例:</p>
+<p>move_red_dot.c</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/*******************************************************************************************
+*
+*   raylib [core] example - Keyboard input
+*
+*   Example originally created with raylib 1.0, last time updated with raylib 1.0
+*
+*   Example licensed under an unmodified zlib/libpng license, which is an OSI-certified,
+*   BSD-like license that allows static linking with closed source software
+*
+*   Copyright (c) 2014-2023 Ramon Santamaria (@raysan5)
+*
+********************************************************************************************/
+// move_red_dot.c
+/* on Replit, add pkgs.raylib to replit.nix
+   use cc move_red_dot.c -lraylib to compile and link
+*/ use ./a.out to execute and move the red dot with arrow keys
+// on Portable system, use cc=tcc.exe -run -lgd -lraylib to run
+
+#include "raylib.h"
+
+//------------------------------------------------------------------------------------
+// Program main entry point
+//------------------------------------------------------------------------------------
+int main(void)
+{
+    // Initialization
+    //--------------------------------------------------------------------------------------
+    const int screenWidth = 800;
+    const int screenHeight = 450;
+
+    InitWindow(screenWidth, screenHeight, "raylib [core] example - keyboard input");
+
+    Vector2 ballPosition = { (float)screenWidth/2, (float)screenHeight/2 };
+
+    SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
+    //--------------------------------------------------------------------------------------
+
+    // Main game loop
+    while (!WindowShouldClose())    // Detect window close button or ESC key
+    {
+        // Update
+        //----------------------------------------------------------------------------------
+        if (IsKeyDown(KEY_RIGHT)) ballPosition.x += 2.0f;
+        if (IsKeyDown(KEY_LEFT)) ballPosition.x -= 2.0f;
+        if (IsKeyDown(KEY_UP)) ballPosition.y -= 2.0f;
+        if (IsKeyDown(KEY_DOWN)) ballPosition.y += 2.0f;
+        //----------------------------------------------------------------------------------
+
+        // Draw
+        //----------------------------------------------------------------------------------
+        BeginDrawing();
+
+            ClearBackground(RAYWHITE);
+
+            DrawText("move the ball with arrow keys", 10, 10, 20, DARKGRAY);
+
+            DrawCircleV(ballPosition, 50, MAROON);
+
+        EndDrawing();
+        //----------------------------------------------------------------------------------
+    }
+
+    // De-Initialization
+    //--------------------------------------------------------------------------------------
+    CloseWindow();        // Close window and OpenGL context
+    //--------------------------------------------------------------------------------------
+
+    return 0;
+}</pre>
+<p>在 Replit 與近端程式環境執行結果:</p>
+<p>啟動後以鍵盤方向鍵上下左右控制紅點.</p>
+<p><img alt="" height="236" src="./../images/raylib_move_red_dot_with_arrow_keys.gif" width="400"/></p><br />replit_cpp << <a href='replit_cpp.html'>Previous</a> <a href='setup.html'>Next</a> >> setup</div>
         
     <!-- footer -->
       <div class="container">

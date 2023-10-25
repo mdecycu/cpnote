@@ -131,7 +131,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li><a href='About.html'>About</a><li class='has-children'><a href='上課內容.html'>上課內容</a><ul class='dropdown'><li><a href='w2-w5.html'>w2-w5</a><li class='has-children'><a href='w6-w7.html'>w6-w7</a><ul class='dropdown'><li><a href='replit_github.html'>replit_github</a><li><a href='replit_html.html'>replit_html</a><li><a href='replit_python.html'>replit_python</a><li><a href='replit_cpp.html'>replit_cpp</a></li></ul><li><a href='gd.html'>gd</a><li><a href='setup.html'>setup</a><li><a href='replit.html'>replit</a><li class='has-children'><a href='MSD.html'>MSD</a><ul class='dropdown'><li><a href='clang.html'>clang</a><li><a href='編譯範例.html'>編譯範例</a></li></li></ul></ul><li><a href='課程評分.html'>課程評分</a><li class='has-children'><a href='課程主題.html'>課程主題</a><ul class='dropdown'><li class='has-children'><a href='數位環境與資源.html'>數位環境與資源</a><ul class='dropdown'><li><a href='上課系統.html'>上課系統</a></li></ul><li class='has-children'><a href='程式能力.html'>程式能力</a><ul class='dropdown'><li><a href='程式語言.html'>程式語言</a><li><a href='ANSI C.html'>ANSI C</a><li><a href='on_linux.html'>on_linux</a><li><a href='on_windows.html'>on_windows</a><li><a href='python.html'>python</a></li></ul><li class='has-children'><a href='開發工具.html'>開發工具</a><ul class='dropdown'><li><a href='程式專案.html'>程式專案</a><li><a href='課程座次.html'>課程座次</a></li></ul><li><a href='課程總結.html'>課程總結</a></li></ul><li><a href='QandA.html'>QandA</a><li><a href='Brython.html'>Brython</a></li>
+                     <li><a href='About.html'>About</a><li class='has-children'><a href='上課內容.html'>上課內容</a><ul class='dropdown'><li><a href='w2-w5.html'>w2-w5</a><li class='has-children'><a href='w6-w7.html'>w6-w7</a><ul class='dropdown'><li><a href='replit_github.html'>replit_github</a><li><a href='replit_html.html'>replit_html</a><li><a href='replit_python.html'>replit_python</a><li><a href='replit_cpp.html'>replit_cpp</a></li></ul><li><a href='C_lib.html'>C_lib</a><li><a href='setup.html'>setup</a><li><a href='replit.html'>replit</a><li class='has-children'><a href='MSD.html'>MSD</a><ul class='dropdown'><li><a href='clang.html'>clang</a><li><a href='編譯範例.html'>編譯範例</a></li></li></ul></ul><li><a href='課程評分.html'>課程評分</a><li class='has-children'><a href='課程主題.html'>課程主題</a><ul class='dropdown'><li class='has-children'><a href='數位環境與資源.html'>數位環境與資源</a><ul class='dropdown'><li><a href='上課系統.html'>上課系統</a></li></ul><li class='has-children'><a href='程式能力.html'>程式能力</a><ul class='dropdown'><li><a href='程式語言.html'>程式語言</a><li><a href='ANSI C.html'>ANSI C</a><li><a href='on_linux.html'>on_linux</a><li><a href='on_windows.html'>on_windows</a><li><a href='python.html'>python</a></li></ul><li class='has-children'><a href='開發工具.html'>開發工具</a><ul class='dropdown'><li><a href='程式專案.html'>程式專案</a><li><a href='課程座次.html'>課程座次</a></li></ul><li><a href='課程總結.html'>課程總結</a></li></ul><li><a href='QandA.html'>QandA</a><li><a href='Brython.html'>Brython</a></li>
                       </ul>
                 </nav>
               </div>
@@ -216,12 +216,21 @@ int main() {
     return 0;
 }
 </pre>
-<p>在選擇 Python 作為 Language 的 repl 專案中, cc 已經內建, 若要加裝 gnuplot 套件則可在 replit.nix 設定檔案中加入 pkgs.gnuplot:</p>
+<p>在選擇 Python 作為 Language 的 repl 專案中, cc 已經內建, 若要加裝 gnuplot 套件則可在 replit.nix 設定檔案中加入 pkgs.<a href="http://www.gnuplot.info/">gnuplot</a>, pkgs.<a href="https://invisible-island.net/ncurses/">ncurses</a>.dev, pkgs.<a href="https://github.com/libgd/libgd">gd</a>, pkgs.<a href="https://www.vim.org/">vim</a>HugeX 與 pkgs.<a href="https://github.com/raysan5/raylib">raylib</a>:</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">{ pkgs }: {
     deps = [
       pkgs.gnuplot
+      pkgs.ncurses.dev
+      pkgs.gd
+      pkgs.vimHugeX
+      pkgs.raylib
     ];
 }</pre>
+<p>gnuplot: 數值分析繪圖程式庫</p>
+<p>gd: 泛用型繪圖程式庫</p>
+<p>ncurses: 文字型類 GUI 程式庫</p>
+<p>vim: 指令模式編輯器</p>
+<p>raylib: 電動遊戲程式庫</p>
 <p></p>
 <p></p><br />setup << <a href='setup.html'>Previous</a> <a href='MSD.html'>Next</a> >> MSD</div>
         
