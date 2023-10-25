@@ -29,10 +29,10 @@ int main() {
 
   /* Open a file for writing. "wb" means "write binary", important
     under MSDOS, harmless under Unix. */
-  pngout = fopen("test.png", "wb");
+  pngout = fopen("./../images/gd_ex1.png", "wb");
 
   /* Do the same for a JPEG-format file. */
-  jpegout = fopen("test.jpg", "wb");
+  jpegout = fopen("./../images/gd_ex1.jpg", "wb");
 
   /* Output the image to the disk file in PNG format. */
   gdImagePng(im, pngout);

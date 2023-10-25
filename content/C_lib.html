@@ -147,47 +147,24 @@ img.add_border {
 <p>gnuplot: <a href="https://github.com/gnuplot/gnuplot">https://github.com/gnuplot/gnuplot</a></p>
 <p><span style="background-color: #ffff00;">數值分析繪圖程式庫</span> - 在機電設計流程中, 工程師運用數值分析法進行設計與模擬運算後, 將數據存檔, 可利用 gnuplot 繪圖指令, 以令人容易理解的圖形呈現數值分析結果.</p>
 <p>範例:</p>
+<p><a href="./../downloads/euler_gnuplot_msd_ex1.c">euler_gnuplot_msd_ex1.c</a></p>
+<p>執行結果:</p>
+<p><img alt="" height="200" src="./../images/motion_plot.png" width="400"/></p>
 <p></p>
 <hr/>
 <p>gd: <a href="https://github.com/libgd/libgd">https://github.com/libgd/libgd</a></p>
 <p>泛用繪圖程式庫: 工程師在產品開發或製造程序中, 可利用線條(例如: 特殊齒輪外型)、字串(例如: 製造日期或保固訊息)或塗色區域(特定標誌、二維條碼或 QRCode)進行一般標誌或圖像繪圖.</p>
 <p>範例:</p>
-<p>gd_ex1.c</p>
-<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">// gd_ex1.c
-/* on Replit, 在 replit.nix 加入 pkgs.gd 後
-以 cc gd_ex1.c -lgd -lm 進行編譯與連結後
-以 ./a.out 執行
-*/
-/* 在近端 Tiny C Compiler 環境, 以 tcc.exe -run -lgd 執行
-*/
-// 導入 gd.h 標頭檔案
-#include &lt;gd.h&gt;
-#include &lt;stdio.h&gt;
-
-int main() {
-	gdImagePtr im; // 宣告 gd 影像指標
-	FILE *out; // 輸出檔案
-	int black,white;
-
-	im = gdImageCreateTrueColor(100,100); // 建立 100x100 影像
-
-	black = gdImageColorAllocate(im, 0, 0, 0); // 設定黑色變數
-	white = gdImageColorAllocate(im, 255, 255, 255);	// 設定白色變數
-	gdImageLine(im, 0, 0,100,100, white); // 以白色畫一條對角線
-
-	out = fopen("draw_line.png", "wb"); // 開啟檔案
-	gdImagePngEx(im, out, 9); // 將影像存檔
-
-	/* 清除不再使用的記憶體 */
-	fclose(out); 
-	gdImageDestroy(im);
-}</pre>
+<p><a href="./../downloads/gd_ex1.c">gd_ex1.c</a></p>
+<p>執行結果:</p>
+<p><img alt="" height="200" src="./../images/gd_ex1.png" width="200"/> gd_ex1.png</p>
+<p><img alt="" height="200" src="./../images/gd_ex1.jpg" width="200"/> gd_ex1.jpg</p>
 <hr/>
 <p>raylib: <a href="https://github.com/raysan5/raylib">https://github.com/raysan5/raylib</a></p>
 <p><a href="https://www.raylib.com/cheatsheet/raylib_cheatsheet_v4.0.pdf">https://www.raylib.com/cheatsheet/raylib_cheatsheet_v4.0.pdf</a></p>
 <p>電玩程式庫</p>
 <p>範例:</p>
-<p>move_red_dot.c</p>
+<p><a href="./../downloads/move_red_dot.c">move_red_dot.c</a></p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/*******************************************************************************************
 *
 *   raylib [core] example - Keyboard input
@@ -203,7 +180,8 @@ int main() {
 // move_red_dot.c
 /* on Replit, add pkgs.raylib to replit.nix
    use cc move_red_dot.c -lraylib to compile and link
-*/ use ./a.out to execute and move the red dot with arrow keys
+use ./a.out to execute and move the red dot with arrow keys
+*/
 // on Portable system, use cc=tcc.exe -run -lgd -lraylib to run
 
 #include "raylib.h"

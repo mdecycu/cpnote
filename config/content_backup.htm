@@ -516,12 +516,15 @@ void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, 
 <p>gnuplot: <a href="https://github.com/gnuplot/gnuplot">https://github.com/gnuplot/gnuplot</a></p>
 <p><span style="background-color: #ffff00;">數值分析繪圖程式庫</span> - 在機電設計流程中, 工程師運用數值分析法進行設計與模擬運算後, 將數據存檔, 可利用 gnuplot 繪圖指令, 以令人容易理解的圖形呈現數值分析結果.</p>
 <p>範例:</p>
+<p><a href="/downloads/euler_gnuplot_msd_ex1.c">euler_gnuplot_msd_ex1.c</a></p>
+<p>執行結果:</p>
+<p><img alt="" height="200" src="/images/motion_plot.png" width="400"/></p>
 <p></p>
 <hr/>
 <p>gd: <a href="https://github.com/libgd/libgd">https://github.com/libgd/libgd</a></p>
 <p>泛用繪圖程式庫: 工程師在產品開發或製造程序中, 可利用線條(例如: 特殊齒輪外型)、字串(例如: 製造日期或保固訊息)或塗色區域(特定標誌、二維條碼或 QRCode)進行一般標誌或圖像繪圖.</p>
 <p>範例:</p>
-<p>gd_ex1.c</p>
+<p><a href="/downloads/gd_ex1.c">gd_ex1.c</a></p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">// gd_ex1.c
 /* on Replit, 在 replit.nix 加入 pkgs.gd 後
 以 cc gd_ex1.c -lgd -lm 進行編譯與連結後
@@ -544,19 +547,21 @@ int main() {
 	white = gdImageColorAllocate(im, 255, 255, 255);	// 設定白色變數
 	gdImageLine(im, 0, 0,100,100, white); // 以白色畫一條對角線
 
-	out = fopen("draw_line.png", "wb"); // 開啟檔案
+	out = fopen("./../images/draw_line.png", "wb"); // 開啟檔案
 	gdImagePngEx(im, out, 9); // 將影像存檔
 
 	/* 清除不再使用的記憶體 */
 	fclose(out); 
 	gdImageDestroy(im);
 }</pre>
+<p>執行結果:</p>
+<p></p>
 <hr/>
 <p>raylib: <a href="https://github.com/raysan5/raylib">https://github.com/raysan5/raylib</a></p>
-<p><a href="https://www.raylib.com/cheatsheet/raylib_cheatsheet_v4.0.pdf">https://www.raylib.com/cheatsheet/raylib_cheatsheet_v4.0.pdf</a> </p>
+<p><a href="https://www.raylib.com/cheatsheet/raylib_cheatsheet_v4.0.pdf">https://www.raylib.com/cheatsheet/raylib_cheatsheet_v4.0.pdf</a></p>
 <p>電玩程式庫</p>
 <p>範例:</p>
-<p>move_red_dot.c</p>
+<p><a href="/downloads/move_red_dot.c">move_red_dot.c</a></p>
 <pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">/*******************************************************************************************
 *
 *   raylib [core] example - Keyboard input
@@ -572,7 +577,8 @@ int main() {
 // move_red_dot.c
 /* on Replit, add pkgs.raylib to replit.nix
    use cc move_red_dot.c -lraylib to compile and link
-*/ use ./a.out to execute and move the red dot with arrow keys
+use ./a.out to execute and move the red dot with arrow keys
+*/
 // on Portable system, use cc=tcc.exe -run -lgd -lraylib to run
 
 #include "raylib.h"
@@ -627,6 +633,7 @@ int main(void)
     return 0;
 }</pre>
 <p>在 Replit 與近端程式環境執行結果:</p>
+<p>啟動後以鍵盤方向鍵上下左右控制紅點.</p>
 <p><img alt="" height="236" src="/images/raylib_move_red_dot_with_arrow_keys.gif" width="400"/></p><h2>setup</h2>
 <p>利用隨身碟中的批次檔案, 設定所需的網路環境.</p>
 <p><a href="/downloads/cadlab_network_setup.7z">cadlab_network_setup.7z</a></p>
@@ -2764,7 +2771,7 @@ doc["add1to100"].bind('click', add)
 <div style="width: 100%; height: 100%;"><textarea autocomplete="off" id="kw_console1"></textarea></div>
 <p><!-- Brython 程式執行的結果, 都以 brython_div1 作為切入位置 --></p>
 <div id="brython_div1"></div>
-<!-- editor1 結束 --><hr/><!-- ########################################## -->
+<!-- editor1 結束 --><hr><!-- ########################################## -->
 <p>從 1 累加到 100 part2:</p>
 <p><button id="add1to100part2">1 add to 100</button><button id="cango_three_gears">cango_three_gears</button><button id="bsnake">BSnake</button><button id="aitetris">AI Tetris</button><button id="threejsblock">Rotating Block</button></p>
 <p><!-- 請注意, 這裡使用 Javascript 將 localStorage["kw_py_src2"] 中存在近端瀏覽器的程式碼, 由使用者決定存檔名稱--></p>
@@ -2883,7 +2890,7 @@ doc["threejsblock"].bind("click", threejsblock.do)
 <div style="width: 100%; height: 100%;"><textarea autocomplete="off" id="kw_console2"></textarea></div>
 <p><!-- Brython 程式執行的結果, 都以 brython_div1 作為切入位置 --></p>
 <div id="brython_div2"></div>
-<!-- editor2 結束 --><hr/>
+<!-- editor2 結束 --><hr>
 <p>
 <script src="https://unpkg.com/three@0.144.0/build/three.js" type="text/javascript"></script>
-</p>
+</p></hr></hr>
