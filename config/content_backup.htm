@@ -10,7 +10,17 @@
 <p style="padding-left: 30px;"><a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EbxsXK5kkU1ImhJ_HcYPnTcB9MboGQcfs6FuojXRPlhInA?e=wzLQFt">basic_portable_python.7z</a> (下載 15MB, 解開後 55MB)</p>
 <p style="padding-left: 30px;">下載 <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EQTW-mq62DpFtw5It9ao-PIBPXW7z5z8oVsW5gd8zbDXOQ?e=q6gHgf">Portable_2023_fall_1.3g_5g.7z</a> (需要下載密碼)</p>
 <p style="padding-left: 30px;">也可以直接使用電腦輔助設計室中 C:\Portable_2023_fall 目錄中的檔案</p>
-<h1>上課內容</h1>
+<h2>s1511</h2>
+<p>當 Replit 自 2024 開始不再提供免費用戶透過開發部署使用 Webview, 意即之後使用者無法再經由 python3 main.py 在廣域網路中使用 repl.co 網址進行編輯.</p>
+<p>因此各學員除了使用近端隨身系統進行 cp2023 倉儲與網站的改版之外, 只能在自架伺服器中採遠端登入的方式在 s1511.cycu.org 主機中維護個人與分組網站.</p>
+<p>由於 s1511 是一台安裝 Ubuntu 操作系統的虛擬主機, 為了能讓 cp2023 網站在伺服器中啟動, 擬採下列方式進行:</p>
+<p>伺服器的符號名稱為 s1511.cycu.org 表示是 151 實體伺服器上的第一台 Virtualbox 虛擬主機</p>
+<p>各班學員在 s1511 伺服器中的登入帳號將設為其學號</p>
+<p>各學員將經由學校的電子郵箱接收所賦予的帳號、密碼以及所分配使用的伺服器埠號</p>
+<p>網站 http 轉向 https 的服務由 nginx 伺服器完成</p>
+<p>https 的服務由 stunnel 承接內部 waitress wsgi 伺服器所送出的動態網站內容</p>
+<p>各學員的靜態網站則由 nginx 伺服器中的 public_html 設定完成</p>
+<p></p><h1>上課內容</h1>
 <p>112 學年度第一學期 (2023 Fall) 機械設計工程系 - 計算機程式課程的上課內容與進度.</p>
 <p>有關 Replit 與近端可攜系統的相關操作, 請參考 cadnote 中的內容: <a href="https://mde.tw/cadnote/content/Replit.html">Replit</a>, <a href="https://mde.tw/cadnote/content/%E8%BF%91%E7%AB%AF%E5%8F%AF%E6%94%9C.html">近端可攜</a>, <a href="https://mde.tw/cadnote/content/Git.html">Git</a>.</p>
 <p>手機建議安裝以下 Apps:</p>
@@ -135,8 +145,7 @@ int main(void) {
 <p style="padding-left: 60px;">2018 <a href="https://link.springer.com/book/10.1007/978-1-4842-3366-5">Beginning C++17</a> (在校園網路或經由 VPN 下載)</p>
 <p style="padding-left: 60px;">2023 <a href="https://link.springer.com/book/10.1007/978-1-4842-9274-7">Modern C++ for Absolute Beginners</a> (在校園網路或經由 VPN 下載)</p>
 <p style="padding-left: 60px;">下載 <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EQHpkbGf-iFAnvQpjr6YpvoBT5IGyhc7zkRFldLb9gzumQ?e=07fTJm">msys64_20230718_cmake.7z</a> (需要下載密碼)</p>
-<p style="padding-left: 60px;">設法利用 Msys2 編譯 SciTE, Solvespace 與 CoppeliaSim</p>
-<h2>w2-w5</h2>
+<p style="padding-left: 60px;">設法利用 Msys2 編譯 SciTE, Solvespace 與 CoppeliaSim</p><h2>w2-w5</h2>
 <p>本課程所謂個人網站, 即 github帳號.github.io, 可由使用者自行設定內容, 建議長期維護後可用於研究所推甄, 或求職時使用.</p>
 <p>本課程所謂評分網站, 即 github帳號.github.io/cp2023, 內容及維護歴程資料將用於課程評分.</p>
 <p>w2</p>
@@ -377,7 +386,7 @@ int main() {
 <li>各學員要有 github 帳號, 且將 user name 登錄到 <a href="https://raw.githubusercontent.com/mdecycu/studlist/main/2023fall/1a.txt">1a</a> 與 <a href="https://raw.githubusercontent.com/mdecycu/studlist/main/2023fall/1b.txt">1b</a> 的倉儲, 內容必須與個人的 github 帳號相同 (<a href="https://mde.tw/studlist/2023fall/1a.txt">1a</a> 與 <a href="https://mde.tw/studlist/2023fall/1b.txt">1b</a>), 各用戶若修改帳號, 必須透過 Pull Requests 要求將新資料合併 (<a href="https://nfuedu-my.sharepoint.com/:v:/g/personal/yen_nfu_edu_tw/EVLjdagaxnVMk8wE5HO8QSUB1qGBFeAnHirQLSxNNWjSHQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0RpcmVjdCJ9fQ&amp;e=iopvVp">Pull Requests 說明</a>).</li>
 <li>各學員要有 <span style="background-color: #ffff00;">Replit</span> 帳號且與 Github connect, 能夠從 Replit 啟動網頁編輯, 轉為靜態網站內容後, 送回 Github 的個人 cp2023 倉儲與網站. (還有兩種方式可以維護倉儲與網站, <span style="background-color: #ffff00;">近端</span>與<span style="background-color: #ffff00;">自架主機</span>上進行內容維護)</li>
 <li>目前會經常使用的 git add, git commit, git push, git pull, git status, git branch, git checkout</li>
-<li>C 程式的繪圖 - Gnuplot, gd, raylib</li>
+<li>C 程式的繪圖 - Gnuplot, gd, raylib (<a href="https://nfuedu-my.sharepoint.com/:v:/g/personal/yen_nfu_edu_tw/EUjYvX4V6-1GoeM3sEQXn1IBwMZ3jzKnqYJ0OPZLD8gL_A?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0RpcmVjdCJ9fQ&amp;e=AdBz8j">近端繪圖說明</a>)</li>
 </ol>
 <hr/>
 <p>第七週練習</p>
