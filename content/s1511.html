@@ -253,17 +253,23 @@ Defaults timestamp_timeout=60</pre>
 <hr/>
 <p>s1511 虛擬主機環境與使用流程:</p>
 <ol>
-<li>s1511 主機只有 IPv6 網路協定, 因此 ssh, sftp 以及 http 等連線的使用都必須透過雙支援協定才能與僅支援 IPv4 的電腦相連.</li>
+<li>s1511 主機只有 IPv6 網路協定, 因此 ssh, sftp 以及 http 等連線的使用都必須透過雙協定支援代理主機設定, 才能與僅支援 IPv4 的電腦相連.</li>
 <li>若希望遠端登入 <span>s1511</span> 伺服器的電腦, 使用 IPv6 網路協定, 可以直接以 ssh 連線, sftp 也可直接連線.</li>
-<li>若希望遠端登入 <span>s1511</span> 伺服器的電腦, 只有 IPv4 網路協定, 則遠端登入使用 ssh 必須設定雙支援代理主機, 假如連線的電腦位於校外, 則可以使用專責 Proxy 或透過校方所提供的 vpn 進行連線後, 再使用 ssh 遠端登入 <span>s1511</span> 主機.</li>
+<li>若希望遠端登入 <span>s1511</span> 伺服器的電腦, 只有 IPv4 網路協定, 則遠端登入使用 ssh 必須設定雙協定支援代理主機, 假如連線的電腦位於校外, 則可以使用專責 Proxy 或透過校方所提供的 vpn 進行連線後, 再使用 ssh 遠端登入 <span>s1511</span> 主機.</li>
 <li>使用者遠端登入 <span>s1511</span> 主機後, 因為該主機只有 IPv6 網路, 因此對 github.com 主機的連線, 無論是 ssh 或 http 都必須設定 proxy 代理主機.</li>
 <li>使用者登入 <span>s1511</span>, 主要目的是利用主機上的 Python 3 執行位於 github.com 上的個人倉儲動態網站, 因此必須先使用 git clone 取下個人的倉儲.</li>
 <li>由於位於 github.com 上的個人倉儲使用子模組, 因此 git clone 之前必須先設定 ssh 對 github.com 連線的代理主機, 以及取下子模組用的 http 代理主機.</li>
 <li>利用 ssh 協定取下個人的代理主機, 其設定必須先用 ssh-keygen 在 .ssh 目錄中建立 private key (id_rsa) 以及 public key (id_rsa.pub), 並且將 id_rsa.pub 登錄到個人 github.com 帳號下 Settings 下的 SSH and GPG keys 設定區. 而且需要在 .ssh 目錄中, 利用 config 設定檔案, 指定 Host 以及代理主機, 此 Host 名稱可以視為 Linux 操作系統下, 以 ssh 對 github.com 連線的 session 名稱.</li>
 <li>git clone 執行時所使用的 http 代理主機設定可透過 git config --global http.proxy http://your_proxy_server:3128 達成.</li>
-<li>完成將個人倉儲取下至個人帳號下的工作目錄後, 因為要採 waitress 方式執行 cmsimde, 因此還需要取得對應的 server.py, 必須放入倉儲目錄中, 另外 acp 也必須使用 Linux 的指令格式, 並且若要使用網際 acp, 則必須 cd 至 cmsimde 後, 以 git pull origin master 取下最新版本.</li>
+<li>完成將個人倉儲取下至個人帳號下的工作目錄後, 因為要採 waitress 方式執行 cmsimde, 因此還需要取得對應的 server.py, 必須放入倉儲目錄中, 另外 acp 也必須使用 Linux 的指令格式, 並且若要使用網際 acp, 則必須利用 chmod u+x acp 讓 acp 可以執行.</li>
 <li>當使用 python3 server.py &amp; 執行 process 後, ps axo pid,comm,uid | grep "python3" 的指令, 可以列出各自帳號下所 background 執行的 process pid, 若需要列出執行 process 對應目錄, 則可以利用 pwdx 加上 pid 後執行取得.</li>
 </ol>
+<p>.ssh 目錄中的 <a href="./../downloads/config">config</a>, 將 SSH session 名稱設為 github.com:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">Host github.com
+User git
+Hostname github.com
+ProxyCommand /usr/bin/ncat --proxy p4.cycu.org:3128 --proxy-type http %h %p
+</pre>
 <p>public_html 中以 cpnote 名稱建立目錄後, 必須以 https 格式取下 cp2023 倉儲內容作為靜態網站</p>
 <p>acp 必須納入 public_html 目錄中的靜態網站 git pull, 且利用 chmod u+x acp 令其可以執行</p>
 <p><a href="./../downloads/acp">acp</a> 內容:</p>
