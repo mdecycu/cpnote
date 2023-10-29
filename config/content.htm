@@ -131,6 +131,15 @@ Defaults timestamp_timeout=60</pre>
 <li>完成將個人倉儲取下至個人帳號下的工作目錄後, 因為要採 waitress 方式執行 cmsimde, 因此還需要取得對應的 server.py, 必須放入倉儲目錄中, 另外 acp 也必須使用 Linux 的指令格式, 並且若要使用網際 acp, 則必須 cd 至 cmsimde 後, 以 git pull origin master 取下最新版本.</li>
 <li>當使用 python3 server.py &amp; 執行 process 後, ps axo pid,comm,uid | grep "python3" 的指令, 可以列出各自帳號下所 background 執行的 process pid, 若需要列出執行 process 對應目錄, 則可以利用 pwdx 加上 pid 後執行取得.</li>
 </ol>
+<p>public_html 中以 cpnote 名稱建立目錄後, 必須以 https 格式取下 cp2023 倉儲內容作為靜態網站</p>
+<p>acp 必須納入 public_html 目錄中的靜態網站 git pull, 且利用 chmod u+x acp 令其可以執行</p>
+<p><a href="/downloads/acp">acp</a> 內容:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">#! /bin/bash
+git add .
+git commit -m "$1"
+git push
+cd ./../public_html/cpnote
+git pull</pre>
 <p></p><h1>上課內容</h1>
 <p>112 學年度第一學期 (2023 Fall) 機械設計工程系 - 計算機程式課程的上課內容與進度.</p>
 <p>有關 Replit 與近端可攜系統的相關操作, 請參考 cadnote 中的內容: <a href="https://mde.tw/cadnote/content/Replit.html">Replit</a>, <a href="https://mde.tw/cadnote/content/%E8%BF%91%E7%AB%AF%E5%8F%AF%E6%94%9C.html">近端可攜</a>, <a href="https://mde.tw/cadnote/content/Git.html">Git</a>.</p>
