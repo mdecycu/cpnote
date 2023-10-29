@@ -22,7 +22,7 @@
 // cc gnuplot_ex1.c -o gnuplot_ex1
 // ./gnuplot_ex1
 #include <stdio.h>
-#include <ncurses.h>
+//#include <ncurses.h>
  
 // 主函式
 int main() {

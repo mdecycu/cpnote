@@ -15,7 +15,7 @@
 <p><span style="background-color: #ccffff;">s1511 如何建立?</span></p>
 <p>建立伺服器:</p>
 <p style="padding-left: 30px;">s1511 是一台安裝 Ubuntu 操作系統的虛擬主機, 為了能讓 cp2023 網站編輯程式能在伺服器中啟動, 擬採下列方式設定:</p>
-<p style="padding-left: 60px;">1. 伺服器的符號名稱為 s1511.cycu.org 表示是 151 實體伺服器上的第一台 Virtualbox 虛擬主機</p>
+<p style="padding-left: 60px;">1. 伺服器的符號名稱為 s1511.cycu.org 表示是 151 實體伺服器上的第一台 Virtualbox 虛擬主機, 並使用 <a href="https://nssm.cc/download">nssm</a> 設定隨實體主機啟動時開啟.</p>
 <p style="padding-left: 60px;">2. 各班學員在 s1511 伺服器中的登入帳號將設為其班級代號加上學號, 以計算機程式課程為例, 學員的帳號將設為 cp 加上學號</p>
 <p style="padding-left: 60px;">3. 各學員將經由學校的電子郵箱接收 s1511 伺服器中的帳號、密碼以及所分配使用的伺服器埠號</p>
 <p style="padding-left: 60px;">4. 9 開頭的埠號將用於 cp2023 倉儲中 server.py 設定用, 屬於內部網路埠號, 由 <a href="https://pypi.org/project/waitress/">waitress</a> 負責啟動 <a href="https://en.wikipedia.org/wiki/Web_Server_Gateway_Interface">WSGI 服務</a></p>
@@ -657,19 +657,46 @@ void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, 
 <p>C++ 程式範例: <a href="https://replit.com/teams/import/afurhdoyyeyvpxbo-SeaPlusPlus">Project copying - Replit</a></p>
 <h2>w8</h2>
 <p>s1511 伺服器中的分組埠號:</p>
-<p>cp2023_ag1:</p>
-<p>cp2023_ag2:</p>
-<p><span>cp2023_ag3:</span></p>
-<p><span>cp2023_ag4:</span></p>
-<p><span>cp2023_ag5:</span></p>
-<p><span>cp2023_ag6:</span></p>
-<p><span>cp2023_bg1:</span></p>
-<p><span>cp2023_bg2:</span></p>
-<p><span>cp2023_bg3:</span></p>
-<p><span>cp2023_bg4:</span></p>
-<p><span>cp2023_bg5:</span></p>
-<p><span>cp2023_bg6:</span></p>
-<h2>C_lib</h2>
+<p>計算機程式課程:</p>
+<p style="padding-left: 30px;">cp2023_ag1: 8220, 9220</p>
+<p style="padding-left: 30px;">cp2023_ag2: 8221, 9221</p>
+<p style="padding-left: 30px;"><span>cp2023_ag3: 8222, 9222</span></p>
+<p style="padding-left: 30px;"><span>cp2023_ag4: 8223, 9223</span></p>
+<p style="padding-left: 30px;"><span>cp2023_ag5: 8224, 9224</span></p>
+<p style="padding-left: 30px;"><span>cp2023_ag6: 8225, 9225</span></p>
+<hr style="padding-left: 30px;"/>
+<p style="padding-left: 30px;"><span>cp2023_bg1: 8226, 9226</span></p>
+<p style="padding-left: 30px;"><span>cp2023_bg2: 8227, 9227</span></p>
+<p style="padding-left: 30px;"><span>cp2023_bg3: 8228, 9228</span></p>
+<p style="padding-left: 30px;"><span>cp2023_bg4: 8229, 9229</span></p>
+<p style="padding-left: 30px;"><span>cp2023_bg5: 8230, 9230</span></p>
+<p style="padding-left: 30px;"><span>cp2023_bg6: 8231, 9231</span></p>
+<hr/>
+<p>電腦輔助設計與實習課程:</p>
+<p style="padding-left: 30px;">cad2023_ag1: 8232, 9232</p>
+<p style="padding-left: 30px;">cad2023_ag2: 8233, 9233</p>
+<p style="padding-left: 30px;"><span>cad2023_ag3: 8234, 9234</span></p>
+<p style="padding-left: 30px;"><span>cad2023_ag4: 8235, 9235</span></p>
+<p style="padding-left: 30px;"><span>cad2023_ag5: 8236, 9236</span></p>
+<p style="padding-left: 30px;"><span>cad2023_ag6: 8237, 9237</span></p>
+<hr/>
+<p style="padding-left: 30px;"><span>cad2023_bg1: 8238, 9238</span></p>
+<p style="padding-left: 30px;"><span>cad2023_bg2: 8239, 9239</span></p>
+<p style="padding-left: 30px;"><span>cad2023_bg3: 8240, 9240</span></p>
+<p style="padding-left: 30px;"><span>cad2023_bg4: 8241, 9241</span></p>
+<p style="padding-left: 30px;"><span>cad2023_bg5: 8242, 9242</span></p>
+<p style="padding-left: 30px;"><span>cad2023_bg6: 8243, 9243</span></p>
+<hr/>
+<p>在 Ubuntu 安裝 gd 程式庫套件:</p>
+<p>sudo apt update</p>
+<p>sudo apt upgrade</p>
+<p>sudo apt install libgd-dev</p>
+<p>cd downloads</p>
+<p>cc gd_ex1.c -lm -lgd</p>
+<p>./a.out</p>
+<p>在 Ubuntu 安裝 gnuplot 套:</p>
+<p>sudo apt install gnuplot</p>
+<p></p><h2>C_lib</h2>
 <p>本課程針對 C 程式語言的教學將使用下列程式庫:</p>
 <p>gnuplot: <a href="https://github.com/gnuplot/gnuplot">https://github.com/gnuplot/gnuplot</a></p>
 <p><span style="background-color: #ffff00;">數值分析繪圖程式庫</span> - 在機電設計流程中, 工程師運用數值分析法進行設計與模擬運算後, 將數據存檔, 可利用 gnuplot 繪圖指令, 以令人容易理解的圖形呈現數值分析結果.</p>
