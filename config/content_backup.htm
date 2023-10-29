@@ -11,26 +11,30 @@
 <p style="padding-left: 30px;">下載 <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EQTW-mq62DpFtw5It9ao-PIBPXW7z5z8oVsW5gd8zbDXOQ?e=q6gHgf">Portable_2023_fall_1.3g_5g.7z</a> (需要下載密碼)</p>
 <p style="padding-left: 30px;">也可以直接使用電腦輔助設計室中 C:\Portable_2023_fall 目錄中的檔案</p>
 <h2>s1511</h2>
-<p>當 Replit 自 2024 開始不再提供免費用戶透過開發部署使用 Webview, 意即之後使用者無法再經由 python3 main.py 在廣域網路中使用 repl.co 網址進行編輯.</p>
-<p>因此各學員除了使用近端隨身系統進行 cp2023 倉儲與網站的改版之外, 只能在自架伺服器中採遠端登入的方式在 s1511.cycu.org 主機中維護個人與分組網站.</p>
-<p>由於 s1511 是一台安裝 Ubuntu 操作系統的虛擬主機, 為了能讓 cp2023 網站在伺服器中啟動, 擬採下列方式進行:</p>
-<p>伺服器的符號名稱為 s1511.cycu.org 表示是 151 實體伺服器上的第一台 Virtualbox 虛擬主機</p>
-<p>各班學員在 s1511 伺服器中的登入帳號將設為其學號</p>
-<p>各學員將經由學校的電子郵箱接收所賦予的帳號、密碼以及所分配使用的伺服器埠號</p>
-<p>各學員登入 s1511.cycu.org 之後, 擬採 SSH 設定方式對 Github 主機進行 git push</p>
-<p>網站 http 轉向 https 的服務由 nginx 伺服器完成</p>
-<p>https 的服務由 stunnel 承接內部 waitress wsgi 伺服器所送出的動態網站內容</p>
-<p>各學員的靜態網站則由 nginx 伺服器中的 public_html 設定完成</p>
+<p>2022.08.30 Replit 趁 Heroku <a href="https://blog.heroku.com/next-chapter">中止提供免費帳號</a>時, 順勢接收許多免費用戶之後, Replit 在 2023.04.13 正式推出 Deployment. 並且允許免費用戶使用. 但在 2023.09.28 卻宣布此一部署服務, 最遲在 2024.01.01 將只提供給付費用戶使用. 意即之後使用者<span style="background-color: #ccffcc;">無法再經由 python3 main.py 在廣域網路中使用 repl.co 網址進行編輯</span>.</p>
+<p>因此各學員除了使用<span style="background-color: #ffff00;">近端隨身系統</span>進行 cp2023 倉儲與網站的改版之外, 只能在<span style="background-color: #ffff00;">自架伺服器</span>中採遠端登入的方式在 s1511.cycu.org 主機中維護個人與分組網站.</p>
+<p><span style="background-color: #ccffff;">s1511 如何建立?</span></p>
+<p>建立伺服器:</p>
+<p style="padding-left: 30px;">s1511 是一台安裝 Ubuntu 操作系統的虛擬主機, 為了能讓 cp2023 網站編輯程式能在伺服器中啟動, 擬採下列方式設定:</p>
+<p style="padding-left: 60px;">1. 伺服器的符號名稱為 s1511.cycu.org 表示是 151 實體伺服器上的第一台 Virtualbox 虛擬主機</p>
+<p style="padding-left: 60px;">2. 各班學員在 s1511 伺服器中的登入帳號將設為其班級代號加上學號, 以計算機程式課程為例, 學員的帳號將設為 cp 加上學號</p>
+<p style="padding-left: 60px;">3. 各學員將經由學校的電子郵箱接收 s1511 伺服器中的帳號、密碼以及所分配使用的伺服器埠號</p>
+<p style="padding-left: 60px;">4. 9 開頭的埠號將用於 cp2023 倉儲中 server.py 設定用, 屬於內部網路埠號, 由 <a href="https://pypi.org/project/waitress/">waitress</a> 負責啟動 <a href="https://en.wikipedia.org/wiki/Web_Server_Gateway_Interface">WSGI 服務</a></p>
+<p style="padding-left: 60px;">5. 各學員登入 s1511.cycu.org 之後, 擬採 SSH 設定方式對 Github 主機進行 git push</p>
+<p style="padding-left: 60px;">6. nginx 全球資訊網伺服器中將包含 http, https 與 public_html 等三種<a href="https://geekrewind.com/configure-nginx-userdir-feature-on-ubuntu-16-04-lts-servers/">服務設定</a></p>
+<p style="padding-left: 60px;">7. waitress wsgi 伺服器經由 9 開頭內部埠號所送出的 http 動態網站內容, 將由各學員在 s1511.cycu.org 中所啟動 8 開頭外部埠號承接, 且此 http proxy 至 https 的服務將採 stunnel 完成</p>
 <hr/>
-<p><span>直接從教務主機取出特定課程的即時修課學員名單(原始碼: <a href="/downloads/nfulist_wsgi_and_server.7z">nfulist_wsgi_and_server.7z</a>):</span></p>
-<p><a href="https://stud.cycu.org:8800?semester=1121&amp;courseno=0813&amp;column=True">https://stud.cycu.org:8800?semester=1121&amp;courseno=0813&amp;column=True</a> </p>
-<p>semester 變數 1121</p>
-<p>courseno 變數 1a: <a href="https://stud.cycu.org:8800/?semester=1121&amp;courseno=0813&amp;column=True">0813</a>, 1b: <a href="https://stud.cycu.org:8800/?semester=1121&amp;courseno=0826&amp;column=True">0826</a>, 2a: <a href="https://stud.cycu.org:8800/?semester=1121&amp;courseno=0838&amp;column=True">0838</a>, 2b: <a href="https://stud.cycu.org:8800/?semester=1121&amp;courseno=0851&amp;column=True">0851</a></p>
-<p>column 變數 True or False(default)</p>
+<p><span>建立使用者帳號:</span></p>
+<p style="padding-left: 30px;">取得修課學員名單:</p>
+<p style="padding-left: 60px;">為能直接從學校教務主機取得各課程班級的即時修課名單, 以 Python + WSGI 建立全球資訊網服務 <span>(原始碼: <a href="/downloads/nfulist_wsgi_and_server.7z">nfulist_wsgi_and_server.7z</a>)</span></p>
+<p style="padding-left: 60px;">從 <a href="https://stud.cycu.org:8800?semester=1121&amp;courseno=0813&amp;column=True">https://stud.cycu.org:8800?semester=1121&amp;courseno=0813&amp;column=True</a> 就可以取得 1a 計算機程式課程的即時修課學員名單, 其中帶有三個輸入參數:</p>
+<p style="padding-left: 90px;">semester 變數,  1121 為 112 學年第 1 學期</p>
+<p style="padding-left: 90px;">courseno 變數, 1a: <a href="https://stud.cycu.org:8800/?semester=1121&amp;courseno=0813&amp;column=True">0813</a>, 1b: <a href="https://stud.cycu.org:8800/?semester=1121&amp;courseno=0826&amp;column=True">0826</a>, 2a: <a href="https://stud.cycu.org:8800/?semester=1121&amp;courseno=0838&amp;column=True">0838</a>, 2b: <a href="https://stud.cycu.org:8800/?semester=1121&amp;courseno=0851&amp;column=True">0851</a>, 每一個學期各課程都有不同代號 (有沒有更好的設計?)</p>
+<p style="padding-left: 90px;">column 變數, True or False(default), True 表示要以行格式, 上下列出學號, 內定為橫向列印</p>
 <hr/>
-<p><span>建立各課程對應的 Ubuntu 帳號與密碼檔案:</span></p>
-<p>gen_s1511_username_password.py</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># Brython
+<p><span>建立各課程對應的 Ubuntu 學員帳號、密碼檔案:</span></p>
+<p>程式碼 gen_s1511_username_password.py</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># Brython 程式碼
 # 導入亂數模組
 import random
 # 導入字串模組
@@ -70,10 +74,11 @@ gen_acc_pass("cad", cad_num)</pre>
 <p><span>create_users_txt.py</span></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">with open("2023_fall_s1511_account_pass.txt") as f:
     data = f.readlines()
+# use "cut -d: -f1,3 /etc/passwd" to make sure used uid range
 # newusers format:  
 # pw_name:pw_passwd:pw_uid:pw_gid:pw_gecos:pw_dir:pw_shell
-# uid starts from 1002
-uid_starts = 1001
+# uid starts from 1003
+uid_starts = 1002
 users = ""
 send = ""
  
@@ -82,7 +87,9 @@ for i in data:
     stud = i.split("\t")
     stud_num = stud[0]
     account = stud[1]
-    password = stud[2].rstrip()
+    password = stud[2]
+    port1 = stud[3]
+    port2 = stud[4].rstrip()
     uid_starts += 1
     uid = str(uid_starts)
     gid = uid
@@ -91,7 +98,7 @@ for i in data:
     shell = "/bin/bash"
     #print(stud_num, account, password)
     users += account + ":" + password + ":" + uid + ":" + gid + ":" + gecos + ":" + home_dir + ":" + shell + "\n"
-    send += stud_num + ":" + account + ":" + password + "\n"
+    send += stud_num + ":" + account + ":" + password + ":" + port1 + ":" + port2 + "\n"
  
 with open("users.txt", "w", encoding="utf-8", newline='\n') as f:
         f.write(users)
@@ -1049,7 +1056,7 @@ int main() {
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">[http "https://github.com"]
 sslVerify = false</pre>
 <p style="padding-left: 30px;">表示不使用 Windows 的 SChannel API 進行認證, 轉而使用 OpenSSL handshake 認證.</p>
-<hr>
+<hr/>
 <p>利用 MSYS2 編譯 SciTE 編輯器:</p>
 <p style="padding-left: 30px;">從 <a href="https://www.scintilla.org/SciTE.html">https://www.scintilla.org/SciTE.html</a> 下載 Scite 原始碼.</p>
 <p style="padding-left: 30px;">cd scintilla\win32</p>
@@ -1061,7 +1068,7 @@ sslVerify = false</pre>
 <p style="padding-left: 30px;">need extra libgcc_s_seh-1.dll, libstdc++-6.dll and libwinpthread-1.dll along with <span>Scintilla.dll and </span><span>SciLexer.dll </span>to execute SciTE.exe</p>
 <p style="padding-left: 30px;">下載 <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/Eai7ZaPaDzdLjObSeCYpSJoBYSyLEEq8iREAsArUVycgug?e=W7PA7x">SciTE537_src_compiled.7z</a> (需要下載密碼)</p>
 <p>SciTE properties files: <a href="http://wcm.cycu.org:88/github/cad2019/downloads/SciTE_properties_files.7z">SciTE_properties_files.7z</a></p>
-<hr>
+<hr/>
 <p>利用 MSYS2 編譯 Tiny C Compiler 並配置 gd 程式庫環境:</p>
 <p>從 <a href="https://github.com/Tiny-C-Compiler/mirror-repository">https://github.com/Tiny-C-Compiler/mirror-repository</a> 下載 Tiny C Compiler 0.9.27 原始碼後, 利用 win32 目錄中的 build-tcc.bat 完成編譯.</p>
 <p>在 MSYS2 環境中以 pacman -S mingw-w64-x86_64-libgd 安裝 gd 程式庫後, 可以取得 2.3.3 版的 libgd.dll</p>
@@ -1309,7 +1316,7 @@ doc["add1to100"].bind('click', add)
 <div style="width: 100%; height: 100%;"><textarea autocomplete="off" id="kw_console1"></textarea></div>
 <p><!-- Brython 程式執行的結果, 都以 brython_div1 作為切入位置 --></p>
 <div id="brython_div1"></div>
-<!-- editor1 結束 --><hr><!-- ########################################## -->
+<!-- editor1 結束 --><hr/><!-- ########################################## -->
 <p>從 1 累加到 100 part2:</p>
 <p><button id="add1to100part2">1 add to 100</button><button id="cango_three_gears">cango_three_gears</button><button id="bsnake">BSnake</button><button id="aitetris">AI Tetris</button><button id="threejsblock">Rotating Block</button></p>
 <p><!-- 請注意, 這裡使用 Javascript 將 localStorage["kw_py_src2"] 中存在近端瀏覽器的程式碼, 由使用者決定存檔名稱--></p>
@@ -1428,7 +1435,7 @@ doc["threejsblock"].bind("click", threejsblock.do)
 <div style="width: 100%; height: 100%;"><textarea autocomplete="off" id="kw_console2"></textarea></div>
 <p><!-- Brython 程式執行的結果, 都以 brython_div1 作為切入位置 --></p>
 <div id="brython_div2"></div>
-<!-- editor2 結束 --><hr/>
+<!-- editor2 結束 --><hr>
 <p>
 <script src="https://unpkg.com/three@0.144.0/build/three.js" type="text/javascript"></script>
 </p>
@@ -2873,7 +2880,7 @@ doc["add1to100"].bind('click', add)
 <div style="width: 100%; height: 100%;"><textarea autocomplete="off" id="kw_console1"></textarea></div>
 <p><!-- Brython 程式執行的結果, 都以 brython_div1 作為切入位置 --></p>
 <div id="brython_div1"></div>
-<!-- editor1 結束 --><hr/><!-- ########################################## -->
+<!-- editor1 結束 --><hr><!-- ########################################## -->
 <p>從 1 累加到 100 part2:</p>
 <p><button id="add1to100part2">1 add to 100</button><button id="cango_three_gears">cango_three_gears</button><button id="bsnake">BSnake</button><button id="aitetris">AI Tetris</button><button id="threejsblock">Rotating Block</button></p>
 <p><!-- 請注意, 這裡使用 Javascript 將 localStorage["kw_py_src2"] 中存在近端瀏覽器的程式碼, 由使用者決定存檔名稱--></p>
@@ -2992,7 +2999,7 @@ doc["threejsblock"].bind("click", threejsblock.do)
 <div style="width: 100%; height: 100%;"><textarea autocomplete="off" id="kw_console2"></textarea></div>
 <p><!-- Brython 程式執行的結果, 都以 brython_div1 作為切入位置 --></p>
 <div id="brython_div2"></div>
-<!-- editor2 結束 --><hr/>
+<!-- editor2 結束 --><hr>
 <p>
 <script src="https://unpkg.com/three@0.144.0/build/three.js" type="text/javascript"></script>
 </p></hr></hr></hr>
