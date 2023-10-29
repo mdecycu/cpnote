@@ -26,14 +26,14 @@
 <hr/>
 <p><span>建立使用者帳號:</span></p>
 <p style="padding-left: 30px;">取得修課學員名單:</p>
-<p style="padding-left: 60px;">為能直接從學校教務主機取得各課程班級的即時修課名單, 以 Python + WSGI 建立全球資訊網服務 <span>(原始碼: <a href="/downloads/nfulist_wsgi_and_server.7z">nfulist_wsgi_and_server.7z</a>)</span></p>
+<p style="padding-left: 60px;">為能直接從學校教務主機取得各課程班級的即時修課名單, 以 Python + WSGI 建立全球資訊網服務 <span>(原始碼: <a href="/downloads/nfulist_wsgi_and_server.7z">nfulist_wsgi_and_server.7z</a>, <a href="/downloads/wsgi.py">wsgi.py</a>)</span></p>
 <p style="padding-left: 60px;">從 <a href="https://stud.cycu.org:8800?semester=1121&amp;courseno=0813&amp;column=True">https://stud.cycu.org:8800?semester=1121&amp;courseno=0813&amp;column=True</a> 就可以取得 1a 計算機程式課程的即時修課學員名單, 其中帶有三個輸入參數:</p>
 <p style="padding-left: 90px;">semester 變數,  1121 為 112 學年第 1 學期</p>
 <p style="padding-left: 90px;">courseno 變數, 1a: <a href="https://stud.cycu.org:8800/?semester=1121&amp;courseno=0813&amp;column=True">0813</a>, 1b: <a href="https://stud.cycu.org:8800/?semester=1121&amp;courseno=0826&amp;column=True">0826</a>, 2a: <a href="https://stud.cycu.org:8800/?semester=1121&amp;courseno=0838&amp;column=True">0838</a>, 2b: <a href="https://stud.cycu.org:8800/?semester=1121&amp;courseno=0851&amp;column=True">0851</a>, 每一個學期各課程都有不同代號 (有沒有更好的設計?)</p>
 <p style="padding-left: 90px;">column 變數, True or False(default), True 表示要以行格式, 上下列出學號, 內定為橫向列印</p>
 <hr/>
 <p><span>建立各課程對應的 Ubuntu 學員帳號、密碼檔案:</span></p>
-<p>程式碼 gen_s1511_username_password.py</p>
+<p>程式碼 <a href="/downloads/gen_s1511_username_password.py">gen_s1511_username_password.py</a></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># Brython 程式碼
 # 導入亂數模組
 import random
@@ -71,7 +71,7 @@ def gen_acc_pass(course, course_num):
         internal_port += 1
 gen_acc_pass("cp", cp_num)
 gen_acc_pass("cad", cad_num)</pre>
-<p><span>create_users_txt.py</span></p>
+<p><a href="/downloads/create_users_txt.py">create_users_txt.py</a></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">with open("2023_fall_s1511_account_pass.txt") as f:
     data = f.readlines()
 # use "cut -d: -f1,3 /etc/passwd" to make sure used uid range
@@ -1435,7 +1435,7 @@ doc["threejsblock"].bind("click", threejsblock.do)
 <div style="width: 100%; height: 100%;"><textarea autocomplete="off" id="kw_console2"></textarea></div>
 <p><!-- Brython 程式執行的結果, 都以 brython_div1 作為切入位置 --></p>
 <div id="brython_div2"></div>
-<!-- editor2 結束 --><hr>
+<!-- editor2 結束 --><hr/>
 <p>
 <script src="https://unpkg.com/three@0.144.0/build/three.js" type="text/javascript"></script>
 </p>
@@ -2880,7 +2880,7 @@ doc["add1to100"].bind('click', add)
 <div style="width: 100%; height: 100%;"><textarea autocomplete="off" id="kw_console1"></textarea></div>
 <p><!-- Brython 程式執行的結果, 都以 brython_div1 作為切入位置 --></p>
 <div id="brython_div1"></div>
-<!-- editor1 結束 --><hr><!-- ########################################## -->
+<!-- editor1 結束 --><hr/><!-- ########################################## -->
 <p>從 1 累加到 100 part2:</p>
 <p><button id="add1to100part2">1 add to 100</button><button id="cango_three_gears">cango_three_gears</button><button id="bsnake">BSnake</button><button id="aitetris">AI Tetris</button><button id="threejsblock">Rotating Block</button></p>
 <p><!-- 請注意, 這裡使用 Javascript 將 localStorage["kw_py_src2"] 中存在近端瀏覽器的程式碼, 由使用者決定存檔名稱--></p>
@@ -2999,7 +2999,7 @@ doc["threejsblock"].bind("click", threejsblock.do)
 <div style="width: 100%; height: 100%;"><textarea autocomplete="off" id="kw_console2"></textarea></div>
 <p><!-- Brython 程式執行的結果, 都以 brython_div1 作為切入位置 --></p>
 <div id="brython_div2"></div>
-<!-- editor2 結束 --><hr>
+<!-- editor2 結束 --><hr/>
 <p>
 <script src="https://unpkg.com/three@0.144.0/build/three.js" type="text/javascript"></script>
-</p></hr></hr></hr>
+</p>
