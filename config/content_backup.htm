@@ -147,8 +147,11 @@ git push
 cd ./../public_html/cpnote
 git pull</pre>
 <p></p><h3>linux</h3>
-<p>s1511.cycu.org 是一台在 Windows 環境中使用 Virtualbox 建立的虛擬主機, 其操作系統為 Ubuntu 22.04 LTS</p>
-<p>建立 openssh keys 可以使用 ssh-keygen 指令</p>
+<p>有關 s1511 伺服器:</p>
+<p style="padding-left: 30px;">s1511.cycu.org 是一台在 Windows 環境中使用 Virtualbox 建立的虛擬主機, 其操作系統為 Ubuntu 22.04 LTS.</p>
+<p style="padding-left: 30px;">因為這台主機已經配置能夠讓 cp2023 執行動態編輯程式的環境, 所以只要使用者能夠利用 OpenSSH 協定, 連結 s1511 與 github.com, 就可以利用 ssh 協定將倉儲 git clone 到 s1511 主機中.</p>
+<p style="padding-left: 30px;">所謂"<span>連結 s1511 與 github.com", 就是指使用者已經將帳號下的 .ssh/id_rsa.pub 的內容送到 Github 帳號 settings 對應的 SSH and GPG keys 中, 且 .ssh/config 已經設定從 IPv6 以 ssh 協定透過代理主機連線到 github.com 的內容.</span></p>
+<p>在 Windows 或 Linux 建立 openssh keys 可以使用 ssh-keygen 指令</p>
 <p>但是 Windows 環境下的 ssh 除了透過命令列指令, 在 Windows 也可以使用 putty 套件工具.</p>
 <p>另外 Windows  sftp <span>除了透過命令列指令, 在 Windows 也可以使用 filezilla 套件工具.</span></p>
 <p>在 s1511.cycu.org 建立 keys 的原因, 是希望能夠直接利用 OpenSSH 的協定, 對 github 中的倉儲 push.</p>
@@ -159,7 +162,8 @@ git pull</pre>
 http_proxy=http://p4.cycu.org:3128
 https_proxy=http://p4.cycu.org:3128
 </pre>
-<p></p><h1>上課內容</h1>
+<p>假如處理好 .ssh/config, .ssh/id_rsa 與 .ssh/id_rsa.pub 的設定, 各用戶就可以利用下列指令, 以 SSH 協定取下 cp2023</p>
+<p>git clone --recurse-submodules git@github.com:scrum-1/cp2023.git</p><h1>上課內容</h1>
 <p>112 學年度第一學期 (2023 Fall) 機械設計工程系 - 計算機程式課程的上課內容與進度.</p>
 <p>有關 Replit 與近端可攜系統的相關操作, 請參考 cadnote 中的內容: <a href="https://mde.tw/cadnote/content/Replit.html">Replit</a>, <a href="https://mde.tw/cadnote/content/%E8%BF%91%E7%AB%AF%E5%8F%AF%E6%94%9C.html">近端可攜</a>, <a href="https://mde.tw/cadnote/content/Git.html">Git</a>.</p>
 <p>手機建議安裝以下 Apps:</p>
