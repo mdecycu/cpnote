@@ -147,11 +147,23 @@ git push
 cd ./../public_html/cp2023
 git pull</pre>
 <p></p><h3>linux</h3>
+<p>由於 s1511.cycu.org 是一台 Ubuntu 伺服器, 使用者登入之後必須熟悉以下 Linux 操作系統尚的指令:</p>
+<p style="padding-left: 30px;">ls 請整理出 <a href="https://blog.gtwang.org/linux/linux-ls-command-tutorial/">https://blog.gtwang.org/linux/linux-ls-command-tutorial/</a> 中的指令說明與用法</p>
+<p style="padding-left: 30px;">cd 請整理出 <a href="https://www.tokfun.net/os/linux/linux-cd-command/">https://www.tokfun.net/os/linux/linux-cd-command/</a> 中的指令說明與用法</p>
+<p style="padding-left: 30px;">cp <a href="https://blog.gtwang.org/linux/linux-cp-command-copy-files-and-directories-tutorial/">https://blog.gtwang.org/linux/linux-cp-command-copy-files-and-directories-tutorial/</a></p>
+<p style="padding-left: 30px;">vi <a href="https://code.yidas.com/linux-vi-vim-command/">https://code.yidas.com/linux-vi-vim-command/</a></p>
+<p style="padding-left: 30px;">其他 Linux commands:</p>
+<p style="padding-left: 60px;"><a href="https://bjpcjp.github.io/pdfs/devops/linux-commands-handbook.pdf">https://bjpcjp.github.io/pdfs/devops/linux-commands-handbook.pdf</a> </p>
+<p style="padding-left: 60px;"><a href="https://buildmedia.readthedocs.org/media/pdf/lym/latest/lym.pdf">https://buildmedia.readthedocs.org/media/pdf/lym/latest/lym.pdf</a> </p>
+<p style="padding-left: 60px;"><a href="http://cc.iiti.ac.in/docs/linuxcommands.pdf">http://cc.iiti.ac.in/docs/linuxcommands.pdf</a> </p>
+<h3>cp2023</h3>
+<p>使用 s1511.cycu.org 伺服器的目的是希望讓各學員登入此電腦後, 能夠以服務啟動個人位於 Github 上的 cp2023 執行編輯後, 能夠將動態網站與靜態網站的改版資料推送回 Github, 並在 s1511 伺服器上即時展示個人的 cp2023 靜態網站內容.</p>
 <p>有關 s1511 伺服器:</p>
 <p style="padding-left: 30px;">s1511.cycu.org 是一台在 Windows 環境中使用 Virtualbox 建立的虛擬主機, 其操作系統為 Ubuntu 22.04 LTS, 而 <a href="https://ubuntu.com/">Ubuntu</a> 則是 Linux 操作系統中的一個分支.</p>
 <p style="padding-left: 30px;">因為這台主機已經配置能夠讓 cp2023 執行動態編輯程式的環境, 所以只要使用者能夠利用 OpenSSH 協定, 連結 s1511 與 github.com, 就可以利用 ssh 協定將倉儲 git clone 到 s1511 主機中.</p>
 <p style="padding-left: 30px;">所謂"<span>連結 s1511 與 github.com", 就是指使用者已經將帳號下的 .ssh/id_rsa.pub 的內容送到 Github 帳號 settings 對應的 SSH and GPG keys 中, 且 .ssh/config 已經設定從 IPv6 以 ssh 協定透過代理主機連線到 github.com 的內容.</span></p>
-<p style="padding-left: 30px;"><span>所謂"這台主機已經配置能夠讓 cp2023 執行動態編輯程式的環境", 指的是這台主機已經在 Python3 環境安裝 cp2023 啟動所需的模組, 也就是已經透過管理者執行 pip install flask <span class="tipue_search_content_bold">flask_cors</span><span><span> </span>bs4 lxml pelican markdown pyopenssl, 而且透過 WSGI 讓使用者只要執行 cp2023 倉儲中的 server.py, 就能開啟動態網頁編輯器.</span></span></p>
+<p style="padding-left: 30px;"><span>所謂"這台主機已經配置能夠讓 cp2023 執行動態編輯程式的環境", 指的是這台主機已經在 Python3 環境安裝 cp2023 啟動所需的模組, 也就是已經透過管理者執行 pip install flask <span class="tipue_search_content_bold">flask_cors</span><span><span> </span>bs4 lxml pelican markdown pyopenssl, 而且透過 WSGI 讓使用者只要執行 cp2023 倉儲中的 server.py, 就能開啟動態網頁編輯器. 但多人存在同一台伺服器使用 WSGI 服務時, 則必須各用戶使用不同的內部與外部埠號, 因此只要各用戶使用分配到的內部 port 與外部 port 進行設定, 各用戶就可以在 cp2023 倉儲啟動編輯後, 登入修改內建的 admin 管理者密碼, 並且以 chmod o-r config/config 指令, 取消 others (也就是 Linux 操作系統下的所有帳號) 的 read 權限, 以保全管理者帳號的編碼. (在 Replit 是透過  Secrets 中的 config 變數設定進行保全).</span></span></p>
+<h3>SSH keys</h3>
 <p>在 Windows 或 Linux 建立 openssh keys 都可以使用 ssh-keygen 指令</p>
 <p>但是 Windows 環境下的 ssh 除了透過命令列指令, 在 Windows 也可以使用 putty 套件工具.</p>
 <p>另外 Windows  sftp <span>除了透過命令列指令, 在 Windows 也可以使用 filezilla 套件工具.</span></p>
@@ -163,8 +175,20 @@ git pull</pre>
 http_proxy=http://p4.cycu.org:3128
 https_proxy=http://p4.cycu.org:3128
 </pre>
+<h3>git clone</h3>
+<p>SSH 代理主機與 https 代理主機設定</p>
 <p>假如處理好 .ssh/config, .ssh/id_rsa 與 .ssh/id_rsa.pub 的設定, 各用戶就可以利用下列指令, 以 SSH 協定取下 cp2023</p>
-<p>git clone --recurse-submodules git@github.com:scrum-1/cp2023.git</p><h1>上課內容</h1>
+<p>git clone --recurse-submodules <a href="mailto:git@github.com:scrum-1/cp2023.git">git@github.com:scrum-1/cp2023.git</a></p>
+<h3>server.py</h3>
+<p>內部埠號與外部埠號</p>
+<p>列出使用 python3 啟動的服務:</p>
+<p>ps -ef|grep python3</p>
+<p>當使用 python3 server.py &amp; 執行 process 後, ps -axo pid,comm,uid | grep "python3" 的指令, 可以列出各自帳號下所 background 執行的 process pid, 若需要列出執行 process 對應目錄, 則可以利用 pwdx 加上 pid 後執行取得.</p>
+<p>ps -axo : <a href="https://explainshell.com/explain?cmd=ps+-axo+pid%2Crss%2Ccommand">https://explainshell.com/explain?cmd=ps+-axo+pid%2Crss%2Ccommand</a></p><h3>git commit</h3>
+<p>git config --global user.email and user.name</p>
+<p>acp 權限與 public_html 目錄中的倉儲內容</p>
+<p>使用者目錄 (711) 與 public_html (755) 目錄權限</p>
+<p></p><h1>上課內容</h1>
 <p>112 學年度第一學期 (2023 Fall) 機械設計工程系 - 計算機程式課程的上課內容與進度.</p>
 <p>有關 Replit 與近端可攜系統的相關操作, 請參考 cadnote 中的內容: <a href="https://mde.tw/cadnote/content/Replit.html">Replit</a>, <a href="https://mde.tw/cadnote/content/%E8%BF%91%E7%AB%AF%E5%8F%AF%E6%94%9C.html">近端可攜</a>, <a href="https://mde.tw/cadnote/content/Git.html">Git</a>.</p>
 <p>手機建議安裝以下 Apps:</p>

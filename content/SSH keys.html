@@ -2,7 +2,7 @@
         <head>
         <title>cpnote</title>
         <meta charset="utf-8">
-<meta property="head" content="H2">
+<meta property="head" content="H3">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
@@ -142,144 +142,19 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">About << <a href='About.html'>Previous</a> <a href='linux.html'>Next</a> >> linux<br /><h1>s1511</h1>
-<p>2022.08.30 Replit 趁 Heroku <a href="https://blog.heroku.com/next-chapter">中止提供免費帳號</a>時, 順勢接收許多免費用戶之後, Replit 在 2023.04.13 正式推出 Deployment. 並且允許免費用戶使用. 但在 2023.09.28 卻宣布此一部署服務, 最遲在 2024.01.01 將只提供給付費用戶使用. 意即之後使用者<span style="background-color: #ccffcc;">無法再經由 python3 main.py 在廣域網路中使用 repl.co 網址進行編輯</span>.</p>
-<p>因此各學員除了使用<span style="background-color: #ffff00;">近端隨身系統</span>進行 cp2023 倉儲與網站的改版之外, 只能在<span style="background-color: #ffff00;">自架伺服器</span>中採遠端登入的方式在 s1511.cycu.org 主機中維護個人與分組網站.</p>
-<p><span style="background-color: #ccffff;">s1511 如何建立?</span></p>
-<p>建立伺服器:</p>
-<p style="padding-left: 30px;">s1511 是一台安裝 Ubuntu 操作系統的虛擬主機, 為了能讓 cp2023 網站編輯程式能在伺服器中啟動, 擬採下列方式設定:</p>
-<p style="padding-left: 60px;">1. 伺服器的符號名稱為 s1511.cycu.org 表示是 151 實體伺服器上的第一台 Virtualbox 虛擬主機, 並使用 <a href="https://nssm.cc/download">nssm</a> 設定隨實體主機啟動時開啟.</p>
-<p style="padding-left: 60px;">2. 各班學員在 s1511 伺服器中的登入帳號將設為其班級代號加上學號, 以計算機程式課程為例, 學員的帳號將設為 cp 加上學號</p>
-<p style="padding-left: 60px;">3. 各學員將經由學校的電子郵箱接收 s1511 伺服器中的帳號、密碼以及所分配使用的伺服器埠號</p>
-<p style="padding-left: 60px;">4. 9 開頭的埠號將用於 cp2023 倉儲中 server.py 設定用, 屬於內部網路埠號, 由 <a href="https://pypi.org/project/waitress/">waitress</a> 負責啟動 <a href="https://en.wikipedia.org/wiki/Web_Server_Gateway_Interface">WSGI 服務</a></p>
-<p style="padding-left: 60px;">5. 各學員登入 s1511.cycu.org 之後, 擬採 SSH 設定方式對 Github 主機進行 git push</p>
-<p style="padding-left: 60px;">6. nginx 全球資訊網伺服器中將包含 http, https 與 public_html 等三種<a href="https://geekrewind.com/configure-nginx-userdir-feature-on-ubuntu-16-04-lts-servers/">服務設定</a></p>
-<p style="padding-left: 60px;">7. waitress wsgi 伺服器經由 9 開頭內部埠號所送出的 http 動態網站內容, 將由各學員在 s1511.cycu.org 中所啟動 8 開頭外部埠號承接, 且此 http proxy 至 https 的服務將採 stunnel 完成</p>
-<hr/>
-<p><span>建立使用者帳號:</span></p>
-<p style="padding-left: 30px;">取得修課學員名單:</p>
-<p style="padding-left: 60px;">為能直接從學校教務主機取得各課程班級的即時修課名單, 以 Python + WSGI 建立全球資訊網服務 <span>(原始碼: <a href="./../downloads/nfulist_wsgi_and_server.7z">nfulist_wsgi_and_server.7z</a>, <a href="./../downloads/wsgi.py">wsgi.py</a>)</span></p>
-<p style="padding-left: 60px;">從 <a href="https://stud.cycu.org:8800?semester=1121&amp;courseno=0813&amp;column=True">https://stud.cycu.org:8800?semester=1121&amp;courseno=0813&amp;column=True</a> 就可以取得 1a 計算機程式課程的即時修課學員名單, 其中帶有三個輸入參數:</p>
-<p style="padding-left: 90px;">semester 變數,  1121 為 112 學年第 1 學期</p>
-<p style="padding-left: 90px;">courseno 變數, 1a: <a href="https://stud.cycu.org:8800/?semester=1121&amp;courseno=0813&amp;column=True">0813</a>, 1b: <a href="https://stud.cycu.org:8800/?semester=1121&amp;courseno=0826&amp;column=True">0826</a>, 2a: <a href="https://stud.cycu.org:8800/?semester=1121&amp;courseno=0838&amp;column=True">0838</a>, 2b: <a href="https://stud.cycu.org:8800/?semester=1121&amp;courseno=0851&amp;column=True">0851</a>, 每一個學期各課程都有不同代號 (有沒有更好的設計?)</p>
-<p style="padding-left: 90px;">column 變數, True or False(default), True 表示要以行格式, 上下列出學號, 內定為橫向列印</p>
-<hr/>
-<p><span>建立各課程對應的 Ubuntu 學員帳號、密碼檔案:</span></p>
-<p>程式碼 <a href="./../downloads/gen_s1511_username_password.py">gen_s1511_username_password.py</a></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># Brython 程式碼
-# 導入亂數模組
-import random
-# 導入字串模組
-import string
-# 利用 def 關鍵字定義函式
-# 函式的輸入變數可以設定初始值
-def password_generator(size=4, chars=string.ascii_lowercase + string.digits):
-    # 函式內以多行註解說明函式功能
-    """Generate random password
-    """
-    # 利用 return 關鍵字將所產生的亂數字串傳回
-    return ''.join(random.choice(chars) for _ in range(size))
-# 建立一個變數與隨後的字串對應
-pass_string = "abcdefhkrstuwxyz"
-cp_num = ["0813", "0826"]
-cad_num = ["0838", "0851"]
-connect_port = 8001
-internal_port = 9001
-def gen_acc_pass(course, course_num):
-    global connect_port, internal_port
-    stud_list =[]
-    for num in course_num:
-        url = "https://stud.cycu.org:8800?semester=1121&amp;courseno=" + num + "&amp;column=True"
-        class_list = open(url).read().split("\n")[:-1]
-        stud_list += class_list
-        #print(stud_list)
-    for stud_num in stud_list:
-        password = password_generator(4, pass_string)
-        #print(password)
-        account = course + stud_num
-        #print(account)
-        print(stud_num + "\t" + account + "\t" + password + "\t" + str(connect_port) + "\t" + str(internal_port))
-        connect_port += 1
-        internal_port += 1
-gen_acc_pass("cp", cp_num)
-gen_acc_pass("cad", cad_num)</pre>
-<p><a href="./../downloads/create_users_txt.py">create_users_txt.py</a></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">with open("2023_fall_s1511_account_pass.txt") as f:
-    data = f.readlines()
-# use "cut -d: -f1,3 /etc/passwd" to make sure used uid range
-# newusers format:  
-# pw_name:pw_passwd:pw_uid:pw_gid:pw_gecos:pw_dir:pw_shell
-# uid starts from 1003
-uid_starts = 1002
-users = ""
-send = ""
- 
-for i in data:
-    #stud_num \t account \t password \n
-    stud = i.split("\t")
-    stud_num = stud[0]
-    account = stud[1]
-    password = stud[2]
-    port1 = stud[3]
-    port2 = stud[4].rstrip()
-    uid_starts += 1
-    uid = str(uid_starts)
-    gid = uid
-    gecos = account
-    home_dir = "/home/" + account
-    shell = "/bin/bash"
-    #print(stud_num, account, password)
-    users += account + ":" + password + ":" + uid + ":" + gid + ":" + gecos + ":" + home_dir + ":" + shell + "\n"
-    send += stud_num + ":" + account + ":" + password + ":" + port1 + ":" + port2 + "\n"
- 
-with open("users.txt", "w", encoding="utf-8", newline='\n') as f:
-        f.write(users)
- 
-with open("send.txt", "w", encoding="utf-8", newline='\n') as f:
-        f.write(send)</pre>
-<p>若要修正跳行符號錯誤, 可以採用:</p>
-<p>change_shell.py</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">import os
-with open("users.txt", "r", encoding="UTF-8") as f:
-    data = f.read().splitlines()
-for i in data:
-    account = i.split(":")[0]
-    print(account)
-    os.system("sudo chsh -s /bin/bash " + account)</pre>
-<p><span>當執行上列程式時, 為避免在程式中列出管理者密碼, 可以編輯 /etc/sudoers 並加入:</span></p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false"># only require a password once every 60 minutes
-Defaults timestamp_timeout=60</pre>
-<p><span>可以讓 sudo python3 change_shell.py 執行時無需輸入管理者密碼.</span></p>
-<hr/>
-<p>s1511 虛擬主機環境與使用流程:</p>
-<ol>
-<li>s1511 主機只有 IPv6 網路協定, 因此 ssh, sftp 以及 http 等連線的使用都必須透過雙協定支援代理主機設定, 才能與僅支援 IPv4 的電腦相連.</li>
-<li>若希望遠端登入 <span>s1511</span> 伺服器的電腦, 使用 IPv6 網路協定, 可以直接以 ssh 連線, sftp 也可直接連線.</li>
-<li>若希望遠端登入 <span>s1511</span> 伺服器的電腦, 只有 IPv4 網路協定, 則遠端登入使用 ssh 必須設定雙協定支援代理主機, 假如連線的電腦位於校外, 則可以使用專責 Proxy 或透過校方所提供的 vpn 進行連線後, 再使用 ssh 遠端登入 <span>s1511</span> 主機.</li>
-<li>使用者遠端登入 <span>s1511</span> 主機後, 因為該主機只有 IPv6 網路, 因此對 github.com 主機的連線, 無論是 ssh 或 http 都必須設定 proxy 代理主機.</li>
-<li>使用者登入 <span>s1511</span>, 主要目的是利用主機上的 Python 3 執行位於 github.com 上的個人倉儲動態網站, 因此必須先使用 git clone 取下個人的倉儲.</li>
-<li>由於位於 github.com 上的個人倉儲使用子模組, 因此 git clone 之前必須先設定 ssh 對 github.com 連線的代理主機, 以及取下子模組用的 http 代理主機.</li>
-<li>利用 ssh 協定取下個人的代理主機, 其設定必須先用 ssh-keygen 在 .ssh 目錄中建立 private key (id_rsa) 以及 public key (id_rsa.pub), 並且將 id_rsa.pub 登錄到個人 github.com 帳號下 Settings 下的 SSH and GPG keys 設定區. 而且需要在 .ssh 目錄中, 利用 config 設定檔案, 指定 Host 以及代理主機, 此 Host 名稱可以視為 Linux 操作系統下, 以 ssh 對 github.com 連線的 session 名稱.</li>
-<li>git clone 執行時所使用的 http 代理主機設定可透過 git config --global http.proxy http://your_proxy_server:3128 達成.</li>
-<li>完成將個人倉儲取下至個人帳號下的工作目錄後, 因為要採 waitress 方式執行 cmsimde, 因此還需要取得對應的 server.py, 必須放入倉儲目錄中, 另外 acp 也必須使用 Linux 的指令格式, 並且若要使用網際 acp, 則必須利用 chmod u+x acp 讓 acp 可以執行.</li>
-<li>當使用 python3 server.py &amp; 執行 process 後, ps axo pid,comm,uid | grep "python3" 的指令, 可以列出各自帳號下所 background 執行的 process pid, 若需要列出執行 process 對應目錄, 則可以利用 pwdx 加上 pid 後執行取得.</li>
-</ol>
-<p>.ssh 目錄中的 <a href="./../downloads/config">config</a>, 將 SSH session 名稱設為 github.com:</p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">Host github.com
-User git
-Hostname github.com
-ProxyCommand /usr/bin/ncat --proxy p4.cycu.org:3128 --proxy-type http %h %p
+    <div id="tipue_search_content">cp2023 << <a href='cp2023.html'>Previous</a> <a href='git clone.html'>Next</a> >> git clone<br /><h1>SSH keys</h1>
+<p>在 Windows 或 Linux 建立 openssh keys 都可以使用 ssh-keygen 指令</p>
+<p>但是 Windows 環境下的 ssh 除了透過命令列指令, 在 Windows 也可以使用 putty 套件工具.</p>
+<p>另外 Windows  sftp <span>除了透過命令列指令, 在 Windows 也可以使用 filezilla 套件工具.</span></p>
+<p>在 s1511.cycu.org 建立 keys 的原因, 是希望能夠直接利用 OpenSSH 的協定, 對 github 中的倉儲 push.</p>
+<p>因為 github.com 只支援 IPv4, 而 s1511.cycu.org 只支援 IPv6</p>
+<p>但 s1511.cycu.org 主機中已經透過 /etc/environment 設定 http 與 https 連線所需的代理主機, 使用者只需要自行處理 ~.ssh/config 中的 ssh 協定代理主機設定即可.</p>
+<p>/etc/environment 中有關 http 與 https 的代理主機設定:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+http_proxy=http://p4.cycu.org:3128
+https_proxy=http://p4.cycu.org:3128
 </pre>
-<p>public_html 中以 cpnote 名稱建立目錄後, 必須以 https 格式取下 cp2023 倉儲內容作為靜態網站</p>
-<p>acp 必須納入 public_html 目錄中的靜態網站 git pull, 且利用 chmod u+x acp 令其可以執行</p>
-<p><a href="./../downloads/acp">acp</a> 內容:</p>
-<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">#! /bin/bash
-git add .
-git commit -m "$1"
-git push
-cd ./../public_html/cp2023
-git pull</pre>
-<p></p><br />About << <a href='About.html'>Previous</a> <a href='linux.html'>Next</a> >> linux</div>
+<br />cp2023 << <a href='cp2023.html'>Previous</a> <a href='git clone.html'>Next</a> >> git clone</div>
         
     <!-- footer -->
       <div class="container">
