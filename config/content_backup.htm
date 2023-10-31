@@ -144,14 +144,15 @@ ProxyCommand /usr/bin/ncat --proxy p4.cycu.org:3128 --proxy-type http %h %p
 git add .
 git commit -m "$1"
 git push
-cd ./../public_html/cpnote
+cd ./../public_html/cp2023
 git pull</pre>
 <p></p><h3>linux</h3>
 <p>有關 s1511 伺服器:</p>
-<p style="padding-left: 30px;">s1511.cycu.org 是一台在 Windows 環境中使用 Virtualbox 建立的虛擬主機, 其操作系統為 Ubuntu 22.04 LTS.</p>
+<p style="padding-left: 30px;">s1511.cycu.org 是一台在 Windows 環境中使用 Virtualbox 建立的虛擬主機, 其操作系統為 Ubuntu 22.04 LTS, 而 <a href="https://ubuntu.com/">Ubuntu</a> 則是 Linux 操作系統中的一個分支.</p>
 <p style="padding-left: 30px;">因為這台主機已經配置能夠讓 cp2023 執行動態編輯程式的環境, 所以只要使用者能夠利用 OpenSSH 協定, 連結 s1511 與 github.com, 就可以利用 ssh 協定將倉儲 git clone 到 s1511 主機中.</p>
 <p style="padding-left: 30px;">所謂"<span>連結 s1511 與 github.com", 就是指使用者已經將帳號下的 .ssh/id_rsa.pub 的內容送到 Github 帳號 settings 對應的 SSH and GPG keys 中, 且 .ssh/config 已經設定從 IPv6 以 ssh 協定透過代理主機連線到 github.com 的內容.</span></p>
-<p>在 Windows 或 Linux 建立 openssh keys 可以使用 ssh-keygen 指令</p>
+<p style="padding-left: 30px;"><span>所謂"這台主機已經配置能夠讓 cp2023 執行動態編輯程式的環境", 指的是這台主機已經在 Python3 環境安裝 cp2023 啟動所需的模組, 也就是已經透過管理者執行 pip install flask <span class="tipue_search_content_bold">flask_cors</span><span><span> </span>bs4 lxml pelican markdown pyopenssl, 而且透過 WSGI 讓使用者只要執行 cp2023 倉儲中的 server.py, 就能開啟動態網頁編輯器.</span></span></p>
+<p>在 Windows 或 Linux 建立 openssh keys 都可以使用 ssh-keygen 指令</p>
 <p>但是 Windows 環境下的 ssh 除了透過命令列指令, 在 Windows 也可以使用 putty 套件工具.</p>
 <p>另外 Windows  sftp <span>除了透過命令列指令, 在 Windows 也可以使用 filezilla 套件工具.</span></p>
 <p>在 s1511.cycu.org 建立 keys 的原因, 是希望能夠直接利用 OpenSSH 的協定, 對 github 中的倉儲 push.</p>
