@@ -146,7 +146,10 @@ git commit -m "$1"
 git push
 cd ./../public_html/cpnote
 git pull</pre>
-<p></p><h1>上課內容</h1>
+<p></p><h3>linux</h3>
+<p>s1511.cycu.org 是一台在 Windows 環境中使用 Virtualbox 建立的虛擬主機, 其操作系統為 Ubuntu 22.04 LTS</p>
+<p>建立 openssh keys 可以使用 ssh-keygen 指令</p>
+<p>但是 ssh 除了透過命令列指令, 在 Windows 也可以使用 putty 套件工具.</p><h1>上課內容</h1>
 <p>112 學年度第一學期 (2023 Fall) 機械設計工程系 - 計算機程式課程的上課內容與進度.</p>
 <p>有關 Replit 與近端可攜系統的相關操作, 請參考 cadnote 中的內容: <a href="https://mde.tw/cadnote/content/Replit.html">Replit</a>, <a href="https://mde.tw/cadnote/content/%E8%BF%91%E7%AB%AF%E5%8F%AF%E6%94%9C.html">近端可攜</a>, <a href="https://mde.tw/cadnote/content/Git.html">Git</a>.</p>
 <p>手機建議安裝以下 Apps:</p>
@@ -696,6 +699,7 @@ void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, 
 <p>./a.out</p>
 <p>在 Ubuntu 安裝 gnuplot 套:</p>
 <p>sudo apt install gnuplot</p>
+<p>因為 s1511 伺服器並沒有安裝 X11, 因此 raylib 相關範例只能在近端可攜環境中執行.</p>
 <p></p><h2>C_lib</h2>
 <p>本課程針對 C 程式語言的教學將使用下列程式庫:</p>
 <p>gnuplot: <a href="https://github.com/gnuplot/gnuplot">https://github.com/gnuplot/gnuplot</a></p>
@@ -839,28 +843,37 @@ Set-DnsClientServerAddress -InterfaceAlias "*" -ServerAddresses $dnsServers
 <p>可以得到下列回應答案:</p>
 <p>加上個別學員所分配到的 IPv6 固定網址設定後的 1_disable_ipv4.ps1 Powershell 設定檔案 (必須自行更改固定 Ipv6 位址):</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false"># 關閉 IPv4 網路
-Disable-NetAdapterBinding -Name "乙太網路 2" -ComponentID ms_tcpip
+Disable-NetAdapterBinding -Name "*" -ComponentID ms_tcpip
   
 # 啟用 IPv6 網路
-Enable-NetAdapterBinding -Name "乙太網路 2" -ComponentID ms_tcpip6
+Enable-NetAdapterBinding -Name "*" -ComponentID ms_tcpip6
   
 # 設置 IPv6 網路中的兩個 DNS 伺服器 (hinet)
 $dnsServers = "2001:b000:168::1", "2001:b000:168::2"
-Set-DnsClientServerAddress -InterfaceAlias "乙太網路 2" -ServerAddresses $dnsServers
- 
- 
+Set-DnsClientServerAddress -InterfaceAlias "*" -ServerAddresses $dnsServers
+
+
 # 設定 IPv6 固定位址 (fixed address), 子網路首碼長度 (subnet prefix) 與網路預設閘道 (gateway) 等三個變數
-$ipv6Address = "2001:288:6004:17:自行修改所份配到的 IPv6 address"
+$ipv6Address = "2001:288:6004:17:請使用個人所分配到的 IPv6 位址"
 $subnetPrefixLength = 64
 $gateway = "2001:288:6004:17::254"
  
-# 利用前述變數設定電腦的 IPv6 網路通訊協定 (固定位址與子網路首碼長度)
-New-NetIPAddress -AddressFamily "IPv6" -InterfaceAlias "乙太網路 2" -IPAddress $ipv6Address -PrefixLength $subnetPrefixLength -DefaultGateway $gateway
+# 參考 https://serverfault.com/questions/427234/getting-network-interface-device-name-in-powershell
+$query = "SELECT * FROM Win32_NetworkAdapter WHERE Manufacturer != 'Microsoft' AND NOT PNPDeviceID LIKE 'ROOT\\%'"
+$interfaces = Get-WmiObject -Query $query | Sort index
+$interfaces | ForEach{
+    $friendlyname = $_ | ForEach-Object { $_.NetConnectionID }
+    New-NetIPAddress -AddressFamily "IPv6" -InterfaceAlias $friendlyname -IPAddress $ipv6Address -PrefixLength $subnetPrefixLength -DefaultGateway $gateway
+}
+
  
 # 列出所使用的 IPv6 網路通訊協定內容
 Write-Host "IPv6 Address: $ipv6Address/$subnetPrefixLength"
 Write-Host "IPv6 Gateway: $gateway"</pre>
-<p></p><h2>replit</h2>
+<p>下載 <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/Eck0KdLe1uZEk_LJ2tkEf4ABZyW32cmq5WZVl52Fww9C2A?e=i5Dm3t">2023_fall_w7_cadlab_network_setup.7z</a> <span>(需要下載密碼), 必須先放入個人所分配到的 IPv6 位址後, 以管理者身分執行批次檔案, 就能直接完成電腦輔助設計室中電腦的網路連線設定.</span></p>
+<p><span>各學員所分配的固定 IPv6 位址如下:</span></p>
+<p style="padding-left: 30px;">1a 學員展示用 IPv6 位址: 2001:288:6004:17:2023:cba::<a href="https://mde.tw/cpnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9215c7c160119721ded887018cda8f4e/raw/593a8e462e0d8e7996f0bca3dd922adfdd4962e0/generate_cp2023_1a_site_repo.py">班級名單序號</a></p>
+<p style="padding-left: 30px;"><span>2b 學員展示用 IPv6 位址: 2001:288:6004:17:2023:cbb::</span><a href="https://mde.tw/cpnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9215c7c160119721ded887018cda8f4e/raw/593a8e462e0d8e7996f0bca3dd922adfdd4962e0/generate_cp2023_1b_site_repo.py">班級名單序號</a></p><h2>replit</h2>
 <p><a href="https://docs.replit.com/">https://docs.replit.com/</a></p>
 <p>請注意: 原本 Replit Python 3.8 虛擬環境的目錄為 venv, 但是 Python 3.10 虛擬環境的目錄已經改用 .pythonlibs, 因此倉儲若不希望帶著此一虛擬環境檔案, 則可以將 .pythonlibs 附加到 .gitignore</p>
 <p>另外在近端必須處理 Python 3.12.0 版本中的 <a href="https://docs.python.org/3/library/ssl.html">https://docs.python.org/3/library/ssl.html</a> </p>
