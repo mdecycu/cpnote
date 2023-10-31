@@ -145,8 +145,18 @@ img.add_border {
     <div id="tipue_search_content">s1511 << <a href='s1511.html'>Previous</a> <a href='上課內容.html'>Next</a> >> 上課內容<br /><h1>linux</h1>
 <p>s1511.cycu.org 是一台在 Windows 環境中使用 Virtualbox 建立的虛擬主機, 其操作系統為 Ubuntu 22.04 LTS</p>
 <p>建立 openssh keys 可以使用 ssh-keygen 指令</p>
-<p>但是 ssh 除了透過命令列指令, 在 Windows 也可以使用 putty 套件工具.</p>
-<p>另外 sft <span>除了透過命令列指令, 在 Windows 也可以使用 filezilla 套件工具.</span></p><br />s1511 << <a href='s1511.html'>Previous</a> <a href='上課內容.html'>Next</a> >> 上課內容</div>
+<p>但是 Windows 環境下的 ssh 除了透過命令列指令, 在 Windows 也可以使用 putty 套件工具.</p>
+<p>另外 Windows  sftp <span>除了透過命令列指令, 在 Windows 也可以使用 filezilla 套件工具.</span></p>
+<p>在 s1511.cycu.org 建立 keys 的原因, 是希望能夠直接利用 OpenSSH 的協定, 對 github 中的倉儲 push.</p>
+<p>因為 github.com 只支援 IPv4, 而 s1511.cycu.org 只支援 IPv6</p>
+<p>但 s1511.cycu.org 主機中已經透過 /etc/environment 設定 http 與 https 連線所需的代理主機, 使用者只需要自行處理 ~.ssh/config 中的 ssh 協定代理主機設定即可.</p>
+<p>/etc/environment 中有關 http 與 https 的代理主機設定:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
+http_proxy=http://p4.cycu.org:3128
+https_proxy=http://p4.cycu.org:3128
+</pre>
+<p>假如處理好 .ssh/config, .ssh/id_rsa 與 .ssh/id_rsa.pub 的設定, 各用戶就可以利用下列指令, 以 SSH 協定取下 cp2023</p>
+<p>git clone --recurse-submodules git@github.com:scrum-1/cp2023.git</p><br />s1511 << <a href='s1511.html'>Previous</a> <a href='上課內容.html'>Next</a> >> 上課內容</div>
         
     <!-- footer -->
       <div class="container">
