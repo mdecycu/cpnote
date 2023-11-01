@@ -11,6 +11,8 @@
 <p style="padding-left: 30px;">下載 <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EQTW-mq62DpFtw5It9ao-PIBPXW7z5z8oVsW5gd8zbDXOQ?e=q6gHgf">Portable_2023_fall_1.3g_5g.7z</a> (需要下載密碼)</p>
 <p style="padding-left: 30px;">也可以直接使用電腦輔助設計室中 C:\Portable_2023_fall 目錄中的檔案</p><h2>s1511</h2>
 <p>2022.08.30 Replit 趁 Heroku <a href="https://blog.heroku.com/next-chapter">中止提供免費帳號</a>時, 順勢接收許多免費用戶之後, Replit 在 2023.04.13 正式推出 Deployment. 並且允許免費用戶使用. 但在 2023.09.28 卻<a href="https://blog.replit.com/hosting-changes">宣布</a>此一部署服務, 最遲在 2024.01.01 將只提供給付費用戶使用. 意即之後使用者<span style="background-color: #ccffcc;">無法再經由 python3 main.py 在廣域網路中使用 repl.co 網址進行編輯</span> (<span style="background-color: #ffcc99;">假如 Webview 仍在, 或許可以在啟動編輯網站後, 在 Webview tag 中登入系統編輯, 但無法在全螢幕中進行編輯</span>).</p>
+<p>2023.10.20 收到 Replit 告知 repl.co 網域服務改變的 email 內容, 其中的 <a href="https://blog.replit.com/hosting-changes">Learn More</a> 就是 2023.08.28 的網誌<a href="https://blog.replit.com/hosting-changes">宣布</a>:</p>
+<p><img alt="" class="add_border" height="284" src="/images/2023_10_20_mail_from_replit.png" width="400"/></p>
 <p>註: w8 在內部 Replit Webview 使用"在新分頁開啟", 得到的外部網址為: repl_名稱--repl_username.repl.co</p>
 <p>使用 Replit 內部 Webview 編輯動態網站並執行 C 程式的畫面:</p>
 <p><img caption="false" class="add_border" height="380" src="/images/cp2023_w8_replit_webview.png" width="600"/></p>
@@ -149,7 +151,7 @@ git commit -m "$1"
 git push
 cd ./../public_html/cp2023
 git pull</pre>
-<p></p><h3>linux</h3>
+<p><a href="/downloads/cp2023_1101_last.txt">cp2023_1101_last.txt</a></p><h3>linux</h3>
 <p>練習登入 s1511.cycu.org 與退出 s1511.cycu.org:</p>
 <p style="padding-left: 30px;">以命令列登入與退出: 從 Windows, ssh 帳號@s1511.cycu.org 登入, 進入後, 以 exit 退出.</p>
 <p style="padding-left: 30px;">以 putty 登入與退出: 設定 putty session 登入, open 後可輸入帳號密碼登入, 進入後, 以 exit 退出.</p>
@@ -216,6 +218,12 @@ https_proxy=http://p4.cycu.org:3128
 <p>acp 權限與 public_html 目錄中的倉儲內容</p>
 <p>使用者目錄 (711) 與 public_html (755) 目錄權限</p>
 <p></p><h1>上課內容</h1>
+<p><span>評分網站與倉儲:</span></p>
+<p style="padding-left: 30px;"><a href="https://mde.tw/cpnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9215c7c160119721ded887018cda8f4e/raw/593a8e462e0d8e7996f0bca3dd922adfdd4962e0/generate_cp2023_1a_site_repo.py">cp2023 1a 學員網站與倉儲連結</a></p>
+<p style="padding-left: 30px;"><a href="https://mde.tw/cpnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9215c7c160119721ded887018cda8f4e/raw/593a8e462e0d8e7996f0bca3dd922adfdd4962e0/generate_cp2023_1b_site_repo.py">cp2023 1b 學員網站與倉儲連結</a></p>
+<p style="padding-left: 30px;">1a 學員展示用 IPv6 位址: 2001:288:6004:17:2023:cba::<a href="https://mde.tw/cpnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9215c7c160119721ded887018cda8f4e/raw/593a8e462e0d8e7996f0bca3dd922adfdd4962e0/generate_cp2023_1a_site_repo.py">班級名單序號</a></p>
+<p style="padding-left: 30px;"><span>2b 學員展示用 IPv6 位址: 2001:288:6004:17:2023:cbb::</span><a href="https://mde.tw/cpnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9215c7c160119721ded887018cda8f4e/raw/593a8e462e0d8e7996f0bca3dd922adfdd4962e0/generate_cp2023_1b_site_repo.py">班級名單序號</a></p>
+<hr/>
 <p>112 學年度第一學期 (2023 Fall) 機械設計工程系 - 計算機程式課程的上課內容與進度.</p>
 <p>有關 Replit 與近端可攜系統的相關操作, 請參考 cadnote 中的內容: <a href="https://mde.tw/cadnote/content/Replit.html">Replit</a>, <a href="https://mde.tw/cadnote/content/%E8%BF%91%E7%AB%AF%E5%8F%AF%E6%94%9C.html">近端可攜</a>, <a href="https://mde.tw/cadnote/content/Git.html">Git</a>.</p>
 <p>手機建議安裝以下 Apps:</p>
