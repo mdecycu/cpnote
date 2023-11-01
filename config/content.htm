@@ -11,8 +11,9 @@
 <p style="padding-left: 30px;">下載 <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EQTW-mq62DpFtw5It9ao-PIBPXW7z5z8oVsW5gd8zbDXOQ?e=q6gHgf">Portable_2023_fall_1.3g_5g.7z</a> (需要下載密碼)</p>
 <p style="padding-left: 30px;">也可以直接使用電腦輔助設計室中 C:\Portable_2023_fall 目錄中的檔案</p><h2>s1511</h2>
 <p>2022.08.30 Replit 趁 Heroku <a href="https://blog.heroku.com/next-chapter">中止提供免費帳號</a>時, 順勢接收許多免費用戶之後, Replit 在 2023.04.13 正式推出 Deployment. 並且允許免費用戶使用. 但在 2023.09.28 卻<a href="https://blog.replit.com/hosting-changes">宣布</a>此一部署服務, 最遲在 2024.01.01 將只提供給付費用戶使用. 意即之後使用者<span style="background-color: #ccffcc;">無法再經由 python3 main.py 在廣域網路中使用 repl.co 網址進行編輯</span> (<span style="background-color: #ffcc99;">假如 Webview 仍在, 或許可以在啟動編輯網站後, 在 Webview tag 中登入系統編輯, 但無法在全螢幕中進行編輯</span>).</p>
+<p>註: w8 在內部 Replit Webview 使用"在新分頁開啟", 得到的外部網址為: repl_名稱--repl_username.repl.co</p>
 <p>使用 Replit 內部 Webview 編輯動態網站並執行 C 程式的畫面:</p>
-<p><img caption="false" height="380" src="/images/cp2023_w8_replit_webview.png" width="600"/></p>
+<p><img caption="false" class="add_border" height="380" src="/images/cp2023_w8_replit_webview.png" width="600"/></p>
 <p>因此各學員除了使用<span style="background-color: #ffff00;">近端隨身系統</span>進行 cp2023 倉儲與網站的改版之外, 只能在<span style="background-color: #ffff00;">自架伺服器</span>中採遠端登入的方式在 s1511.cycu.org 主機中維護個人與分組網站.</p>
 <p><span style="background-color: #ccffff;">s1511 如何建立?</span></p>
 <p>建立伺服器:</p>
@@ -152,44 +153,65 @@ git pull</pre>
 <p>練習登入 s1511.cycu.org 與退出 s1511.cycu.org:</p>
 <p style="padding-left: 30px;">以命令列登入與退出: 從 Windows, ssh 帳號@s1511.cycu.org 登入, 進入後, 以 exit 退出.</p>
 <p style="padding-left: 30px;">以 putty 登入與退出: 設定 putty session 登入, open 後可輸入帳號密碼登入, 進入後, 以 exit 退出.</p>
+<p style="padding-left: 30px;">登入後, 學習如何利用 mkdir 建立目錄, 如何利用 cp 複製檔案, 如何利用 mv 移動檔案, 如何利用 rm 刪除檔案, 如何利用 cd 在各目錄中遊走, 如何利用 vi 建立及編輯檔案.</p>
+<p style="padding-left: 30px;">登入後, 學習如何利用 chmod 針對特定目錄或檔案設定存取權, 例如: chmod 711 /home/your_account, 其中的 7 為 r = read 以 4 代表, w = write 以 2 代表, x = execute 以 1 代表, 且 Linux 中每一個檔案或目錄都用 10 個字元代表其屬性, 第一個字元若為 d = directory 表示該名稱為目錄, 隨後的 2-4 字元代表 user 對該檔案或目錄的 rwx 存取權, 5-7 字元則代表 group = 同一群組用戶對該檔案或目錄的存取權, 8-10 字元則代表 others = 非用戶非同一群組的其他身分使用者對該檔案或目錄的存取權.</p>
+<p style="padding-left: 30px;">因此, chmod 711 /home/your_account, 表示要將帳號對應目錄設為 user 可以 rwx, 而同一群組及其他用戶則只能 x = execute 執行.</p>
+<p style="padding-left: 30px;">若使用 chmod 755 /home/your_account/public_html 進行設定, 表示該目錄中的所有內容, user 可以 rwx, 而同一群組及其他用戶則只能 r = read 以 4 代表, 然後加上 x = execute 以 1 代表, 也就是 4 + 1 = 5 的 r-x 權限, 即可以讀取與執行的權限.</p>
+<p>練習利用 sftp 指令從 s1511.cycu.org 取下或放上檔案:</p>
+<p style="padding-left: 30px;">在近端執行 gd in C 繪製 ROC Flag 後, 取得 roc_flag.png, 以 sftp 送進自己位於 s1511.cycu.org 主機中 cp2023 倉儲 images 目錄中.</p>
+<p style="padding-left: 30px;">從 s1511.cycu.org 取下自己 cp2023 倉儲 downloads 中的某一個 .c 程式碼.</p>
+<p style="padding-left: 30px;">從 Windows 將 ssh session 設定檔案 config, 送到 s1511.cycu.org 主機中帳號下的 .ssh 目錄</p>
+<p>練習建立 s1511.cycu.org 中帳號下的 private key 與 public key:</p>
+<p style="padding-left: 30px;">遠端登入 s1511.cycu.org 之後, 利用 ssh-keygen 指令在 ~/.ssh 目錄中建立 id_rsa 與 id_rsa.pub</p>
+<p style="padding-left: 30px;">以 sftp 從 s1511.cycu.org 主機取下 .ssh 目錄中的 id_rsa.pub public key</p>
+<p style="padding-left: 30px;">將 id_rsa.pub public key 的內容登錄到 Github 帳號 settings 中的 SSH and GPG keys 中</p>
+<p>練習在 s1511.cycu.org 中設定提交 github 倉儲用的 .gitconfig 檔案:</p>
+<p style="padding-left: 30px;">登入 s1511.cycu.org 後, 利用 git config --global user.email 與 user.name 設定在 Github 帳號所登記的電子郵箱與 username</p>
 <p>由於 s1511.cycu.org 是一台 Ubuntu 伺服器, 使用者登入之後必須熟悉以下 Linux 操作系統上的指令:</p>
-<p style="padding-left: 30px;">ls 請整理出 <a href="https://blog.gtwang.org/linux/linux-ls-command-tutorial/">https://blog.gtwang.org/linux/linux-ls-command-tutorial/</a> 中的指令說明與用法</p>
-<p style="padding-left: 30px;">cd 請整理出 <a href="https://www.tokfun.net/os/linux/linux-cd-command/">https://www.tokfun.net/os/linux/linux-cd-command/</a> 中的指令說明與用法</p>
-<p style="padding-left: 30px;">cp <a href="https://blog.gtwang.org/linux/linux-cp-command-copy-files-and-directories-tutorial/">https://blog.gtwang.org/linux/linux-cp-command-copy-files-and-directories-tutorial/</a></p>
-<p style="padding-left: 30px;">vi <a href="https://code.yidas.com/linux-vi-vim-command/">https://code.yidas.com/linux-vi-vim-command/</a></p>
+<p style="padding-left: 30px;">ls: ls -l, ls -la, ls -l *.png</p>
+<p style="padding-left: 30px;">cd: cd ../, cd</p>
+<p style="padding-left: 30px;">cp: cp ./gd_ex1.c ../downloads/</p>
+<p style="padding-left: 30px;">vi: <a href="https://code.yidas.com/linux-vi-vim-command/">https://code.yidas.com/linux-vi-vim-command/</a></p>
 <p style="padding-left: 30px;">其他 Linux commands:</p>
 <p style="padding-left: 60px;"><a href="https://bjpcjp.github.io/pdfs/devops/linux-commands-handbook.pdf">https://bjpcjp.github.io/pdfs/devops/linux-commands-handbook.pdf</a></p>
 <p style="padding-left: 60px;"><a href="https://buildmedia.readthedocs.org/media/pdf/lym/latest/lym.pdf">https://buildmedia.readthedocs.org/media/pdf/lym/latest/lym.pdf</a></p>
 <p style="padding-left: 60px;"><a href="http://cc.iiti.ac.in/docs/linuxcommands.pdf">http://cc.iiti.ac.in/docs/linuxcommands.pdf</a></p><h3>cp2023</h3>
 <p>使用 s1511.cycu.org 伺服器的目的是希望讓各學員登入此電腦後, 能夠以服務啟動個人位於 Github 上的 cp2023 執行編輯後, 能夠將動態網站與靜態網站的改版資料推送回 Github, 並在 s1511 伺服器上即時展示個人的 cp2023 靜態網站內容.</p>
 <p>有關 s1511 伺服器:</p>
-<p style="padding-left: 30px;">s1511.cycu.org 是一台在 Windows 環境中使用 Virtualbox 建立的虛擬主機, 其操作系統為 Ubuntu 22.04 LTS, 而 <a href="https://ubuntu.com/">Ubuntu</a> 則是 Linux 操作系統中的一個分支.</p>
+<p style="padding-left: 30px;">s1511.cycu.org 是一台在 Windows 環境中使用 Virtualbox 建立的虛擬主機, 其操作系統為 Ubuntu 22.04 LTS (<a href="https://ubuntu.com/about/release-cycle">Ubuntu 各版次的生命週期</a>), 而 <a href="https://ubuntu.com/">Ubuntu</a> 則是 Linux 操作系統中的一個分支.</p>
 <p style="padding-left: 30px;">因為這台主機已經配置能夠讓 cp2023 執行動態編輯程式的環境, 所以只要使用者能夠利用 OpenSSH 協定, 連結 s1511 與 github.com, 就可以利用 ssh 協定將倉儲 git clone 到 s1511 主機中.</p>
-<p style="padding-left: 30px;">所謂"<span>連結 s1511 與 github.com", 就是指使用者已經將帳號下的 .ssh/id_rsa.pub 的內容送到 Github 帳號 settings 對應的 SSH and GPG keys 中, 且 .ssh/config 已經設定從 IPv6 以 ssh 協定透過代理主機連線到 github.com 的內容.</span></p>
-<p style="padding-left: 30px;"><span>所謂"這台主機已經配置能夠讓 cp2023 執行動態編輯程式的環境", 指的是這台主機已經在 Python3 環境安裝 cp2023 啟動所需的模組, 也就是已經透過管理者執行 pip install flask <span class="tipue_search_content_bold">flask_cors</span><span><span> </span>bs4 lxml pelican markdown pyopenssl, 而且透過 WSGI 讓使用者只要執行 cp2023 倉儲中的 server.py, 就能開啟動態網頁編輯器. 但多人存在同一台伺服器使用 WSGI 服務時, 則必須各用戶使用不同的內部與外部埠號, 因此只要各用戶使用分配到的內部 port 與外部 port 進行設定, 各用戶就可以在 cp2023 倉儲啟動編輯後, 登入修改內建的 admin 管理者密碼, 並且以 chmod o-r config/config 指令, 取消 others (也就是 Linux 操作系統下的所有帳號) 的 read 權限, 以保全管理者帳號的編碼. (在 Replit 是透過  Secrets 中的 config 變數設定進行保全).</span></span></p>
-<h3>SSH keys</h3>
+<p style="padding-left: 30px;">所謂"<span>連結 s1511 與 github.com", 就是指使用者已經將帳號下的 .ssh/id_rsa.pub 的內容送到 Github 帳號 settings 對應的 SSH and GPG keys 中進行登錄, 且 .ssh/config 已經設定從 IPv6 以 ssh 協定透過代理主機連線到 github.com 的內容.</span></p>
+<p><span>.ssh 目錄中的 <a href="https://mde.tw/cpnote/downloads/config">config</a>, 將 SSH session 名稱設為 github.com:</span></p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">Host github.com
+User git
+Hostname github.com
+ProxyCommand /usr/bin/ncat --proxy p4.cycu.org:3128 --proxy-type http %h %p</pre>
+<p><span>所謂"這台主機已經配置能夠讓 cp2023 執行動態編輯程式的環境", 指的是這台主機已經在 Python3 環境安裝 cp2023 啟動所需的模組.</span></p>
+<p><span> 也就是已經透過管理者執行 pip install flask <span class="tipue_search_content_bold">flask_cors</span><span><span> </span>bs4 lxml pelican markdown pyopenssl</span></span></p>
+<p><span><span>而且透過 WSGI 讓使用者只要執行 cp2023 倉儲中的 server.py, 就能開啟動態網頁編輯器. </span></span></p>
+<p><span><span>但多人存在同一台伺服器使用 WSGI 服務時, 則必須各用戶使用不同的內部與外部埠號, 因此只要各用戶使用分配到的內部 port 與外部 port 進行設定, 各用戶就可以在 cp2023 倉儲啟動編輯後, 登入修改內建的 admin 管理者密碼, 並且以 chmod o-r config/config 指令, 取消 others (也就是 Linux 操作系統下的所有帳號) 的 read 權限, 以保全管理者帳號的編碼. (在 Replit 是透過  Secrets 中的 config 變數設定進行保全).</span></span></p><h3>SSH keys</h3>
 <p>在 Windows 或 Linux 建立 openssh keys 都可以使用 ssh-keygen 指令</p>
-<p>但是 Windows 環境下的 ssh 除了透過命令列指令, 在 Windows 也可以使用 putty 套件工具.</p>
-<p>另外 Windows  sftp <span>除了透過命令列指令, 在 Windows 也可以使用 filezilla 套件工具.</span></p>
+<p>在 Windows 環境下, 希望遠端登入 (remote login) 到另外一台已經啟動 ssh server 的主機, 可以使用 ssh 指令外 (此地的 ssh 指令為 client) , 在 Windows 也可以使用 putty 套件工具進行遠端登入.</p>
+<p>另外 Windows  sftp (安全的檔案傳輸協定 client) <span>除了透過命令列指令, 在 Windows 也可以使用 filezilla 套件工具, 能夠以 sftp client 指令遠端登入到 s1511.cycu.org, 表示遠端伺服器已經安裝 sftp 伺服器並且啟動.</span></p>
 <p>在 s1511.cycu.org 建立 keys 的原因, 是希望能夠直接利用 OpenSSH 的協定, 對 github 中的倉儲 push.</p>
-<p>因為 github.com 只支援 IPv4, 而 s1511.cycu.org 只支援 IPv6</p>
+<p>因為 github.com 只支援 IPv4, 而 s1511.cycu.org 只支援 IPv6, 因此在 s1511 主機上要利用各種網路 client 對 github.com 進行連結或交換檔案, 都必須針對各種 client 設定代理主機, 其中包括 ssh client, sftp client, git client, https client (也就是全球資訊網瀏覽器)等.</p>
 <p>但 s1511.cycu.org 主機中已經透過 /etc/environment 設定 http 與 https 連線所需的代理主機, 使用者只需要自行處理 ~.ssh/config 中的 ssh 協定代理主機設定即可.</p>
 <p>/etc/environment 中有關 http 與 https 的代理主機設定:</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
 http_proxy=http://p4.cycu.org:3128
 https_proxy=http://p4.cycu.org:3128
-</pre>
-<h3>git clone</h3>
+</pre><h3>git clone</h3>
 <p>SSH 代理主機與 https 代理主機設定</p>
-<p>假如處理好 .ssh/config, .ssh/id_rsa 與 .ssh/id_rsa.pub 的設定, 各用戶就可以利用下列指令, 以 SSH 協定取下 cp2023</p>
-<p>git clone --recurse-submodules <a href="mailto:git@github.com:scrum-1/cp2023.git">git@github.com:scrum-1/cp2023.git</a></p>
-<h3>server.py</h3>
+<p>假如處理好 .ssh/config, .ssh/id_rsa 與 .ssh/id_rsa.pub 的設定, 各用戶就可以利用下列指令, 以 SSH 協定取下 cp2023:</p>
+<p style="padding-left: 30px;">git clone --recurse-submodules <a href="mailto:git@github.com:scrum-1/cp2023.git">git@github.com:scrum-1/cp2023.git</a></p>
+<p>取下的倉儲內容, 包含子模組將會放入 cp2023 目錄.</p><h3>server.py</h3>
 <p>內部埠號與外部埠號</p>
 <p>列出使用 python3 啟動的服務:</p>
-<p>ps -ef|grep python3</p>
+<p>ps -ef | grep python3</p>
 <p>當使用 python3 server.py &amp; 執行 process 後, ps -axo pid,comm,uid | grep "python3" 的指令, 可以列出各自帳號下所 background 執行的 process pid, 若需要列出執行 process 對應目錄, 則可以利用 pwdx 加上 pid 後執行取得.</p>
 <p>ps -axo : <a href="https://explainshell.com/explain?cmd=ps+-axo+pid%2Crss%2Ccommand">https://explainshell.com/explain?cmd=ps+-axo+pid%2Crss%2Ccommand</a></p>
-<p>pwdx : <a href="https://www.cyberciti.biz/faq/unix-linux-pwdx-command-examples-usage-syntax/">https://www.cyberciti.biz/faq/unix-linux-pwdx-command-examples-usage-syntax/</a></p><h3>git commit</h3>
+<p>pwdx : <a href="https://www.cyberciti.biz/faq/unix-linux-pwdx-command-examples-usage-syntax/">https://www.cyberciti.biz/faq/unix-linux-pwdx-command-examples-usage-syntax/</a></p>
+<p>kill: <a href="https://www.geeksforgeeks.org/kill-command-in-linux-with-examples/">https://www.geeksforgeeks.org/kill-command-in-linux-with-examples/</a></p><h3>git commit</h3>
 <p>git config --global user.email and user.name</p>
 <p>acp 權限與 public_html 目錄中的倉儲內容</p>
 <p>使用者目錄 (711) 與 public_html (755) 目錄權限</p>

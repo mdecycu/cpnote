@@ -145,11 +145,18 @@ img.add_border {
     <div id="tipue_search_content">linux << <a href='linux.html'>Previous</a> <a href='SSH keys.html'>Next</a> >> SSH keys<br /><h1>cp2023</h1>
 <p>使用 s1511.cycu.org 伺服器的目的是希望讓各學員登入此電腦後, 能夠以服務啟動個人位於 Github 上的 cp2023 執行編輯後, 能夠將動態網站與靜態網站的改版資料推送回 Github, 並在 s1511 伺服器上即時展示個人的 cp2023 靜態網站內容.</p>
 <p>有關 s1511 伺服器:</p>
-<p style="padding-left: 30px;">s1511.cycu.org 是一台在 Windows 環境中使用 Virtualbox 建立的虛擬主機, 其操作系統為 Ubuntu 22.04 LTS, 而 <a href="https://ubuntu.com/">Ubuntu</a> 則是 Linux 操作系統中的一個分支.</p>
+<p style="padding-left: 30px;">s1511.cycu.org 是一台在 Windows 環境中使用 Virtualbox 建立的虛擬主機, 其操作系統為 Ubuntu 22.04 LTS (<a href="https://ubuntu.com/about/release-cycle">Ubuntu 各版次的生命週期</a>), 而 <a href="https://ubuntu.com/">Ubuntu</a> 則是 Linux 操作系統中的一個分支.</p>
 <p style="padding-left: 30px;">因為這台主機已經配置能夠讓 cp2023 執行動態編輯程式的環境, 所以只要使用者能夠利用 OpenSSH 協定, 連結 s1511 與 github.com, 就可以利用 ssh 協定將倉儲 git clone 到 s1511 主機中.</p>
-<p style="padding-left: 30px;">所謂"<span>連結 s1511 與 github.com", 就是指使用者已經將帳號下的 .ssh/id_rsa.pub 的內容送到 Github 帳號 settings 對應的 SSH and GPG keys 中, 且 .ssh/config 已經設定從 IPv6 以 ssh 協定透過代理主機連線到 github.com 的內容.</span></p>
-<p style="padding-left: 30px;"><span>所謂"這台主機已經配置能夠讓 cp2023 執行動態編輯程式的環境", 指的是這台主機已經在 Python3 環境安裝 cp2023 啟動所需的模組, 也就是已經透過管理者執行 pip install flask <span class="tipue_search_content_bold">flask_cors</span><span><span> </span>bs4 lxml pelican markdown pyopenssl, 而且透過 WSGI 讓使用者只要執行 cp2023 倉儲中的 server.py, 就能開啟動態網頁編輯器. 但多人存在同一台伺服器使用 WSGI 服務時, 則必須各用戶使用不同的內部與外部埠號, 因此只要各用戶使用分配到的內部 port 與外部 port 進行設定, 各用戶就可以在 cp2023 倉儲啟動編輯後, 登入修改內建的 admin 管理者密碼, 並且以 chmod o-r config/config 指令, 取消 others (也就是 Linux 操作系統下的所有帳號) 的 read 權限, 以保全管理者帳號的編碼. (在 Replit 是透過  Secrets 中的 config 變數設定進行保全).</span></span></p>
-<br />linux << <a href='linux.html'>Previous</a> <a href='SSH keys.html'>Next</a> >> SSH keys</div>
+<p style="padding-left: 30px;">所謂"<span>連結 s1511 與 github.com", 就是指使用者已經將帳號下的 .ssh/id_rsa.pub 的內容送到 Github 帳號 settings 對應的 SSH and GPG keys 中進行登錄, 且 .ssh/config 已經設定從 IPv6 以 ssh 協定透過代理主機連線到 github.com 的內容.</span></p>
+<p><span>.ssh 目錄中的 <a href="https://mde.tw/cpnote/downloads/config">config</a>, 將 SSH session 名稱設為 github.com:</span></p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">Host github.com
+User git
+Hostname github.com
+ProxyCommand /usr/bin/ncat --proxy p4.cycu.org:3128 --proxy-type http %h %p</pre>
+<p><span>所謂"這台主機已經配置能夠讓 cp2023 執行動態編輯程式的環境", 指的是這台主機已經在 Python3 環境安裝 cp2023 啟動所需的模組.</span></p>
+<p><span> 也就是已經透過管理者執行 pip install flask <span class="tipue_search_content_bold">flask_cors</span><span><span> </span>bs4 lxml pelican markdown pyopenssl</span></span></p>
+<p><span><span>而且透過 WSGI 讓使用者只要執行 cp2023 倉儲中的 server.py, 就能開啟動態網頁編輯器. </span></span></p>
+<p><span><span>但多人存在同一台伺服器使用 WSGI 服務時, 則必須各用戶使用不同的內部與外部埠號, 因此只要各用戶使用分配到的內部 port 與外部 port 進行設定, 各用戶就可以在 cp2023 倉儲啟動編輯後, 登入修改內建的 admin 管理者密碼, 並且以 chmod o-r config/config 指令, 取消 others (也就是 Linux 操作系統下的所有帳號) 的 read 權限, 以保全管理者帳號的編碼. (在 Replit 是透過  Secrets 中的 config 變數設定進行保全).</span></span></p><br />linux << <a href='linux.html'>Previous</a> <a href='SSH keys.html'>Next</a> >> SSH keys</div>
         
     <!-- footer -->
       <div class="container">

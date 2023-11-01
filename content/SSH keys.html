@@ -144,17 +144,16 @@ img.add_border {
         </header>
     <div id="tipue_search_content">cp2023 << <a href='cp2023.html'>Previous</a> <a href='git clone.html'>Next</a> >> git clone<br /><h1>SSH keys</h1>
 <p>在 Windows 或 Linux 建立 openssh keys 都可以使用 ssh-keygen 指令</p>
-<p>但是 Windows 環境下的 ssh 除了透過命令列指令, 在 Windows 也可以使用 putty 套件工具.</p>
-<p>另外 Windows  sftp <span>除了透過命令列指令, 在 Windows 也可以使用 filezilla 套件工具.</span></p>
+<p>在 Windows 環境下, 希望遠端登入 (remote login) 到另外一台已經啟動 ssh server 的主機, 可以使用 ssh 指令外 (此地的 ssh 指令為 client) , 在 Windows 也可以使用 putty 套件工具進行遠端登入.</p>
+<p>另外 Windows  sftp (安全的檔案傳輸協定 client) <span>除了透過命令列指令, 在 Windows 也可以使用 filezilla 套件工具, 能夠以 sftp client 指令遠端登入到 s1511.cycu.org, 表示遠端伺服器已經安裝 sftp 伺服器並且啟動.</span></p>
 <p>在 s1511.cycu.org 建立 keys 的原因, 是希望能夠直接利用 OpenSSH 的協定, 對 github 中的倉儲 push.</p>
-<p>因為 github.com 只支援 IPv4, 而 s1511.cycu.org 只支援 IPv6</p>
+<p>因為 github.com 只支援 IPv4, 而 s1511.cycu.org 只支援 IPv6, 因此在 s1511 主機上要利用各種網路 client 對 github.com 進行連結或交換檔案, 都必須針對各種 client 設定代理主機, 其中包括 ssh client, sftp client, git client, https client (也就是全球資訊網瀏覽器)等.</p>
 <p>但 s1511.cycu.org 主機中已經透過 /etc/environment 設定 http 與 https 連線所需的代理主機, 使用者只需要自行處理 ~.ssh/config 中的 ssh 協定代理主機設定即可.</p>
 <p>/etc/environment 中有關 http 與 https 的代理主機設定:</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin"
 http_proxy=http://p4.cycu.org:3128
 https_proxy=http://p4.cycu.org:3128
-</pre>
-<br />cp2023 << <a href='cp2023.html'>Previous</a> <a href='git clone.html'>Next</a> >> git clone</div>
+</pre><br />cp2023 << <a href='cp2023.html'>Previous</a> <a href='git clone.html'>Next</a> >> git clone</div>
         
     <!-- footer -->
       <div class="container">
