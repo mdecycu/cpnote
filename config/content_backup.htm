@@ -10,7 +10,7 @@
 <p style="padding-left: 30px;"><a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EbxsXK5kkU1ImhJ_HcYPnTcB9MboGQcfs6FuojXRPlhInA?e=wzLQFt">basic_portable_python.7z</a> (下載 15MB, 解開後 55MB)</p>
 <p style="padding-left: 30px;">下載 <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EQTW-mq62DpFtw5It9ao-PIBPXW7z5z8oVsW5gd8zbDXOQ?e=q6gHgf">Portable_2023_fall_1.3g_5g.7z</a> (需要下載密碼)</p>
 <p style="padding-left: 30px;">也可以直接使用電腦輔助設計室中 C:\Portable_2023_fall 目錄中的檔案</p><h2>s1511</h2>
-<p>2022.08.30 Replit 趁 Heroku <a href="https://blog.heroku.com/next-chapter">中止提供免費帳號</a>時, 順勢接收許多免費用戶之後, Replit 在 2023.04.13 正式推出 Deployment. 並且允許免費用戶使用. 但在 2023.09.28 卻<a href="https://blog.replit.com/hosting-changes">宣布</a>此一部署服務, 最遲在 2024.01.01 將只提供給付費用戶使用. 意即之後使用者<span style="background-color: #ccffcc;">無法再經由 python3 main.py 在廣域網路中使用 repl.co 網址進行編輯</span> (假如 Webview 仍在, 或許可以在啟動編輯網站後, 在 Webview tag 中登入系統編輯, 但無法在全螢幕中進行編輯).</p>
+<p>2022.08.30 Replit 趁 Heroku <a href="https://blog.heroku.com/next-chapter">中止提供免費帳號</a>時, 順勢接收許多免費用戶之後, Replit 在 2023.04.13 正式推出 Deployment. 並且允許免費用戶使用. 但在 2023.09.28 卻<a href="https://blog.replit.com/hosting-changes">宣布</a>此一部署服務, 最遲在 2024.01.01 將只提供給付費用戶使用. 意即之後使用者<span style="background-color: #ccffcc;">無法再經由 python3 main.py 在廣域網路中使用 repl.co 網址進行編輯</span> (<span style="background-color: #ffcc99;">假如 Webview 仍在, 或許可以在啟動編輯網站後, 在 Webview tag 中登入系統編輯, 但無法在全螢幕中進行編輯</span>).</p>
 <p>因此各學員除了使用<span style="background-color: #ffff00;">近端隨身系統</span>進行 cp2023 倉儲與網站的改版之外, 只能在<span style="background-color: #ffff00;">自架伺服器</span>中採遠端登入的方式在 s1511.cycu.org 主機中維護個人與分組網站.</p>
 <p><span style="background-color: #ccffff;">s1511 如何建立?</span></p>
 <p>建立伺服器:</p>
@@ -742,7 +742,11 @@ void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, 
 <p>在 Ubuntu 安裝 gnuplot 套:</p>
 <p>sudo apt install gnuplot</p>
 <p>因為 s1511 伺服器並沒有安裝 X11, 因此 raylib 相關範例只能在近端可攜環境中執行.</p>
-<p></p><h2>C_lib</h2>
+<hr/>
+<p>程式練習:</p>
+<p style="padding-left: 30px;"><a href="https://mde.tw/cpnote/content/%E4%B8%8A%E8%AA%B2%E5%85%A7%E5%AE%B9.html">上課內容</a>中的 Exercises</p>
+<p style="padding-left: 30px;"><a href="https://mde.tw/cpnote/content/w2-w5.html">w2-w5</a> 週任務中的 Exercises</p>
+<p style="padding-left: 30px;"><a href="https://mde.tw/cpnote/content/w6-w7.html">w6-w7</a> 週任務中的練習一與練習二</p><h2>C_lib</h2>
 <p>本課程針對 C 程式語言的教學將使用下列程式庫:</p>
 <p>gnuplot: <a href="https://github.com/gnuplot/gnuplot">https://github.com/gnuplot/gnuplot</a></p>
 <p><span style="background-color: #ffff00;">數值分析繪圖程式庫</span> - 在機電設計流程中, 工程師運用數值分析法進行設計與模擬運算後, 將數據存檔, 可利用 gnuplot 繪圖指令, 以令人容易理解的圖形呈現數值分析結果.</p>
@@ -917,6 +921,7 @@ Write-Host "IPv6 Gateway: $gateway"</pre>
 <p style="padding-left: 30px;">1a 學員展示用 IPv6 位址: 2001:288:6004:17:2023:cba::<a href="https://mde.tw/cpnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9215c7c160119721ded887018cda8f4e/raw/593a8e462e0d8e7996f0bca3dd922adfdd4962e0/generate_cp2023_1a_site_repo.py">班級名單序號</a></p>
 <p style="padding-left: 30px;"><span>2b 學員展示用 IPv6 位址: 2001:288:6004:17:2023:cbb::</span><a href="https://mde.tw/cpnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9215c7c160119721ded887018cda8f4e/raw/593a8e462e0d8e7996f0bca3dd922adfdd4962e0/generate_cp2023_1b_site_repo.py">班級名單序號</a></p><h2>replit</h2>
 <p><a href="https://docs.replit.com/">https://docs.replit.com/</a></p>
+<p>w8: 為了強化保全, Replit 目前只能透過 Gmail 或 Github 帳號登入, 無法直接利用帳號與密碼登入.</p>
 <p>請注意: 原本 Replit Python 3.8 虛擬環境的目錄為 venv, 但是 Python 3.10 虛擬環境的目錄已經改用 .pythonlibs, 因此倉儲若不希望帶著此一虛擬環境檔案, 則可以將 .pythonlibs 附加到 .gitignore</p>
 <p>另外在近端必須處理 Python 3.12.0 版本中的 <a href="https://docs.python.org/3/library/ssl.html">https://docs.python.org/3/library/ssl.html</a> </p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">httpd.socket = ssl.wrap_socket(httpd.socket,
@@ -2826,10 +2831,11 @@ for i, item in enumerate(data, 1):
 </script>
 </p>
 <p>A: 使用 <a href="https://pages.github.com/">Github Pages</a>.</p>
-<p>Q: cmsimde 已知 bug.</p>
+<p>Q: cmsimde 已知 bugs.</p>
 <p>A:</p>
 <p style="padding-left: 30px;">特定頁面中無法讓 URL 嵌入 html 中的 anchor 標註.</p>
 <p style="padding-left: 30px;">特定情況下使用者無法在編輯器最末端輸入資料, 必須透過 Source code 轉而直接利用 html 才能編輯內容.</p>
+<p style="padding-left: 30px;">使用者給定無法分頁的頁面標題時, 例如: 將特定 html 或特殊符號當作頁面標題時, 會完全刪除 config/content.htm 的內容.</p>
 <p></p><h1>Brython</h1>
 <p><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">https://en.wikipedia.org/wiki/Python_(programming_language)</a></p>
 <h4>Examples:</h4>
