@@ -124,18 +124,9 @@ Defaults timestamp_timeout=60</pre>
 <p><span>可以讓 sudo python3 change_shell.py 執行時無需輸入管理者密碼.</span></p>
 <hr/>
 <p>s1511 虛擬主機環境與使用流程:</p>
-<ol>
-<li>s1511 主機只有 IPv6 網路協定, 因此 ssh, sftp 以及 http 等連線的使用都必須透過雙協定支援代理主機設定, 才能與僅支援 IPv4 的電腦相連.</li>
-<li>若希望遠端登入 <span>s1511</span> 伺服器的電腦, 使用 IPv6 網路協定, 可以直接以 ssh 連線, sftp 也可直接連線.</li>
-<li>若希望遠端登入 <span>s1511</span> 伺服器的電腦, 只有 IPv4 網路協定, 則遠端登入使用 ssh 必須設定雙協定支援代理主機, 假如連線的電腦位於校外, 則可以使用專責 Proxy 或透過校方所提供的 vpn 進行連線後, 再使用 ssh 遠端登入 <span>s1511</span> 主機.</li>
-<li>使用者遠端登入 <span>s1511</span> 主機後, 因為該主機只有 IPv6 網路, 因此對 github.com 主機的連線, 無論是 ssh 或 http 都必須設定 proxy 代理主機.</li>
-<li>使用者登入 <span>s1511</span>, 主要目的是利用主機上的 Python 3 執行位於 github.com 上的個人倉儲動態網站, 因此必須先使用 git clone 取下個人的倉儲.</li>
-<li>由於位於 github.com 上的個人倉儲使用子模組, 因此 git clone 之前必須先設定 ssh 對 github.com 連線的代理主機, 以及取下子模組用的 http 代理主機.</li>
-<li>利用 ssh 協定取下個人的代理主機, 其設定必須先用 ssh-keygen 在 .ssh 目錄中建立 private key (id_rsa) 以及 public key (id_rsa.pub), 並且將 id_rsa.pub 登錄到個人 github.com 帳號下 Settings 下的 SSH and GPG keys 設定區. 而且需要在 .ssh 目錄中, 利用 config 設定檔案, 指定 Host 以及代理主機, 此 Host 名稱可以視為 Linux 操作系統下, 以 ssh 對 github.com 連線的 session 名稱.</li>
-<li>git clone 執行時所使用的 http 代理主機設定可透過 git config --global http.proxy http://your_proxy_server:3128 達成.</li>
-<li>完成將個人倉儲取下至個人帳號下的工作目錄後, 因為要採 waitress 方式執行 cmsimde, 因此還需要取得對應的 server.py, 必須放入倉儲目錄中, 另外 acp 也必須使用 Linux 的指令格式, 並且若要使用網際 acp, 則必須利用 chmod u+x acp 讓 acp 可以執行.</li>
-<li>當使用 python3 server.py &amp; 執行 process 後, ps axo pid,comm,uid | grep "python3" 的指令, 可以列出各自帳號下所 background 執行的 process pid, 若需要列出執行 process 對應目錄, 則可以利用 pwdx 加上 pid 後執行取得.</li>
-</ol>
+<p style="padding-left: 30px;">1. s1511 主機只有 IPv6 網路協定, 因此 ssh, sftp 以及 https 等連線的使用都必須透過雙協定支援代理主機設定, 才能與僅支援 IPv4 的電腦相連. 使用電腦輔助設計室的電腦, 只要下載<a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/Eck0KdLe1uZEk_LJ2tkEf4ABZyW32cmq5WZVl52Fww9C2A?e=i5Dm3t">2023_fall_w7_cadlab_network_setup.7z</a> <span>(需要下載密碼), 放入隨身碟, 然後根據說明納入自己所分配到的固定 IPv6, 就可以採管理者身分執行批次檔的方式完成網路設定.</span></p>
+<p style="padding-left: 30px;">2. 利用 ssh 協定取下個人的代理主機, 其設定必須先用 ssh-keygen 在 .ssh 目錄中建立 private key (id_rsa) 以及 public key (id_rsa.pub), 並且將 id_rsa.pub 登錄到個人 github.com 帳號下 Settings 下的 SSH and GPG keys 設定區. 而且需要在 .ssh 目錄中, 利用 config 設定檔案, 指定 Host 以及代理主機, 此 Host 名稱可以視為 Linux 操作系統下, 以 ssh 對 github.com 連線的 session 名稱.</p>
+<p style="padding-left: 30px;">3. 當使用 python3 server.py &amp; 執行 process 後, ps -axo pid,comm,uid | grep "python3" 的指令, 可以列出各自帳號下所 background 執行的 process pid, 若需要列出執行 process 對應目錄, 則可以利用 pwdx 加上 pid 後執行取得.</p>
 <p>.ssh 目錄中的 <a href="/downloads/config">config</a>, 將 SSH session 名稱設為 github.com:</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">Host github.com
 User git
@@ -223,6 +214,7 @@ https_proxy=http://p4.cycu.org:3128
 <p style="padding-left: 30px;"><a href="https://mde.tw/cpnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9215c7c160119721ded887018cda8f4e/raw/593a8e462e0d8e7996f0bca3dd922adfdd4962e0/generate_cp2023_1b_site_repo.py">cp2023 1b 學員網站與倉儲連結</a></p>
 <p style="padding-left: 30px;">1a 學員展示用 IPv6 位址: 2001:288:6004:17:2023:cba::<a href="https://mde.tw/cpnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9215c7c160119721ded887018cda8f4e/raw/593a8e462e0d8e7996f0bca3dd922adfdd4962e0/generate_cp2023_1a_site_repo.py">班級名單序號</a></p>
 <p style="padding-left: 30px;"><span>2b 學員展示用 IPv6 位址: 2001:288:6004:17:2023:cbb::</span><a href="https://mde.tw/cpnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9215c7c160119721ded887018cda8f4e/raw/593a8e462e0d8e7996f0bca3dd922adfdd4962e0/generate_cp2023_1b_site_repo.py">班級名單序號</a></p>
+<hr/>
 <p>112 學年度第一學期 (2023 Fall) 機械設計工程系 - 計算機程式課程的上課內容與進度.</p>
 <p>有關 Replit 與近端可攜系統的相關操作, 請參考 cadnote 中的內容: <a href="https://mde.tw/cadnote/content/Replit.html">Replit</a>, <a href="https://mde.tw/cadnote/content/%E8%BF%91%E7%AB%AF%E5%8F%AF%E6%94%9C.html">近端可攜</a>, <a href="https://mde.tw/cadnote/content/Git.html">Git</a>.</p>
 <p>手機建議安裝以下 Apps:</p>
@@ -762,7 +754,7 @@ void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, 
 <p style="padding-left: 30px;"><span>cad2023_bg4: 8241, 9241</span></p>
 <p style="padding-left: 30px;"><span>cad2023_bg5: 8242, 9242</span></p>
 <p style="padding-left: 30px;"><span>cad2023_bg6: 8243, 9243</span></p>
-<hr>
+<hr/>
 <p>在 Ubuntu 安裝 gd 程式庫套件:</p>
 <p>sudo apt update</p>
 <p>sudo apt upgrade</p>
@@ -778,6 +770,7 @@ void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, 
 <p style="padding-left: 30px;"><a href="https://mde.tw/cpnote/content/%E4%B8%8A%E8%AA%B2%E5%85%A7%E5%AE%B9.html">上課內容</a>中的 Exercises</p>
 <p style="padding-left: 30px;"><a href="https://mde.tw/cpnote/content/w2-w5.html">w2-w5</a> 週任務中的 Exercises</p>
 <p style="padding-left: 30px;"><a href="https://mde.tw/cpnote/content/w6-w7.html">w6-w7</a> 週任務中的練習一與練習二</p>
+<p style="padding-left: 30px;">請利用 C 結合 gd 繪圖程式庫, 畫出 <a href="https://en.wikipedia.org/wiki/Flag_of_China">PROC</a>, <a href="https://en.wikipedia.org/wiki/Flag_of_the_United_Kingdom">United Kingdom</a>, <a href="https://en.wikipedia.org/wiki/Flag_of_Japan">Japan</a> 與 <a href="https://en.wikipedia.org/wiki/Flag_of_South_Korea">South Korea</a> Flags.</p>
 <p style="padding-left: 30px;">各分組成員協同將 <a href="https://nfuedu-my.sharepoint.com/:b:/g/personal/yen_nfu_edu_tw/EWd1cR2zOStOjVSduSw6pQMBv1fB6tWu-P9qfVH2YxbDPw?e=uOZW7N">jsliu_c_programming.pdf</a><span> </span>(需要下載密碼) 內容整理後, 放入各分組網站.</p><h2>C_lib</h2>
 <p>本課程針對 C 程式語言的教學將使用下列程式庫:</p>
 <p>gnuplot: <a href="https://github.com/gnuplot/gnuplot">https://github.com/gnuplot/gnuplot</a></p>
@@ -3033,7 +3026,7 @@ doc["add1to100"].bind('click', add)
 <div style="width: 100%; height: 100%;"><textarea autocomplete="off" id="kw_console1"></textarea></div>
 <p><!-- Brython 程式執行的結果, 都以 brython_div1 作為切入位置 --></p>
 <div id="brython_div1"></div>
-<!-- editor1 結束 --><hr><!-- ########################################## -->
+<!-- editor1 結束 --><hr/><!-- ########################################## -->
 <p>從 1 累加到 100 part2:</p>
 <p><button id="add1to100part2">1 add to 100</button><button id="cango_three_gears">cango_three_gears</button><button id="bsnake">BSnake</button><button id="aitetris">AI Tetris</button><button id="threejsblock">Rotating Block</button></p>
 <p><!-- 請注意, 這裡使用 Javascript 將 localStorage["kw_py_src2"] 中存在近端瀏覽器的程式碼, 由使用者決定存檔名稱--></p>
@@ -3155,4 +3148,4 @@ doc["threejsblock"].bind("click", threejsblock.do)
 <!-- editor2 結束 --><hr/>
 <p>
 <script src="https://unpkg.com/three@0.144.0/build/three.js" type="text/javascript"></script>
-</p></hr></hr>
+</p>
