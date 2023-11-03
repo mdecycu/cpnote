@@ -259,7 +259,7 @@ Defaults timestamp_timeout=60</pre>
 <p>s1511 虛擬主機環境與使用流程:</p>
 <p style="padding-left: 30px;">1. s1511 主機只有 IPv6 網路協定, 因此 ssh, sftp 以及 https 等連線的使用都必須透過雙協定支援代理主機設定, 才能與僅支援 IPv4 的電腦相連. 使用電腦輔助設計室的電腦, 只要下載<a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/Eck0KdLe1uZEk_LJ2tkEf4ABZyW32cmq5WZVl52Fww9C2A?e=i5Dm3t">2023_fall_w7_cadlab_network_setup.7z</a> <span>(需要下載密碼), 放入隨身碟, 然後根據說明納入自己所分配到的固定 IPv6, 就可以採管理者身分執行批次檔的方式完成網路設定.</span></p>
 <p style="padding-left: 30px;">2. 利用 ssh 協定取下個人的代理主機, 其設定必須先用 ssh-keygen 在 .ssh 目錄中建立 private key (id_rsa) 以及 public key (id_rsa.pub), 並且將 id_rsa.pub 登錄到個人 github.com 帳號下 Settings 下的 SSH and GPG keys 設定區. 而且需要在 .ssh 目錄中, 利用 config 設定檔案, 指定 Host 以及代理主機, 此 Host 名稱可以視為 Linux 操作系統下, 以 ssh 對 github.com 連線的 session 名稱.</p>
-<p style="padding-left: 30px;">3. 當使用 python3 server.py &amp; 執行 process 後, ps -axo pid,comm,uid | grep "python3" 的指令, 可以列出各自帳號下所 background 執行的 process pid, 若需要列出執行 process 對應目錄, 則可以利用 pwdx 加上 pid 後執行取得.</p>
+<p style="padding-left: 30px;">3. 當使用 python3 server.py &amp; 執行 process 後, ps -axo pid,comm,uname | grep "python3" 的指令, 可以列出各自帳號下所 background 執行的 process pid, 若需要列出執行 process 對應目錄, 則可以利用 pwdx 加上 pid 後執行取得.</p>
 <p>.ssh 目錄中的 <a href="./../downloads/config">config</a>, 將 SSH session 名稱設為 github.com:</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">Host github.com
 User git
