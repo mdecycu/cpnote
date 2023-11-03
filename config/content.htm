@@ -724,7 +724,7 @@ void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, 
 <p>以下為 C++ 進階課程, 僅提供參考.</p>
 <p><a href="https://docs.replit.com/teaching-curriculum/intro-cpp">Intro to C++ | Replit Docs</a>, 針對有 C++ 以外程式基礎的學員, 除了基本 C++ 語法外還介紹指標 (pointers) 與資料結構 (data structures).</p>
 <p>C++ 程式範例: <a href="https://replit.com/teams/import/afurhdoyyeyvpxbo-SeaPlusPlus">Project copying - Replit</a></p>
-<h2>w8</h2>
+<h2>w8-w9</h2>
 <p>s1511 伺服器中的分組埠號:</p>
 <p>計算機程式課程:</p>
 <p style="padding-left: 30px;">cp2023_ag1: 8220, 9220</p>
@@ -772,7 +772,144 @@ void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, 
 <p style="padding-left: 30px;"><a href="https://mde.tw/cpnote/content/w2-w5.html">w2-w5</a> 週任務中的 Exercises</p>
 <p style="padding-left: 30px;"><a href="https://mde.tw/cpnote/content/w6-w7.html">w6-w7</a> 週任務中的練習一與練習二</p>
 <p style="padding-left: 30px;">請利用 C 結合 gd 繪圖程式庫, 畫出 <a href="https://en.wikipedia.org/wiki/Flag_of_China">PROC</a>, <a href="https://en.wikipedia.org/wiki/Flag_of_the_United_Kingdom">United Kingdom</a>, <a href="https://en.wikipedia.org/wiki/Flag_of_Japan">Japan</a> 與 <a href="https://en.wikipedia.org/wiki/Flag_of_South_Korea">South Korea</a> Flags.</p>
-<p style="padding-left: 30px;">各分組成員協同將 <a href="https://nfuedu-my.sharepoint.com/:b:/g/personal/yen_nfu_edu_tw/EWd1cR2zOStOjVSduSw6pQMBv1fB6tWu-P9qfVH2YxbDPw?e=uOZW7N">jsliu_c_programming.pdf</a><span> </span>(需要下載密碼) 內容整理後, 放入各分組網站.</p><h2>C_lib</h2>
+<p style="padding-left: 30px;">各分組成員協同將 <a href="https://nfuedu-my.sharepoint.com/:b:/g/personal/yen_nfu_edu_tw/EWd1cR2zOStOjVSduSw6pQMBv1fB6tWu-P9qfVH2YxbDPw?e=uOZW7N">jsliu_c_programming.pdf</a><span> </span>(需要下載密碼) 內容整理後, 放入各分組網站.</p>
+<p><span style="background-color: #ffff00;">w9 程式練習</span>:</p>
+<p>2b w8 作業: 請根據 <a href="https://mde.tw/cadnote/downloads/cad2023_2b_w8.txt">cad2023_2b_w8.txt</a> 檔案中的內容, 透過程式的讀取與篩選, 按照時間先後, 列出 2b 修課學員中已經登入 s1511.cycu.org 的學號. (修課學員名單 2a: <a href="https://stud.cycu.org:8800/?semester=1121&amp;courseno=0838&amp;column=True">0838</a>, 2b: <a href="https://stud.cycu.org:8800/?semester=1121&amp;courseno=0851&amp;column=True">0851</a>)</p>
+<p>假如在近端處理, 必須同時儲存兩個檔案後, 進行資料選取:</p>
+<p><a href="/downloads/get_stud_num_from_last_data.py">get_stud_num_from_last_data.py</a> (若採 Brython 編寫, 可以直接<a href="https://mde.tw/cadnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9215c7c160119721ded887018cda8f4e/raw/f9f2fd6819ae9553d51990901aa694073d51439a/get_stud_num_from_last_data.py">列出結果</a>, 依照登入時間先後排序, 其中 41123227 為管理者最早測試時登入, 若採用 ANSI 編寫: <a href="/downloads/c_parse_last_cp2023.7z">c_parse_last_cp2023.7z</a>)</p>
+<p>read_last_final1.c 原始碼:</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main() {
+    // Open the user file for reading
+    FILE* user_file = fopen("2b_user_list.txt", "r");
+    if (user_file == NULL) {
+        perror("Error opening user file");
+        return 1;
+    }
+
+    char line[100]; // Assuming a maximum line length of 100 characters
+
+    char valid_users[100][20]; // Assuming a maximum of 100 valid users with a length of 20 characters each
+    int valid_user_count = 0;
+
+    // Read and store the student numbers from the user file
+    while (fgets(line, sizeof(line), user_file)) {
+        line[strcspn(line, "\n")] = '\0'; // Remove the newline character
+        strcpy(valid_users[valid_user_count], line);
+        valid_user_count++;
+    }
+
+    // Close the user file
+    fclose(user_file);
+
+    // Open the CAD file for reading
+    FILE* cad_file = fopen("cad2023_2b_w8.txt", "r");
+    if (cad_file == NULL) {
+        perror("Error opening CAD file");
+        return 1;
+    }
+
+    char unique_users[100][20]; // Assuming a maximum of 100 unique users with a length of 20 characters each
+    int unique_user_count = 0;
+
+    // Read the CAD file line by line
+    while (fgets(line, sizeof(line), cad_file)) {
+        char* token = strtok(line, " "); // Split the line by space
+        if (token != NULL &amp;&amp; strstr(token, "cad") == token) {
+            // Extract the student number (skip "cad")
+            char student_number[20]; // Assuming a maximum length of 20 characters for a student number
+            strcpy(student_number, token + 3); // Skip "cad"
+            
+            // Check if the student number is in the list of valid users and not a duplicate
+            int is_valid = 0;
+            for (int i = 0; i &lt; valid_user_count; i++) {
+                if (strcmp(valid_users[i], student_number) == 0) {
+                    is_valid = 1;
+                    break;
+                }
+            }
+            
+            // Add the student number to the unique_users list if it's valid and not a duplicate
+            if (is_valid) {
+                int is_duplicate = 0;
+                for (int i = 0; i &lt; unique_user_count; i++) {
+                    if (strcmp(unique_users[i], student_number) == 0) {
+                        is_duplicate = 1;
+                        break;
+                    }
+                }
+                
+                if (!is_duplicate) {
+                    strcpy(unique_users[unique_user_count], student_number);
+                    unique_user_count++;
+                }
+            }
+        }
+    }
+
+    // Reverse the order of the unique student numbers
+    for (int i = 0; i &lt; unique_user_count / 2; i++) {
+        char temp[20];
+        strcpy(temp, unique_users[i]);
+        strcpy(unique_users[i], unique_users[unique_user_count - 1 - i]);
+        strcpy(unique_users[unique_user_count - 1 - i], temp);
+    }
+
+    // Print the unique student numbers in reverse order
+    for (int i = 0; i &lt; unique_user_count; i++) {
+        printf("%s\n", unique_users[i]);
+    }
+
+    // Close the CAD file
+    fclose(cad_file);
+
+    return 0;
+}
+</pre>
+<p>若採用 Python 編寫:</p>
+<p>read_last.py 原始碼</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 讀取學號檔案
+with open("2b_user_list.txt", 'r') as user_file:
+    user_lines = user_file.read().splitlines()
+ 
+# 讀取 last 指令轉出的檔案, 以 last -w &gt; cad2023_2b_w8.txt 建立檔案
+with open("cad2023_2b_w8.txt", 'r') as cad_file:
+    # 以下是利用跳行符號, 將每一行區隔成數列
+    cad_lines = cad_file.read().splitlines()
+#print(cad_lines)
+ 
+# 從 cad_lines 建立所有登入使用者數列
+login_users = []
+for i in cad_lines:
+    line_list = i.split(" ")
+    login_users.append(line_list[0])
+#print(login_users)
+ 
+# 根據 https://stackoverflow.com/questions/480214/how-do-i-remove-duplicates-from-a-list-while-preserving-order
+# 數列去除重複元素但仍保持原始次序
+login_users = list(dict.fromkeys(login_users))
+#print(login_users)
+ 
+# 建立數列存放符合條件的使用者
+valid_users = []
+ 
+# 取出符合條件的使用者
+for line in login_users:
+    if "cad" in line:
+        # 將 cad 字串去除
+        user_number = line.replace("cad", "")
+        if user_number in user_lines:
+            valid_users.append(user_number)
+             
+# 利用 reverse() 將 valid_users 反向排序
+valid_users.reverse()
+ 
+# , 最早登入者列在最前面
+for user in valid_users:
+    print(user)</pre>
+<p></p><h2>C_lib</h2>
 <p>本課程針對 C 程式語言的教學將使用下列程式庫:</p>
 <p>gnuplot: <a href="https://github.com/gnuplot/gnuplot">https://github.com/gnuplot/gnuplot</a></p>
 <p><span style="background-color: #ffff00;">數值分析繪圖程式庫</span> - 在機電設計流程中, 工程師運用數值分析法進行設計與模擬運算後, 將數據存檔, 可利用 gnuplot 繪圖指令, 以令人容易理解的圖形呈現數值分析結果.</p>
