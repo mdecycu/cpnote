@@ -2,7 +2,7 @@
         <head>
         <title>cpnote</title>
         <meta charset="utf-8">
-<meta property="head" content="H3">
+<meta property="head" content="H2">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
@@ -142,34 +142,19 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">s1511 << <a href='s1511.html'>Previous</a> <a href='cp2023.html'>Next</a> >> cp2023<br /><h1>linux</h1>
-<p>練習登入 s1511.cycu.org 與退出 s1511.cycu.org:</p>
-<p style="padding-left: 30px;">以命令列登入與退出: 從 Windows, ssh 帳號@s1511.cycu.org 登入, 進入後, 以 exit 退出.</p>
-<p style="padding-left: 30px;">以 putty 登入與退出: 設定 putty session 登入, open 後可輸入帳號密碼登入, 進入後, 以 exit 退出.</p>
-<p style="padding-left: 30px;">登入後, 學習如何利用 mkdir 建立目錄, 如何利用 cp 複製檔案, 如何利用 mv 移動檔案, 如何利用 rm 刪除檔案, 如何利用 cd 在各目錄中遊走, 如何利用 vi 建立及編輯檔案.</p>
-<p style="padding-left: 30px;">登入後, 學習如何利用 chmod 針對特定目錄或檔案設定存取權, 例如: chmod 711 /home/your_account, 其中的 7 為 r = read 以 4 代表, w = write 以 2 代表, x = execute 以 1 代表, 且 Linux 中每一個檔案或目錄都用 10 個字元代表其屬性, 第一個字元若為 d = directory 表示該名稱為目錄, 隨後的 2-4 字元代表 user 對該檔案或目錄的 rwx 存取權, 5-7 字元則代表 group = 同一群組用戶對該檔案或目錄的存取權, 8-10 字元則代表 others = 非用戶非同一群組的其他身分使用者對該檔案或目錄的存取權.</p>
-<p style="padding-left: 30px;">因此, chmod 711 /home/your_account, 表示要將帳號對應目錄設為 user 可以 rwx, 而同一群組及其他用戶則只能 x = execute 執行.</p>
-<p style="padding-left: 30px;">若使用 chmod 755 /home/your_account/public_html 進行設定, 表示該目錄中的所有內容, user 可以 rwx, 而同一群組及其他用戶則只能 r = read 以 4 代表, 然後加上 x = execute 以 1 代表, 也就是 4 + 1 = 5 的 r-x 權限, 即可以讀取與執行的權限.</p>
-<p>練習利用 sftp 指令從 s1511.cycu.org 取下或放上檔案:</p>
-<p style="padding-left: 30px;">在近端執行 gd in C 繪製 ROC Flag 後, 取得 roc_flag.png, 以 sftp 送進自己位於 s1511.cycu.org 主機中 cp2023 倉儲 images 目錄中.</p>
-<p style="padding-left: 30px;">從 s1511.cycu.org 取下自己 cp2023 倉儲 downloads 中的某一個 .c 程式碼.</p>
-<p style="padding-left: 30px;">從 Windows 將 ssh session 設定檔案 config, 送到 s1511.cycu.org 主機中帳號下的 .ssh 目錄</p>
-<p>練習建立 s1511.cycu.org 中帳號下的 private key 與 public key:</p>
-<p style="padding-left: 30px;">遠端登入 s1511.cycu.org 之後, 利用 ssh-keygen 指令在 ~/.ssh 目錄中建立 id_rsa 與 id_rsa.pub</p>
-<p style="padding-left: 30px;">以 sftp 從 s1511.cycu.org 主機取下 .ssh 目錄中的 id_rsa.pub public key</p>
-<p style="padding-left: 30px;">將 id_rsa.pub public key 的內容登錄到 Github 帳號 settings 中的 SSH and GPG keys 中</p>
-<p>練習在 s1511.cycu.org 中設定提交 github 倉儲用的 .gitconfig 檔案:</p>
-<p style="padding-left: 30px;">登入 s1511.cycu.org 後, 利用 git config --global user.email 與 user.name 設定在 Github 帳號所登記的電子郵箱與 username</p>
-<p>由於 s1511.cycu.org 是一台 Ubuntu 伺服器, 使用者登入之後必須熟悉以下 Linux 操作系統上的指令:</p>
-<p style="padding-left: 30px;">ls: ls -l, ls -la, ls -l *.png</p>
-<p style="padding-left: 30px;">cd: cd ../, cd</p>
-<p style="padding-left: 30px;">cp: cp ./gd_ex1.c ../downloads/</p>
-<p style="padding-left: 30px;">vi: <a href="https://code.yidas.com/linux-vi-vim-command/">https://code.yidas.com/linux-vi-vim-command/</a></p>
-<p style="padding-left: 30px;">其他 Linux commands:</p>
-<p style="padding-left: 60px;"><a href="https://bjpcjp.github.io/pdfs/devops/linux-commands-handbook.pdf">https://bjpcjp.github.io/pdfs/devops/linux-commands-handbook.pdf</a></p>
-<p style="padding-left: 60px;"><a href="https://buildmedia.readthedocs.org/media/pdf/lym/latest/lym.pdf">https://buildmedia.readthedocs.org/media/pdf/lym/latest/lym.pdf</a></p>
-<p style="padding-left: 60px;"><a href="http://cc.iiti.ac.in/docs/linuxcommands.pdf">http://cc.iiti.ac.in/docs/linuxcommands.pdf</a></p>
-<br />s1511 << <a href='s1511.html'>Previous</a> <a href='cp2023.html'>Next</a> >> cp2023</div>
+    <div id="tipue_search_content">About << <a href='About.html'>Previous</a> <a href='s1511.html'>Next</a> >> s1511<br /><h1>程式應用</h1>
+<p>已知利用 C 程式可以控制雷射 XY 工作平台中雷射頭移動(<a href="https://www.bystronic.com/twn/tw/l/laser-cutting">雷射切割</a>), 且從 <a href="https://mde.tw/cpnote/content/w6-w7.html">w6-w7 頁面</a>中已知如何利用 C 程式繪製 ROC 國旗, 請問如何利用 C 程式引導雷射切割頭勾勒出 ROC 國旗圖案的外觀線條?</p>
+<p><img alt="" height="67" src="https://mde.tw/cpnote/images/roc_flag3.png" width="100"/></p>
+<p><img caption="false" height="70" src="./../images/rod_flag_outline.png" width="100"/></p>
+<p>(graphics from <a href="https://www.supercoloring.com/zh-hant/tu-se-ye/tai-wan-guo-qi">here</a>)</p>
+<p>Reference:</p>
+<p style="padding-left: 30px;">利用 Google 查詢:如何利用 C (ANSI C) 計算直線 (line) 與圓 (circle) 的交接點 (intersection) 座標 (coordinate)</p>
+<p style="padding-left: 30px;">ANSI C: American National Standards Institute, 美國國家標準局</p>
+<p style="padding-left: 30px;">與 ANSI C 有關的 pdf:</p>
+<p style="padding-left: 60px;"><a href="https://karadev.net/uroci/filespdf/files/Programming-in-ANSI-C.pdf">https://karadev.net/uroci/filespdf/files/Programming-in-ANSI-C.pdf</a></p>
+<p style="padding-left: 30px;"><a href="https://www.google.com/search?q=ansi+c+intersection+of+line+and+circle">https://www.google.com/search?q=ansi+c+intersection+of+line+and+circle</a></p>
+<p style="padding-left: 30px;"></p>
+<p></p><br />About << <a href='About.html'>Previous</a> <a href='s1511.html'>Next</a> >> s1511</div>
         
     <!-- footer -->
       <div class="container">
