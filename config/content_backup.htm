@@ -12,21 +12,29 @@
 <p style="padding-left: 30px;">也可以直接使用電腦輔助設計室中 C:\Portable_2023_fall 目錄中的檔案</p>
 <p></p>
 <h2>程式應用</h2>
-<p>已知利用 C 程式可以控制雷射 XY 工作平台中雷射頭移動(<a href="https://www.bystronic.com/twn/tw/l/laser-cutting">雷射切割</a>), 且從 <a href="https://mde.tw/cpnote/content/w6-w7.html">w6-w7 頁面</a>中已知如何利用 C 程式繪製 ROC 國旗, 請問如何利用 C 程式引導雷射切割頭勾勒出 ROC 國旗圖案的外觀線條?</p>
+<p>1. 已知利用 C 程式可以控制雷射 XY 工作平台中雷射頭移動(<a href="https://www.bystronic.com/twn/tw/l/laser-cutting">雷射切割</a>), 且從 <a href="https://mde.tw/cpnote/content/w6-w7.html">w6-w7 頁面</a>中已知如何利用 C 程式繪製 ROC 國旗, 請問如何利用 C 程式引導雷射切割頭勾勒出 ROC 國旗圖案的外觀線條?</p>
 <p><img alt="" height="67" src="https://mde.tw/cpnote/images/roc_flag3.png" width="100"/></p>
 <p><img caption="false" height="70" src="/images/rod_flag_outline.png" width="100"/></p>
 <p>(graphics from <a href="https://www.supercoloring.com/zh-hant/tu-se-ye/tai-wan-guo-qi">here</a>)</p>
 <p><img alt="" height="100" src="/images/roc_flag_outline_on_solvespace.png" width="100"/></p>
-<p><img alt="" height="103" src="/images/white_sun_outline.png" width="100"/></p>
 <p><a href="/downloads/roc_flag_outline.slvs">roc_flag_outline.slvs</a></p>
+<p><img alt="" height="103" src="/images/white_sun_outline.png" width="100"/></p>
+<p><a href="/downloads/roc_flag_outline-2.slvs">roc_flag_outline-2.slvs</a></p>
 <p>Reference:</p>
 <p style="padding-left: 30px;">利用 Google 查詢:如何利用 C (ANSI C) 計算直線 (line) 與圓 (circle) 的交接點 (intersection) 座標 (coordinate)</p>
 <p style="padding-left: 30px;">ANSI C: American National Standards Institute, 美國國家標準局</p>
 <p style="padding-left: 30px;">與 ANSI C 有關的 pdf:</p>
 <p style="padding-left: 60px;"><a href="https://karadev.net/uroci/filespdf/files/Programming-in-ANSI-C.pdf">https://karadev.net/uroci/filespdf/files/Programming-in-ANSI-C.pdf</a></p>
 <p style="padding-left: 30px;"><a href="https://www.google.com/search?q=ansi+c+intersection+of+line+and+circle">https://www.google.com/search?q=ansi+c+intersection+of+line+and+circle</a></p>
-<p style="padding-left: 30px;"></p>
-<p></p><h2>s1511</h2>
+<p style="padding-left: 30px;"><a href="https://math.stackexchange.com/questions/228841/how-do-i-calculate-the-intersections-of-a-straight-line-and-a-circle">How do I calculate the intersection(s) of a straight line and a circle? - Mathematics Stack Exchange</a> (如何計算一條直線與圓的相交點?)</p>
+<p style="padding-left: 60px;">平面上直線的方程式?  \(y = mx + c\), 其中 m 為直線斜率 (slope), c 為特定常數 (constant)</p>
+<p style="padding-left: 60px;">平面上圓的方程式? \((x-p)^2 + (y-q)^2 = r^2\), 其中圓心座標 (center coordinate) 為 \((p, q)\) 半徑 (radius) 為 \(r\)</p>
+<p style="padding-left: 60px;">將直線方程式與圓方程式聯立求解, 就可以求出交點的座標.</p>
+<p><a href="/downloads/roc_list_coord_flag.c">roc_list_coord_flag.c</a> (可以列出繪製 ROC flag 過程的點座標)</p>
+<p>假如利用 Python 的 sympy 解題會更簡單: <a href="/downloads/line_circle_intersection.py">line_circle_intersection.py</a></p>
+<p>2. <a href="/downloads/cp2023_1a_midterm.txt">cp2023_1a_midterm.txt</a> 1a 期中考週所填回的期望成績與分組組別, 請各組利用 C 程式列出各組成員名單 (未分組的學員請以亂數補至尚未滿 9 人的組別中).</p>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><h2>s1511</h2>
 <p>2022.08.30 Replit 趁 Heroku <a href="https://blog.heroku.com/next-chapter">中止提供免費帳號</a>時, 順勢接收許多免費用戶之後, Replit 在 2023.04.13 正式推出 Deployment. 並且允許免費用戶使用. 但在 2023.09.28 卻<a href="https://blog.replit.com/hosting-changes">宣布</a>此一部署服務, 最遲在 2024.01.01 將只提供給付費用戶使用. 意即之後使用者<span style="background-color: #ccffcc;">無法再經由 python3 main.py 在廣域網路中使用 repl.co 網址進行編輯</span> (<span style="background-color: #ffcc99;">假如 Webview 仍在, 或許可以在啟動編輯網站後, 在 Webview tag 中登入系統編輯, 但無法在全螢幕中進行編輯</span>).</p>
 <p>2023.10.20 收到 Replit 告知 repl.co 網域服務改變的 email 內容, 其中的 <a href="https://blog.replit.com/hosting-changes">Learn More</a> 就是 2023.08.28 的網誌<a href="https://blog.replit.com/hosting-changes">宣布</a>:</p>
 <p><img alt="" class="add_border" height="284" src="/images/2023_10_20_mail_from_replit.png" width="400"/></p>

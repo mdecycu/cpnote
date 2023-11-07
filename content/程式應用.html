@@ -143,7 +143,7 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">About << <a href='About.html'>Previous</a> <a href='s1511.html'>Next</a> >> s1511<br /><h1>程式應用</h1>
-<p>已知利用 C 程式可以控制雷射 XY 工作平台中雷射頭移動(<a href="https://www.bystronic.com/twn/tw/l/laser-cutting">雷射切割</a>), 且從 <a href="https://mde.tw/cpnote/content/w6-w7.html">w6-w7 頁面</a>中已知如何利用 C 程式繪製 ROC 國旗, 請問如何利用 C 程式引導雷射切割頭勾勒出 ROC 國旗圖案的外觀線條?</p>
+<p>1. 已知利用 C 程式可以控制雷射 XY 工作平台中雷射頭移動(<a href="https://www.bystronic.com/twn/tw/l/laser-cutting">雷射切割</a>), 且從 <a href="https://mde.tw/cpnote/content/w6-w7.html">w6-w7 頁面</a>中已知如何利用 C 程式繪製 ROC 國旗, 請問如何利用 C 程式引導雷射切割頭勾勒出 ROC 國旗圖案的外觀線條?</p>
 <p><img alt="" height="67" src="https://mde.tw/cpnote/images/roc_flag3.png" width="100"/></p>
 <p><img caption="false" height="70" src="./../images/rod_flag_outline.png" width="100"/></p>
 <p>(graphics from <a href="https://www.supercoloring.com/zh-hant/tu-se-ye/tai-wan-guo-qi">here</a>)</p>
@@ -157,8 +157,16 @@ img.add_border {
 <p style="padding-left: 30px;">與 ANSI C 有關的 pdf:</p>
 <p style="padding-left: 60px;"><a href="https://karadev.net/uroci/filespdf/files/Programming-in-ANSI-C.pdf">https://karadev.net/uroci/filespdf/files/Programming-in-ANSI-C.pdf</a></p>
 <p style="padding-left: 30px;"><a href="https://www.google.com/search?q=ansi+c+intersection+of+line+and+circle">https://www.google.com/search?q=ansi+c+intersection+of+line+and+circle</a></p>
-<p style="padding-left: 30px;"></p>
-<p></p><br />About << <a href='About.html'>Previous</a> <a href='s1511.html'>Next</a> >> s1511</div>
+<p style="padding-left: 30px;"><a href="https://math.stackexchange.com/questions/228841/how-do-i-calculate-the-intersections-of-a-straight-line-and-a-circle">How do I calculate the intersection(s) of a straight line and a circle? - Mathematics Stack Exchange</a> (如何計算一條直線與圓的相交點?)</p>
+<p style="padding-left: 60px;">平面上直線的方程式?  \(y = mx + c\), 其中 m 為直線斜率 (slope), c 為特定常數 (constant)</p>
+<p style="padding-left: 60px;">平面上圓的方程式? \((x-p)^2 + (y-q)^2 = r^2\), 其中圓心座標 (center coordinate) 為 \((p, q)\) 半徑 (radius) 為 \(r\)</p>
+<p style="padding-left: 60px;">將直線方程式與圓方程式聯立求解, 就可以求出交點的座標.</p>
+<p><a href="./../downloads/roc_list_coord_flag.c">roc_list_coord_flag.c</a> (可以列出繪製 ROC flag 過程的點座標)</p>
+<p>假如利用 Python 的 sympy 解題會更簡單: <a href="./../downloads/line_circle_intersection.py">line_circle_intersection.py</a></p>
+<p>2. <a href="./../downloads/cp2023_1a_midterm.txt">cp2023_1a_midterm.txt</a> 1a 期中考週所填回的期望成績與分組組別, 請各組利用 C 程式列出各組成員名單 (未分組的學員請以亂數補至尚未滿 9 人的組別中).</p>
+<p>參考: <a href="./../downloads/cp2023_1a_list_group_member.7z">cp2023_1a_list_group_member.7z</a></p>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script><br />About << <a href='About.html'>Previous</a> <a href='s1511.html'>Next</a> >> s1511</div>
         
     <!-- footer -->
       <div class="container">
