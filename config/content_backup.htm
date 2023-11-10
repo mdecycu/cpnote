@@ -1,6 +1,7 @@
 <h1>About</h1>
 <p><a href="https://mde.tw/cpnote">https://mde.tw/cpnote</a>, 若 s1511 伺服器提供服務, 經由 IPv6 可連線 <a href="https://s1511.cycu.org/~pj2022/cpnote">https://s1511.cycu.org/~pj2022/cpnote</a>.</p>
 <p>這是國立虎尾科技大學 (National Formosa University, Taiwan) 機械設計工程系大一計算機程式課堂筆記網站。</p>
+<p>本網站的對應倉儲位於 <a href="https://github.com/mdecycu/cpnote">https://github.com/mdecycu/cpnote</a>, 課程學員可以從<a href="https://github.com/mdecycu/cpnote/commits/main">改版歷程</a>中檢視內容差異, 以便了解各階段課程重點.</p>
 <p>課程內容將從基本的 C 程式語言練習起，主要目的是讓學員了解編譯程式語言的特性及基本用法。</p>
 <p>C 程式語言範例，包括如何利用數值分析流程，解出 mass-spring-damper 系統運動程式，並將質量的運動位移及速度，以 Gnuplot 圖表列出。</p>
 <p>接著將數值分析運算移至瀏覽器時，要求學員試著將 C 程式改寫為 Javascript， 並加上 plotly.js 進行繪圖。</p>
@@ -10,8 +11,7 @@
 <p style="padding-left: 30px;"><a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EbxsXK5kkU1ImhJ_HcYPnTcB9MboGQcfs6FuojXRPlhInA?e=wzLQFt">basic_portable_python.7z</a> (下載 15MB, 解開後 55MB)</p>
 <p style="padding-left: 30px;">下載 <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EQTW-mq62DpFtw5It9ao-PIBPXW7z5z8oVsW5gd8zbDXOQ?e=q6gHgf">Portable_2023_fall_1.3g_5g.7z</a> (需要下載密碼)</p>
 <p style="padding-left: 30px;">也可以直接使用電腦輔助設計室中 C:\Portable_2023_fall 目錄中的檔案</p>
-<p></p>
-<h2>程式應用</h2>
+<p></p><h2>程式應用</h2>
 <p>計算機程式課程的目的, 在提供機械設計工程師一個應用電腦與網路<span style="background-color: #ffff00;">解決問題的選項</span>, 其中的問題包括在產品開發過程中必須執行的許多<span style="background-color: #ffff00;">重複且枯燥的工作流程</span>, 必須儘可能地滿足不同客戶在不同時間點可能提出對於產品設計與製造上的需求.</p>
 <p>機械設計工程師使用電腦與網路解決問題的情境, 可以用<span style="background-color: #ffff00;">線上購物與實體商店</span>作為比喻, 線上購物雖然無法完全取代實體商店, 但是作為線上購物店家, 顧客可以透過網路, 在較無時間與地點限制的情況下, 瀏覽與商品或服務有關的資訊, 店家只要完整地將各種產品有關的資訊呈現在網站上即可.</p>
 <p>線上購物: 潛在客戶可以根據需求, <span style="background-color: #ffff00;">深入了解產品規格與保固條件</span>, 瀏覽商品與購物過程所留下的<span style="background-color: #ffff00;">歷程數據</span>可以做為店家提供更好服務的參考.</p>
@@ -183,6 +183,7 @@ git push
 cd ./../public_html/cp2023
 git pull</pre>
 <p><a href="/downloads/cp2023_1101_last.txt">cp2023_1101_last.txt</a></p>
+<hr/>
 <p>Letsencrypt 數位簽章更新:</p>
 <p style="padding-left: 30px;">sudo /etc/init.d/nginx stop</p>
 <p style="padding-left: 30px;">certbot certonly --standalone</p><h3>linux</h3>
@@ -259,6 +260,13 @@ https_proxy=http://p4.cycu.org:3128
 <p></p>
 <h1>上課內容</h1>
 <p>教育版帳號 microsoftonline 登入點: <a href="https://login.microsoftonline.com/">https://login.microsoftonline.com/</a> </p>
+<p>建議學習計算機程式課程的心態與方法:</p>
+<p>由於計算機程式是透過指令或特定敘述與電腦軟硬體進行互動, 且最直接的程式內容都使<span style="background-color: #ffff00;">用英文與電腦進行溝通</span>, 因此在學習計算機程式的過程, <span style="background-color: #ffff00;">儘量使用全英文模式</span>, 當電腦回應英文或解題過程碰到英文教材, 一定要仔細閱讀, 充分了解各英文單字與文句段落的意涵, 之後才能靈活運用.</p>
+<p>所謂"儘量使用全英文模式"的意思為: 登入系統的<span style="background-color: #ccffcc;">帳號</span>使用英文命名、電腦中<span style="background-color: #ccffcc;">目錄與檔案的命名</span>使用英文、程式中的<span style="background-color: #ccffcc;">註解與變數或函式命名</span>也盡量使用有意義的英文 (可以透過線上翻譯系統, 將中文語句轉為英文)、改版<span style="background-color: #ccffcc;">提交敘述</span>也儘量使用英文描述、<span style="background-color: #ccffcc;">網頁的標題</span>也儘量使用英文.</p>
+<p>閱讀英文教材並且不斷提升<span style="background-color: #ffff00;">自我英文在聽、說、讀、寫的能力</span>的方法是: 不要排拒英文教材, 因為特定系統的完整說明文件, 通常是用英文編寫. 當電腦回應英文敘述, 或者在閱讀英文教材時, 可以利用 AI 系統的輔助, 加快對於內容的深入了解, 並可從中增加自我英文字彙能力. (可以利用網路上許多優質的計算機程式相關<span style="background-color: #ffff00;">英文教學影片</span>輔助學習)</p>
+<p>電腦輔助設計室的電腦已經加裝<span style="background-color: #ccffcc;">還原卡</span>, 為了快速客製化電腦以提高使用效率, 必須使用<span style="background-color: #ccffcc;">隨身碟</span>中的批次檔 (batch)、登錄檔 (registry) 或 Powershell 指令檔進行設定, 例如: <span style="background-color: #ffff00;">網路環境</span>、<span style="background-color: #ffff99;">Putty 工作階段</span>、<span style="background-color: #ffff00;">程式編譯環境</span>、<span style="background-color: #ffff00;">程式解譯環境</span>、關閉額外的<span style="background-color: #ffff00;">電腦服務及負載</span>等.</p>
+<p><span style="background-color: #ffff00;">C、Javascript 與 Python</span> 是機械設計工程師目前經常會碰到的計算機程式語言, 初學者可以按照此一順序進行學習. C 經常被用來控制電腦硬體, Javascript 內建在每一個瀏覽器中, 而 Python 則是從精簡解題到跨足 AI 領域的最佳解譯系統. 之後若需要涉足較大型電腦套件, 還可能碰到 C++、C#、Java、Rust 與 Mojo 等計算機程式語言.</p>
+<p>無論學習那一種計算機程式語言, 所有的程式師都是從"Hello World!"<span style="background-color: #ccffcc;">簡單列印</span>開始, 透過<span style="background-color: #ffff00;">自學與網路協同環境</span>, 不斷強化自我的程式解題能力. 建議所有學員必得要將所碰到的程式範例一字字打字開始, 經由編譯、連結與執行, 或者解譯後執行的每一個<span style="background-color: #ffff00;">細節充分理解</span>, 之後才能有機會在碰到產品開發過程中<span style="background-color: #ccffcc;">棘手問題</span>時, 享受利用計算機程式<span style="background-color: #ffff99;">解題的方便與效能</span>.</p>
 <p><span>評分網站與倉儲:</span></p>
 <p style="padding-left: 30px;"><a href="https://mde.tw/cpnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9215c7c160119721ded887018cda8f4e/raw/593a8e462e0d8e7996f0bca3dd922adfdd4962e0/generate_cp2023_1a_site_repo.py">cp2023 1a 學員網站與倉儲連結</a></p>
 <p style="padding-left: 30px;"><a href="https://mde.tw/cpnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9215c7c160119721ded887018cda8f4e/raw/593a8e462e0d8e7996f0bca3dd922adfdd4962e0/generate_cp2023_1b_site_repo.py">cp2023 1b 學員網站與倉儲連結</a></p>
@@ -389,8 +397,7 @@ int main(void) {
 <p style="padding-left: 60px;">2018 <a href="https://link.springer.com/book/10.1007/978-1-4842-3366-5">Beginning C++17</a> (在校園網路或經由 VPN 下載)</p>
 <p style="padding-left: 60px;">2023 <a href="https://link.springer.com/book/10.1007/978-1-4842-9274-7">Modern C++ for Absolute Beginners</a> (在校園網路或經由 VPN 下載)</p>
 <p style="padding-left: 60px;">下載 <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EQHpkbGf-iFAnvQpjr6YpvoBT5IGyhc7zkRFldLb9gzumQ?e=07fTJm">msys64_20230718_cmake.7z</a> (需要下載密碼)</p>
-<p style="padding-left: 60px;">設法利用 Msys2 編譯 SciTE, Solvespace 與 CoppeliaSim</p>
-<h2>w2-w5</h2>
+<p style="padding-left: 60px;">設法利用 Msys2 編譯 SciTE, Solvespace 與 CoppeliaSim</p><h2>w2-w5</h2>
 <p>本課程所謂個人網站, 即 github帳號.github.io, 可由使用者自行設定內容, 建議長期維護後可用於研究所推甄, 或求職時使用.</p>
 <p>本課程所謂評分網站, 即 github帳號.github.io/cp2023, 內容及維護歴程資料將用於課程評分.</p>
 <p>w2</p>
@@ -766,7 +773,7 @@ void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, 
 <p>w6 上課後, 1a 已經完成 Replit 資料推向 Github 學員:</p>
 <p style="padding-left: 30px;"><a href="https://cyg41223103.github.io/cp2023">41223103</a><span><span> </span>(</span><a href="https://github.com/CYG41223103/cp2023">repo</a><span>)</span></p>
 <p>w6 上課前, 1b 已經完成 Replit 資料推向 Github 學員:</p>
-<p style="padding-left: 30px;"><a href="https://mch40930151.github.io/cp2023">40930151</a><span><span> </span>(</span><a href="https://github.com/mch40930151/cp2023">repo</a><span>)</span><br/><a href="https://41223201.github.io/cp2023">41223201</a><span><span> </span>(</span><a href="https://github.com/41223201/cp2023">repo</a><span>)</span><br/><a href="https://41223205.github.io/cp2023">41223205</a><span><span> </span>(</span><a href="https://github.com/41223205/cp2023">repo</a><span>)</span><br/><a href="https://41223206.github.io/cp2023">41223206</a><span><span> </span>(</span><a href="https://github.com/41223206/cp2023">repo</a><span>)</span><br/><a href="https://41223209.github.io/cp2023">41223209</a><span><span> </span>(</span><a href="https://github.com/41223209/cp2023">repo</a><span>)</span><br/><a href="https://ray41223215.github.io/cp2023">41223215</a><span><span> </span>(</span><a href="https://github.com/RAY41223215/cp2023">repo</a><span>)</span><br/><a href="https://41223217.github.io/cp2023">41223217</a><span><span> </span>(</span><a href="https://github.com/41223217/cp2023">repo</a><span>)</span><br/><a href="https://41223224.github.io/cp2023">41223224</a><span><span> </span>(</span><a href="https://github.com/41223224/cp2023">repo</a><span>)</span><br/><a href="https://41223225.github.io/cp2023">41223225</a><span><span> </span>(</span><a href="https://github.com/41223225/cp2023">repo</a><span>)</span><br/><a href="https://lin41223226.github.io/cp2023">41223226</a><span><span> </span>(</span><a href="https://github.com/Lin41223226/cp2023">repo</a><span>)</span><br/><a href="https://hyy41223228.github.io/cp2023">41223228</a><span><span> </span>(</span><a href="https://github.com/hyy41223228/cp2023">repo</a><span>)</span><br/><a href="https://41223234.github.io/cp2023">41223234</a><span><span> </span>(</span><a href="https://github.com/41223234/cp2023">repo</a><span>)</span><br/><a href="https://41223235.github.io/cp2023">41223235</a><span><span> </span>(</span><a href="https://github.com/41223235/cp2023">repo</a><span>)</span><br/><a href="https://41223246.github.io/cp2023">41223246</a><span><span> </span>(</span><a href="https://github.com/41223246/cp2023">repo</a><span>)</span></p>
+<p style="padding-left: 30px;"><a href="https://mch40930151.github.io/cp2023">40930151</a><span><span> </span>(</span><a href="https://github.com/mch40930151/cp2023">repo</a><span>)</span><br/><a href="https://41223201.github.io/cp2023">41223201</a><span><span> </span>(</span><a href="https://github.com/41223201/cp2023">repo</a><span>)</span><br/><a href="https://41223205.github.io/cp2023">41223205</a><span><span> </span>(</span><a href="https://github.com/41223205/cp2023">repo</a><span>)</span><br/><a href="https://41223206.github.io/cp2023">41223206</a><span><span> </span>(</span><a href="https://github.com/41223206/cp2023">repo</a><span>)</span><br/><a href="https://41223209.github.io/cp2023">41223209</a><span><span> </span>(</span><a href="https://github.com/41223209/cp2023">repo</a><span>)</span><br/><a href="https://ray41223215.github.io/cp2023">41223215</a><span><span> </span>(</span><a href="https://github.com/RAY41223215/cp2023">repo</a><span>)</span><br/><a href="https://41223217.github.io/cp2023">41223217</a><span><span> </span>(</span><a href="https://github.com/41223217/cp2023">repo</a><span>)</span><br/><a href="https://41223224.github.io/cp2023">41223224</a><span><span> </span>(</span><a href="https://github.com/41223224/cp2023">repo</a><span>)</span><br/><a href="https://41223225.github.io/cp2023">41223225</a><span><span> </span>(</span><a href="https://github.com/41223225/cp2023">repo</a><span>)</span><br/><a href="https://lin41223226.github.io/cp2023">41223226</a><span><span> </span>(</span><a href="https://github.com/Lin41223226/cp2023">repo</a><span>)</span><br/><a href="https://hyy41223228.github.io/cp2023">41223228</a><span><span> </span>(</span><a href="https://github.com/hyy41223228/cp2023">repo</a><span>)</span><br/><a href="https://41223234.github.io/cp2023">41223234</a><span><span> </span>(</span><a href="https://github.com/41223234/cp2023">repo</a><span>)</span><br/><a href="https://41223235.github.io/cp2023">41223235</a><span><span> </span>(</span><a href="https://github.com/41223235/cp2023">repo</a><span>)</span><br><a href="https://41223246.github.io/cp2023">41223246</a><span><span> </span>(</span><a href="https://github.com/41223246/cp2023">repo</a><span>)</span></br></p>
 <h3>replit_html</h3>
 <p><a href="https://docs.replit.com/teaching-curriculum/intro-python">Intro to Python | Replit Docs</a></p>
 <h3>replit_python</h3>
@@ -799,7 +806,7 @@ void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, 
 <p style="padding-left: 30px;"><span>cad2023_ag4: 8235, 9235</span></p>
 <p style="padding-left: 30px;"><span>cad2023_ag5: 8236, 9236</span></p>
 <p style="padding-left: 30px;"><span>cad2023_ag6: 8237, 9237</span></p>
-<hr/>
+<hr>
 <p style="padding-left: 30px;"><span>cad2023_bg1: 8238, 9238</span></p>
 <p style="padding-left: 30px;"><span>cad2023_bg2: 8239, 9239</span></p>
 <p style="padding-left: 30px;"><span>cad2023_bg3: 8240, 9240</span></p>
@@ -817,7 +824,7 @@ void draw_white_sun(gdImagePtr img, int center_x, int center_y, int sun_radius, 
 <p>在 Ubuntu 安裝 gnuplot 套:</p>
 <p>sudo apt install gnuplot</p>
 <p>因為 s1511 伺服器並沒有安裝 X11, 因此 raylib 相關範例只能在近端可攜環境中執行.</p>
-<hr>
+<hr/>
 <p><span style="background-color: #ffff00;">w8 之前所指令的程式練習作業</span>:</p>
 <p style="padding-left: 30px;"><a href="https://mde.tw/cpnote/content/%E4%B8%8A%E8%AA%B2%E5%85%A7%E5%AE%B9.html">上課內容</a>中的 Exercises</p>
 <p style="padding-left: 30px;"><a href="https://mde.tw/cpnote/content/w2-w5.html">w2-w5</a> 週任務中的 Exercises</p>
@@ -975,7 +982,7 @@ for user in valid_users:
 <p>執行結果:</p>
 <p><img alt="" height="200" src="/images/motion_plot.png" width="400"/></p>
 <p></p>
-<hr>
+<hr/>
 <p>gd: <a href="https://github.com/libgd/libgd">https://github.com/libgd/libgd</a></p>
 <p>泛用繪圖程式庫 - 工程師在產品開發或製造程序中, 可利用線條(例如: 特殊齒輪外型)、字串(例如: 製造日期或保固訊息)或塗色區域(特定標誌、二維條碼或 QRCode)進行一般標誌或圖像繪圖.</p>
 <p>範例:</p>
@@ -1405,7 +1412,7 @@ sslVerify = false</pre>
 <p style="padding-left: 30px;">need extra libgcc_s_seh-1.dll, libstdc++-6.dll and libwinpthread-1.dll along with <span>Scintilla.dll and </span><span>SciLexer.dll </span>to execute SciTE.exe</p>
 <p style="padding-left: 30px;">下載 <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/Eai7ZaPaDzdLjObSeCYpSJoBYSyLEEq8iREAsArUVycgug?e=W7PA7x">SciTE537_src_compiled.7z</a> (需要下載密碼)</p>
 <p>SciTE properties files: <a href="http://wcm.cycu.org:88/github/cad2019/downloads/SciTE_properties_files.7z">SciTE_properties_files.7z</a></p>
-<hr/>
+<hr>
 <p>利用 MSYS2 編譯 Tiny C Compiler 並配置 gd 程式庫環境:</p>
 <p>從 <a href="https://github.com/Tiny-C-Compiler/mirror-repository">https://github.com/Tiny-C-Compiler/mirror-repository</a> 下載 Tiny C Compiler 0.9.27 原始碼後, 利用 win32 目錄中的 build-tcc.bat 完成編譯.</p>
 <p>在 MSYS2 環境中以 pacman -S mingw-w64-x86_64-libgd 安裝 gd 程式庫後, 可以取得 2.3.3 版的 libgd.dll</p>
@@ -1653,7 +1660,7 @@ doc["add1to100"].bind('click', add)
 <div style="width: 100%; height: 100%;"><textarea autocomplete="off" id="kw_console1"></textarea></div>
 <p><!-- Brython 程式執行的結果, 都以 brython_div1 作為切入位置 --></p>
 <div id="brython_div1"></div>
-<!-- editor1 結束 --><hr/><!-- ########################################## -->
+<!-- editor1 結束 --><hr><!-- ########################################## -->
 <p>從 1 累加到 100 part2:</p>
 <p><button id="add1to100part2">1 add to 100</button><button id="cango_three_gears">cango_three_gears</button><button id="bsnake">BSnake</button><button id="aitetris">AI Tetris</button><button id="threejsblock">Rotating Block</button></p>
 <p><!-- 請注意, 這裡使用 Javascript 將 localStorage["kw_py_src2"] 中存在近端瀏覽器的程式碼, 由使用者決定存檔名稱--></p>
@@ -3349,4 +3356,4 @@ doc["threejsblock"].bind("click", threejsblock.do)
 <!-- editor2 結束 --><hr/>
 <p>
 <script src="https://unpkg.com/three@0.144.0/build/three.js" type="text/javascript"></script>
-</p></hr></hr></hr>
+</p></hr></hr></hr></hr>
