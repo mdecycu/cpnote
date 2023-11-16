@@ -1,0 +1,216 @@
+<!DOCTYPE html><html>
+        <head>
+        <title>cpnote</title>
+        <meta charset="utf-8">
+<meta property="head" content="H2">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/magnific-popup.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/jquery-ui.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.carousel.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/owl.theme.default.min.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/bootstrap-datepicker.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/flaticon/font/flaticon.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/aos.css">
+        <link rel="stylesheet" href="./../cmsimde/static/chimper/css/style.css">
+        <link rel="shortcut icon" href="./../cmsimde/static/favicons.png">
+        
+        <style type='text/css'>
+            .site-section {
+            background-color: #FFFF;
+            padding: 40px 40px;
+            }
+            body > div > div.dropdown.open {
+                display: block;
+            }
+        </style>
+    
+        <!-- <script src="./../cmsimde/static/jquery.js"></script> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+        <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/normalize.min.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch_set.js"></script>
+        <script src="tipuesearch_content.js"></script>
+        <link rel="stylesheet" href="./../cmsimde/static/tipuesearch/css/tipuesearch.css">
+        <script src="./../cmsimde/static/tipuesearch/tipuesearch.js"></script>
+        <!-- for Wink3 客製化關閉 -->
+        <!--
+        <link rel="stylesheet" type="text/css" href="./../cmsimde/static/winkPlayer.css" />
+        <script type="text/javascript" src="./../cmsimde/static/winkPlayer.js"></script>
+        -->
+        <script>
+            /* original tipuesearch
+            $(document).ready(function() {
+                 $('#tipue_search_input').tipuesearch();
+            });
+            */
+            // customed doSearch
+            function doSearch() {
+                $('#tipue_search_input').tipuesearch({
+                    newWindow: true, 
+                    minimumLength: 2,
+                    wholeWords: false, // for search 中文
+                });
+            }
+            $(document).ready(doSearch);
+        </script>
+        
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shCore.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushBash.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDiff.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJScript.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushJava.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPython.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushSql.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushHaxe.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushXml.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPhp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushPowerShell.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushLua.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushMojo.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCpp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCss.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushCSharp.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushDart.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/syntaxhighlighter/shBrushRust.js"></script>
+<link type="text/css" rel="stylesheet" href="./../cmsimde/static/syntaxhighlighter/css/shCoreDefault.css"/>
+<script type="text/javascript">SyntaxHighlighter.all();</script>
+<!-- 暫時不用
+<script src="./../cmsimde/static/fengari-web.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/Cango-13v08-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/CangoAxes-4v01-min.js"></script>
+<script type="text/javascript" src="./../cmsimde/static/gearUtils-05.js"></script>
+-->
+<!-- for Brython 暫時不用
+<script src="https://scrum-3.github.io/web/brython/brython.js"></script>
+<script src="https://scrum-3.github.io/web/brython/brython_stdlib.js"></script>
+-->
+<style>
+img.add_border {
+    border: 3px solid blue;
+}
+</style>
+
+</head>
+<body>
+<div class='container'><nav>
+        
+    <div class="site-wrap">
+
+    <div class="site-mobile-menu">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+    
+            <header class="site-navbar py-4 bg-white" role="banner">
+              <div class="container">
+                <div class="row align-items-center">
+                <h1>cpnote 計算機程式課堂筆記</h1>
+                <div class="pl-4">
+                    <form>
+                    <input type="text" placeholder="Search" name="q" id="tipue_search_input" pattern=".{2,}" title="At least 2 characters" required>
+                    </form>
+                </div>
+                  <!-- <div class="col-11 col-xl-2">
+                    <h1 class="mb-0 site-logo"><a href="index.html" class="text-black h2 mb-0">cpnote 計算機程式課堂筆記</a></h1> 
+                  </div>
+                  -->
+                  <div class="col-12 col-md-10 d-none d-xl-block">
+                    <nav class="site-navigation position-relative text-right" role="navigation">
+    <ul class='site-menu js-clone-nav mr-auto d-none d-lg-block'>
+                        <li class="active has-children"><a href="index.html">Home</a>
+                        <ul class="dropdown">
+                            <li><a href="sitemap.html">SMap</a></li>
+                            <li><a href="./../reveal/index.html">reveal</a></li>
+                            <li><a href="./../blog/index.html">blog</a></li>
+                        </ul>
+                      </li>
+                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li><a href='程式應用.html'>程式應用</a><li class='has-children'><a href='s1511.html'>s1511</a><ul class='dropdown'><li><a href='linux.html'>linux</a><li><a href='cp2023.html'>cp2023</a><li><a href='SSH keys.html'>SSH keys</a><li><a href='git clone.html'>git clone</a><li><a href='server.py.html'>server.py</a><li><a href='git commit.html'>git commit</a></li></li></ul></ul><li class='has-children'><a href='上課內容.html'>上課內容</a><ul class='dropdown'><li><a href='links.html'>links</a><li><a href='w2-w5.html'>w2-w5</a><li class='has-children'><a href='w6-w7.html'>w6-w7</a><ul class='dropdown'><li><a href='replit_github.html'>replit_github</a><li><a href='replit_html.html'>replit_html</a><li><a href='replit_python.html'>replit_python</a><li><a href='replit_cpp.html'>replit_cpp</a></li></ul><li><a href='w8-w9.html'>w8-w9</a><li><a href='w10.html'>w10</a><li><a href='C_lib.html'>C_lib</a><li><a href='setup.html'>setup</a><li><a href='replit.html'>replit</a><li class='has-children'><a href='MSD.html'>MSD</a><ul class='dropdown'><li><a href='clang.html'>clang</a><li><a href='編譯範例.html'>編譯範例</a></li></li></ul></ul><li><a href='課程評分.html'>課程評分</a><li class='has-children'><a href='課程主題.html'>課程主題</a><ul class='dropdown'><li class='has-children'><a href='數位環境與資源.html'>數位環境與資源</a><ul class='dropdown'><li><a href='上課系統.html'>上課系統</a></li></ul><li class='has-children'><a href='程式能力.html'>程式能力</a><ul class='dropdown'><li><a href='程式語言.html'>程式語言</a><li><a href='ANSI C.html'>ANSI C</a><li><a href='on_linux.html'>on_linux</a><li><a href='on_windows.html'>on_windows</a><li><a href='python.html'>python</a></li></ul><li class='has-children'><a href='開發工具.html'>開發工具</a><ul class='dropdown'><li><a href='程式專案.html'>程式專案</a><li><a href='課程座次.html'>課程座次</a></li></ul><li><a href='課程總結.html'>課程總結</a></li></ul><li><a href='QandA.html'>QandA</a><li><a href='Brython.html'>Brython</a></li>
+                      </ul>
+                </nav>
+              </div>
+              <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
+              </div>
+
+            </div>
+          </div>
+          
+        </header>
+    <div id="tipue_search_content">上課內容 << <a href='上課內容.html'>Previous</a> <a href='w2-w5.html'>Next</a> >> w2-w5<br /><h1>links</h1>
+<p><span>1a:</span></p>
+<p style="padding-left: 30px;"><span><a href="https://41023101.github.io/cp2023_ag1">ag1</a> (<a href="https://github.com/41023101/cp2023_ag1">repo</a>)</span></p>
+<p style="padding-left: 30px;"><span><a href="https://41223136.github.io/cp2023_ag2">ag2</a> (<a href="https://github.com/41223136/cp2023_ag2">repo</a>)</span></p>
+<p style="padding-left: 30px;"><span><a href="https://41223133.github.io/cp2023_ag3">ag3</a> (<a href="https://github.com/41223133/cp2023_ag3">repo</a>)</span></p>
+<p style="padding-left: 30px;"><span><a href="https://hong41223129.github.io/cp2023_ag4">ag4</a> (<a href="https://github.com/hong41223129/cp2023_ag4">repo</a>)</span></p>
+<p style="padding-left: 30px;"><span><a href="https://41223150.github.io/cp2023_ag5">ag5</a> (<a href="https://github.com/41223150/cp2023_ag5">repo</a>)</span></p>
+<p style="padding-left: 30px;"><span><a href="https://FGH41223111.github.io/cp2023_ag6">ag6</a> (<a href="https://github.com/FGH41223111/cp2023_ag6">repo</a>)</span></p>
+<p style="padding-left: 30px;"><span>1a 學員固定 IPv6 位址:</span></p>
+<p style="padding-left: 60px;">2001:288:6004:17:2023:cba::班級名單序號</p>
+<p style="padding-left: 30px;"><span><a href="https://40823241a.github.io/cp2023">40823241</a> (<a href="https://github.com/40823241a/cp2023">repo</a>) 序號: 1<br/><a href="https://fws40923137.github.io/cp2023">40923137</a> (<a href="https://github.com/fws40923137/cp2023">repo</a>) 序號: 2<br/><a href="https://41023101.github.io/cp2023">41023101</a> (<a href="https://github.com/41023101/cp2023">repo</a>) 序號: 3<br/><a href="https://george0324.github.io/cp2023">41023131</a> (<a href="https://github.com/george0324/cp2023">repo</a>) 序號: 4<br/><a href="https://41023141.github.io/cp2023">41023141</a> (<a href="https://github.com/41023141/cp2023">repo</a>) 序號: 5<br/><a href="https://41127151.github.io/cp2023">41127151</a> (<a href="https://github.com/41127151/cp2023">repo</a>) 序號: 6<br/><a href="https://yan41223101.github.io/cp2023">41223101</a> (<a href="https://github.com/yan41223101/cp2023">repo</a>) 序號: 7<br/><a href="https://41223102.github.io/cp2023">41223102</a> (<a href="https://github.com/41223102/cp2023">repo</a>) 序號: 8<br/><a href="https://CYG41223103.github.io/cp2023">41223103</a> (<a href="https://github.com/CYG41223103/cp2023">repo</a>) 序號: 9<br/><a href="https://41223104.github.io/cp2023">41223104</a> (<a href="https://github.com/41223104/cp2023">repo</a>) 序號: 10<br/><a href="https://41223105.github.io/cp2023">41223105</a> (<a href="https://github.com/41223105/cp2023">repo</a>) 序號: 11<br/><a href="https://CYA41223106.github.io/cp2023">41223106</a> (<a href="https://github.com/CYA41223106/cp2023">repo</a>) 序號: 12<br/><a href="https://Lin41223107.github.io/cp2023">41223107</a> (<a href="https://github.com/Lin41223107/cp2023">repo</a>) 序號: 13<br/><a href="https://41223108.github.io/cp2023">41223108</a> (<a href="https://github.com/41223108/cp2023">repo</a>) 序號: 14<br/><a href="https://41223110.github.io/cp2023">41223110</a> (<a href="https://github.com/41223110/cp2023">repo</a>) 序號: 15<br/><a href="https://FGH41223111.github.io/cp2023">41223111</a> (<a href="https://github.com/FGH41223111/cp2023">repo</a>) 序號: 16<br/><a href="https://WSE41223112.github.io/cp2023">41223112</a> (<a href="https://github.com/WSE41223112/cp2023">repo</a>) 序號: 17<br/><a href="https://41223113.github.io/cp2023">41223113</a> (<a href="https://github.com/41223113/cp2023">repo</a>) 序號: 18<br/><a href="https://kim41223114.github.io/cp2023">41223114</a> (<a href="https://github.com/kim41223114/cp2023">repo</a>) 序號: 19<br/><a href="https://41223116.github.io/cp2023">41223116</a> (<a href="https://github.com/41223116/cp2023">repo</a>) 序號: 20<br/><a href="https://Manto8.github.io/cp2023">41223117</a> (<a href="https://github.com/Manto8/cp2023">repo</a>) 序號: 21<br/><a href="https://zhe41223118.github.io/cp2023">41223118</a> (<a href="https://github.com/zhe41223118/cp2023">repo</a>) 序號: 22<br/><a href="https://41223119.github.io/cp2023">41223119</a> (<a href="https://github.com/41223119/cp2023">repo</a>) 序號: 23<br/><a href="https://41223120.github.io/cp2023">41223120</a> (<a href="https://github.com/41223120/cp2023">repo</a>) 序號: 24<br/><a href="https://yan21ed.github.io/cp2023">41223121</a> (<a href="https://github.com/yan21ed/cp2023">repo</a>) 序號: 25<br/><a href="https://Spirit0224.github.io/cp2023">41223122</a> (<a href="https://github.com/Spirit0224/cp2023">repo</a>) 序號: 26<br/><a href="https://G8People.github.io/cp2023">41223123</a> (<a href="https://github.com/G8People/cp2023">repo</a>) 序號: 27<br/><a href="https://41223124.github.io/cp2023">41223124</a> (<a href="https://github.com/41223124/cp2023">repo</a>) 序號: 28<br/><a href="https://Linjiahong41223125.github.io/cp2023">41223125</a> (<a href="https://github.com/Linjiahong41223125/cp2023">repo</a>) 序號: 29<br/><a href="https://Ren911308.github.io/cp2023">41223126</a> (<a href="https://github.com/Ren911308/cp2023">repo</a>) 序號: 30<br/><a href="https://WufinDalus0604.github.io/cp2023">41223127</a> (<a href="https://github.com/WufinDalus0604/cp2023">repo</a>) 序號: 31<br/><a href="https://41223128.github.io/cp2023">41223128</a> (<a href="https://github.com/41223128/cp2023">repo</a>) 序號: 32<br/><a href="https://hong41223129.github.io/cp2023">41223129</a> (<a href="https://github.com/hong41223129/cp2023">repo</a>) 序號: 33<br/><a href="https://joeisme1208.github.io/cp2023">41223130</a> (<a href="https://github.com/joeisme1208/cp2023">repo</a>) 序號: 34<br/><a href="https://yuhao-08.github.io/cp2023">41223131</a> (<a href="https://github.com/yuhao-08/cp2023">repo</a>) 序號: 35<br/><a href="https://CHN41223132.github.io/cp2023">41223132</a> (<a href="https://github.com/CHN41223132/cp2023">repo</a>) 序號: 36<br/><a href="https://41223133.github.io/cp2023">41223133</a> (<a href="https://github.com/41223133/cp2023">repo</a>) 序號: 37<br/><a href="https://41223134.github.io/cp2023">41223134</a> (<a href="https://github.com/41223134/cp2023">repo</a>) 序號: 38<br/><a href="https://41223135.github.io/cp2023">41223135</a> (<a href="https://github.com/41223135/cp2023">repo</a>) 序號: 39<br/><a href="https://41223136.github.io/cp2023">41223136</a> (<a href="https://github.com/41223136/cp2023">repo</a>) 序號: 40<br/><a href="https://41223137.github.io/cp2023">41223137</a> (<a href="https://github.com/41223137/cp2023">repo</a>) 序號: 41<br/><a href="https://41223138.github.io/cp2023">41223138</a> (<a href="https://github.com/41223138/cp2023">repo</a>) 序號: 42<br/><a href="https://weikai557.github.io/cp2023">41223139</a> (<a href="https://github.com/weikai557/cp2023">repo</a>) 序號: 43<br/><a href="https://41223140.github.io/cp2023">41223140</a> (<a href="https://github.com/41223140/cp2023">repo</a>) 序號: 44<br/><a href="https://41223141.github.io/cp2023">41223141</a> (<a href="https://github.com/41223141/cp2023">repo</a>) 序號: 45<br/><a href="https://41223142.github.io/cp2023">41223142</a> (<a href="https://github.com/41223142/cp2023">repo</a>) 序號: 46<br/><a href="https://41223143.github.io/cp2023">41223143</a> (<a href="https://github.com/41223143/cp2023">repo</a>) 序號: 47<br/><a href="https://41223144.github.io/cp2023">41223144</a> (<a href="https://github.com/41223144/cp2023">repo</a>) 序號: 48<br/><a href="https://LYY41223145.github.io/cp2023">41223145</a> (<a href="https://github.com/LYY41223145/cp2023">repo</a>) 序號: 49<br/><a href="https://41223146.github.io/cp2023">41223146</a> (<a href="https://github.com/41223146/cp2023">repo</a>) 序號: 50<br/><a href="https://41223147.github.io/cp2023">41223147</a> (<a href="https://github.com/41223147/cp2023">repo</a>) 序號: 51<br/><a href="https://ZZW41223148.github.io/cp2023">41223148</a> (<a href="https://github.com/ZZW41223148/cp2023">repo</a>) 序號: 52<br/><a href="https://otakuyoyo.github.io/cp2023">41223149</a> (<a href="https://github.com/otakuyoyo/cp2023">repo</a>) 序號: 53<br/><a href="https://41223150.github.io/cp2023">41223150</a> (<a href="https://github.com/41223150/cp2023">repo</a>) 序號: 54<br/><a href="https://41223152.github.io/cp2023">41223152</a> (<a href="https://github.com/41223152/cp2023">repo</a>) 序號: 55<br/><a href="https://41223153.github.io/cp2023">41223153</a> (<a href="https://github.com/41223153/cp2023">repo</a>) 序號: 56</span></p>
+<hr/>
+<p>1b:</p>
+<p style="padding-left: 30px;"><a href="https://Liu41223244.github.io/cp2023_bg1">bg1</a> (<a href="https://github.com/Liu41223244/cp2023_bg1">repo</a>)</p>
+<p style="padding-left: 30px;"><a href="https://41223235.github.io/cp2023_bg2">bg2</a> (<a href="https://github.com/41223235/cp2023_bg2">repo</a>)</p>
+<p style="padding-left: 30px;"><a href="https://41223243.github.io/cp2023_bg3">bg3</a> (<a href="https://github.com/41223243/cp2023_bg3">repo</a>)</p>
+<p style="padding-left: 30px;"><a href="https://RAY41223215.github.io/cp2023_bg4">bg4</a> (<a href="https://github.com/RAY41223215/cp2023_bg4">repo</a>)</p>
+<p style="padding-left: 30px;"><a href="https://41223205.github.io/cp2023_bg5">bg5</a> (<a href="https://github.com/41223205/cp2023_bg5">repo</a>)</p>
+<p style="padding-left: 30px;"><a href="https://41223224.github.io/cp2023_bg6">bg6</a> (<a href="https://github.com/41223224/cp2023_bg6">repo</a>)</p>
+<p style="padding-left: 30px;"><span>1b 學員固定 IPv6 位址: </span></p>
+<p style="padding-left: 60px;"><span>2001:288:6004:17:2023:cbb::</span>班級名單序號</p>
+<p style="padding-left: 30px;"><a href="https://mch40930151.github.io/cp2023">40930151</a> (<a href="https://github.com/mch40930151/cp2023">repo</a>) 序號: 1<br/><a href="https://40931103.github.io/cp2023">40931103</a> (<a href="https://github.com/40931103/cp2023">repo</a>) 序號: 2<br/><a href="https://41223201.github.io/cp2023">41223201</a> (<a href="https://github.com/41223201/cp2023">repo</a>) 序號: 3<br/><a href="https://41223202.github.io/cp2023">41223202</a> (<a href="https://github.com/41223202/cp2023">repo</a>) 序號: 4<br/><a href="https://41223203.github.io/cp2023">41223203</a> (<a href="https://github.com/41223203/cp2023">repo</a>) 序號: 5<br/><a href="https://huiyu41223204.github.io/cp2023">41223204</a> (<a href="https://github.com/huiyu41223204/cp2023">repo</a>) 序號: 6<br/><a href="https://41223205.github.io/cp2023">41223205</a> (<a href="https://github.com/41223205/cp2023">repo</a>) 序號: 7<br/><a href="https://41223206.github.io/cp2023">41223206</a> (<a href="https://github.com/41223206/cp2023">repo</a>) 序號: 8<br/><a href="https://emma0312.github.io/cp2023">41223207</a> (<a href="https://github.com/emma0312/cp2023">repo</a>) 序號: 9<br/><a href="https://41223208.github.io/cp2023">41223208</a> (<a href="https://github.com/41223208/cp2023">repo</a>) 序號: 10<br/><a href="https://41223209.github.io/cp2023">41223209</a> (<a href="https://github.com/41223209/cp2023">repo</a>) 序號: 11<br/><a href="https://41223210.github.io/cp2023">41223210</a> (<a href="https://github.com/41223210/cp2023">repo</a>) 序號: 12<br/><a href="https://41223211.github.io/cp2023">41223211</a> (<a href="https://github.com/41223211/cp2023">repo</a>) 序號: 13<br/><a href="https://jjjay41223212.github.io/cp2023">41223212</a> (<a href="https://github.com/jjjay41223212/cp2023">repo</a>) 序號: 14<br/><a href="https://41223214.github.io/cp2023">41223214</a> (<a href="https://github.com/41223214/cp2023">repo</a>) 序號: 15<br/><a href="https://RAY41223215.github.io/cp2023">41223215</a> (<a href="https://github.com/RAY41223215/cp2023">repo</a>) 序號: 16<br/><a href="https://41223216.github.io/cp2023">41223216</a> (<a href="https://github.com/41223216/cp2023">repo</a>) 序號: 17<br/><a href="https://41223217.github.io/cp2023">41223217</a> (<a href="https://github.com/41223217/cp2023">repo</a>) 序號: 18<br/><a href="https://41223218.github.io/cp2023">41223218</a> (<a href="https://github.com/41223218/cp2023">repo</a>) 序號: 19<br/><a href="https://leehao0709.github.io/cp2023">41223219</a> (<a href="https://github.com/leehao0709/cp2023">repo</a>) 序號: 20<br/><a href="https://41223220.github.io/cp2023">41223220</a> (<a href="https://github.com/41223220/cp2023">repo</a>) 序號: 21<br/><a href="https://leeshaowei0716.github.io/cp2023">41223221</a> (<a href="https://github.com/leeshaowei0716/cp2023">repo</a>) 序號: 22<br/><a href="https://41223222.github.io/cp2023">41223222</a> (<a href="https://github.com/41223222/cp2023">repo</a>) 序號: 23<br/><a href="https://linryan23.github.io/cp2023">41223223</a> (<a href="https://github.com/linryan23/cp2023">repo</a>) 序號: 24<br/><a href="https://41223224.github.io/cp2023">41223224</a> (<a href="https://github.com/41223224/cp2023">repo</a>) 序號: 25<br/><a href="https://41223225.github.io/cp2023">41223225</a> (<a href="https://github.com/41223225/cp2023">repo</a>) 序號: 26<br/><a href="https://Lin41223226.github.io/cp2023">41223226</a> (<a href="https://github.com/Lin41223226/cp2023">repo</a>) 序號: 27<br/><a href="https://41223227.github.io/cp2023">41223227</a> (<a href="https://github.com/41223227/cp2023">repo</a>) 序號: 28<br/><a href="https://hyy41223228.github.io/cp2023">41223228</a> (<a href="https://github.com/hyy41223228/cp2023">repo</a>) 序號: 29<br/><a href="https://41223229.github.io/cp2023">41223229</a> (<a href="https://github.com/41223229/cp2023">repo</a>) 序號: 30<br/><a href="https://41223230.github.io/cp2023">41223230</a> (<a href="https://github.com/41223230/cp2023">repo</a>) 序號: 31<br/><a href="https://41223231.github.io/cp2023">41223231</a> (<a href="https://github.com/41223231/cp2023">repo</a>) 序號: 32<br/><a href="https://41223232.github.io/cp2023">41223232</a> (<a href="https://github.com/41223232/cp2023">repo</a>) 序號: 33<br/><a href="https://41223233even.github.io/cp2023">41223233</a> (<a href="https://github.com/41223233even/cp2023">repo</a>) 序號: 34<br/><a href="https://41223234.github.io/cp2023">41223234</a> (<a href="https://github.com/41223234/cp2023">repo</a>) 序號: 35<br/><a href="https://41223235.github.io/cp2023">41223235</a> (<a href="https://github.com/41223235/cp2023">repo</a>) 序號: 36<br/><a href="https://41223236.github.io/cp2023">41223236</a> (<a href="https://github.com/41223236/cp2023">repo</a>) 序號: 37<br/><a href="https://Cloud41223237.github.io/cp2023">41223237</a> (<a href="https://github.com/Cloud41223237/cp2023">repo</a>) 序號: 38<br/><a href="https://41223238.github.io/cp2023">41223238</a> (<a href="https://github.com/41223238/cp2023">repo</a>) 序號: 39<br/><a href="https://41223239.github.io/cp2023">41223239</a> (<a href="https://github.com/41223239/cp2023">repo</a>) 序號: 40<br/><a href="https://41223240.github.io/cp2023">41223240</a> (<a href="https://github.com/41223240/cp2023">repo</a>) 序號: 41<br/><a href="https://41223241.github.io/cp2023">41223241</a> (<a href="https://github.com/41223241/cp2023">repo</a>) 序號: 42<br/><a href="https://41223242.github.io/cp2023">41223242</a> (<a href="https://github.com/41223242/cp2023">repo</a>) 序號: 43<br/><a href="https://41223243.github.io/cp2023">41223243</a> (<a href="https://github.com/41223243/cp2023">repo</a>) 序號: 44<br/><a href="https://Liu41223244.github.io/cp2023">41223244</a> (<a href="https://github.com/Liu41223244/cp2023">repo</a>) 序號: 45<br/><a href="https://41223245.github.io/cp2023">41223245</a> (<a href="https://github.com/41223245/cp2023">repo</a>) 序號: 46<br/><a href="https://41223246.github.io/cp2023">41223246</a> (<a href="https://github.com/41223246/cp2023">repo</a>) 序號: 47<br/><a href="https://CYC41223247.github.io/cp2023">41223247</a> (<a href="https://github.com/CYC41223247/cp2023">repo</a>) 序號: 48<br/><a href="https://41223248.github.io/cp2023">41223248</a> (<a href="https://github.com/41223248/cp2023">repo</a>) 序號: 49<br/><a href="https://41223249.github.io/cp2023">41223249</a> (<a href="https://github.com/41223249/cp2023">repo</a>) 序號: 50<br/><a href="https://timluo123.github.io/cp2023">41223250</a> (<a href="https://github.com/timluo123/cp2023">repo</a>) 序號: 51<br/><a href="https://41223251.github.io/cp2023">41223251</a> (<a href="https://github.com/41223251/cp2023">repo</a>) 序號: 52<br/><a href="https://supowen.github.io/cp2023">41223252</a> (<a href="https://github.com/supowen/cp2023">repo</a>) 序號: 53</p><br />上課內容 << <a href='上課內容.html'>Previous</a> <a href='w2-w5.html'>Next</a> >> w2-w5</div>
+        
+    <!-- footer -->
+      <div class="container">
+        <div class="row pt-3 mx-auto">
+            <p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+        </div>
+      </div>
+    <!-- for footer -->
+    
+        </div> <!-- for site wrap -->
+            <!-- <script src="../cmsimde/static/chimper/js/jquery-3.3.1.min.js"></script> -->
+            <script src="../cmsimde/static/chimper/js/jquery-migrate-3.0.1.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery-ui.js"></script>
+            <script src="../cmsimde/static/chimper/js/popper.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/owl.carousel.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.stellar.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.countdown.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/jquery.magnific-popup.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/bootstrap-datepicker.min.js"></script>
+            <script src="../cmsimde/static/chimper/js/aos.js"></script>
+            <!--
+            <script src="../cmsimde/static/chimper/js/typed.js"></script>
+                    <script>
+                    var typed = new Typed('.typed-words', {
+                    strings: ["Web Apps"," WordPress"," Mobile Apps"],
+                    typeSpeed: 80,
+                    backSpeed: 80,
+                    backDelay: 4000,
+                    startDelay: 1000,
+                    loop: true,
+                    showCursor: true
+                    });
+                    </script>
+            -->
+            <script src="../cmsimde/static/chimper/js/main.js"></script>
+        
+<!-- 啟用 LaTeX equations 編輯 -->
+  <!-- <script>
+  MathJax = {
+    tex: {inlineMath: [['$', '$'], ['\(', '\)']]}
+  };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>-->
+    </body></html>
+        
