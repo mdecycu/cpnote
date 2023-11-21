@@ -143,6 +143,9 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">w8-w9 << <a href='w8-w9.html'>Previous</a> <a href='C_lib.html'>Next</a> >> C_lib<br /><h1>w10-w11</h1>
+<p>w11: 針對 s1511 伺服器, 新增別名 (在 DNS 術語中稱為 CNAME) s, 因此可以透過 <a href="https://s.cycu.org/~pj2022/cpnote">https://s.cycu.org/~pj2022/cpnote</a> 擷取工作站室中的課堂筆記網頁.</p>
+<p style="padding-left: 30px;">使用 Letsencrypy 中的 <span style="background-color: #ffff00;">certbot certonly -d s1511.cycu.org -d s.cycu.org</span> 指令, 執行之前可以利用 sudo /etc/init.d/nginx stop 關掉 nginx, 並在上述擴充網域數位簽章的過程, 讓 certbot 指令啟動 local web server 進行主機認證, 即透過登記在 DNS 伺服器中的 IPv6 address 確認主機位址.</p>
+<p style="padding-left: 30px;">擴增伺服器別名後, 以 sudo /etc/init.d/nginx start 重新啟動全球資訊網伺服器, 並且以 sudo /etc/init.d/stunnel4 restart 重新啟動 https 代理伺服器.</p>
 <p>項目1: 如何快速設定電腦輔助設計室中的網路 - 採 IPv6 網路設定.</p>
 <p style="padding-left: 30px;">請檢查隨身碟中的網路設定程式, 確認帶有可攜程式環境以及網路設定相關檔案.</p>
 <p style="padding-left: 30px;">目的是能夠在啟動隨身系統之後, 可以透過 rsa private key 以 SSH 取下個人倉儲, 並能啟動編輯後轉檔, 擁有推送回 github 的權限.</p>

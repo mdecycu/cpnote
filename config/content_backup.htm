@@ -995,19 +995,22 @@ for user in valid_users:
     print(user)</pre>
 <p></p>
 <h2>w10-w11</h2>
+<p>w11: 針對 s1511 伺服器, 新增別名 s, 因此可以透過 <a href="https://s.cycu.org/~pj2022/cpnote">https://s.cycu.org/~pj2022/cpnote</a> 擷取工作站室中的課堂筆記網頁.</p>
+<p style="padding-left: 30px;">使用 Letsencrypy 中的 <span style="background-color: #ffff00;">certbot certonly -d s1511.cycu.org -d s.cycu.org</span> 指令, 執行之前可以利用 sudo /etc/init.d/nginx stop 關掉 nginx, 並在上述擴充網域數位簽章的過程, 讓 certbot 指令啟動 local web server 進行主機認證, 即透過登記在 DNS 伺服器中的 IPv6 address 確認主機位址.</p>
+<p style="padding-left: 30px;">擴增伺服器別名後, 以 sudo /etc/init.d/nginx start 重新啟動全球資訊網伺服器, 並且以 sudo /etc/init.d/stunnel4 restart 重新啟動 https 代理伺服器.</p>
 <p>項目1: 如何快速設定電腦輔助設計室中的網路 - 採 IPv6 網路設定.</p>
 <p style="padding-left: 30px;">請檢查隨身碟中的網路設定程式, 確認帶有可攜程式環境以及網路設定相關檔案.</p>
 <p style="padding-left: 30px;">目的是能夠在啟動隨身系統之後, 可以透過 rsa private key 以 SSH 取下個人倉儲, 並能啟動編輯後轉檔, 擁有推送回 github 的權限.</p>
 <p style="padding-left: 30px;">各組組長能夠在取下分組倉儲後, 以個人 IPv6 位址啟動後, 允許分組組員登入修改網頁內容, 並透過組長的 rsa private key 推送回 github.</p>
 <p style="padding-left: 30px;">個人與分組組員能在近端編寫 C 程式, 完成編譯連結後將程式碼與結果放入網頁, 並編寫相關心得報告.</p>
 <p style="padding-left: 30px;">以上近端操作流程, 也可以在 s1511 與 Replit 伺服器上進行個人與分組倉儲及網頁的改版.</p>
-<p>如何分別利用 Replit、s1511.cycu.org 或 localhost 維護個人與分組的網站內容.</p>
+<p>項目2: 請分別利用 Replit、s1511.cycu.org 或 localhost 維護個人與分組的網站內容, 並比較不同方法開發計算計程式的優缺點.</p>
 <p style="padding-left: 30px;"><span style="background-color: #ffff00;">Replit</span> 必須先在 Github 安裝 Replit Application 授權之後, 再 import 倉儲.</p>
 <p style="padding-left: 60px;">import 倉儲後, 必須先設定 Run 執行內容, 取下 submodule, 並安裝倉儲編輯所需的模組以及設定 secrets 頁面中的 config 變數後, 才能啟動編輯網頁.</p>
 <p style="padding-left: 30px;"><span style="background-color: #ffff00;">s1511</span> 則需要先設定 keys 與 session config, 然後才能將倉儲以 SSH clone 至個人帳號下, 修改個人或分組所分配到的內部連網埠號後, 以 python3 server.py 執行網頁編輯. 也可透過 acp 設法讓動態與靜態網站內容同步.</p>
 <p style="padding-left: 30px;"><span style="background-color: #ffff00;">localhost</span> 則可以使用 s1511 中的 private key, 經由 puttygen 轉檔後使用, 以 SSH clone 至個人隨身碟後, 可以利用 cms 啟動編輯網站, 修改內容並轉為靜態網站後, 以 acp 將改版資料新增提交推送到 Github. 若修改倉儲中的 init.py, 置入所在電腦的外部 IPv6 位址, 則可以 cms 啟動後, 修改管理者密碼, 讓其他組員連線至所啟動的動態或靜態網站內容.</p>
 <p style="padding-left: 30px;">各學員在以上採多個不同方式維護個人與分組網站的過程, 可以在改版之前先行 git pull, 以減少合併的內容.</p>
-<p>程式練習:</p>
+<p>項目3: 程式練習:</p>
 <p style="padding-left: 30px;"><span style="background-color: #ffff00;">w8 之前所指令的程式練習作業</span>:</p>
 <p style="padding-left: 60px;"><a href="https://mde.tw/cpnote/content/%E4%B8%8A%E8%AA%B2%E5%85%A7%E5%AE%B9.html">上課內容</a>中的 Exercises</p>
 <p style="padding-left: 60px;"><a href="https://mde.tw/cpnote/content/w2-w5.html">w2-w5</a> 週任務中的 Exercises</p>
