@@ -1,0 +1,2 @@
+<div class="winkVideoContainerClass"><video width="1008" height="630" autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/cmsimde/static" data-varname="winkVideoData_w11_1a_1" muted="true">
+<source src="/downloads/w11_1a_1.mp4" type="video/mp4" /></video></div>
