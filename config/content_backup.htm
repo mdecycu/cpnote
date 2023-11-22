@@ -995,10 +995,11 @@ for user in valid_users:
     print(user)</pre>
 <p></p>
 <h2>w10-w11</h2>
-<p>w11: 針對 s1511 伺服器, 新增別名 (在 DNS 術語中稱為 CNAME) s, 因此可以透過 <a href="https://s.cycu.org/~pj2022/cpnote">https://s.cycu.org/~pj2022/cpnote</a> 擷取工作站室中的課堂筆記網頁.</p>
+<p><span style="background-color: #ccffcc;">項目1</span>到<span style="background-color: #ccffcc;">項目3</span>就是各組必須在分組網站, 利用組員分工學習的方式, 將計算機程式的教學內容及作業進行整理. 且各組員所分配到的工作必須先在個人網站中整理後, 再放入各分組網站中.</p>
+<p>w11: 針對 s1511 伺服器, 新增別名 (在 DNS 術語中稱為 CNAME) s, 因此可以透過 <a href="https://s.cycu.org/~pj2022/cpnote">https://s.cycu.org/~pj2022/cpnote</a> 擷取工作站室中的課堂筆記靜態網頁.</p>
 <p style="padding-left: 30px;">使用 Letsencrypy 中的 <span style="background-color: #ffff00;">certbot certonly -d s1511.cycu.org -d s.cycu.org</span> 指令, 執行之前可以利用 sudo /etc/init.d/nginx stop 關掉 nginx, 並在上述擴充網域數位簽章的過程, 讓 certbot 指令啟動 local web server 進行主機認證, 即透過登記在 DNS 伺服器中的 IPv6 address 確認主機位址.</p>
 <p style="padding-left: 30px;">擴增伺服器別名後, 以 sudo /etc/init.d/nginx start 重新啟動全球資訊網伺服器, 並且以 sudo /etc/init.d/stunnel4 restart 重新啟動 https 代理伺服器.</p>
-<p>項目1: 如何快速設定電腦輔助設計室中的網路 - 採 IPv6 網路設定.</p>
+<p><span style="background-color: #ccffcc;">項目1</span>: 如何快速設定電腦輔助設計室中的網路 - 採 IPv6 網路設定.</p>
 <p style="padding-left: 30px;">請檢查隨身碟中的網路設定程式, 確認帶有可攜程式環境以及網路設定相關檔案.</p>
 <p style="padding-left: 30px;">目的是能夠在啟動隨身系統之後, 可以透過 rsa private key 以 SSH 取下個人倉儲, 並能啟動編輯後轉檔, 擁有推送回 github 的權限.</p>
 <p style="padding-left: 30px;">各組組長能夠在取下分組倉儲後, 以個人 IPv6 位址啟動後, 允許分組組員登入修改網頁內容, 並透過組長的 rsa private key 推送回 github.</p>
@@ -1012,7 +1013,7 @@ for user in valid_users:
  
 [HKEY_CURRENT_USER\SOFTWARE\Debugmode\Wink\Settings]
 "FfmpegPath"="y:\\ffmpeg.exe"</pre>
-<p><a href="https://mde.tw/cadnote/downloads/2a_w10_start_ipv6_wink_reg.7z">2a_w10_start_ipv6_wink_reg.7z</a></p>
+<p><a href="https://mde.tw/cadnote/downloads/2a_w10_start_ipv6_wink_reg.7z">2a_w10_start_ipv6_wink_reg.7z</a> (可以將此 <span style="background-color: #ffff99;">wink 登錄設定檔</span>, 連同<span style="background-color: #ffff99;">網路設定</span>, <span style="background-color: #ffff99;">Zoomit 啟動</span>與 <span style="background-color: #ffff99;">putty setting</span> 設定, 以 reg import 指令整合至 tinyc 可攜程式系統的 start_ipv6.bat 中).</p>
 <p><span>以下為設定 w11_1a.mp4 的過程 (<a href="/downloads/w11_1a_1.txt">w11_1a_1.txt</a></span><span>):</span></p>
 <div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/cmsimde/static" data-varname="winkVideoData_w11_1a_1" height="630" muted="true" width="1008">
 <source src="/downloads/w11_1a_1.mp4" type="video/mp4"/></video></div>
@@ -1024,20 +1025,21 @@ for user in valid_users:
 <p>接下來該如何利用程式方法, 得知使用者已經設定 rsa keys? </p>
 <p style="padding-left: 30px;">假如能夠使用程式進入 s.cycu.org 讀取各用戶的 .ssh/id_rsa.pub, 就可以知道是否該用戶已經建立 rsa keys. 但是必須在 s.cycu.org 主機中設法建立網際程式, 並參考<a href="https://stackoverflow.com/questions/82831/how-do-i-check-whether-a-file-exists-without-exceptions">這裡</a>的說明, 就可以根據各班學員名單逐一進入各用戶的目錄查驗其帳號下是否已經建立 id_rsa.pub 檔案.</p>
 <hr/>
-<p>項目2: 請分別利用 Replit、s1511.cycu.org 或 localhost 維護個人與分組的網站內容, 並比較不同方法開發計算計程式的優缺點.</p>
+<p><span style="background-color: #ccffcc;">項目2</span>: 請分別利用 Replit、s1511.cycu.org 或 localhost 維護個人與分組的網站內容, 並比較不同方法開發計算計程式的優缺點.</p>
 <p style="padding-left: 30px;"><span style="background-color: #ffff00;">Replit</span> 必須先在 Github 安裝 Replit Application 授權之後, 再 import 倉儲.</p>
 <p style="padding-left: 60px;">import 倉儲後, 必須先設定 Run 執行內容, 取下 submodule, 並安裝倉儲編輯所需的模組以及設定 secrets 頁面中的 config 變數後, 才能啟動編輯網頁.</p>
 <p style="padding-left: 30px;"><span style="background-color: #ffff00;">s1511</span> 則需要先設定 keys 與 session config, 然後才能將倉儲以 SSH clone 至個人帳號下, 修改個人或分組所分配到的內部連網埠號後, 以 python3 server.py 執行網頁編輯. 也可透過 acp 設法讓動態與靜態網站內容同步.</p>
 <p style="padding-left: 30px;"><span style="background-color: #ffff00;">localhost</span> 則可以使用 s1511 中的 private key, 經由 puttygen 轉檔後使用, 以 SSH clone 至個人隨身碟後, 可以利用 cms 啟動編輯網站, 修改內容並轉為靜態網站後, 以 acp 將改版資料新增提交推送到 Github. 若修改倉儲中的 init.py, 置入所在電腦的外部 IPv6 位址, 則可以 cms 啟動後, 修改管理者密碼, 讓其他組員連線至所啟動的動態或靜態網站內容.</p>
 <p style="padding-left: 30px;">各學員在以上採多個不同方式維護個人與分組網站的過程, 可以在改版之前先行 git pull, 以減少合併的內容.</p>
-<p>項目3: 程式練習:</p>
-<p style="padding-left: 30px;"><span style="background-color: #ffff00;">w8 之前所指令的程式練習作業</span>:</p>
+<p><span style="background-color: #ccffcc;">項目3</span>: 程式練習:</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffff00;">w8 之前所指令的程式 C 練習作業</span>:</p>
 <p style="padding-left: 60px;"><a href="https://mde.tw/cpnote/content/%E4%B8%8A%E8%AA%B2%E5%85%A7%E5%AE%B9.html">上課內容</a>中的 Exercises</p>
 <p style="padding-left: 60px;"><a href="https://mde.tw/cpnote/content/w2-w5.html">w2-w5</a> 週任務中的 Exercises</p>
 <p style="padding-left: 60px;"><a href="https://mde.tw/cpnote/content/w6-w7.html">w6-w7</a> 週任務中的練習一與練習二</p>
 <p style="padding-left: 60px;">請利用 C 結合 gd 繪圖程式庫, 畫出 <a href="https://en.wikipedia.org/wiki/Flag_of_China">PROC</a>, <a href="https://en.wikipedia.org/wiki/Flag_of_the_United_Kingdom">United Kingdom</a>, <a href="https://en.wikipedia.org/wiki/Flag_of_Japan">Japan</a> 與 <a href="https://en.wikipedia.org/wiki/Flag_of_South_Korea">South Korea</a> Flags.</p>
-<p style="padding-left: 90px;">參考: <a href="https://mde.tw/cpnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9215c7c160119721ded887018cda8f4e/raw/2656b22351c7784cf50380a1095aa4821c728166/cp2023_roc_flag.py">ROC flag</a> in Brython, <a href="https://mde.tw/cpnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9215c7c160119721ded887018cda8f4e/raw/53f31755db24d1acc04036f808f5a4f276648e61/cp2023_proc_flag.py">PROC flag</a> in Brython, </p>
+<p style="padding-left: 90px;">參考: <a href="https://mde.tw/cpnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9215c7c160119721ded887018cda8f4e/raw/2656b22351c7784cf50380a1095aa4821c728166/cp2023_roc_flag.py">ROC flag</a> in Brython, <a href="https://mde.tw/cpnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9215c7c160119721ded887018cda8f4e/raw/53f31755db24d1acc04036f808f5a4f276648e61/cp2023_proc_flag.py">PROC flag</a> in Brython, <a href="https://mde.tw/cpnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9215c7c160119721ded887018cda8f4e/raw/8c5cd1cde1d51d6d31f7ed39d462d71409394143/cp2023_usa_flag.py">USA flag</a> in Brython.</p>
 <p style="padding-left: 60px;">各分組成員協同將 <a href="https://nfuedu-my.sharepoint.com/:b:/g/personal/yen_nfu_edu_tw/EWd1cR2zOStOjVSduSw6pQMBv1fB6tWu-P9qfVH2YxbDPw?e=uOZW7N">jsliu_c_programming.pdf</a><span> </span>(需要下載密碼) 內容整理後, 放入各分組網站.</p>
+<p style="padding-left: 30px;"><span style="background-color: #ffcc99;">上述以 C 語言編寫的程式, 假如採用 Javascript 或 Python 語言編寫, 對於機械與機電整合設計工程師, 分別有那些不同的應用範圍</span>.</p>
 <p style="padding-left: 30px;"><span style="background-color: #ffff00;">w9 程式練習</span>:</p>
 <p style="padding-left: 30px;">2b w8 作業: 請根據 <a href="https://mde.tw/cadnote/downloads/cad2023_2b_w8.txt">cad2023_2b_w8.txt</a> 檔案中的內容, 透過程式的讀取與篩選, 按照時間先後, 列出 2b 修課學員中已經登入 s1511.cycu.org 的學號. (修課學員名單 2a: <a href="https://stud.cycu.org:8800/?semester=1121&amp;courseno=0838&amp;column=True">0838</a>, 2b: <a href="https://stud.cycu.org:8800/?semester=1121&amp;courseno=0851&amp;column=True">0851</a>)</p>
 <p style="padding-left: 30px;">假如在近端處理, 必須同時儲存兩個檔案後, 進行資料選取:</p>
