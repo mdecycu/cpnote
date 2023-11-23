@@ -53,7 +53,7 @@
 <p>在 Ubuntu 中要安裝基本 C 編譯器: <span style="background-color: #ffff99;">sudo apt install build-essential</span></p>
 <p>在 Ubuntu 中要安裝 gd graphics library: <span style="background-color: #ffff99;">sudo apt install libgd-dev</span></p>
 <p>在 Ubuntu 中要安裝 gnuplot 套件: <span style="background-color: #ffff99;">sudo apt install gnuplot</span></p>
-<p>在 Ubuntu 中編譯 <a href="/downloads/roc_flag_in_gd.c">roc_flag_in_gd.c</a> 指令: cc roc_flag_in_gd.c -lgd -lm</p>
+<p>在 Ubuntu 中編譯 <a href="/downloads/roc_flag_in_gd.c">roc_flag_in_gd.c</a> 指令: <span style="background-color: #ffff99;">cc roc_flag_in_gd.c -lgd -lm</span></p>
 <p style="padding-left: 30px;">因為 roc_flag_in_gd.c 中使用 gd library 以及 math library, 所以必須在連結時將所需程式庫導入.</p>
 <hr/>
 <p>2022.08.30 Replit 趁 Heroku <a href="https://blog.heroku.com/next-chapter">中止提供免費帳號</a>時, 順勢接收許多免費用戶之後, Replit 在 2023.04.13 正式推出 Deployment. 並且允許免費用戶使用. 但在 2023.09.28 卻<a href="https://blog.replit.com/hosting-changes">宣布</a>此一部署服務, 最遲在 2024.01.01 將只提供給付費用戶使用. 意即之後使用者<span style="background-color: #ccffcc;">無法再經由 python3 main.py 在廣域網路中使用 repl.co 網址進行編輯</span> (<span style="background-color: #ffcc99;">假如 Webview 仍在, 或許可以在啟動編輯網站後, 在 Webview tag 中登入系統編輯, 但無法在全螢幕中進行編輯</span>).</p>
@@ -1074,7 +1074,7 @@ for user in valid_users:
 <p>執行結果:</p>
 <p><img alt="" height="200" src="/images/motion_plot.png" width="400"/></p>
 <p></p>
-<hr>
+<hr/>
 <p>gd: <a href="https://github.com/libgd/libgd">https://github.com/libgd/libgd</a></p>
 <p>泛用繪圖程式庫 - 工程師在產品開發或製造程序中, 可利用線條(例如: 特殊齒輪外型)、字串(例如: 製造日期或保固訊息)或塗色區域(特定標誌、二維條碼或 QRCode)進行一般標誌或圖像繪圖.</p>
 <p>範例:</p>
@@ -1082,7 +1082,7 @@ for user in valid_users:
 <p>執行結果:</p>
 <p><img alt="" height="200" src="/images/gd_ex1.png" width="200"/> gd_ex1.png</p>
 <p><img alt="" height="200" src="/images/gd_ex1.jpg" width="200"/> gd_ex1.jpg</p>
-<hr>
+<hr/>
 <p>raylib: <a href="https://github.com/raysan5/raylib">https://github.com/raysan5/raylib</a></p>
 <p>raygui: <a href="https://github.com/raysan5/raygui">https://github.com/raysan5/raygui</a></p>
 <p><a href="https://www.raylib.com/cheatsheet/raylib_cheatsheet_v4.0.pdf">https://www.raylib.com/cheatsheet/raylib_cheatsheet_v4.0.pdf</a></p>
@@ -1378,7 +1378,7 @@ int main() {
 <p style="padding-left: 30px;"><a href="https://www.researchgate.net/publication/340027249_Developments_in_Runge-Kutta_Method_to_Solve_Ordinary_Differential_Equations">Developments in Runge–Kutta Method to Solve Ordinary Differential Equations</a></p>
 <p style="padding-left: 30px;"><a href="https://www.me.psu.edu/cimbala/Learning/General/Runge_Kutta_Technique.pdf">https://www.me.psu.edu/cimbala/Learning/General/Runge_Kutta_Technique.pdf</a></p>
 <p style="padding-left: 30px;"><a href="https://homepage.math.uiowa.edu/~atkinson/papers/NAODE_Book.pdf">NUMERICAL SOLUTION OF ORDINARY DIFFERENTIAL EQUATIONS</a> (from one of the authors)</p>
-<hr>
+<hr/>
 <p>將 euler_gnuplot_msd_ex1.c 存入 downloads 目錄, 然後在 replit.nix 中進行 C 與 gnuplot 套件的設置:</p>
 <p>replit.nix 設定內容:</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">{ pkgs }: {
@@ -1483,7 +1483,7 @@ int main() {
 <p style="padding-left: 60px;">安裝 CMake</p>
 <p style="padding-left: 90px;">pacman -S mingw-w64-x86_64-cmake</p>
 <p>下載 <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EQHpkbGf-iFAnvQpjr6YpvoBT5IGyhc7zkRFldLb9gzumQ?e=07fTJm">msys64_20230718_cmake.7z</a> (需要下載密碼)</p>
-<hr>
+<hr/>
 <p>編譯 Solvespace:</p>
 <p style="padding-left: 30px;"><a href="https://solvespace.com/index.pl">Solvespace</a> 是一套小型的開放源參數式電腦輔助設計與繪圖軟體.</p>
 <p style="padding-left: 30px;">git clone --recurse-submodules https://github.com/solvespace/solvespace.git<br/><br/>cd solvespace<br/><br/>git checkout v3.1<br/><br/>mkdir build<br/><br/>cd build<br/><br/>cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release<br/><br/>mingw32-make</p>
@@ -1492,7 +1492,7 @@ int main() {
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">[http "https://github.com"]
 sslVerify = false</pre>
 <p style="padding-left: 30px;">表示不使用 Windows 的 SChannel API 進行認證, 轉而使用 OpenSSL handshake 認證.</p>
-<hr>
+<hr/>
 <p>利用 MSYS2 編譯 SciTE 編輯器:</p>
 <p style="padding-left: 30px;">從 <a href="https://www.scintilla.org/SciTE.html">https://www.scintilla.org/SciTE.html</a> 下載 Scite 原始碼.</p>
 <p style="padding-left: 30px;">cd scintilla\win32</p>
@@ -3448,4 +3448,4 @@ doc["threejsblock"].bind("click", threejsblock.do)
 <!-- editor2 結束 --><hr/>
 <p>
 <script src="https://unpkg.com/three@0.144.0/build/three.js" type="text/javascript"></script>
-</p></hr></hr></hr></hr></hr>
+</p>
