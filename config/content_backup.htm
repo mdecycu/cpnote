@@ -1023,7 +1023,7 @@ for user in valid_users:
 <p><span>以下為設定 w11_1a.mp4 的過程 (<a href="/downloads/w11_1a_1.txt">w11_1a_1.txt</a></span><span>):</span></p>
 <div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/cmsimde/static" data-varname="winkVideoData_w11_1a_1" height="630" muted="true" width="1008">
 <source src="/downloads/w11_1a_1.mp4" type="video/mp4"/></video></div>
-<p>w11_1b_1 操作影片<br/><br/></p>
+<p>w11_1b_1 操作影片</p>
 <div class="winkVideoContainerClass"><video autoplay="autoplay" class="winkVideoClass" controls="controls" data-dirname="/cmsimde/static" data-varname="winkVideoData_w11_1b_1" height="630" muted="true" width="1008">
 <source src="/downloads/w11_1b.mp4" type="video/mp4"/></video></div>
 <p>w11_1a 已經登入 s.cycu.org 的學員名單: <a href="/downloads/w11_1a_s_server_login.txt">w11_1a_s_server_login.txt</a>, 請問<span style="background-color: #ff99cc;">如何</span>按照學號列出 w11 已經會登入 s.cycu.org 的學員名單? (<a href="/downloads/w11_1b_s_server_login.txt">w11_1b_s_server_login.txt</a>)</p>
@@ -1207,7 +1207,7 @@ $dnsServers = "2001:b000:168::1", "2001:b000:168::2"
 Set-DnsClientServerAddress -InterfaceAlias "*" -ServerAddresses $dnsServers
 </pre>
 <p>對 ChatGPT 提問:</p>
-<p style="padding-left: 30px;">the following powershell script can setup windows network connection "# 關閉 IPv4 網路<br/>Disable-NetAdapterBinding -Name "*" -ComponentID ms_tcpip<br/> <br/># 啟用 IPv6 網路<br/>Enable-NetAdapterBinding -Name "*" -ComponentID ms_tcpip6<br/> <br/># 設置 IPv6 網路中的兩個 DNS 伺服器 (hinet)<br/>$dnsServers = "2001:b000:168::1", "2001:b000:168::2"<br>Set-DnsClientServerAddress -InterfaceAlias "*" -ServerAddresses $dnsServers" what if the ipv6 address need set to 2001:288:6004:17:1234::1234 and subnet prefix as 64 and ipv6 gateway as 2001:288:6004:17::254</br></p>
+<p style="padding-left: 30px;">the following powershell script can setup windows network connection "# 關閉 IPv4 網路<br/>Disable-NetAdapterBinding -Name "*" -ComponentID ms_tcpip<br/> <br/># 啟用 IPv6 網路<br/>Enable-NetAdapterBinding -Name "*" -ComponentID ms_tcpip6<br/> <br/># 設置 IPv6 網路中的兩個 DNS 伺服器 (hinet)<br/>$dnsServers = "2001:b000:168::1", "2001:b000:168::2"<br/>Set-DnsClientServerAddress -InterfaceAlias "*" -ServerAddresses $dnsServers" what if the ipv6 address need set to 2001:288:6004:17:1234::1234 and subnet prefix as 64 and ipv6 gateway as 2001:288:6004:17::254</p>
 <p>可以得到下列回應答案:</p>
 <p>加上個別學員所分配到的 IPv6 固定網址設定後的 1_disable_ipv4.ps1 Powershell 設定檔案 (必須自行更改固定 Ipv6 位址):</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false"># 關閉 IPv4 網路
