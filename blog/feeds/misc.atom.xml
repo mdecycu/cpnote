@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>CPNOTE 計算機程式網誌 - Misc</title><link href="./" rel="alternate"></link><link href="./feeds/misc.atom.xml" rel="self"></link><id>./</id><updated>2023-11-24T11:00:00+08:00</updated><entry><title>2023 Fall CP 課程</title><link href="./2023-Fall-Intro-to-computer-programming.html" rel="alternate"></link><published>2023-11-24T11:00:00+08:00</published><updated>2023-11-24T10:41:52+08:00</updated><author><name>yen</name></author><id>tag:None,2023-11-24:./2023-Fall-Intro-to-computer-programming.html</id><summary type="html">&lt;p&gt;2023 Fall 計算機程式的教學主要介紹 C 與 Python 在機械設計流程中的應用.&lt;/p&gt;
+</summary><content type="html">&lt;p&gt;2023 Fall 計算機程式的教學主要介紹 C 與 Python 在機械設計流程中的應用.&lt;/p&gt;
+
+
+&lt;h1&gt;學習&lt;/h1&gt;
+&lt;p&gt;學習是一種歷程, 而且是有明確目的的履歷與過程.&lt;/p&gt;
+&lt;p&gt;倘若是在學校階段的學習, 其明確目的就是透過學習成績證明自我學習的成效, 最終取得該階段所頒發的學歷證書.&lt;/p&gt;
+&lt;p&gt;KMOLAB 是知識管理與最佳化應用實驗室的簡稱, 其教學目標可從開課順序中一窺全貌: 計算機程式、網際內容管理、電腦輔助設計與實習, 最終得驗收課程則為協同產品設計實習. 橫貫這四門課程的主要內容為電腦、網路、程式與機電資整合設計.&lt;/p&gt;
+&lt;h2&gt;電腦&lt;/h2&gt;
+&lt;p&gt;雲端主機、Windows 個人電腦、Windows 伺服器、Ubuntu 主機.&lt;/p&gt;
+&lt;h2&gt;網路&lt;/h2&gt;
+&lt;p&gt;IPv6、DNS 伺服器、Proxy 伺服器、WWW 伺服器與 wsgi 伺服器&lt;/p&gt;
+&lt;h2&gt;程式&lt;/h2&gt;
+&lt;p&gt;C/C++、Javascript、Brython、Python&lt;/p&gt;
+&lt;h2&gt;機電資整合設計&lt;/h2&gt;
+&lt;p&gt;MCAD、Cyber-Physical Integrated Simulation Systems&lt;/p&gt;
+&lt;h1&gt;C 程式&lt;/h1&gt;
+&lt;h2&gt;gd 繪圖&lt;/h2&gt;
+&lt;p&gt;Replit&lt;/p&gt;
+&lt;p&gt;Ubuntu&lt;/p&gt;
+&lt;p&gt;Windows&lt;/p&gt;
+&lt;p&gt;gd 繪圖程式庫應用
+gnuplot 繪圖套件應用&lt;/p&gt;
+&lt;h1&gt;Python&lt;/h1&gt;
+&lt;p&gt;Python&lt;/p&gt;
+&lt;p&gt;pelican markdown -o blog -s local_publishconf.py&lt;/p&gt;</content><category term="Misc"></category><category term="2023FallCP"></category></entry></feed>

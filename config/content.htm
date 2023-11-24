@@ -1040,6 +1040,7 @@ for user in valid_users:
 <p style="padding-left: 30px;"><span style="background-color: #ffff00;">s1511</span> 則需要先設定 keys 與 session config, 然後才能將倉儲以 SSH clone 至個人帳號下, 修改個人或分組所分配到的內部連網埠號後, 以 python3 server.py 執行網頁編輯. 也可透過 acp 設法讓動態與靜態網站內容同步.</p>
 <p style="padding-left: 30px;"><span style="background-color: #ffff00;">localhost</span> 則可以使用 s1511 中的 private key, 經由 puttygen 轉檔後使用, 以 SSH clone 至個人隨身碟後, 可以利用 cms 啟動編輯網站, 修改內容並轉為靜態網站後, 以 acp 將改版資料新增提交推送到 Github. 若修改倉儲中的 init.py, 置入所在電腦的外部 IPv6 位址, 則可以 cms 啟動後, 修改管理者密碼, 讓其他組員連線至所啟動的動態或靜態網站內容.</p>
 <p style="padding-left: 30px;">各學員在以上採多個不同方式維護個人與分組網站的過程, 可以在改版之前先行 git pull, 以減少合併的內容.</p>
+<p style="padding-left: 30px;">在 Windows 使用 pelican 建立網誌必須 pip install tzdata, 否則無法取得 TIMEZONE 設定.</p>
 <p><span style="background-color: #ccffcc;">項目3</span>: 程式練習:</p>
 <p style="padding-left: 30px;"><span style="background-color: #ffff00;">w8 之前所指令的程式 C 練習作業</span>:</p>
 <p style="padding-left: 60px;"><a href="https://mde.tw/cpnote/content/%E4%B8%8A%E8%AA%B2%E5%85%A7%E5%AE%B9.html">上課內容</a>中的 Exercises</p>
