@@ -10,8 +10,8 @@ int main() {
     }
   
     // Use Gnuplot plotting commands, specify font and output as PNG
-    fprintf(gnuplotPipe, "set fontpath 'gnuplot.conf'\n");
-    fprintf(gnuplotPipe, "set terminal png font 'default,10' size 800,400\n");
+    fprintf(gnuplotPipe, "set terminal png font './edukai-4.0.ttf' 14 size 800,400\n");
+    fprintf(gnuplotPipe, "set title '互動式工程繪圖'\n");
     fprintf(gnuplotPipe, "set output 'hellognuplot.png'\n");
     fprintf(gnuplotPipe, "plot sin(x)");
     // Close popen

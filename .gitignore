@@ -32,3 +32,6 @@ config/config
 # OS-specific
 .DS_Store
 Thumbs.db
+
+# ignore edukai-4.0.ttf
+edukai-4.0.ttf

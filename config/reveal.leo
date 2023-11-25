@@ -47,6 +47,8 @@
 </v>
 <v t="leo.20231125113019.1"><vh>C 的數值分析</vh>
 <v t="leo.20231125113135.1"><vh>C 的數值分析1</vh></v>
+<v t="leo.20231125151049.1"><vh>Replit 的 gnuplot 繪圖</vh></v>
+<v t="leo.20231125160332.1"><vh>s.cycu.org 的 gnuplot 繪圖</vh></v>
 </v>
 <v t="leo.20220314205802.8"><vh>slide 2</vh></v>
 <v t="leo.20220314205802.9"><vh>slide3</vh>
@@ -1616,30 +1618,7 @@ int main() {
 
 - 以下的 C 程式是透過 [popen()](https://pubs.opengroup.org/onlinepubs/9699919799.2008edition/functions/popen.html) 與外部的 [gnuplot](http://www.gnuplot.info/docs_5.4/Gnuplot_5_4.pdf) 互動式繪圖套件結合, 透過指令執行繪圖
 
-- [hellognuplot.c](https://mde.tw/cpnote/downloads/hellognuplot.c) 原始碼如下:
-
-```[]
-#include &lt;stdio.h&gt;
-  
-// 主函式
-int main() {
-    // Start a Gnuplot process using popen
-    FILE *gnuplotPipe = popen("gnuplot -persistent", "w");
-    if (!gnuplotPipe) {
-        fprintf(stderr, "Failed to start Gnuplot.\n");
-        return 1;
-    }
-  
-    // Use Gnuplot plotting commands, specify font and output as PNG
-    fprintf(gnuplotPipe, "set terminal png font 'default,10' size 800,400\n");
-    fprintf(gnuplotPipe, "set output 'hellognuplot.png'\n");
-    fprintf(gnuplotPipe, "plot sin(x)");
-    // Close popen
-    pclose(gnuplotPipe);
-  
-    return 0;
-}
-```
+- [hellognuplot.c](https://mde.tw/cpnote/downloads/hellognuplot.c) 原始碼
 
 &lt;/small&gt;
 &lt;/script&gt;
@@ -1726,6 +1705,46 @@ ccc=tcc.exe -run -lgd
 make.command=make
 command.compile.*.c=$(ccc) -std=c99
 ```
+
+&lt;/small&gt;
+&lt;/script&gt;
+&lt;/section&gt;
+
+</t>
+<t tx="leo.20231125151049.1">&lt;section data-markdown&gt;
+&lt;script type="text/template"&gt;
+## Replit 的 gnuplot 繪圖
+
+&lt;small&gt;
+
+- 在 Replit 平台必須先在 &lt;n style="color:red;"&gt;replit.nix&lt;/n&gt; 設定檔案中加入 &lt;n style="color:red;"&gt;pkgs.gnuplot&lt;/n&gt; 套件
+
+- 假如希望在 Replit 平台使用中文字型檔案, 可以從[教育部網頁](https://language.moe.gov.tw/001/Upload/Files/site_content/M0001/edukai.pdf)下載後上傳到 repl 專案, 但因為檔案 edukai-4.0.ttf 約 15MB, 若不希望放入倉儲, 可以在 &lt;n style="color:red;"&gt;.gitignore&lt;/n&gt; 中設定
+
+- 編譯與連結指令: cc hellognuplot.c, 執行指令: ./a.out
+
+- [hellognuplot.c](https://mde.tw/cpnote/downloads/hellognuplot.c) 原始碼
+
+&lt;/small&gt;
+&lt;/script&gt;
+&lt;/section&gt;
+
+</t>
+<t tx="leo.20231125160332.1">&lt;section data-markdown&gt;
+&lt;script type="text/template"&gt;
+## s.cycu.org 的 gnuplot 繪圖
+
+&lt;small&gt;
+
+- s.cycu.org 已經透過 &lt;n style="color:red;"&gt;sudo apt install build-essential&lt;/n&gt; 安裝 C 的編譯環境
+
+- s.cycu.org 已經透過 &lt;n style="color:red;"&gt;sudo apt install gnuplot&lt;/n&gt; 安裝 gnuplot 套件
+
+- 假如希望在 s.cycu.org 伺服器使用中文字型檔案, 可以從[教育部網頁](https://language.moe.gov.tw/001/Upload/Files/site_content/M0001/edukai.pdf)下載後上傳到 repl 專案, 但因為檔案 edukai-4.0.ttf 約 15MB, 若不希望放入倉儲, 可以在 &lt;n style="color:red;"&gt;.gitignore&lt;/n&gt; 中設定
+
+- 編譯與連結指令: cc hellognuplot.c, 執行指令: ./a.out
+
+- [hellognuplot.c](https://mde.tw/cpnote/downloads/hellognuplot.c) 原始碼
 
 &lt;/small&gt;
 &lt;/script&gt;
