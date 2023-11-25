@@ -36,7 +36,9 @@
 <v t="leo.20231124222728.1"><vh>for 重複迴圈2</vh></v>
 </v>
 <v t="leo.20231124223510.1"><vh>C + gd 繪圖</vh>
-<v t="leo.20231124223557.1"><vh>C 的 gd 繪圖程式</vh></v>
+<v t="leo.20231124223557.1"><vh>C 的 gd 繪圖程式1</vh></v>
+<v t="leo.20231125101754.1"><vh>C 的 gd 繪圖程式2</vh></v>
+<v t="leo.20231125103147.1"><vh>C 的 gd 繪圖程式3</vh></v>
 </v>
 <v t="leo.20220314205802.8"><vh>slide 2</vh></v>
 <v t="leo.20220314205802.9"><vh>slide3</vh>
@@ -1473,7 +1475,7 @@ int main()
 &lt;/section&gt;</t>
 <t tx="leo.20231124223557.1">&lt;section data-markdown&gt;
 &lt;script type="text/template"&gt;
-## C 的 gd 繪圖程式
+## C 的 gd 繪圖程式1
 
 &lt;small&gt;
 
@@ -1543,6 +1545,50 @@ int main() {
     return 0;
 }
 ```
+
+&lt;/small&gt;
+&lt;/script&gt;
+&lt;/section&gt;
+
+</t>
+<t tx="leo.20231125101754.1">&lt;section data-markdown&gt;
+&lt;script type="text/template"&gt;
+## C 的 gd 繪圖程式2
+
+&lt;small&gt;
+
+- 從上一頁的繪圖程式 [hellogd.c](https://mde.tw/cpnote/downloads/hellogd.c) 可以得到以下結論
+
+- 繪圖程式庫的導入, 是因為 &lt;n style="color:red;"&gt;#include &lt;gd.h&gt;&lt;/n&gt;, 此一 header 檔案定義了許多繪圖的函式
+
+- 數學程式庫的導入, 是因為 &lt;n style="color:red;"&gt;#include &lt;math.h&gt;&lt;/n&gt;, 此一 header 檔案定義了許多數學函式
+
+- C 程式的執行是由 &lt;n style="color:red;"&gt;main()&lt;/n&gt; 主導, 而前面的 int 表示此一主函式執行之後, 會傳回整數型別的資料
+
+- 主函式中要使用變數之前, &lt;n style="color:red;"&gt;一定要宣告其資料型別&lt;/n&gt;, 且每一個可執行的表示式最後, 都要&lt;n style="color:red;"&gt;加上";" 分號&lt;/n&gt;
+
+- [gdImageAlphaBlending](https://libgd.github.io/manuals/2.2.4/files/gd-c.html#gdImageAlphaBlending) 函式中的第二輸入變數為圖層 (layer) [效果](https://libgd.github.io/manuals/2.2.4/files/gd-h.html#Effects)
+
+&lt;/small&gt;
+&lt;/script&gt;
+&lt;/section&gt;
+
+</t>
+<t tx="leo.20231125103147.1">&lt;section data-markdown&gt;
+&lt;script type="text/template"&gt;
+## C 的 gd 繪圖程式3
+
+&lt;small&gt;
+
+- [gdImagePtr](https://libgd.github.io/manuals/2.2.4/files/gd-h.html#gdImagePtr) 是 gd 繪圖程式庫中的一種資料型別, 定義在 gd.h 中, 其資料型別是設計為 &lt;n style="color:red;"&gt;pointer 指標&lt;/n&gt;
+
+- [gdImageAlphaBlending()](https://libgd.github.io/manuals/2.2.4/files/gd-c.html#gdImageAlphaBlending) 函式中的第二輸入變數為圖層 (layer) [效果](https://libgd.github.io/manuals/2.2.4/files/gd-h.html#Effects)
+
+- 其他與 gd 繪圖程式庫有關的語法, 則可以從 [gd.h](https://libgd.github.io/manuals/2.2.4/files/gd-h.html) 查詢, 例如: [gdImageColorAllocate()](https://libgd.github.io/manuals/2.2.4/files/gd-c.html#gdImageColorAllocate)、 [gdImageFilledRectangle()](https://libgd.github.io/manuals/2.2.4/files/gd-c.html#gdImageFilledRectangle)、 [gdImageFilledEllipse()](https://libgd.github.io/manuals/2.2.4/files/gd-c.html#gdImageFilledEllipse)、[gdImageEllipse()](https://libgd.github.io/manuals/2.2.4/files/gd-c.html#gdImageEllipse)、[gdImageLine](https://libgd.github.io/manuals/2.2.4/files/gd-c.html#gdImageLine)、[gdPoint](https://libgd.github.io/manuals/2.2.4/files/gd-h.html#gdPoint)、[gdImageFilledPolygon()](https://libgd.github.io/manuals/2.2.4/files/gd-c.html#gdImageFilledPolygon)、[gdImagePngEx()](https://libgd.github.io/manuals/2.3.0/files/gd_png-c.html#gdImagePngEx) 與 [gdImageDestroy()](https://libgd.github.io/manuals/2.2.4/files/gd-c.html#gdImageDestroy)
+
+- 2017 年發布的 [C 程式語言標準](https://web.archive.org/web/20181230041359if_/http://www.open-std.org/jtc1/sc22/wg14/www/abq/c17_updated_proposed_fdis.pdf), 可以查詢 C 的函式定義, 例如: 查詢 &lt;n style="color:red;"&gt; fopen()&lt;/n&gt; 函式的用法
+
+- 請從 [C 程式語言標準](https://web.archive.org/web/20181230041359if_/http://www.open-std.org/jtc1/sc22/wg14/www/abq/c17_updated_proposed_fdis.pdf), 查詢 &lt;n style="color:red;"&gt;fprintf()&lt;/n&gt; 與 &lt;n style="color:red;"&gt;fclose()&lt;/n&gt; 函式的用法
 
 &lt;/small&gt;
 &lt;/script&gt;
