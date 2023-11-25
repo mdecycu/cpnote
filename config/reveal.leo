@@ -35,10 +35,18 @@
 <v t="leo.20231124222442.1"><vh>for 重複迴圈1</vh></v>
 <v t="leo.20231124222728.1"><vh>for 重複迴圈2</vh></v>
 </v>
-<v t="leo.20231124223510.1"><vh>C + gd 繪圖</vh>
+<v t="leo.20231124223510.1"><vh>C 的 gd 繪圖</vh>
 <v t="leo.20231124223557.1"><vh>C 的 gd 繪圖程式1</vh></v>
 <v t="leo.20231125101754.1"><vh>C 的 gd 繪圖程式2</vh></v>
 <v t="leo.20231125103147.1"><vh>C 的 gd 繪圖程式3</vh></v>
+</v>
+<v t="leo.20231125113243.1"><vh>不同平台的 gd 繪圖</vh>
+<v t="leo.20231125113334.1"><vh>Replit 的 gd 繪圖</vh></v>
+<v t="leo.20231125113402.1"><vh>s.cycu.org 的 gd 繪圖</vh></v>
+<v t="leo.20231125113421.1"><vh>Windows 的 gd 繪圖</vh></v>
+</v>
+<v t="leo.20231125113019.1"><vh>C 的數值分析</vh>
+<v t="leo.20231125113135.1"><vh>C 的數值分析1</vh></v>
 </v>
 <v t="leo.20220314205802.8"><vh>slide 2</vh></v>
 <v t="leo.20220314205802.9"><vh>slide3</vh>
@@ -1584,11 +1592,140 @@ int main() {
 
 - [gdImageAlphaBlending()](https://libgd.github.io/manuals/2.2.4/files/gd-c.html#gdImageAlphaBlending) 函式中的第二輸入變數為圖層 (layer) [效果](https://libgd.github.io/manuals/2.2.4/files/gd-h.html#Effects)
 
-- 其他與 gd 繪圖程式庫有關的語法, 則可以從 [gd.h](https://libgd.github.io/manuals/2.2.4/files/gd-h.html) 查詢, 例如: [gdImageColorAllocate()](https://libgd.github.io/manuals/2.2.4/files/gd-c.html#gdImageColorAllocate)、 [gdImageFilledRectangle()](https://libgd.github.io/manuals/2.2.4/files/gd-c.html#gdImageFilledRectangle)、 [gdImageFilledEllipse()](https://libgd.github.io/manuals/2.2.4/files/gd-c.html#gdImageFilledEllipse)、[gdImageEllipse()](https://libgd.github.io/manuals/2.2.4/files/gd-c.html#gdImageEllipse)、[gdImageLine](https://libgd.github.io/manuals/2.2.4/files/gd-c.html#gdImageLine)、[gdPoint](https://libgd.github.io/manuals/2.2.4/files/gd-h.html#gdPoint)、[gdImageFilledPolygon()](https://libgd.github.io/manuals/2.2.4/files/gd-c.html#gdImageFilledPolygon)、[gdImagePngEx()](https://libgd.github.io/manuals/2.3.0/files/gd_png-c.html#gdImagePngEx) 與 [gdImageDestroy()](https://libgd.github.io/manuals/2.2.4/files/gd-c.html#gdImageDestroy)
+- 其他與 gd 繪圖程式庫有關的語法, 則可以從 [gd.h](https://libgd.github.io/manuals/2.2.4/files/gd-h.html)、[gd.c](https://libgd.github.io/manuals/2.2.4/files/gd-c.html) 或 [PNG IO](https://libgd.github.io/manuals/2.3.0/files/gd_png-c.html) 查詢, 例如: [gdImageColorAllocate()](https://libgd.github.io/manuals/2.2.4/files/gd-c.html#gdImageColorAllocate)、 [gdImageFilledRectangle()](https://libgd.github.io/manuals/2.2.4/files/gd-c.html#gdImageFilledRectangle)、 [gdImageFilledEllipse()](https://libgd.github.io/manuals/2.2.4/files/gd-c.html#gdImageFilledEllipse)、[gdImageEllipse()](https://libgd.github.io/manuals/2.2.4/files/gd-c.html#gdImageEllipse)、[gdImageLine](https://libgd.github.io/manuals/2.2.4/files/gd-c.html#gdImageLine)、[gdPoint](https://libgd.github.io/manuals/2.2.4/files/gd-h.html#gdPoint)、[gdImageFilledPolygon()](https://libgd.github.io/manuals/2.2.4/files/gd-c.html#gdImageFilledPolygon)、[gdImagePngEx()](https://libgd.github.io/manuals/2.3.0/files/gd_png-c.html#gdImagePngEx) 與 [gdImageDestroy()](https://libgd.github.io/manuals/2.2.4/files/gd-c.html#gdImageDestroy)
 
-- 2017 年發布的 [C 程式語言標準](https://web.archive.org/web/20181230041359if_/http://www.open-std.org/jtc1/sc22/wg14/www/abq/c17_updated_proposed_fdis.pdf), 可以查詢 C 的函式定義, 例如: 查詢 &lt;n style="color:red;"&gt; fopen()&lt;/n&gt; 函式的用法
+- 2017 年發布的 [C 程式語言標準](https://web.archive.org/web/20181230041359if_/http://www.open-std.org/jtc1/sc22/wg14/www/abq/c17_updated_proposed_fdis.pdf), 可以查詢 C 的函式定義, 例如: 查詢 [fopen()](https://pubs.opengroup.org/onlinepubs/9699919799.2008edition/functions/fopen.html) 函式的用法
 
-- 請從 [C 程式語言標準](https://web.archive.org/web/20181230041359if_/http://www.open-std.org/jtc1/sc22/wg14/www/abq/c17_updated_proposed_fdis.pdf), 查詢 &lt;n style="color:red;"&gt;fprintf()&lt;/n&gt; 與 &lt;n style="color:red;"&gt;fclose()&lt;/n&gt; 函式的用法
+- 請從 [POSIX.1](https://pubs.opengroup.org/onlinepubs/9699919799.2018edition/) (自 1988 年發動的[可攜操作系統介面](https://en.wikipedia.org/wiki/POSIX), 其 Core Services 包含標準 C 程式語法), 查詢 [fprintf()](https://pubs.opengroup.org/onlinepubs/9699919799.2008edition/functions/fprintf.html) 與 [fclose()](https://pubs.opengroup.org/onlinepubs/9699919799.2008edition/functions/fclose.html) 等 C 程式語言內建函式的用法
+
+&lt;/small&gt;
+&lt;/script&gt;
+&lt;/section&gt;
+
+</t>
+<t tx="leo.20231125113019.1">&lt;section&gt;
+    @others
+&lt;/section&gt;</t>
+<t tx="leo.20231125113135.1">&lt;section data-markdown&gt;
+&lt;script type="text/template"&gt;
+## C 的數值分析1
+
+&lt;small&gt;
+
+- 請分別在 Replit、s.cycu.org 以及 Windows 11 操作系統中執行下列程式
+
+- 以下的 C 程式是透過 [popen()](https://pubs.opengroup.org/onlinepubs/9699919799.2008edition/functions/popen.html) 與外部的 [gnuplot](http://www.gnuplot.info/docs_5.4/Gnuplot_5_4.pdf) 互動式繪圖套件結合, 透過指令執行繪圖
+
+- [hellognuplot.c](https://mde.tw/cpnote/downloads/hellognuplot.c) 原始碼如下:
+
+```[]
+#include &lt;stdio.h&gt;
+  
+// 主函式
+int main() {
+    // Start a Gnuplot process using popen
+    FILE *gnuplotPipe = popen("gnuplot -persistent", "w");
+    if (!gnuplotPipe) {
+        fprintf(stderr, "Failed to start Gnuplot.\n");
+        return 1;
+    }
+  
+    // Use Gnuplot plotting commands, specify font and output as PNG
+    fprintf(gnuplotPipe, "set terminal png font 'default,10' size 800,400\n");
+    fprintf(gnuplotPipe, "set output 'hellognuplot.png'\n");
+    fprintf(gnuplotPipe, "plot sin(x)");
+    // Close popen
+    pclose(gnuplotPipe);
+  
+    return 0;
+}
+```
+
+&lt;/small&gt;
+&lt;/script&gt;
+&lt;/section&gt;
+
+</t>
+<t tx="leo.20231125113243.1">&lt;section&gt;
+    @others
+&lt;/section&gt;</t>
+<t tx="leo.20231125113334.1">&lt;section data-markdown&gt;
+&lt;script type="text/template"&gt;
+## Replit 的 gd 繪圖
+
+&lt;small&gt;
+
+- 請分別在 [Replit](https://replit.com)、s.cycu.org 以及 Windows 11 操作系統中執行 [hellogd.c](https://mde.tw/cpnote/downloads/hellogd.c)
+
+- 先前已知在 [Replit](https://replit.com) 平台上, 無論選擇哪一種程式語言作為 Template, 只要在 Shell 嘗試以 cc 指令編譯 .c 程式, 按下 Enter 虛擬系統就會自行安裝 C compiler
+
+- 但是要能編譯連結 C 與 gd 繪圖程式, 則必須加裝 gd 程式庫, 因此在 replit.nix 中必須加入  [pkgs.gd](https://mde.tw/cpnote/content/index.html?q=pkgs.gd), 其中 pkgs 為 packages 的簡寫, 也就是程式庫套件的意思
+
+- 至於在 Shell 中編譯連結 [hellogd.c](https://mde.tw/cpnote/downloads/hellogd.c) 的指令為: &lt;n style="color:red;"&gt;cc hellogd.c -lgd&lt;/n&gt;, 若沒有特別利用 -o 宣告輸出檔案名稱, 則編譯輸出檔案的名稱為 a.out, 可以利用 &lt;n style="color:red;"&gt;./a.out&lt;/n&gt; 執行
+
+- 假如繪圖程式中除了 gd 繪圖程式外, 還用到 math.h 數學程式庫, 則需要利用 &lt;n style="color:red;"&gt;cc hellogd.c -lgd -lm&lt;/n&gt; 進行編譯與連結
+
+- 請根據上列說明, 在 repl 專案中, 修改 &lt;n style="color:red;"&gt;replit.nix&lt;/n&gt; 檔案如下, 看看 [hellogd.c](https://mde.tw/cpnote/downloads/hellogd.c) 執行後的結果為何?
+
+```[]
+{ pkgs }: {
+    deps = [
+      pkgs.gd
+    ];
+}
+```
+
+&lt;/small&gt;
+&lt;/script&gt;
+&lt;/section&gt;
+
+</t>
+<t tx="leo.20231125113402.1">&lt;section data-markdown&gt;
+&lt;script type="text/template"&gt;
+## s.cycu.org 的 gd 繪圖
+
+&lt;small&gt;
+
+- 請分別在 Replit、[s.cycu.org](https://s.cycu.org) 以及 Windows 11 操作系統中執行下列程式
+
+- 由於 [s.cycu.org](https://s.cycu.org) 伺服器已經透過 &lt;n style="color:red;"&gt;sudo apt install build-essential&lt;/n&gt; 安裝 C 程式的編譯器, 而且透過 &lt;n style="color:red;"&gt;sudo apt install libgd-dev&lt;/n&gt; 安裝 gd 程式庫, 因此使用者登入後, 可以直接以 cc  [hellogd.c](https://mde.tw/cpnote/downloads/hellogd.c) -lgd 編譯連結後, 再以 ./a.out 執行
+
+- 假如繪圖程式除了使用 gd 程式庫, 還引用數學程式庫 math.h, 則可以利用 cc  [hellogd.c](https://mde.tw/cpnote/downloads/hellogd.c) -lgd -lm 編譯連結後, 再以 ./a.out 執行
+
+- 假如 [hellogd.c](https://mde.tw/cpnote/downloads/hellogd.c) 程式碼位於倉儲的 downloads 目錄, 且宣告執行後的 gd 繪圖檔案位於倉儲的 images 目錄, 則使用可在 s.cycu.org 主機中開啟編輯網站 (即所謂動態網站) 直接引用 [hellogd.c](https://mde.tw/cpnote/downloads/hellogd.c) 與執行後的繪圖檔案.
+
+&lt;/small&gt;
+&lt;/script&gt;
+&lt;/section&gt;
+
+</t>
+<t tx="leo.20231125113421.1">&lt;section data-markdown&gt;
+&lt;script type="text/template"&gt;
+## Windows 的 gd 繪圖
+
+&lt;small&gt;
+
+- 請分別在 Replit、s.cycu.org 以及 Windows 11 操作系統中執行下列程式
+
+- 在 Windows 11 執行 [hellogd.c](https://mde.tw/cpnote/downloads/hellogd.c), 可以下載 [tinyc.7z](https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EV5P-1cv-y1Ih5zFT9LyTy0B6vGwNfDVlXYescPWAcMliw?e=LTUnq7) (需要下載密碼), 解開後放入隨身碟
+
+- 啟動 tinyc 中的 start_ipv6.bat 後, 必須在 SciTE 編輯器中, 以 Options - cc.properties 帶出 C 程式的編譯與執行設定檔案, 修改 473 行之後的編譯與執行設定, 也就是在 tcc.exe -run 之後, 加入 -lgd, 以確保使用 Tiny C Compiler 編譯連結的過程會導入 gd 繪圖程式庫
+
+- 之後若希望再利用 tcc 編譯執行帶有其他程式庫的程式碼, 可以在 tcc.exe -run -lgd 之後再加入其他程式庫的連結設定
+
+```[]
+# Braces are only matched in operator style
+braces.cpp.style=10
+
+ccopts=-pedantic -Os
+#cc=g++ $(ccopts) -c $(FileNameExt) -o $(FileName).o
+#ccc=gcc $(ccopts) -c $(FileNameExt) -o $(FileName).o
+cc=tcc.exe -run -lgd
+ccc=tcc.exe -run -lgd
+
+make.command=make
+command.compile.*.c=$(ccc) -std=c99
+```
 
 &lt;/small&gt;
 &lt;/script&gt;
