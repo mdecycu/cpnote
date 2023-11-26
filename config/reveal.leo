@@ -50,6 +50,11 @@
 <v t="leo.20231125151049.1"><vh>Replit 的 gnuplot 繪圖</vh></v>
 <v t="leo.20231125160332.1"><vh>s.cycu.org 的 gnuplot 繪圖</vh></v>
 </v>
+<v t="leo.20231125162002.1"><vh>維護倉儲內容</vh>
+<v t="leo.20231125162033.1"><vh>Replit 上維護倉儲內容</vh></v>
+<v t="leo.20231125162106.1"><vh>s.cycu.org 上維護倉儲內容</vh></v>
+<v t="leo.20231125162149.1"><vh>Windows 上維護倉儲內容</vh></v>
+</v>
 <v t="leo.20220314205802.8"><vh>slide 2</vh></v>
 <v t="leo.20220314205802.9"><vh>slide3</vh>
 <v t="leo.20220314205802.10"><vh>slide 3-1</vh></v>
@@ -1745,6 +1750,82 @@ command.compile.*.c=$(ccc) -std=c99
 - 編譯與連結指令: cc hellognuplot.c, 執行指令: ./a.out
 
 - [hellognuplot.c](https://mde.tw/cpnote/downloads/hellognuplot.c) 原始碼
+
+&lt;/small&gt;
+&lt;/script&gt;
+&lt;/section&gt;
+
+</t>
+<t tx="leo.20231125162002.1">&lt;section&gt;
+    @others
+&lt;/section&gt;</t>
+<t tx="leo.20231125162033.1">&lt;section data-markdown&gt;
+&lt;script type="text/template"&gt;
+## Replit 上維護倉儲內容
+
+&lt;small&gt;
+
+- 以電子郵箱註冊作為 Replit 登入帳號後, 登入自己的 Github 帳號
+
+- 登入 Replit 後, 選擇 account 下方的 Connected services, 點選 Github 右邊的 Connect, 以便連結與 Github 的權限
+
+- 利用 Replit 的 create Repl 建立專案, 且是利用 Import 的方式選擇 Python 作為 Template, 將 Github 倉儲輸入 Repl
+
+- 首先輸入 python3 main.py 作為 .replit 的內容, 之後只要按下 Run 就是執行 python3 main.py
+
+- 利用[密碼產生程式](https://mde.tw/cpnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/b92b16621dd0246c352cf13d6463b333/raw/0bfa669750aba3abe48554509bbd43d65b6e5c82/hashlib_password_generator.py), 建立 secrets 頁面中的 config 管理者登入密碼變數
+
+- 利用 Shell 指令: &lt;n style="color:red;"&gt;git submodule update --init&lt;/n&gt; 取下子模組, 並以 &lt;n style="color:red;"&gt;pip install flask flask_cors bs4 lxml pelican markdown gevent&lt;/n&gt; 安裝 Run 執行所需的 Python 模組
+
+- 最後按下 Run 就可以啟動編輯網站, 編輯結束利用 Convert 轉為靜態網站, 最後利用 Git 頁面新增提交並 push.
+
+&lt;/small&gt;
+&lt;/script&gt;
+&lt;/section&gt;
+
+</t>
+<t tx="leo.20231125162106.1">&lt;section data-markdown&gt;
+&lt;script type="text/template"&gt;
+## s.cycu.org 上維護倉儲內容
+
+&lt;small&gt;
+
+- 登入 s.cycu.org 之後, 以 &lt;n style="color:red;"&gt;ssh-keygen&lt;/n&gt; 指令, 連續按下三個 Enter, 就可以在 .ssh 目錄建立 id_rsa 與 id_rsa.pub
+
+- 在 Windows 11 以 sftp 帳號@s.cycu.org 登入遠端檔案傳輸模式後, cd .ssh 之後, 在 .ssh 目錄以 &lt;n style="color:red;"&gt;get id_rsa*&lt;/n&gt; 取下私鑰與公鑰
+
+- 利用 SciTE 開啟 id_rsa.pub, 並將公鑰內容送到 Github 帳號 Settings 中的 SSH and GPG keys
+
+- 下載 [config](https://mde.tw/cpnote/downloads/config) SSH 設定檔案, 利用 sftp 模式, 以 put config 送到 s.cycu.org 帳號下的 .ssh 目錄, 此時在 s.cycu.org 已經可以利用 github.com 昨為代號, 透過代理主機與私鑰, 以 &lt;n style="color:red;"&gt;git clone --recurse-submodules git@github.com:帳號/倉儲名稱.git&lt;/n&gt; 取下倉儲內容, 並在 python3 server.py 之後啟動編輯網站, 改版後 Convert 轉靜態, 並透過 &lt;n style="color:red;"&gt;chmod u+x acp&lt;/n&gt; 讓 acp 可以執行.
+
+- 改版並轉靜態之後, 就可以利用 acp 按鈕執行新增提交與推送
+
+- 若已知同一倉儲已經在其他地方將改版資料推向 Github, 在 s.cycu.org 執行改版程序之前, 可以利用 &lt;n style="color:red;"&gt;git pull&lt;/n&gt; 減少之後推送時必須解決的衝突內容
+
+&lt;/small&gt;
+&lt;/script&gt;
+&lt;/section&gt;
+
+</t>
+<t tx="leo.20231125162149.1">&lt;section data-markdown&gt;
+&lt;script type="text/template"&gt;
+## Windows 上維護倉儲內容
+
+&lt;small&gt;
+
+- 之前若已經在 s.cycu.org 登錄 id_rsa.pub 作為 Github 公鑰, 則取下的對應 &lt;n style="color:red;"&gt;id_rsa&lt;/n&gt; 可以利用 puttygen 轉為 .ppk 使用
+
+- 利用 putty 建立名稱與連線 session 都選為 &lt;n style="color:red;"&gt;github.com&lt;/n&gt; 的設定, 讓 Windows 與 s.cycu.org 進行 git clone 有相同的指令
+
+- 開啟 puttygent, load 進先前從 s.cycu.org 主機 .ssh 目錄取下的 id_rsa, 將原先 OpenSSL 格式的私鑰&lt;n style="color:red;"&gt;存為 .ppk 格式&lt;/n&gt;
+
+- 在 putty 所建立的 &lt;n style="color:red;"&gt;github.com&lt;/n&gt; session 必須指定位於 y: 目錄, 以免之後若隨身碟代號改變而失效
+
+- github.com session 設定 &lt;n style="color:red;"&gt;proxy&lt;/n&gt; 與 &lt;n style="color:red;"&gt;private key&lt;/n&gt; 位置後, 必須利用 Open 測試是否可以 ssh 連線到 github.com
+
+- putty session 設定完成後, 必須將位於 &lt;n style="color:red;"&gt;Computer\HKEY_CURRENT_USER\SOFTWARE\SimonTatham&lt;/n&gt; 的 .reg 導出, 之後只要利用滑鼠雙點擊就可以完成 putty session 設定
+
+- 以 &lt;n style="color:red;"&gt;git clone --recurse-submodules git@github.com:帳號/倉儲名稱.git&lt;/n&gt; 取下倉儲內容, 進入倉儲後, 以 &lt;n style="color:red;"&gt;cms&lt;/n&gt; 啟動編輯網站, 改版後 Convert 然後利用 acp 推送到 Github
 
 &lt;/small&gt;
 &lt;/script&gt;
