@@ -55,22 +55,48 @@
     </script>
     </section>
 
-    <section data-markdown>
-    <script type="text/template">
-    ## 困難的地方在哪?
+    <section>
+        <section data-markdown>
+        <script type="text/template">
+        ## 困難的地方在哪?1
 
-    - 要先弄清楚電腦的網路設定
+        - 要先弄清楚電腦的網路設定
 
-    - 要在雲端、自架 server 與近端維護 Github 上的倉儲與網站內容
+        - 要在雲端、自架 server 與近端維護 Github 上的倉儲與網站內容
 
-    - 許多教材內容都是英文
+        - 許多教材內容都是英文
 
-    - 課後要花許多時間自己練習
+        - 課後要花許多時間自己練習
 
-    - <del style="color:red;">聽說這門課會當很多人</del>
-    </script>
+        - <del style="color:red;">聽說這門課會當很多人</del>
+        </script>
+        </section>
+
+        <section data-markdown>
+        <script type="text/template">
+        ## 困難的地方在哪?2
+
+        <small>
+
+        - IPv4 與 IPv6 網路協定<n style="color:red;">彼此完全不相容</n>, 使用各種網路客戶端工具, 如 ssh、sftp、http、https 以及 git 指令, 都需要透過<n style="color:red">設定代理主機</n>才能從純 IPv6 網路環境, 連接至目前只支援 IPv4 的雲端服務, 例如: github.com 與 replit.com
+
+        - 在電腦輔助設計室要讓每一位使用都取得最大網路頻寬, 闢開 IPv4 的 NAT 瓶頸, 只能<n style="color:red">全面使用 IPv6 設定</n>
+
+        - 為了讓兩百多名使用者在機械設計系網段, 各自擁有一個上課時能直接聯外的 IP 位址, 只能使用 IPv6 設定
+
+        - 為了建立上課用的伺服主機, 包括考試用主機、分組協同用主機, 為求取得較高彈性與自由度, 也選擇只設定 IPv6 網路位址
+
+        - 學校的 DHCP6 伺服器並<n style="color:red">沒有完整設定 Gateway 與 DNS 伺服器</n>, 使用者必須自行設定
+
+        - 學校的 <n style="color:red">dns.nfu.edu.tw</n> 伺服器的 IPv6 設定, 並沒有正常運作, 且目前已不允許系上使用者跨區將 DNS 伺服器設為較穩定且反應快速的中華電信伺服器
+
+        - <del style="color:red;">聽說這門課會當很多人</del> 這種說法並不真確, 應該說: 先前是不是<n style="color:red">太多人提早放棄努力</n>
+
+        </small>
+        </script>
+        </section>
+
     </section>
-
     <section>
         <section data-markdown>
         <script type="text/template">
