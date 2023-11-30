@@ -58,6 +58,10 @@
 <v t="leo.20231125162106.1"><vh>s.cycu.org 上維護倉儲內容</vh></v>
 <v t="leo.20231125162149.1"><vh>Windows 上維護倉儲內容</vh></v>
 </v>
+<v t="leo.20231130082959.1"><vh>w12 實習測驗</vh>
+<v t="leo.20231130082959.2"><vh>分組座位表測驗</vh></v>
+<v t="leo.20231130083112.1"><vh>分組座位表製作說明</vh></v>
+</v>
 </v>
 </v>
 </v>
@@ -1384,6 +1388,47 @@ command.compile.*.c=$(ccc) -std=c99
 - 學校的 &lt;n style="color:red"&gt;dns.nfu.edu.tw&lt;/n&gt; 伺服器的 IPv6 設定, 並沒有正常運作, 且目前已不允許系上使用者跨區將 DNS 伺服器設為較穩定且反應快速的中華電信伺服器
 
 - &lt;del style="color:red;"&gt;聽說這門課會當很多人&lt;/del&gt; 這種說法並不真確, 應該說: 先前是不是&lt;n style="color:red"&gt;太多人提早放棄努力&lt;/n&gt;
+
+&lt;/small&gt;
+&lt;/script&gt;
+&lt;/section&gt;
+
+</t>
+<t tx="leo.20231130082959.1">&lt;section&gt;
+    @others
+&lt;/section&gt;</t>
+<t tx="leo.20231130082959.2">&lt;section data-markdown&gt;
+&lt;script type="text/template"&gt;
+## 分組座位表測驗
+
+&lt;small&gt;
+
+- 各班按分組安排座位後, 以 Excel 取各學員的座位座標, 例如: 第一組學員位於&lt;n style="color:red;"&gt;第一列最左邊的學員, 其座位座標為 (1,1)&lt;/n&gt;, 第一組學員位於第一列最右邊的座位座標為 (1,9), 其餘各組座位依此類推
+
+- 在取得各班分組座位座標資料後, 將從 Excel 轉存為&lt;n style="color:red;"&gt;"學號\t座位座標"&lt;/n&gt;格式的 .txt 檔案, 請各學員設法在個人網站上說明在取得該座標資料後, 如何在個人網站中的第一階次, 名稱為 w12 的標題頁面中, &lt;n style="color:red;"&gt;將學號印在該學員的座位上, 列出各班的學員座位&lt;/n&gt;
+
+- 各學員除在 w12 頁面說明將如何處理上列實習測驗問題外, 請利用 Wink 錄製處理過程影格, 並&lt;n style="color:red;"&gt;加上各頁操作說明後, 將 .mp4 影片檔案放入 w12 &lt;/n&gt;頁面中
+
+&lt;/small&gt;
+&lt;/script&gt;
+&lt;/section&gt;
+
+</t>
+<t tx="leo.20231130083112.1">&lt;section data-markdown&gt;
+&lt;script type="text/template"&gt;
+## 分組座位表製作說明
+
+&lt;small&gt;
+
+- 已知各學員座位檔案格式為 &lt;n style="color:red;"&gt;"學號\t座位座標"&lt;/n&gt;
+
+- 能否利用 C 程式讀取該檔案之後, 再逐一列出?
+
+- 當逐一列出各學員學號與座位座標之後, 能否透過"\t"分割學號與座位座標?
+
+- 當逐一取出各學員的座位座標後, 能否再分割座位座標, 得到該學員的組別與座次別?
+
+- 然後呢? 還是乾脆以人工方式逐一在 w12 頁面中列出各學員座次位址的學號, 反正才不到 60 筆資料
 
 &lt;/small&gt;
 &lt;/script&gt;
