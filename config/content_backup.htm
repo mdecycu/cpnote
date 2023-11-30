@@ -1040,6 +1040,7 @@ for user in valid_users:
 <p style="padding-left: 30px;"><span style="background-color: #ffff00;">s1511</span> 則需要先設定 keys 與 session config, 然後才能將倉儲以 SSH clone 至個人帳號下, 修改個人或分組所分配到的內部連網埠號後, 以 python3 server.py 執行網頁編輯. 也可透過 acp 設法讓動態與靜態網站內容同步.</p>
 <p style="padding-left: 30px;"><span style="background-color: #ffff00;">localhost</span> 則可以使用 s1511 中的 private key, 經由 puttygen 轉檔後使用, 以 SSH clone 至個人隨身碟後, 可以利用 cms 啟動編輯網站, 修改內容並轉為靜態網站後, 以 acp 將改版資料新增提交推送到 Github. 若修改倉儲中的 init.py, 置入所在電腦的外部 IPv6 位址, 則可以 cms 啟動後, 修改管理者密碼, 讓其他組員連線至所啟動的動態或靜態網站內容.</p>
 <p style="padding-left: 30px;">各學員在以上採多個不同方式維護個人與分組網站的過程, 可以在改版之前先行 git pull, 以減少合併的內容.</p>
+<p style="padding-left: 30px;">在 Windows 使用 pelican 建立網誌必須 pip install tzdata, 否則無法取得 TIMEZONE 設定.</p>
 <p><span style="background-color: #ccffcc;">項目3</span>: 程式練習:</p>
 <p style="padding-left: 30px;"><span style="background-color: #ffff00;">w8 之前所指令的程式 C 練習作業</span>:</p>
 <p style="padding-left: 60px;"><a href="https://mde.tw/cpnote/content/%E4%B8%8A%E8%AA%B2%E5%85%A7%E5%AE%B9.html">上課內容</a>中的 Exercises</p>
@@ -1068,7 +1069,8 @@ for user in valid_users:
 <p style="padding-left: 30px;"><a href="https://www.debugmode.com/wink.html">Wink</a> 為操作流程影片製作套件, 可以在電腦操作過程, 儲存關鍵頁面與滑鼠點擊區域後, 加上輔助文字說明後製作成 mp4 影片檔.</p>
 <p style="padding-left: 30px;"><a href="https://github.com/ShareX/ShareX/releases">ShareX</a> 為螢幕畫面取像或錄影套件, 可以擷取電腦畫面任一區域存為影像檔, 或者結合語音說明與滑鼠操作錄製說明影片.</p>
 <p style="padding-left: 30px;"><a href="https://github.com/obsproject/obs-studio/releases">OBS</a> 為電腦廣播製作系統, 可以結合各種語音、圖像與影片製作出多元的電腦操作說明影片.</p>
-<p style="padding-left: 30px;">Wink 與 ShareX 都需要 <a href="https://ffmpeg.org/download.html#build-windows">ffmpeq.exe</a>.</p><h2>C_lib</h2>
+<p style="padding-left: 30px;">Wink 與 ShareX 都需要 <a href="https://ffmpeg.org/download.html#build-windows">ffmpeq.exe</a>.</p><h2>w12</h2>
+<p><a href="https://nfuedu-my.sharepoint.com/:v:/g/personal/yen_nfu_edu_tw/EZNZ2_9DTYxLgP8k-6mK7ecBWpTNivviMP5bzt_IXGqKeA?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&amp;e=PXC5Ry">w12_1b_1.mp4</a></p><h2>C_lib</h2>
 <p>本課程針對 C 程式語言的教學將使用下列程式庫:</p>
 <p>gnuplot: <a href="https://github.com/gnuplot/gnuplot">https://github.com/gnuplot/gnuplot</a></p>
 <p><span style="background-color: #ffff00;">數值分析繪圖程式庫</span> - 在機電設計流程中, 工程師運用數值分析法進行設計與模擬運算後, 將數據存檔, 可利用 gnuplot 繪圖指令, 以令人容易理解的圖形呈現數值分析結果.</p>
