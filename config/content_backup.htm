@@ -1122,13 +1122,22 @@ sslVerify = false
 <p>詢問 1: </p>
 <p style="padding-left: 30px;"><span>目前的 C 程式內容如下"<span style="background-color: #ccffff;">#include &lt;stdio.h&gt; #include &lt;gd.h&gt; #include &lt;math.h&gt; int main() { int width = 800; int height = 600;</span></span></p>
 <p style="padding-left: 30px;"><span style="background-color: #ccffff;">中間的程式碼沒有列出......</span></p>
-<p style="padding-left: 30px;"><span><span style="background-color: #ccffff;">gdImagePngEx(img, outputFile, 9); fclose(outputFile); gdImageDestroy(img); return 0; }</span>" 請加上一個可以宣告旋轉圓點與順時鐘旋轉角度作為輸入的函式 rotateFilledPolygon(x_orig, y_orig, rotation_ang, points2), 並且加入該函式的呼叫與應用.</span></p>
+<p style="padding-left: 30px;"><span><span style="background-color: #ccffff;">gdImagePngEx(img, outputFile, 9); fclose(outputFile); gdImageDestroy(img); return 0; }</span>" 請加上一個可以宣告旋轉中心點與順時鐘旋轉角度作為輸入的函式 rotateFilledPolygon(x_orig, y_orig, rotation_ang, points2), 並且加入該函式的呼叫與應用.</span></p>
 <p>ChatGPT 回答 1:</p>
 <p style="padding-left: 30px;"><span>要加入可以宣告旋轉圓點和順時鐘旋轉角度作為輸入的函式 </span><code>rotateFilledPolygon</code><span>，可以使用以下方式修改你的程式碼。這個函式的目標是旋轉 </span><code>points2</code><span> 中的多邊形，並將結果畫到圖像上。</span></p>
 <p style="padding-left: 30px;"><span><a href="/downloads/hellogd1.c">hellogd1.c</a></span></p>
 <p style="padding-left: 30px;"><span>這樣，你的程式現在包含了一個可以旋轉多邊形的函式，並且在主函式中有兩次呼叫，分別旋轉了兩個不同的多邊形。</span></p>
 <p>hellogd1.c 畫出的圖形:</p>
-<p><img alt="" class="add_border" height="150" src="/images/hellogd1.png" width="200"/></p><h2>C_lib</h2>
+<p><img alt="" class="add_border" height="150" src="/images/hellogd1.png" width="200"/></p>
+<p>詢問 2:</p>
+<p style="padding-left: 30px;"><span>請加上呼叫 points 與 points2 代入 rotateFilledPolygon() 各旋轉 30 度共四次的程式</span></p>
+<p><span>ChatGPt 回答 2:</span></p>
+<p style="padding-left: 30px;"><span>Sure, you can call <code>rotateFilledPolygon()</code> multiple times to rotate <code>points</code> and <code>points2</code> by 30 degrees each time. Here's an example of how you can modify your code to achieve this:</span></p>
+<p style="padding-left: 30px;"><span><a href="/downloads/hellogd2.c">hellogd2.c</a></span></p>
+<p style="padding-left: 30px;"><span>This code rotates both <code>points</code> and <code>points2</code> by 30 degrees four times each and draws them on the image.</span></p>
+<p style="padding-left: 30px;"><span>其中修改 rotateFilledPolygon(500, 200, 30.0, points2, 4); 讓 points2 繞著 (500, 200) 旋轉 12 次, 結果如下:</span></p>
+<p><span><img alt="" class="add_border" height="150" src="/images/hellogd2.png" width="200"/></span></p>
+<p><span></span></p><h2>C_lib</h2>
 <p>本課程針對 C 程式語言的教學將使用下列程式庫:</p>
 <p>gnuplot: <a href="https://github.com/gnuplot/gnuplot">https://github.com/gnuplot/gnuplot</a></p>
 <p><span style="background-color: #ffff00;">數值分析繪圖程式庫</span> - 在機電設計流程中, 工程師運用數值分析法進行設計與模擬運算後, 將數據存檔, 可利用 gnuplot 繪圖指令, 以令人容易理解的圖形呈現數值分析結果.</p>

@@ -143,11 +143,12 @@ img.add_border {
           
         </header>
     <div id="tipue_search_content">w12-w13 << <a href='w12-w13.html'>Previous</a> <a href='C_lib.html'>Next</a> >> C_lib<br /><h1>繪圖範例</h1>
+<p><a href="https://nfuedu-my.sharepoint.com/:v:/g/personal/yen_nfu_edu_tw/EXZy5RVayJ5AlCRh1Jusih0BiVtLP7GQzuK1TUNnfR2qKQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&amp;e=2EZaNa">w13_1b_1.mp4</a> (說明如何利用 ChatGPT 協助編寫 gd 繪圖程式)</p>
 <p>以下將利用 <a href="./../downloads/hellogd.c">hellogd.c</a> 作為基礎, 對 ChatGPT 提問, 並設法了解 AI 所傳回的 gd 繪圖程式內容:</p>
 <p>詢問 1: </p>
 <p style="padding-left: 30px;"><span>目前的 C 程式內容如下"<span style="background-color: #ccffff;">#include &lt;stdio.h&gt; #include &lt;gd.h&gt; #include &lt;math.h&gt; int main() { int width = 800; int height = 600;</span></span></p>
 <p style="padding-left: 30px;"><span style="background-color: #ccffff;">中間的程式碼沒有列出......</span></p>
-<p style="padding-left: 30px;"><span><span style="background-color: #ccffff;">gdImagePngEx(img, outputFile, 9); fclose(outputFile); gdImageDestroy(img); return 0; }</span>" 請加上一個可以宣告旋轉圓點與順時鐘旋轉角度作為輸入的函式 rotateFilledPolygon(x_orig, y_orig, rotation_ang, points2), 並且加入該函式的呼叫與應用.</span></p>
+<p style="padding-left: 30px;"><span><span style="background-color: #ccffff;">gdImagePngEx(img, outputFile, 9); fclose(outputFile); gdImageDestroy(img); return 0; }</span>" 請加上一個可以宣告旋轉中心點與順時鐘旋轉角度作為輸入的函式 rotateFilledPolygon(x_orig, y_orig, rotation_ang, points2), 並且加入該函式的呼叫與應用.</span></p>
 <p>ChatGPT 回答 1:</p>
 <p style="padding-left: 30px;"><span>要加入可以宣告旋轉圓點和順時鐘旋轉角度作為輸入的函式 </span><code>rotateFilledPolygon</code><span>，可以使用以下方式修改你的程式碼。這個函式的目標是旋轉 </span><code>points2</code><span> 中的多邊形，並將結果畫到圖像上。</span></p>
 <p style="padding-left: 30px;"><span><a href="./../downloads/hellogd1.c">hellogd1.c</a></span></p>
