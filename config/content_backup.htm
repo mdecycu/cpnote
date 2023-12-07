@@ -1085,13 +1085,37 @@ for user in valid_users:
 <p><span style="background-color: #ff99cc;">C -&gt; Javascript -&gt; Brython -&gt; Python -&gt; Cython (C++) -&gt; Rust or Mojo</span></p>
 <p>C 目前除了用於數值分析運算外, 由於其跨硬體的可攜性優勢而經常被用於機電<span style="background-color: #ffff00;">自動控制</span>領域</p>
 <p>將 C 改寫為 Javascript 後, 在網頁前端可以直接顯示結果, 也能與後端的各種運算軟硬體結合, 成為協同產品設計的有效工具: 例如: <a href="https://pmksplus.com/">https://pmksplus.com/</a> 與 <a href="https://motiongen.io/">https://motiongen.io/</a> 都是典型的應用範例.</p>
-<p><a href="https://github.com/DesignEngrLab/PMKS">PMKS 原始碼</a> (採 Flashlight)</p>
-<p><a href="https://github.com/PMKS-Web/PMKSWeb">PMKS + 原始碼</a> (採 C#)</p>
+<p><a href="https://github.com/DesignEngrLab/PMKS">PMKS 原始碼</a> (採 <a href="https://link.springer.com/book/10.1007/978-1-4302-3480-7">Silverlight</a>)</p>
+<p><a href="https://github.com/PMKS-Web/PMKSWeb">PMKS + 原始碼</a> (採 <a href="https://link.springer.com/book/10.1007/978-1-4842-9523-6">Typescript</a>)</p>
 <p><a href="https://app.pmksplus.com/?0P.kG.K,W.101.MA,A,02xq,1Z,0.GB,B,03Gi,YJ,0.GC,C,M4,2Ox,0.KD,D,06A,X,0.GE,E,02La,2Ch,0..YRAB,AB,Fe,Fe,036G,Hx,c5cae9,A,B,,.YRBCE,BCE,Fe,Fe,01m4,1jJ,303e9f,B,C,E,,.YRCD,CD,Fe,Fe,7z,1Ck,0d125a,C,D,,...JBF">pmks+ 平面機構設計範例1</a>, <a href="https://app.pmksplus.com/?0P.rS.K,4S.101.MA,A,036g,1vM,0.GB,B,04cF,2mG,0.GC,C,03O7,2mG,0.KD,D,02jn,0k7,0..YRAB,AB,Fe,Fe,03sT,2Kp,c5cae9,A,B,,.YRBC,BC,Fe,Fe,03-B,2mG,303e9f,B,C,,.YRCD,CD,Fe,Fe,032y,114,c5cae9,C,D,,...N_6">機構合成範例1</a>, </p>
 <p>然而目前 Javascript 與機械設計的結合性略低於 Python, 且近年來許多原本採 Matlab 執行運算與控制的應用, 已經可以完全透過 Python 程式取代, 因此若能在網頁前端使用 Javascript 與 <a href="https://brython.info/">Brython</a>, 然後在網頁後端採用 Python + Cython, 除了可以在數值分析運算上以 C++ 的速度執行, 也可在後續導入許多與 Python 高度相關的 AI 套件, 例如: <a href="https://www.tensorflow.org">TensorFlow</a>、<a href="https://keras.io">Keras</a> 與 <a href="https://pytorch.org/">PyTorch</a>.</p>
 <p>Matlab 打不過 Python, 於是<a href="https://www.mathworks.com/products/matlab/matlab-vs-python.html">推廣兩者一起使用</a>. <a href="https://www.upgrad.com/blog/matlab-vs-python/">Matlab 與 Python 比較</a>, 假如真的要<a href="https://towardsdatascience.com/theres-a-clear-winner-between-matlab-vs-python-f6bb56b2b930">比輸贏</a>或者叫你<a href="https://realpython.com/matlab-vs-python/">不要再走回頭路了</a>.</p>
 <p>Brython 程式練習頁面: <a href="https://mde.tw/cpnote/content/Brython.html">https://mde.tw/cpnote/content/Brython.html</a></p>
 <p><a href="https://mde.tw/cpnote/content/w10-w11.html">https://mde.tw/cpnote/content/w10-w11.html</a> 中的程式改以 Brython 編寫, 並將程式存入個人的 Github Gist 取用. How?</p>
+<hr/>
+<p>可攜系統中 home_ipv6 目錄中的 .gitconfig</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">[http]
+	proxy = http://p4.cycu.org:3128
+[user]
+	name = 你的 github 帳號
+	email = 登記在 github 帳號的 email
+[safe]
+	directory = *
+[http "https://github.com"]
+sslVerify = false
+[pull]
+	rebase = false
+</pre>
+<p>.gitconfig 設定說明:</p>
+<p>[http]<br/>    proxy = <a href="http://p4.cycu.org:3128">http://p4.cycu.org:3128</a></p>
+<p>也可以透過命令列中輸入 git config --global http.proxy <a href="http://p4.cycu.org:3128">http://p4.cycu.org:3128</a> 取得</p>
+<p>這是設定 git 指令需要使用 http 或 https 協定擷取 cmsimde 時, 假如網路只支援 IPv6, 就必須透過代理主機連線到目前只支援 IPv4 的 github.com</p>
+<p>[user]<br/>    name = 你的 github 帳號<br/>    email = 登記在 github 帳號的 email</p>
+<p>是在 git commit -m "提交訊息" 時綁定身分用</p>
+<p>[safe]<br/>    directory = *</p>
+<p>則是宣告目前所使用的檔案目錄都是 safe</p>
+<p>[http "https://github.com"]<br/>    sslVerify = false</p>
+<p>表示當連線到 github.com 時所使用的 key 不用登記在 Windows 操作系統中</p>
 <p></p><h2>C_lib</h2>
 <p>本課程針對 C 程式語言的教學將使用下列程式庫:</p>
 <p>gnuplot: <a href="https://github.com/gnuplot/gnuplot">https://github.com/gnuplot/gnuplot</a></p>
@@ -1510,7 +1534,7 @@ int main() {
 <p style="padding-left: 60px;">安裝 CMake</p>
 <p style="padding-left: 90px;">pacman -S mingw-w64-x86_64-cmake</p>
 <p>下載 <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EQHpkbGf-iFAnvQpjr6YpvoBT5IGyhc7zkRFldLb9gzumQ?e=07fTJm">msys64_20230718_cmake.7z</a> (需要下載密碼)</p>
-<hr/>
+<hr>
 <p>編譯 Solvespace:</p>
 <p style="padding-left: 30px;"><a href="https://solvespace.com/index.pl">Solvespace</a> 是一套小型的開放源參數式電腦輔助設計與繪圖軟體.</p>
 <p style="padding-left: 30px;">git clone --recurse-submodules https://github.com/solvespace/solvespace.git<br/><br/>cd solvespace<br/><br/>git checkout v3.1<br/><br/>mkdir build<br/><br/>cd build<br/><br/>cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release<br/><br/>mingw32-make</p>
@@ -1898,7 +1922,7 @@ doc["threejsblock"].bind("click", threejsblock.do)
 <div style="width: 100%; height: 100%;"><textarea autocomplete="off" id="kw_console2"></textarea></div>
 <p><!-- Brython 程式執行的結果, 都以 brython_div1 作為切入位置 --></p>
 <div id="brython_div2"></div>
-<!-- editor2 結束 --><hr/>
+<!-- editor2 結束 --><hr>
 <p>
 <script src="https://unpkg.com/three@0.144.0/build/three.js" type="text/javascript"></script>
 </p>
@@ -3475,4 +3499,4 @@ doc["threejsblock"].bind("click", threejsblock.do)
 <!-- editor2 結束 --><hr/>
 <p>
 <script src="https://unpkg.com/three@0.144.0/build/three.js" type="text/javascript"></script>
-</p>
+</p></hr></hr>
