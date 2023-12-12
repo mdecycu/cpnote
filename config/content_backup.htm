@@ -1146,6 +1146,8 @@ sslVerify = false
 <p><span style="background-color: #ccffcc;">項目2</span>: 請分別利用 Replit、s.cycu.org 或 localhost 維護個人與分組的網站內容, 並比較不同方法開發計算計程式的優缺點.</p>
 <p>Replit 至今的免費帳號仍可用來維護個人與分組網站內容, 也能用來開發 C + gd + gnuplot 等程式.</p>
 <p>s.cycu.org 中必須善用 ps -axo pid,comm,uname | grep "python3" 查詢個人所啟動的網頁編輯 process id, 並了解各用戶可以利用 kill pid 刪除 process, 且可利用 python3 server.py&amp; 再次啟用網頁編輯服務.</p>
+<p>Replit: 改版之前必須先至 Shell 執行 git pull, 若有動態網站檔案 (即 config/content.htm) 中的衝突, 可在編輯網站利用 EditA (Edit All 頁面) 決定衝突區域的內容.</p>
+<p>s.cycu.org 與 localhost: 改版之前必須先至倉儲目錄執行 git pull, 若有動態網站檔案 (即 config/content.htm) 中的衝突, 可在編輯網站利用 EditA (Edit All 頁面) 決定衝突區域的內容.</p>
 <p><span style="background-color: #ccffcc;">項目3</span>: 程式練習:</p>
 <p style="padding-left: 30px;"><span style="background-color: #ffff00;">w8 之前所指令的程式 C 練習作業</span>:</p>
 <p style="padding-left: 60px;"><a href="https://mde.tw/cpnote/content/%E4%B8%8A%E8%AA%B2%E5%85%A7%E5%AE%B9.html">上課內容</a>中的 Exercises</p>
@@ -1161,7 +1163,20 @@ sslVerify = false
 <p style="padding-left: 30px;">2b w8 作業: 請根據 <a href="https://mde.tw/cadnote/downloads/cad2023_2b_w8.txt">cad2023_2b_w8.txt</a> 檔案中的內容, 透過程式的讀取與篩選, 按照時間先後, 列出 2b 修課學員中已經登入 s1511.cycu.org 的學號. (修課學員名單 2a: <a href="https://stud.cycu.org:8800/?semester=1121&amp;courseno=0838&amp;column=True">0838</a>, 2b: <a href="https://stud.cycu.org:8800/?semester=1121&amp;courseno=0851&amp;column=True">0851</a>)</p>
 <p style="padding-left: 30px;">假如在近端處理, 必須同時儲存兩個檔案後, 進行資料選取:</p>
 <p style="padding-left: 30px;"><a href="https://mde.tw/cpnote/downloads/get_stud_num_from_last_data.py">get_stud_num_from_last_data.py</a> (若採 Brython 編寫, 可以直接<a href="https://mde.tw/cadnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9215c7c160119721ded887018cda8f4e/raw/f9f2fd6819ae9553d51990901aa694073d51439a/get_stud_num_from_last_data.py">列出結果</a>, 依照登入時間先後排序, 其中 41123227 為管理者最早測試時登入, 若採用 ANSI 編寫: <a href="https://mde.tw/cpnote/downloads/c_parse_last_cp2023.7z">c_parse_last_cp2023.7z</a>)</p>
-<p style="padding-left: 30px;"><img alt="" height="133" src="/images/roc_flag3.png" width="200"/> <img caption="false" height="142" src="/images/rod_flag_outline.png" width="205"/></p>
+<p style="padding-left: 30px;">從 <a href="/downloads/hellogd.c">hellogd.c</a> 變化出下列各國國旗: 過程請參考<a href="https://mde.tw/cpnote/reveal/index.html#/5">簡報</a>.</p>
+<p style="padding-left: 30px;"><img alt="" height="133" src="/images/roc_flag3.png" width="200"/> <img caption="false" height="142" src="/images/rod_flag_outline.png" width="205"/>(如何<a href="https://mde.tw/cpnote/content/%E7%A8%8B%E5%BC%8F%E6%87%89%E7%94%A8.html">求平面上兩線交點</a>?)</p>
+<p style="padding-left: 30px;"><a href="https://mde.tw/cpnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/7464c66475548e9cc41469e36c1dddb2/raw/a68cb31411e493b5d8eac4680d8f927cb515c4bc/roc_flag_in_brython.py">ROC flag in Brython</a></p>
+<p style="padding-left: 30px;">USA 國旗</p>
+<p style="padding-left: 30px;"><a href="https://mde.tw/cpnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/7464c66475548e9cc41469e36c1dddb2/raw/a68cb31411e493b5d8eac4680d8f927cb515c4bc/usa_flag_in_brython.py">USA flag in Brython</a></p>
+<p style="padding-left: 30px;">PROC 國旗</p>
+<p style="padding-left: 30px;"><a href="https://mde.tw/cpnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/7464c66475548e9cc41469e36c1dddb2/raw/a68cb31411e493b5d8eac4680d8f927cb515c4bc/proc_flag_in_brython.py">PROC flag in Brython</a></p>
+<p style="padding-left: 30px;">UK 國旗</p>
+<p style="padding-left: 30px;">Japan 國旗</p>
+<p style="padding-left: 30px;">S Korean 國旗</p>
+<p style="padding-left: 30px;"><a href="https://mde.tw/cpnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/7464c66475548e9cc41469e36c1dddb2/raw/a68cb31411e493b5d8eac4680d8f927cb515c4bc/bsnake_in_brython.py">貪食蛇 in Brython</a></p>
+<p style="padding-left: 30px;"><a href="https://riptutorial.com/ebook/html5-canvas">Html5 canvas ebook</a></p>
+<p>利用 ChatGPT 對話所完成的 2a 座位排序程式: <a href="https://mde.tw/cadnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9215c7c160119721ded887018cda8f4e/raw/6aa687555226885c935927bffaab3f9a81b513a3/w13_2a_seat_html.py">w13_2a_seat.py 執行結果</a> (對話與程式編寫過程請參考<a href="https://mde.tw/cadnote/content/w12.html">這裡</a>)</p>
+<p>利用 "<span><span style="background-color: #ffff99;">sudo update-rc.d stunnel4 defaults</span>" 將 s.cycu.org 中的 stunnel4 設為與系統同步啟動.</span></p>
 <p style="padding-left: 30px;"></p><h2>C_lib</h2>
 <p>本課程針對 C 程式語言的教學將使用下列程式庫:</p>
 <p>gnuplot: <a href="https://github.com/gnuplot/gnuplot">https://github.com/gnuplot/gnuplot</a></p>
