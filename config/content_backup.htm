@@ -1182,9 +1182,11 @@ sslVerify = false
 <p><a href="https://nfuedu-my.sharepoint.com/:v:/g/personal/yen_nfu_edu_tw/EYlCcKincVZOhYcrmeBTcRkByvCWOpdujpXy3OWG7h649g?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&amp;e=AcRsHb">w14_1a_1.mp4</a> (總結網路設定與 C 繪圖程式執行環境設定)</p>
 <p><a href="https://nfuedu-my.sharepoint.com/:v:/g/personal/yen_nfu_edu_tw/EfwAmHE58ddCj7hYFX8mFGwBhu1PLcpTEz1kWZ3Q8yTLsw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&amp;e=vfbRcV">w14_1a_2.mp4</a> (如何將 Brython 程式存入個人 Github Gist 區域, 並呼叫執行)</p><h3>線上繪圖</h3>
 <p><a href="https://mde.tw/cpnote/content/%E7%B7%9A%E4%B8%8A%E7%B9%AA%E5%9C%96.html?src=https://gist.githubusercontent.com/mdecycu/bb2438a8c0f07c88763f2b889d305246/raw/d38a80ee11b9617584264cbf392509344308427a/w14_1_helloworld.py">列印 10 次 Hello World</a> (<a href="https://nfuedu-my.sharepoint.com/:v:/g/personal/yen_nfu_edu_tw/Ed6ekshMPgpOhPwOs1vyr5ABNoimQs-pZdds46Aoa4VmlQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&amp;e=PxTcLG">操作說明</a>)</p>
+<p>下載 ipv4 與 ipv6 網路連線用的 tinyc 可攜環境: <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EQJEhVP0NHFKp76GVg9BdKQBqBie9VbT7vaMFH8tJpCAKA?e=cZ73uc">tinyc_w14.7z</a> (<a href="https://nfuedu-my.sharepoint.com/:v:/g/personal/yen_nfu_edu_tw/Ed6ekshMPgpOhPwOs1vyr5ABNoimQs-pZdds46Aoa4VmlQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&amp;e=C9TgL2">操作說明</a>)</p>
 <!-- 第一程式編輯區可透過 src 變數從 gist 取下程式執行
 第二程式區則可直接將 gist url 寫在網頁中以按鈕執行
 -->
+<p>C + <a href="https://github.com/libsdl-org/SDL">SDL</a> 2D Game: 登入 Replit 後, 點擊 <a href="https://replit.com/github/mdecycu/basque">Basque</a>, 將原始碼匯入 Repl 後, 按下 Run 執行.</p>
 <p><button id="add1to100">1 add to 100</button> <button id="roc_flag">ROC flag</button> <button id="hellogd">hellogd</button></p>
 <p>將 iterable 與 iterator <a href="https://home.gamer.com.tw/creationDetail.php?sn=4337438">相關說明</a>, 利用 Brython 與 Ace Editor 整理在這個頁面.</p>
 <!-- 導入 brython 程式庫 -->
@@ -1442,7 +1444,28 @@ doc["hellogd"].bind("click", hellogd.do)
 <!-- editor2 結束 --><hr/>
 <p>
 <script src="https://unpkg.com/three@0.144.0/build/three.js" type="text/javascript"></script>
-</p><h2>C_lib</h2>
+</p><h2>w15</h2>
+<p>C 程式的 gd 與 gnupot 繪圖 -&gt; Brython Frontend + Python Backend (<a href="https://github.com/mdecycu/cmsimde">cmsimde</a>)</p>
+<p style="padding-left: 30px;"><a href="https://github.com/mdecycu/cmsimde">cmsimde</a> <a href="https://pyslvs.github.io/content/Solid%20Edge.html">linked</a> with <a href="https://resources.sw.siemens.com/en-US/download-solid-edge-community-edition">Solid Edge Community edition</a></p>
+<p>C 程式的動態繪圖 (Game or Simulation):</p>
+<p style="padding-left: 30px;">C + <a href="https://github.com/libsdl-org/SDL">SDL</a> 2D Game: 登入 Replit 後, 點擊 <a href="https://replit.com/github/mdecycu/basque">Basque</a>, 將原始碼匯入 Repl 後, 按下 Run 執行</p>
+<p style="padding-left: 30px;"><a href="https://github.com/mdecycu/tinyc.games">https://github.com/mdecycu/tinyc.games</a></p>
+<p>C 程式版次管理與資料庫系統:</p>
+<p style="padding-left: 30px;"><a href="https://www.fossil-scm.org">https://www.fossil-scm.org</a> </p>
+<p style="padding-left: 30px;"><a href="https://www.sqlite.org">https://www.sqlite.org</a> </p>
+<p>Python 的動態繪圖 (PyQt and Pysdl2):</p>
+<p style="padding-left: 30px;"><a href="https://pyslvs.github.io">https://pyslvs.github.io</a></p>
+<p style="padding-left: 30px;"><a href="https://github.com/py-sdl/py-sdl2">https://github.com/py-sdl/py-sdl2</a> </p>
+<p>然後呢?</p>
+<p style="padding-left: 30px;">Rust:</p>
+<p style="padding-left: 60px;"><a href="https://github.com/KmolYuan/efd-rs">https://github.com/KmolYuan/efd-rs</a> </p>
+<p style="padding-left: 60px;"><a href="https://github.com/KmolYuan/four-bar-rs">https://github.com/KmolYuan/four-bar-rs</a> </p>
+<p style="padding-left: 30px;">Typescript:</p>
+<p style="padding-left: 60px;"><a href="https://github.com/PMKS-Web/PMKSWeb">https://github.com/PMKS-Web/PMKSWeb</a> </p>
+<p style="padding-left: 30px;">Mojo:</p>
+<p style="padding-left: 60px;"><a href="https://github.com/modularml/mojo">https://github.com/modularml/mojo</a> </p>
+<p style="padding-left: 60px;"></p>
+<p></p><h2>C_lib</h2>
 <p>本課程針對 C 程式語言的教學將使用下列程式庫:</p>
 <p>gnuplot: <a href="https://github.com/gnuplot/gnuplot">https://github.com/gnuplot/gnuplot</a></p>
 <p><span style="background-color: #ffff00;">數值分析繪圖程式庫</span> - 在機電設計流程中, 工程師運用數值分析法進行設計與模擬運算後, 將數據存檔, 可利用 gnuplot 繪圖指令, 以令人容易理解的圖形呈現數值分析結果.</p>
