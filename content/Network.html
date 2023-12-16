@@ -2,7 +2,7 @@
         <head>
         <title>cpnote</title>
         <meta charset="utf-8">
-<meta property="head" content="H2">
+<meta property="head" content="H3">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700,900" rel="stylesheet">
         <link rel="stylesheet" href="./../cmsimde/static/chimper/fonts/icomoon/style.css">
@@ -142,12 +142,26 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">python << <a href='python.html'>Previous</a> <a href='程式專案.html'>Next</a> >> 程式專案<br /><h1>開發工具</h1>
-<p>3. 開發程式工具 (解決特定問題)</p>
-<p>References:</p>
-<p style="padding-left: 30px;"><a href="https://www.codecademy.com/resources/blog/20-code-challenges/">https://www.codecademy.com/resources/blog/20-code-challenges/</a></p>
-<p style="padding-left: 30px;"><a href="https://www.freecodecamp.org/news/python-projects-for-beginners/">https://www.freecodecamp.org/news/python-projects-for-beginners/</a> </p>
-<br />python << <a href='python.html'>Previous</a> <a href='程式專案.html'>Next</a> >> 程式專案</div>
+    <div id="tipue_search_content">w15 << <a href='w15.html'>Previous</a> <a href='C_lib.html'>Next</a> >> C_lib<br /><h1>Network</h1>
+<p>這裡我們再來談與網路有關的議題, 其實就機械設計相關人員就使用網路的議題, 比起必須從底層設定網路的資訊工程相關人員來說, 已經非常單純與直覺. 但是為何課程中只要一提到與電腦軟硬體或網路相關的議題時, 多數人都會覺得使用上藏著許多秘訣. 其實不然. 因為機械設計工程師在運用電腦與網路, 最重要的議題就是:</p>
+<p>能不能使用電腦與網路執行<span style="background-color: #ffff99;">有效率的運算</span></p>
+<p>以及</p>
+<p>能不能運用電腦與網路進行<span style="background-color: #ffff99;">協同設計</span></p>
+<p>至於過程中的<span style="background-color: #ff99cc;">複雜度</span>來自於:</p>
+<ol>
+<li>幾乎所有的電腦軟硬體內定的回應都是<span style="background-color: #ffff99;">英文</span></li>
+<li>使用者對於自身長期使用的電腦與軟硬體相關配備與設置<span style="background-color: #ffff99;">並非十分了解</span></li>
+<li>電腦輔助設計室中若採用 <span style="background-color: #ffff99;">IPv4</span> 協定配置, 學員<span style="background-color: #ffff99;">無法取得足夠上網頻寬</span></li>
+<li>學校 <span style="background-color: #ffff99;">IPv6</span> 網路協定的設置<span style="background-color: #ffff99;">並不完全</span></li>
+<li><span style="background-color: #ffff99;">github.com</span> 至今(2023.12)仍<span style="background-color: #ffff99;">只支援 IPv4</span></li>
+</ol>
+<p>以下將逐一針對上列議題加以說明, 該如何因應:</p>
+<p>熟悉電腦回應的英文訊息: 在使用電腦軟硬體過程, 當電腦回應各種英文訊息時, 儘量不要直接利用翻譯軟體轉為中文, 而應該設法了解每一個英文單字與術語的意思, 更好的習慣是, 在 B5 的紙本筆記本上謄寫各單字的<a href="https://www.merriam-webster.com/">英英字典</a>查詢結果, 假以時日後, 將可充分了解各種情況下電腦的回應訊息, 並作出適當回應.</p>
+<p>熟悉電腦軟硬體的配備: 無論使用自己或公用電腦時, 都必須設法查詢目前電腦軟硬體配備的規格, 以及所安裝的套件屬性, 針對可以取得的操作系統安裝檔案, 應該從空機自行安裝並設定網路. 其他常用的電腦套件也應該從該軟體的開發起源或目前所屬公司的相關資料了解起, 並自行安裝設定. 在充分了解電腦各式軟硬體安裝與配置的過程, 可以利用 Virtualbox 安裝虛擬主機, 並從中逐一測試不同軟硬體搭配下的各種表現, 從單機的單一網路卡配置開始, 到多台虛擬主機在不同軟硬上彼此透過不同的網路設定連線時的使用操作演練, 將可以最方便取得的模擬環境, 逐步熟悉電腦軟硬體相關內容與配置方法.</p>
+<p>IPv4 網路的限制: 電腦輔助設計室中的電腦若採用 IPv4 連線機制, 必須透過 NAT 派送內部 IP 位址後, 統一以 NAT 的一個外部 IPv4 位址連外, 如此各電腦所能取得的對外頻寬, 並不足以讓學員順利操作各種 ssh, sftp, https 以及 git 網路連線對外指令. 因此若希望依賴連外網路上課, 必須局部或全部電腦採純 IPv6 網路上網. 因此在電腦輔助設計室上網的設定要訣是: 假如 IPv4 網速無法達到使用要求, 可以採純 IPv6 網路設定上網, 但是各種協定連線則必須各自設定雙網路協定支援的代理主機. 如此才能順利對目前仍只支援 IPv4 的伺服器連線(主要標的為 github.com).</p>
+<p>學校的 IPv6 環境設置並不完全: 2023 年中之前, 儘管學校並無正常的 IPv6 DNS 伺服器可用, 但因允許使用中華電信的 DNS 伺服器設定, 因此只要將 IPv6 網路協定, 設為 DHCP6 取得 IPv6 位址後, 再搭配 hinet 的 IPv6 DNS 設置就可正常以網站的符號名稱連外. 但是目前 (2023.12) DHCP6 僅給定 address, 並無正確的 gateway 與 DNS 設定. 因此必須要自行設定固定 IPv6 address 與 gateway 之外, 還必須自行設定系上的 DNS server. 才能正常使用 IPv6 網路協定連外.</p>
+<p>github.com 只支援 IPv4: 這個我們沒有辦法改變, 只能使用 IPv4 連線, 或者在純 IPv6 網路環境下, 針對 https 與 ssh 對 github.com 連線時, 透過雙網路協定支援的代理主機進行連線.</p>
+<p>實際操作練習: 假如使用的電腦硬體是 Intel i7 且記憶體 8G 以上, 可以安裝 <a href="https://www.virtualbox.org/wiki/Downloads">https://www.virtualbox.org/wiki/Downloads</a>, 並下載 <a href="https://software.nfu.edu.tw/Windows/tw/Win_10_22H2.4_64BIT_Ch.ISO">Windows 10 64位元 22H2.4</a> (在校網或透過 VPN 下載)開始進行各種配置與設定練習.</p><br />w15 << <a href='w15.html'>Previous</a> <a href='C_lib.html'>Next</a> >> C_lib</div>
         
     <!-- footer -->
       <div class="container">
