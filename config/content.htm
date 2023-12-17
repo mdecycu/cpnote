@@ -1482,11 +1482,11 @@ doc["hellogd"].bind("click", hellogd.do)
 <p>熟悉電腦回應的英文訊息: 在使用電腦軟硬體過程, 當電腦回應各種英文訊息時, 儘量不要直接利用翻譯軟體轉為中文, 而應該設法了解每一個英文單字與術語的意思, 更好的習慣是, 在 B5 的紙本筆記本上謄寫各單字的<a href="https://www.merriam-webster.com/">英英字典</a>查詢結果, 假以時日後, 將可充分了解各種情況下電腦的回應訊息, 並作出適當回應.</p>
 <p>熟悉電腦軟硬體的配備: 無論使用自己或公用電腦時, 都必須設法查詢目前電腦軟硬體配備的規格, 以及所安裝的套件屬性, 針對可以取得的操作系統安裝檔案, 應該從空機自行安裝並設定網路. 其他常用的電腦套件也應該從該軟體的開發起源或目前所屬公司的相關資料了解起, 並自行安裝設定. 在充分了解電腦各式軟硬體安裝與配置的過程, 可以利用 Virtualbox 安裝虛擬主機, 並從中逐一測試不同軟硬體搭配下的各種表現, 從單機的單一網路卡配置開始, 到多台虛擬主機在不同軟硬上彼此透過不同的網路設定連線時的使用操作演練, 將可以最方便取得的模擬環境, 逐步熟悉電腦軟硬體相關內容與配置方法.</p>
 <p>IPv4 網路的限制: 電腦輔助設計室中的電腦若採用 IPv4 連線機制, 必須透過 NAT 派送內部 IP 位址後, 統一以 NAT 的一個外部 IPv4 位址連外, 如此各電腦所能取得的對外頻寬, 並不足以讓學員順利操作各種 ssh, sftp, https 以及 git 網路連線對外指令. 因此若希望依賴連外網路上課, 必須局部或全部電腦採純 IPv6 網路上網. 因此在電腦輔助設計室上網的設定要訣是: 假如 IPv4 網速無法達到使用要求, 可以採純 IPv6 網路設定上網, 但是各種協定連線則必須各自設定雙網路協定支援的代理主機. 如此才能順利對目前仍只支援 IPv4 的伺服器連線(主要標的為 github.com).</p>
-<p>學校的 IPv6 環境設置並不完全: 2023 年中之前, 儘管學校並無正常的 IPv6 DNS 伺服器可用, 但因允許使用中華電信的 DNS 伺服器設定, 因此只要將 IPv6 網路協定, 設為 DHCP6 取得 IPv6 位址後, 再搭配 hinet 的 IPv6 DNS 設置就可正常以網站的符號名稱連外. 但是目前 (2023.12) DHCP6 僅給定 address, 並無正確的 gateway 與 DNS 設定. 因此必須要自行設定固定 IPv6 address 與 gateway 之外, 還必須自行設定系上的 DNS server. 才能正常使用 IPv6 網路協定連外.</p>
+<p>學校的 IPv6 環境設置並不完全: 2023 年中之前, 儘管學校並無正常的 IPv6 DNS 伺服器可用, 但因允許使用中華電信的 DNS 伺服器設定, 因此只要將 IPv6 網路協定, 設為 DHCP6 取得 IPv6 位址後, 再搭配 hinet 的 IPv6 DNS 設置就可正常以網站的符號名稱連外. 但是目前 (2023.12) DHCP6 僅給定 address, 並無正確的 gateway 與 DNS 設定. 因此必須要自行設定固定 IPv6 address 與 gateway 之外, 還必須自行設定系上的 DNS server. 才能正常使用 IPv6 網路協定連外. (2016 年曾經規劃的<a href="https://cadlab.mde.tw/post/ji-jie-she-ji-gong-cheng-xi-ipv6-wang-zhi-fen-pei.html">系上 IPv6 位址分配</a>, 也從未施行, mde.nfu.edu.tw 與 eng.nfu.edu.tw 網域上的 <a href="https://support.google.com/a/answer/6043385?co=DASHER._Family=Education">Google Workspace for Education</a> 也一直放在雲端)</p>
 <p>github.com 只支援 IPv4: 這個我們沒有辦法改變, 只能使用 IPv4 連線, 或者在純 IPv6 網路環境下, 針對 https 與 ssh 對 github.com 連線時, 透過雙網路協定支援的代理主機進行連線.</p>
 <p>實際操作練習: 假如使用的電腦硬體是 Intel i7 且記憶體 8G 以上, 可以安裝 <a href="https://www.virtualbox.org/wiki/Downloads">https://www.virtualbox.org/wiki/Downloads</a>, 並下載 <a href="https://software.nfu.edu.tw/Windows/tw/Win_10_22H2.4_64BIT_Ch.ISO">Windows 10 64位元 22H2.4</a> (在校網或透過 VPN 下載)開始進行各種配置與設定練習.</p><h2>C_lib</h2>
 <p>本課程針對 C 程式語言的教學將使用下列程式庫:</p>
-<p>gnuplot: <a href="https://github.com/gnuplot/gnuplot">https://github.com/gnuplot/gnuplot</a></p>
+<p><span style="background-color: #ccffcc;">gnuplot</span>: <a href="https://github.com/gnuplot/gnuplot">https://github.com/gnuplot/gnuplot</a></p>
 <p><span style="background-color: #ffff00;">數值分析繪圖程式庫</span> - 在機電設計流程中, 工程師運用數值分析法進行設計與模擬運算後, 將數據存檔, 可利用 gnuplot 繪圖指令, 以令人容易理解的圖形呈現數值分析結果.</p>
 <p>範例:</p>
 <p><a href="/downloads/euler_gnuplot_msd_ex1.c">euler_gnuplot_msd_ex1.c</a></p>
@@ -1494,7 +1494,7 @@ doc["hellogd"].bind("click", hellogd.do)
 <p><img alt="" height="200" src="/images/motion_plot.png" width="400"/></p>
 <p></p>
 <hr/>
-<p>gd: <a href="https://github.com/libgd/libgd">https://github.com/libgd/libgd</a></p>
+<p><span style="background-color: #ccffcc;">gd</span>: <a href="https://github.com/libgd/libgd">https://github.com/libgd/libgd</a></p>
 <p>泛用繪圖程式庫 - 工程師在產品開發或製造程序中, 可利用線條(例如: 特殊齒輪外型)、字串(例如: 製造日期或保固訊息)或塗色區域(特定標誌、二維條碼或 QRCode)進行一般標誌或圖像繪圖.</p>
 <p>範例:</p>
 <p><a href="/downloads/gd_ex1.c">gd_ex1.c</a></p>
@@ -1502,7 +1502,7 @@ doc["hellogd"].bind("click", hellogd.do)
 <p><img alt="" height="200" src="/images/gd_ex1.png" width="200"/> gd_ex1.png</p>
 <p><img alt="" height="200" src="/images/gd_ex1.jpg" width="200"/> gd_ex1.jpg</p>
 <hr/>
-<p>raylib: <a href="https://github.com/raysan5/raylib">https://github.com/raysan5/raylib</a></p>
+<p><span style="background-color: #ccffcc;">raylib</span>: <a href="https://github.com/raysan5/raylib">https://github.com/raysan5/raylib</a></p>
 <p>raygui: <a href="https://github.com/raysan5/raygui">https://github.com/raysan5/raygui</a></p>
 <p><a href="https://www.raylib.com/cheatsheet/raylib_cheatsheet_v4.0.pdf">https://www.raylib.com/cheatsheet/raylib_cheatsheet_v4.0.pdf</a></p>
 <p>電玩程式庫 - 工程師可將機電流程中與產品設計或製造程序有關的系統, 透過與使用者互動呈現逼真的模擬過程或結果, 也可用來開發與機電系統有關的虛擬整合套件(例如: 透過與實體感測器或影像辨識系統結合, 將實時運動競賽中的運動員動作與虛擬實境或擴增實境系統結合), 也可用來<a href="https://itch.io/games/made-with-raylib">開發電動遊戲</a>(<a href="https://github.com/raysan5/raylib-games">raylib-games</a>).</p>
@@ -1581,7 +1581,32 @@ int main(void)
 }</pre>
 <p>在 Replit 與近端程式環境執行結果:</p>
 <p>啟動後以鍵盤方向鍵上下左右控制紅點.</p>
-<p><img alt="" height="236" src="/images/raylib_move_red_dot_with_arrow_keys.gif" width="400"/></p><h2>setup</h2>
+<p><img alt="" height="236" src="/images/raylib_move_red_dot_with_arrow_keys.gif" width="400"/></p>
+<p><span style="background-color: #ccffcc;">SDL</span>:</p>
+<p style="padding-left: 30px;"><a href="https://github.com/libsdl-org/SDL">https://github.com/libsdl-org/SDL</a></p>
+<p style="padding-left: 60px;"><a href="https://github.com/libsdl-org/SDL/releases/download/release-2.28.5/SDL2-2.28.5-win32-x64.zip">https://github.com/libsdl-org/SDL/releases/download/release-2.28.5/SDL2-2.28.5-win32-x64.zip</a></p>
+<p style="padding-left: 60px;"><a href="https://github.com/libsdl-org/SDL/releases/download/release-2.28.5/SDL2-devel-2.28.5-mingw.tar.gz">https://github.com/libsdl-org/SDL/releases/download/release-2.28.5/SDL2-devel-2.28.5-mingw.tar.gz</a></p>
+<p style="padding-left: 30px;"><a href="https://github.com/libsdl-org/SDL_ttf">https://github.com/libsdl-org/SDL_ttf</a></p>
+<p style="padding-left: 60px;"><a href="https://github.com/libsdl-org/SDL_ttf/releases/download/release-2.20.2/SDL2_ttf-2.20.2-win32-x64.zip">https://github.com/libsdl-org/SDL_ttf/releases/download/release-2.20.2/SDL2_ttf-2.20.2-win32-x64.zip</a></p>
+<p style="padding-left: 60px;"><a href="https://github.com/libsdl-org/SDL_ttf/releases/download/release-2.20.2/SDL2_ttf-devel-2.20.2-mingw.zip">https://github.com/libsdl-org/SDL_ttf/releases/download/release-2.20.2/SDL2_ttf-devel-2.20.2-mingw.zip</a></p>
+<p style="padding-left: 30px;">On Replit: <a href="https://replit.com/@wcms/basque">https://replit.com/@wcms/basque</a></p>
+<p>Replit 環境中的 replit.nix 設定:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">{ pkgs }: {
+	deps = [
+        # 安裝 gnuplot 套件
+        pkgs.gnuplot
+        # 安裝 gd 程式庫
+        pkgs.gd
+        # 安裝 raylib 程式庫
+        pkgs.raylib
+        # 以下安裝 SDL2 相關程式庫
+        pkgs.SDL2
+        pkgs.SDL2_image
+        pkgs.SDL2_mixer
+        pkgs.SDL2_ttf
+	];
+}</pre>
+<p>以下將建立一個能透過 Tiny C 編譯執行上列程式庫的可攜套件:</p><h2>setup</h2>
 <p>利用隨身碟中的批次檔案, 設定所需的網路環境.</p>
 <p><a href="/downloads/cadlab_network_setup.7z">cadlab_network_setup.7z</a></p>
 <p>納入個別學員所分配到的 IPv6 固定網址設定: <a href="/downloads/2023_fall_cadlab_network_setup.7z">2023_fall_cadlab_network_setup.7z</a></p>
