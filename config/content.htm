@@ -1445,6 +1445,14 @@ doc["hellogd"].bind("click", hellogd.do)
 <p>
 <script src="https://unpkg.com/three@0.144.0/build/three.js" type="text/javascript"></script>
 </p><h2>w15</h2>
+<p><a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EVAUoMJEeLhNgkyzcuPn-ioBsQyDn-tkZ7PqchPE1a5Jlw?e=THBxiC">tcc with gd, raylib and sdl2.7z</a> (需要下載密碼)</p>
+<p style="padding-left: 30px;">解開壓縮後<span style="background-color: #ffff99;">取代原有 tinyc 可攜環境中的 tcc 目錄</span>, 並將 <span style="background-color: #ffff99;">cpp.properties</span> 檔案取代原有 wscite 目錄中的檔案後, 即可直接利用 wscite 編輯器中的 Tools - Go 利用 Tiny C Compiler 執行 C + gd, C + raylib, C + gnuplot 與 C + SDL2 等位於 tcc\c_ex 目錄中的靜態與動態繪圖範例程式.</p>
+<p style="padding-left: 30px;"><a href="https://libgd.github.io/manuals/2.2.3/">https://libgd.github.io/manuals/2.2.3/</a> </p>
+<p style="padding-left: 30px;"><a href="https://www.raylib.com/">https://www.raylib.com/</a> </p>
+<p style="padding-left: 30px;"><a href="https://github.com/libsdl-org/SDL">https://github.com/libsdl-org/SDL</a> </p>
+<p style="padding-left: 60px;"><a href="https://github.com/mdecycu/F1-Race">https://github.com/mdecycu/F1-Race</a>  </p>
+<p style="padding-left: 60px;"><a href="https://github.com/mdecycu/Run-Away">https://github.com/mdecycu/Run-Away</a> (<a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EbZdnqiBShRDsnXzGLD65hMBrEooFlSPux2szDYs9AZ9Pw?e=NM4JG9">下載 tcc 編譯連結後的可執行檔案</a>, 需要下載密碼) </p>
+<p style="padding-left: 90px;"><a href="https://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/">https://www.cs.colby.edu/maxwell/courses/tutorials/maketutor/</a> </p>
 <p>C 程式的 gd 與 gnupot 繪圖 -&gt; Brython Frontend + Python Backend (<a href="https://github.com/mdecycu/cmsimde">cmsimde</a>)</p>
 <p style="padding-left: 30px;"><a href="https://github.com/mdecycu/cmsimde">cmsimde</a> <a href="https://pyslvs.github.io/content/Solid%20Edge.html">linked</a> with <a href="https://resources.sw.siemens.com/en-US/download-solid-edge-community-edition">Solid Edge Community edition</a></p>
 <p style="padding-left: 30px;"><a href="https://www.codementor.io/@dewetvanthomas/tutorial-arduino-programming-in-c-12b7cztyui">Arduino Programming in C</a></p>
@@ -1464,8 +1472,7 @@ doc["hellogd"].bind("click", hellogd.do)
 <p style="padding-left: 30px;">Typescript:</p>
 <p style="padding-left: 60px;"><a href="https://github.com/PMKS-Web/PMKSWeb">https://github.com/PMKS-Web/PMKSWeb</a></p>
 <p style="padding-left: 30px;">Mojo:</p>
-<p style="padding-left: 60px;"><a href="https://github.com/modularml/mojo">https://github.com/modularml/mojo</a></p>
-<h3>Network</h3>
+<p style="padding-left: 60px;"><a href="https://github.com/modularml/mojo">https://github.com/modularml/mojo</a></p><h3>Network</h3>
 <p>這裡我們再來談與網路有關的議題, 其實就機械設計相關人員就使用網路的議題, 比起必須從底層設定網路的資訊工程相關人員來說, 已經非常單純與直覺. 但是為何課程中只要一提到與電腦軟硬體或網路相關的議題時, 多數人都會覺得使用上藏著許多秘訣. 其實不然. 因為機械設計工程師在運用電腦與網路, 最重要的議題就是:</p>
 <p>能不能使用電腦與網路執行<span style="background-color: #ffff99;">有效率的運算</span></p>
 <p>以及</p>
@@ -1606,6 +1613,15 @@ int main(void)
         pkgs.SDL2_ttf
 	];
 }</pre>
+<p>利用 MSYS2 編譯 SDL2:</p>
+<p style="padding-left: 30px;">下載 SDL 原始碼: <a href="https://github.com/libsdl-org/SDL/archive/refs/tags/release-2.28.5.zip">https://github.com/libsdl-org/SDL/archive/refs/tags/release-2.28.5.zip</a></p>
+<p style="padding-left: 30px;">cd SDL-release-2.28.5</p>
+<p style="padding-left: 30px;">mkdir build</p>
+<p style="padding-left: 30px;">cd build</p>
+<p style="padding-left: 30px;">cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release</p>
+<p style="padding-left: 30px;">mingw32-make</p>
+<p style="padding-left: 30px;">下載 SDL_ttf 原始碼: <a href="https://github.com/libsdl-org/SDL_ttf/archive/refs/tags/release-2.20.2.zip">https://github.com/libsdl-org/SDL_ttf/archive/refs/tags/release-2.20.2.zip</a></p>
+<p style="padding-left: 30px;">cd</p>
 <p>以下將建立一個能透過 Tiny C 編譯執行上列程式庫的可攜套件:</p><h2>setup</h2>
 <p>利用隨身碟中的批次檔案, 設定所需的網路環境.</p>
 <p><a href="/downloads/cadlab_network_setup.7z">cadlab_network_setup.7z</a></p>

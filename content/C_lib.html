@@ -264,6 +264,15 @@ int main(void)
         pkgs.SDL2_ttf
 	];
 }</pre>
+<p>利用 MSYS2 編譯 SDL2:</p>
+<p style="padding-left: 30px;">下載 SDL 原始碼: <a href="https://github.com/libsdl-org/SDL/archive/refs/tags/release-2.28.5.zip">https://github.com/libsdl-org/SDL/archive/refs/tags/release-2.28.5.zip</a></p>
+<p style="padding-left: 30px;">cd SDL-release-2.28.5</p>
+<p style="padding-left: 30px;">mkdir build</p>
+<p style="padding-left: 30px;">cd build</p>
+<p style="padding-left: 30px;">cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release</p>
+<p style="padding-left: 30px;">mingw32-make</p>
+<p style="padding-left: 30px;">下載 SDL_ttf 原始碼: <a href="https://github.com/libsdl-org/SDL_ttf/archive/refs/tags/release-2.20.2.zip">https://github.com/libsdl-org/SDL_ttf/archive/refs/tags/release-2.20.2.zip</a></p>
+<p style="padding-left: 30px;">cd</p>
 <p>以下將建立一個能透過 Tiny C 編譯執行上列程式庫的可攜套件:</p><br />Network << <a href='Network.html'>Previous</a> <a href='setup.html'>Next</a> >> setup</div>
         
     <!-- footer -->
