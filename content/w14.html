@@ -184,7 +184,40 @@ img.add_border {
 <p><span>利用 Gist 與 Brython 頁面執行:</span></p>
 <p style="padding-left: 30px;"><a href="https://mde.tw/cpnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/b2b7076761eb5573032dff8ba639ef7f/raw/79259dbdf2b9e49e1d601b945e5c0d7858824ab0/from1_add_to.py">從 1 累加到 10</a></p>
 <p><a href="https://nfuedu-my.sharepoint.com/:v:/g/personal/yen_nfu_edu_tw/EYlCcKincVZOhYcrmeBTcRkByvCWOpdujpXy3OWG7h649g?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&amp;e=AcRsHb">w14_1a_1.mp4</a> (總結網路設定與 C 繪圖程式執行環境設定)</p>
-<p><a href="https://nfuedu-my.sharepoint.com/:v:/g/personal/yen_nfu_edu_tw/EfwAmHE58ddCj7hYFX8mFGwBhu1PLcpTEz1kWZ3Q8yTLsw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&amp;e=vfbRcV">w14_1a_2.mp4</a> (如何將 Brython 程式存入個人 Github Gist 區域, 並呼叫執行)</p><br />繪圖範例 << <a href='繪圖範例.html'>Previous</a> <a href='線上繪圖.html'>Next</a> >> 線上繪圖</div>
+<p><a href="https://nfuedu-my.sharepoint.com/:v:/g/personal/yen_nfu_edu_tw/EfwAmHE58ddCj7hYFX8mFGwBhu1PLcpTEz1kWZ3Q8yTLsw?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&amp;e=vfbRcV">w14_1a_2.mp4</a> (如何將 Brython 程式存入個人 Github Gist 區域, 並呼叫執行)</p>
+<p>pentagram (五芒星) 畫法:<br/><br/><img caption="false" class="add_border" height="187" src="./../images/pentagram.png" width="200"/><br/><br/>OC 為長軸 r, 角 OCB 為 18 度, 角 BOA 為 36 度, 因此 OA = r*sin(18度) = OB*cos(36度), 因此短軸 OB 為 r*sin(18度)/cos(36度)<br/><br/>若以 OA 延伸至圓上的尖角作為起點, 也就是長軸 r 旋轉 0 度, 接著順時針旋轉 36 度至 B 點則距離中心點 O 為短軸, 此兩點的座標從中心點 (x, y), x 軸向右為正將增加短軸 OB*sin(36度), 而 y 軸因為向下為正, 因此將減少 OB*cos(36度), 也就是 B 點的 x 座標為 x + OB*sin(36度), y 座標則為 y - OB*cos(36度), 接著若再順時針轉 36 度則抵達 C 點座標, C 點的 x 座標為 x + OC*sin(36度), y 座標則為 y - OC*cos(36度), 將上述運算寫為 C + gd 的五芒星塗色程式則成為:</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">void draw_star(gdImagePtr img, int x, int y, int size, int color) {
+    gdPoint points[10];
+    double deg = M_PI/180.;
+
+    for (int i = 0; i &lt; 10; i++) {
+        double angle = M_PI/2 + i* 2 * M_PI / 10;
+        int radius = (i % 2 == 0) ? size : size*sin(18*deg)/cos(36*deg);
+        points[i].x = x + radius * cos(angle);
+        points[i].y = y - radius * sin(angle);
+    }
+
+    // Fill the star with white color
+    gdImageFilledPolygon(img, points, 10, color);
+}</pre>
+<p>若是畫空心的輪廓線條五芒星程式則成為:</p>
+<pre class="brush:cpp;auto-links:false;toolbar:false" contenteditable="false">void draw_star(gdImagePtr img, int x, int y, int size, int color) {
+    gdPoint points[10];
+    double deg = M_PI/180.;
+
+    for (int i = 0; i &lt; 10; i++) {
+        double angle = M_PI/2 + i* 2 * M_PI / 10;
+        int radius = (i % 2 == 0) ? size : size*sin(18*deg)/cos(36*deg);
+        points[i].x = x + radius * cos(angle);
+        points[i].y = y - radius * sin(angle);
+    }
+
+    // Fill the star with color
+    //gdImageFilledPolygon(img, points, 10, color);
+    // Draw the star with line
+    gdImagePolygon(img, points, 10, color);
+}</pre>
+<p></p><br />繪圖範例 << <a href='繪圖範例.html'>Previous</a> <a href='線上繪圖.html'>Next</a> >> 線上繪圖</div>
         
     <!-- footer -->
       <div class="container">
