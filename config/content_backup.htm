@@ -1215,7 +1215,9 @@ sslVerify = false
 }</pre>
 <p>五芒星與座標旋轉範例:</p>
 <p style="padding-left: 30px;"><a href="/downloads/w15_star_rotate_gd.7z">w15_star_rotate_gd.7z</a></p>
-<p><a href="/downloads/proc_flag_in_gd.c">proc_flag_in_gd.c</a></p><h3>線上繪圖</h3>
+<p><a href="/downloads/proc_flag_in_gd.c">proc_flag_in_gd.c</a></p>
+<p><a href="/downloads/proc_flag_in_gd_outline.c">proc_flag_in_gd_outline.c</a></p>
+<p><img alt="" height="133" src="/images/proc_flag_in_gd_w15.png" width="200"/> <img alt="" height="133" src="/images/proc_flag_in_gd_w15_outline.png" width="200"/></p><h3>線上繪圖</h3>
 <p><a href="https://mde.tw/cpnote/content/%E7%B7%9A%E4%B8%8A%E7%B9%AA%E5%9C%96.html?src=https://gist.githubusercontent.com/mdecycu/bb2438a8c0f07c88763f2b889d305246/raw/d38a80ee11b9617584264cbf392509344308427a/w14_1_helloworld.py">列印 10 次 Hello World</a> (<a href="https://nfuedu-my.sharepoint.com/:v:/g/personal/yen_nfu_edu_tw/Ed6ekshMPgpOhPwOs1vyr5ABNoimQs-pZdds46Aoa4VmlQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&amp;e=PxTcLG">操作說明</a>)</p>
 <p>下載 ipv4 與 ipv6 網路連線用的 tinyc 可攜環境: <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EQJEhVP0NHFKp76GVg9BdKQBqBie9VbT7vaMFH8tJpCAKA?e=cZ73uc">tinyc_w14.7z</a> (<a href="https://nfuedu-my.sharepoint.com/:v:/g/personal/yen_nfu_edu_tw/Ed6ekshMPgpOhPwOs1vyr5ABNoimQs-pZdds46Aoa4VmlQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&amp;e=C9TgL2">操作說明</a>)</p>
 <!-- 第一程式編輯區可透過 src 變數從 gist 取下程式執行
@@ -1719,7 +1721,7 @@ $dnsServers = "2001:b000:168::1", "2001:b000:168::2"
 Set-DnsClientServerAddress -InterfaceAlias "*" -ServerAddresses $dnsServers
 </pre>
 <p>對 ChatGPT 提問:</p>
-<p style="padding-left: 30px;">the following powershell script can setup windows network connection "# 關閉 IPv4 網路<br/>Disable-NetAdapterBinding -Name "*" -ComponentID ms_tcpip<br/> <br/># 啟用 IPv6 網路<br>Enable-NetAdapterBinding -Name "*" -ComponentID ms_tcpip6<br/> <br/># 設置 IPv6 網路中的兩個 DNS 伺服器 (hinet)<br/>$dnsServers = "2001:b000:168::1", "2001:b000:168::2"<br/>Set-DnsClientServerAddress -InterfaceAlias "*" -ServerAddresses $dnsServers" what if the ipv6 address need set to 2001:288:6004:17:1234::1234 and subnet prefix as 64 and ipv6 gateway as 2001:288:6004:17::254</br></p>
+<p style="padding-left: 30px;">the following powershell script can setup windows network connection "# 關閉 IPv4 網路<br/>Disable-NetAdapterBinding -Name "*" -ComponentID ms_tcpip<br/> <br/># 啟用 IPv6 網路<br/>Enable-NetAdapterBinding -Name "*" -ComponentID ms_tcpip6<br/> <br># 設置 IPv6 網路中的兩個 DNS 伺服器 (hinet)<br/>$dnsServers = "2001:b000:168::1", "2001:b000:168::2"<br/>Set-DnsClientServerAddress -InterfaceAlias "*" -ServerAddresses $dnsServers" what if the ipv6 address need set to 2001:288:6004:17:1234::1234 and subnet prefix as 64 and ipv6 gateway as 2001:288:6004:17::254</br></p>
 <p>可以得到下列回應答案:</p>
 <p>加上個別學員所分配到的 IPv6 固定網址設定後的 1_disable_ipv4.ps1 Powershell 設定檔案 (必須自行更改固定 Ipv6 位址):</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false"># 關閉 IPv4 網路
