@@ -1181,6 +1181,7 @@ sslVerify = false
 <p style="padding-left: 60px;"><img alt="" class="add_border" height="133" src="/images/korean_flag_in_gd_w15_step2.png" width="200"/></p>
 <p style="padding-left: 60px;">接著利用長方形端點座標對國旗中心旋轉, 即可完成下圖.</p>
 <p style="padding-left: 60px;"><img alt="" class="add_border" height="133" src="/images/korean_flag_in_gd_w15_step3.png" width="200"/></p>
+<p style="padding-left: 60px;">最後只要再對周圍四個長方形區域進行細部繪圖, 即可完成韓國國旗的繪製.</p>
 <p style="padding-left: 30px;"><a href="https://mde.tw/cpnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/7464c66475548e9cc41469e36c1dddb2/raw/a68cb31411e493b5d8eac4680d8f927cb515c4bc/bsnake_in_brython.py">貪食蛇 in Brython</a></p>
 <p style="padding-left: 30px;"><a href="https://riptutorial.com/ebook/html5-canvas">Html5 canvas ebook</a></p>
 <p>利用 ChatGPT 對話所完成的 2a 座位排序程式: <a href="https://mde.tw/cadnote/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/9215c7c160119721ded887018cda8f4e/raw/6aa687555226885c935927bffaab3f9a81b513a3/w13_2a_seat_html.py">w13_2a_seat.py 執行結果</a> (對話與程式編寫過程請參考<a href="https://mde.tw/cadnote/content/w12.html">這裡</a>)</p>
@@ -1729,7 +1730,7 @@ $dnsServers = "2001:b000:168::1", "2001:b000:168::2"
 Set-DnsClientServerAddress -InterfaceAlias "*" -ServerAddresses $dnsServers
 </pre>
 <p>對 ChatGPT 提問:</p>
-<p style="padding-left: 30px;">the following powershell script can setup windows network connection "# 關閉 IPv4 網路<br/>Disable-NetAdapterBinding -Name "*" -ComponentID ms_tcpip<br/> <br/># 啟用 IPv6 網路<br>Enable-NetAdapterBinding -Name "*" -ComponentID ms_tcpip6<br/> <br/># 設置 IPv6 網路中的兩個 DNS 伺服器 (hinet)<br/>$dnsServers = "2001:b000:168::1", "2001:b000:168::2"<br>Set-DnsClientServerAddress -InterfaceAlias "*" -ServerAddresses $dnsServers" what if the ipv6 address need set to 2001:288:6004:17:1234::1234 and subnet prefix as 64 and ipv6 gateway as 2001:288:6004:17::254</br></br></p>
+<p style="padding-left: 30px;">the following powershell script can setup windows network connection "# 關閉 IPv4 網路<br/>Disable-NetAdapterBinding -Name "*" -ComponentID ms_tcpip<br/> <br/># 啟用 IPv6 網路<br>Enable-NetAdapterBinding -Name "*" -ComponentID ms_tcpip6<br/> <br/># 設置 IPv6 網路中的兩個 DNS 伺服器 (hinet)<br/>$dnsServers = "2001:b000:168::1", "2001:b000:168::2"<br/>Set-DnsClientServerAddress -InterfaceAlias "*" -ServerAddresses $dnsServers" what if the ipv6 address need set to 2001:288:6004:17:1234::1234 and subnet prefix as 64 and ipv6 gateway as 2001:288:6004:17::254</br></p>
 <p>可以得到下列回應答案:</p>
 <p>加上個別學員所分配到的 IPv6 固定網址設定後的 1_disable_ipv4.ps1 Powershell 設定檔案 (必須自行更改固定 Ipv6 位址):</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false"># 關閉 IPv4 網路
