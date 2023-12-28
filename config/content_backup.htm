@@ -280,7 +280,7 @@ https_proxy=http://p4.cycu.org:3128
 <p><span>各學員倉儲與網站的評分及格標準為:</span></p>
 <p style="padding-left: 30px;"><span>各學員必須在網站呈現<span style="background-color: #ffff00;">完整看過以下各階段的教學影片的歷程, 並了解其內容要旨</span></span></p>
 <p style="padding-left: 30px;"><span>並針對各階段<span style="background-color: #ffff00;">內容實際操作至少一遍</span></span></p>
-<p><span>教學影片:</span></p>
+<p><span>教學影片 (必須登入 nfu Teams 後才能觀看):</span></p>
 <p style="padding-left: 30px;"><span>1. <a href="https://nfuedu-my.sharepoint.com/:v:/g/personal/yen_nfu_edu_tw/EbXrVO6Jeb5Gnn47Dvpv7pYBcg-VOc3h3Br4tITzr9fpAQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJTdHJlYW1XZWJBcHAiLCJyZWZlcnJhbFZpZXciOiJTaGFyZURpYWxvZy1MaW5rIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXcifX0%3D&amp;e=dZYY3x">電腦輔助設計室網路設定說明</a> (6:53)</span></p>
 <p style="padding-left: 60px;"><span>2. <a href="https://mde.tw/cpnote/content/w10-w11.html">Wink 網路設定</a> (0:57)</span></p>
 <p style="padding-left: 30px;"><span>3. <a href="https://mde.tw/cpnote/content/linux.html">s.cycu.org 平台上的 vi 編輯器用法</a> (0:24)</span></p>
@@ -1550,6 +1550,14 @@ doc["hellogd"].bind("click", hellogd.do)
 <p><img alt="" height="71" src="/images/cp2023_final_project2.png" width="400"/></p>
 <p>1. 請利用 C + gd 繪圖程式庫重新繪製 Figure 1 的質量、彈簧與阻尼器與左右牆面的配置圖.</p>
 <p>2. 當 m1 的起始位置為 1, m2 的起始位置為 -0.5 且 m1, m2 的起始速度都為 0 的情況下, 請利用 C + gnuplot 繪製從 t=0 到 t=10 秒之間, m1 與 m2 的位置以及速度相對於時間的趨勢圖.</p>
+<p>參考資料:</p>
+<p style="padding-left: 30px;"><a href="/downloads/Poisson3D.7z">Poisson3D.7z</a> from <a href="https://github.com/derekharrison/Poisson3D">https://github.com/derekharrison/Poisson3D</a> </p>
+<p style="padding-left: 30px;"><a href="https://github.com/anuj-das-10/Numerical-Methods">https://github.com/anuj-das-10/Numerical-Methods</a> </p>
+<p style="padding-left: 30px;"><a href="https://github.com/mikeroyal/Differential-Equations-Guide">https://github.com/mikeroyal/Differential-Equations-Guide</a> </p>
+<p style="padding-left: 30px;"><a href="https://github.com/LinjianMa/Numerical-Fluid-Dynamics">https://github.com/LinjianMa/Numerical-Fluid-Dynamics</a> </p>
+<p style="padding-left: 30px;"><a href="https://github.com/SciML/diffeqpy">https://github.com/SciML/diffeqpy</a> </p>
+<p style="padding-left: 30px;"><a href="https://github.com/cfgnunes/numerical-methods-python">https://github.com/cfgnunes/numerical-methods-python</a> </p>
+<p style="padding-left: 30px;"><a href="https://github.com/Nesador95/Computational-Physics-Solutions">https://github.com/Nesador95/Computational-Physics-Solutions</a> </p>
 <hr/>
 <p><a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EVAUoMJEeLhNgkyzcuPn-ioBsQyDn-tkZ7PqchPE1a5Jlw?e=THBxiC">tcc with gd, raylib and sdl2.7z</a> (需要下載密碼)</p>
 <p style="padding-left: 30px;">解開壓縮後<span style="background-color: #ffff99;">取代原有 tinyc 可攜環境中的 tcc 目錄</span>, 並將 <span style="background-color: #ffff99;">cpp.properties</span> 檔案取代原有 wscite 目錄中的檔案後, 即可直接利用 wscite 編輯器中的 Tools - Go 利用 Tiny C Compiler 執行 C + gd, C + raylib, C + gnuplot 與 C + SDL2 等位於 tcc\c_ex 目錄中的靜態與動態繪圖範例程式.</p>
@@ -2061,7 +2069,7 @@ int main() {
 <p style="padding-left: 60px;">安裝 CMake</p>
 <p style="padding-left: 90px;">pacman -S mingw-w64-x86_64-cmake</p>
 <p>下載 <a href="https://nfuedu-my.sharepoint.com/:u:/g/personal/yen_nfu_edu_tw/EQHpkbGf-iFAnvQpjr6YpvoBT5IGyhc7zkRFldLb9gzumQ?e=07fTJm">msys64_20230718_cmake.7z</a> (需要下載密碼)</p>
-<hr/>
+<hr>
 <p>編譯 Solvespace:</p>
 <p style="padding-left: 30px;"><a href="https://solvespace.com/index.pl">Solvespace</a> 是一套小型的開放源參數式電腦輔助設計與繪圖軟體.</p>
 <p style="padding-left: 30px;">git clone --recurse-submodules https://github.com/solvespace/solvespace.git<br/><br/>cd solvespace<br/><br/>git checkout v3.1<br/><br/>mkdir build<br/><br/>cd build<br/><br/>cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release<br/><br/>mingw32-make</p>
@@ -3905,7 +3913,7 @@ doc["add1to100"].bind('click', add)
 <div style="width: 100%; height: 100%;"><textarea autocomplete="off" id="kw_console1"></textarea></div>
 <p><!-- Brython 程式執行的結果, 都以 brython_div1 作為切入位置 --></p>
 <div id="brython_div1"></div>
-<!-- editor1 結束 --><hr/><!-- ########################################## -->
+<!-- editor1 結束 --><hr><!-- ########################################## -->
 <p>從 1 累加到 100 part2:</p>
 <p><button id="add1to100part2">1 add to 100</button><button id="cango_three_gears">cango_three_gears</button><button id="bsnake">BSnake</button><button id="aitetris">AI Tetris</button><button id="threejsblock">Rotating Block</button></p>
 <p><!-- 請注意, 這裡使用 Javascript 將 localStorage["kw_py_src2"] 中存在近端瀏覽器的程式碼, 由使用者決定存檔名稱--></p>
@@ -4027,4 +4035,4 @@ doc["threejsblock"].bind("click", threejsblock.do)
 <!-- editor2 結束 --><hr/>
 <p>
 <script src="https://unpkg.com/three@0.144.0/build/three.js" type="text/javascript"></script>
-</p>
+</p></hr></hr>
