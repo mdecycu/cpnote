@@ -1552,6 +1552,7 @@ doc["hellogd"].bind("click", hellogd.do)
 <p>2. 當 m1 的起始位置為 1, m2 的起始位置為 -0.5 且 m1, m2 的起始速度都為 0 的情況下, 請利用 C + gnuplot 繪製從 t=0 到 t=10 秒之間, m1 與 m2 的位置以及速度相對於時間的趨勢圖.</p>
 <p>參考資料:</p>
 <p style="padding-left: 30px;"><a href="/downloads/Poisson3D.7z">Poisson3D.7z</a> from <a href="https://github.com/derekharrison/Poisson3D">https://github.com/derekharrison/Poisson3D</a> </p>
+<p style="padding-left: 30px;"><a href="https://github.com/derekharrison/heat3D-flex">https://github.com/derekharrison/heat3D-flex</a> </p>
 <p style="padding-left: 30px;"><a href="https://github.com/anuj-das-10/Numerical-Methods">https://github.com/anuj-das-10/Numerical-Methods</a> </p>
 <p style="padding-left: 30px;"><a href="https://github.com/mikeroyal/Differential-Equations-Guide">https://github.com/mikeroyal/Differential-Equations-Guide</a> </p>
 <p style="padding-left: 30px;"><a href="https://github.com/LinjianMa/Numerical-Fluid-Dynamics">https://github.com/LinjianMa/Numerical-Fluid-Dynamics</a> </p>
@@ -1599,6 +1600,11 @@ doc["hellogd"].bind("click", hellogd.do)
 <p style="padding-left: 60px;"><a href="https://github.com/PMKS-Web/PMKSWeb">https://github.com/PMKS-Web/PMKSWeb</a></p>
 <p style="padding-left: 30px;">Mojo:</p>
 <p style="padding-left: 60px;"><a href="https://github.com/modularml/mojo">https://github.com/modularml/mojo</a></p><h3>Network</h3>
+<p>2023.12.29</p>
+<p>Replit.com 是否支援 IPv6, 可以利用 nslookup 指令, 以 server 2001:b000:168::1 將伺服器設為中華電信的 dns.hinet.net, 然後查詢 replit.com, 可以得知確實 replit.com 符號名稱目前是支援 IPv6. 但是若使用純 IPv6 登入 replit.com, 將無法啟動 repl, 而必須在 IPv4 環境下才能 booting.</p>
+<p>只不過, 2024.1.1 之後, replit.com 的 deployment 有新的設定, 不再讓免費用戶使用先前 repl.co 而只能讓付費用戶使用部署設定.</p>
+<p>因此就網際協同, 目前只能使用 s.cycu.org 這台只支援 IPv6 的自架伺服器.</p>
+<hr/>
 <p>這裡我們再來談與網路有關的議題, 其實就機械設計相關人員就使用網路的議題, 比起必須從底層設定網路的資訊工程相關人員來說, 已經非常單純與直覺. 但是為何課程中只要一提到與電腦軟硬體或網路相關的議題時, 多數人都會覺得使用上藏著許多秘訣. 其實不然. 因為機械設計工程師在運用電腦與網路, 最重要的議題就是:</p>
 <p>能不能使用電腦與網路執行<span style="background-color: #ffff99;">有效率的運算</span></p>
 <p>以及</p>
@@ -2458,7 +2464,7 @@ doc["threejsblock"].bind("click", threejsblock.do)
 <div style="width: 100%; height: 100%;"><textarea autocomplete="off" id="kw_console2"></textarea></div>
 <p><!-- Brython 程式執行的結果, 都以 brython_div1 作為切入位置 --></p>
 <div id="brython_div2"></div>
-<!-- editor2 結束 --><hr/>
+<!-- editor2 結束 --><hr>
 <p>
 <script src="https://unpkg.com/three@0.144.0/build/three.js" type="text/javascript"></script>
 </p>
@@ -3913,7 +3919,7 @@ doc["add1to100"].bind('click', add)
 <div style="width: 100%; height: 100%;"><textarea autocomplete="off" id="kw_console1"></textarea></div>
 <p><!-- Brython 程式執行的結果, 都以 brython_div1 作為切入位置 --></p>
 <div id="brython_div1"></div>
-<!-- editor1 結束 --><hr><!-- ########################################## -->
+<!-- editor1 結束 --><hr/><!-- ########################################## -->
 <p>從 1 累加到 100 part2:</p>
 <p><button id="add1to100part2">1 add to 100</button><button id="cango_three_gears">cango_three_gears</button><button id="bsnake">BSnake</button><button id="aitetris">AI Tetris</button><button id="threejsblock">Rotating Block</button></p>
 <p><!-- 請注意, 這裡使用 Javascript 將 localStorage["kw_py_src2"] 中存在近端瀏覽器的程式碼, 由使用者決定存檔名稱--></p>
