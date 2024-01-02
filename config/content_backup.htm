@@ -1551,7 +1551,7 @@ doc["hellogd"].bind("click", hellogd.do)
 <p>1. 請利用 C + gd 繪圖程式庫重新繪製 Figure 1 的質量、彈簧與阻尼器與左右牆面的配置圖.</p>
 <p>2. 當 m1 的起始位置為 1, m2 的起始位置為 -0.5 且 m1, m2 的起始速度都為 0 的情況下, 請利用 C + gnuplot 繪製從 t=0 到 t=10 秒之間, m1 與 m2 的位置以及速度相對於時間的趨勢圖.</p>
 <p>參考資料:</p>
-<p style="padding-left: 30px;"><a href="https://pressbooks.bccampus.ca/engineeringsystems/chapter/building-bond-graph-models-general-procedure-and-application/">https://pressbooks.bccampus.ca/engineeringsystems/chapter/building-bond-graph-models-general-procedure-and-application/</a> </p>
+<p style="padding-left: 30px;"><a href="https://pressbooks.bccampus.ca/engineeringsystems/chapter/building-bond-graph-models-general-procedure-and-application/">https://pressbooks.bccampus.ca/engineeringsystems/chapter/building-bond-graph-models-general-procedure-and-application/</a></p>
 <p style="padding-left: 30px;"><a href="/downloads/Poisson3D.7z">Poisson3D.7z</a> from <a href="https://github.com/derekharrison/Poisson3D">https://github.com/derekharrison/Poisson3D</a> </p>
 <p style="padding-left: 30px;"><a href="https://github.com/derekharrison/heat3D-flex">https://github.com/derekharrison/heat3D-flex</a> </p>
 <p style="padding-left: 30px;"><a href="https://github.com/anuj-das-10/Numerical-Methods">https://github.com/anuj-das-10/Numerical-Methods</a> </p>
@@ -1594,6 +1594,13 @@ doc["hellogd"].bind("click", hellogd.do)
 <p style="padding-left: 30px;"><a href="https://pyslvs.github.io">https://pyslvs.github.io</a></p>
 <p style="padding-left: 30px;"><a href="https://github.com/py-sdl/py-sdl2">https://github.com/py-sdl/py-sdl2</a></p>
 <p>然後呢?</p>
+<p style="padding-left: 30px;">C/C++ and/or Qt:</p>
+<p style="padding-left: 60px;"><a href="https://github.com/OpenModelica/OpenModelica">https://github.com/OpenModelica/OpenModelica</a></p>
+<p style="padding-left: 90px;"><a href="https://github.com/modelica/VehicleInterfaces">https://github.com/modelica/VehicleInterfaces</a> </p>
+<p style="padding-left: 60px;"><a href="https://github.com/CoppeliaRobotics">https://github.com/CoppeliaRobotics</a></p>
+<p style="padding-left: 60px;"><a href="https://github.com/cyberbotics/webots">https://github.com/cyberbotics/webots</a></p>
+<p style="padding-left: 60px;"><a href="https://github.com/Range-Software/range3">https://github.com/Range-Software/range3</a></p>
+<p style="padding-left: 60px;"><a href="https://github.com/bulletphysics/bullet3">https://github.com/bulletphysics/bullet3</a></p>
 <p style="padding-left: 30px;">Rust:</p>
 <p style="padding-left: 60px;"><a href="https://github.com/KmolYuan/efd-rs">https://github.com/KmolYuan/efd-rs</a></p>
 <p style="padding-left: 60px;"><a href="https://github.com/KmolYuan/four-bar-rs">https://github.com/KmolYuan/four-bar-rs</a></p>
@@ -1840,6 +1847,13 @@ Write-Host "IPv6 Gateway: $gateway"</pre>
 <p style="padding-left: 30px;">Replit 透過 <a href="https://replit.com/forgot">https://replit.com/forgot</a> 仍可重新設定為利用 Email 作為帳號與對應密碼登入.</p>
 <p style="padding-left: 30px;">Replit 的 Webview 只有使用 Firefox 瀏覽器的情況下才可以使用 Sessions, 也就是能在 Webview 頁面下登入. 因為 Replit 的 Webview 使用 iframe 標註將 https 伺服器的輸入嵌入 Tab 頁面中.</p>
 <p style="padding-left: 30px;">之所以只有 Firefox 允許在 Webview 頁面下使用 local storage, 是因為 <a href="https://stackoverflow.com/questions/67645164/cross-domain-local-storage-using-iframes-block-third-party-cookies">Chrome 與 Edge block local storage in iframe</a>.</p>
+<p style="padding-left: 30px;">但是即使在 Firefox 的 Webview 中 Search 內容仍與部分 cmsimde 的功能仍無法將 output 顯示在 Webview 中.</p>
+<p style="padding-left: 30px;">.replit 中有關 commit user 的環境變數設定:</p>
+<pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">[env]
+GIT_AUTHOR_NAME = "github_帳號"
+GIT_AUTHOR_EMAIL = "github_帳號對應 EMail"
+GIT_COMMITTER_NAME = "github_帳號"
+GIT_COMMITTER_EMAIL = "github_帳號對應 Email"</pre>
 <p>請注意: 原本 Replit Python 3.8 虛擬環境的目錄為 venv, 但是 Python 3.10 虛擬環境的目錄已經改用 .pythonlibs, 因此倉儲若不希望帶著此一虛擬環境檔案, 則可以將 .pythonlibs 附加到 .gitignore</p>
 <p>另外在近端必須處理 Python 3.12.0 版本中的 <a href="https://docs.python.org/3/library/ssl.html">https://docs.python.org/3/library/ssl.html</a> </p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">httpd.socket = ssl.wrap_socket(httpd.socket,
@@ -1975,7 +1989,7 @@ int main() {
 <p style="padding-left: 30px;"><a href="https://www.researchgate.net/publication/340027249_Developments_in_Runge-Kutta_Method_to_Solve_Ordinary_Differential_Equations">Developments in Runge–Kutta Method to Solve Ordinary Differential Equations</a></p>
 <p style="padding-left: 30px;"><a href="https://www.me.psu.edu/cimbala/Learning/General/Runge_Kutta_Technique.pdf">https://www.me.psu.edu/cimbala/Learning/General/Runge_Kutta_Technique.pdf</a></p>
 <p style="padding-left: 30px;"><a href="https://homepage.math.uiowa.edu/~atkinson/papers/NAODE_Book.pdf">NUMERICAL SOLUTION OF ORDINARY DIFFERENTIAL EQUATIONS</a> (from one of the authors)</p>
-<hr/>
+<hr>
 <p>將 euler_gnuplot_msd_ex1.c 存入 downloads 目錄, 然後在 replit.nix 中進行 C 與 gnuplot 套件的設置:</p>
 <p>replit.nix 設定內容:</p>
 <pre class="brush:js;auto-links:false;toolbar:false" contenteditable="false">{ pkgs }: {
@@ -4046,4 +4060,4 @@ doc["threejsblock"].bind("click", threejsblock.do)
 <!-- editor2 結束 --><hr/>
 <p>
 <script src="https://unpkg.com/three@0.144.0/build/three.js" type="text/javascript"></script>
-</p>
+</p></hr>

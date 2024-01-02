@@ -3,6 +3,11 @@ modules = ["python-3.10:v18-20230807-322e88b"]
 hidden = [".pythonlibs"]
 run = "python3 main.py"
 entrypoint = "main.py"
+[env]
+GIT_AUTHOR_NAME = "mdecycu"
+GIT_AUTHOR_EMAIL = "mdecycuorg@gmail.com"
+GIT_COMMITTER_NAME = "mdecycu"
+GIT_COMMITTER_EMAIL = "mdecycuorg@gmail.com"
 
 [nix]
 channel = "stable-23_05"
