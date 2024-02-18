@@ -167,7 +167,8 @@ img.add_border {
 <p>IPv4 網路的限制: 電腦輔助設計室中的電腦若採用 IPv4 連線機制, 必須透過 NAT 派送內部 IP 位址後, 統一以 NAT 的一個外部 IPv4 位址連外, 如此各電腦所能取得的對外頻寬, 並不足以讓學員順利操作各種 ssh, sftp, https 以及 git 網路連線對外指令. 因此若希望依賴連外網路上課, 必須局部或全部電腦採純 IPv6 網路上網. 因此在電腦輔助設計室上網的設定要訣是: 假如 IPv4 網速無法達到使用要求, 可以採純 IPv6 網路設定上網, 但是各種協定連線則必須各自設定雙網路協定支援的代理主機. 如此才能順利對目前仍只支援 IPv4 的伺服器連線(主要標的為 github.com).</p>
 <p>學校的 IPv6 環境設置並不完全: 2023 年中之前, 儘管學校並無正常的 IPv6 DNS 伺服器可用, 但因允許使用中華電信的 DNS 伺服器設定, 因此只要將 IPv6 網路協定, 設為 DHCP6 取得 IPv6 位址後, 再搭配 hinet 的 IPv6 DNS 設置就可正常以網站的符號名稱連外. 但是目前 (2023.12) DHCP6 僅給定 address, 並無正確的 gateway 與 DNS 設定. 因此必須要自行設定固定 IPv6 address 與 gateway 之外, 還必須自行設定系上的 DNS server. 才能正常使用 IPv6 網路協定連外. (2016 年曾經規劃的<a href="https://cadlab.mde.tw/post/ji-jie-she-ji-gong-cheng-xi-ipv6-wang-zhi-fen-pei.html">系上 IPv6 位址分配</a>, 也從未施行, mde.nfu.edu.tw 與 eng.nfu.edu.tw 網域上的 <a href="https://support.google.com/a/answer/6043385?co=DASHER._Family=Education">Google Workspace for Education</a> 也一直放在雲端)</p>
 <p>github.com 只支援 IPv4: 這個我們沒有辦法改變, 只能使用 IPv4 連線, 或者在純 IPv6 網路環境下, 針對 https 與 ssh 對 github.com 連線時, 透過雙網路協定支援的代理主機進行連線.</p>
-<p>實際操作練習: 假如使用的電腦硬體是 Intel i7 且記憶體 8G 以上, 可以安裝 <a href="https://www.virtualbox.org/wiki/Downloads">https://www.virtualbox.org/wiki/Downloads</a>, 並下載 <a href="https://software.nfu.edu.tw/Windows/tw/Win_10_22H2.4_64BIT_Ch.ISO">Windows 10 64位元 22H2.4</a> (在校網或透過 VPN 下載)開始進行各種配置與設定練習.</p><br />w15-w16 << <a href='w15-w16.html'>Previous</a> <a href='C_lib.html'>Next</a> >> C_lib</div>
+<p>實際操作練習: 假如使用的電腦硬體是 Intel i7 且記憶體 8G 以上, 可以安裝 <a href="https://www.virtualbox.org/wiki/Downloads">https://www.virtualbox.org/wiki/Downloads</a>, 並下載 <a href="https://software.nfu.edu.tw/Windows/tw/Win_10_22H2.4_64BIT_Ch.ISO">Windows 10 64位元 22H2.4</a> (在校網或透過 VPN 下載)開始進行各種配置與設定練習.</p>
+<br />w15-w16 << <a href='w15-w16.html'>Previous</a> <a href='C_lib.html'>Next</a> >> C_lib</div>
         
     <!-- footer -->
       <div class="container">
